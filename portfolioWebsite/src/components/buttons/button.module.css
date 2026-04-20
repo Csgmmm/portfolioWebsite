@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  align-items: center;
+  border-radius: var(--xl);
+  padding: var(--xs);
+  border: 0;
+  cursor: pointer;
+  font-size: var(--m);
+  font-family: inherit; 
+  font-weight: 600;
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+.secondary {
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  color: var(--text);
+
+}
+
+.tertiary {
+  background-color: transparent;
+  color: var(--text);
+
+}
+
+.active {
+  color: var(--secondary);
+  border-right: 1px solid var(--secondary);
+  border-radius: 0;
+}
