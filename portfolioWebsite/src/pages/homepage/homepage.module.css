@@ -1,0 +1,63 @@
+h1 {
+  color: var(--h1);
+}
+
+.header {
+  padding: var(--xl-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-Pic {
+  display: flex;
+}
+.chip-title {
+  font-size: var(--xl-2);
+  line-height: normal;
+  padding-right: 196px;
+  padding-top: var(--md);
+}
+.chip {
+  width: 0%;
+}
+
+.name {
+  color: var(--primary);
+}
+
+.profilePic {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--null);
+    display: flex;
+    flex-direction: column;
+  }
+  .title-Pic {
+    line-height: normal;
+    padding-right: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chip-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding-right: 0;
+    text-align: center;
+    padding-top: var(--null);
+  }
+  .chip {
+    width: 15%;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+}

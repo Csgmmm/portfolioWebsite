@@ -1,4 +1,5 @@
 /*desktop*/
+
 .menu-icon {
   display: none;
 }
@@ -22,6 +23,10 @@
   font-weight: 700;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
 /*mobile*/
 @media (max-width: 768px) {
   .menu-icon {
@@ -45,7 +50,7 @@
     position: absolute;
     padding: var(--sm);
     width: 85%;
-    background-color: rgba(60, 50, 70, 0.7);
+    background-color: rgba(45, 45, 45, 0.9);
     border-radius: var(--sm);
   }
 

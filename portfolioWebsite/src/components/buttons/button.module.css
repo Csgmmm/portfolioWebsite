@@ -12,7 +12,7 @@
 
 .primary {
   background-color: var(--primary);
-  color: var(--text);
+  color: var(--button-color);
 }
 
 .secondary {

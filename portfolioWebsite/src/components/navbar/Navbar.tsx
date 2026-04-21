@@ -51,7 +51,7 @@ function Navbar() {
             </Button>
           </Link>
         </div>
-        <Button variant="secondary" onClick={toggleTheme}>
+        <Button variant="primary" onClick={toggleTheme}>
           <span className="theme">
             <SunMoon />
             Theme

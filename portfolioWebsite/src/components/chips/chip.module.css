@@ -1,0 +1,19 @@
+.primary {
+  border: 1px solid var(--secondary);
+  border-radius: var(--xl);
+  padding: var(--xxs) var(--sm);
+  font-size: var(--sm);
+  font-weight: 800;
+  color: var(--secondary);
+  width: fit-content;
+}
+
+.secondary {
+  border: 1px solid var(--placeholder);
+  border-radius: var(--xl);
+  padding: var(--xxs) var(--sm);
+  font-size: var(--sm);
+  font-weight: 800;
+  color: var(--placeholder);
+  width: fit-content;
+}
