@@ -1,5 +1,6 @@
 :root {
   --background: #0a0a0c;
+  --background-secondary: #262626;
   --text: #ffffff;
   --primary: #7639ff;
   --secondary: #af8bff;
@@ -20,10 +21,34 @@
   --xl-6: 80px;
   --xl-7: 88px;
   --xl-8: 96px;
+  --text-caption: 12px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.33em;
+}
+
+h4 {
+  font-size: 1.17em;
+}
+h5 {
+  font-size: 0.83em;
+}
+h6 {
+  font-size: 0.67em;
 }
 
 [data-theme="light"] {
   --background: #ffffff;
+  --background-secondary: #eaeaea;
   --text: #414141;
   --primary: #7639ff;
   --secondary: #af8bff;
