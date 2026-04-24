@@ -1,7 +1,12 @@
+
 /*desktop*/
 
 .menu-icon {
   display: none;
+}
+
+.nav {
+  margin: var(--md);
 }
 
 .nav-content {

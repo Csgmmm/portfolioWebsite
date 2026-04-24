@@ -66,5 +66,5 @@ h6 {
 body {
   background: var(--background);
   color: var(--text);
-  margin: var(--lg);
+  margin: var(--null);
 }

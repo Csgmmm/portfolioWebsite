@@ -27,6 +27,15 @@
   color: var(--text);
 }
 
+.link {
+  color: var(--secondary);
+  background-color: transparent;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
 .active {
   color: var(--secondary);
   border-radius: 0;

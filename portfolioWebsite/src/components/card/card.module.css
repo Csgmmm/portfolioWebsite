@@ -8,5 +8,5 @@
   flex-direction: column;
   border: 1px solid var(--border);
   box-shadow: var(--shadow) 0px 8px 24px;
-  padding-bottom: var(--lg);
+  padding-bottom: var(--sm);
 }

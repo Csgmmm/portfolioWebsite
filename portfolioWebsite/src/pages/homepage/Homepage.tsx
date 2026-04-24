@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   CodeXml,
   LayoutTemplate,
   MousePointerClick,
@@ -28,11 +29,7 @@ import babyTracker from "./assets/babyTracker.png";
 import feminDashboard from "./assets/feminDashboard.png";
 import Button from "../../components/buttons/Button";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  vscDarkPlus,
-  vs,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useState, useEffect } from "react";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function Homepage() {
   const code = `<div className="loginInfo">
@@ -41,16 +38,6 @@ function Homepage() {
   <p>joana@email.com / pw: joana</p>
 </div>`;
 
-  const [isDark, setIsDark] = useState(
-    document.documentElement.getAttribute("data-theme") === "dark",
-  );
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.getAttribute("data-theme") === "dark");
-    });
-    observer.observe(document.documentElement, { attributes: true });
-    return () => observer.disconnect();
-  }, []);
   return (
     <>
       <section className={styles.headerContainer}>
@@ -218,16 +205,32 @@ function Homepage() {
                 />
                 <div className={styles.infoContainer}>
                   <h4>Asian Food Delivery App</h4>
-                  <div className={styles.containerBtn}>
-                    <Button variant="primary" className={styles.btnCards}>
+                  <span className={styles.containerBtn}>
+                    <Button
+                      variant="primary"
+                      onClick={() =>
+                        window.open(
+                          "https://www.figma.com/proto/bc78eK6Kvi0658WAZmmFoI/yumyum?node-id=4-333&p=f&viewport=3%2C294%2C0.13&t=1TKBUC7W5dZf2h1W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A333&page-id=1%3A2",
+                          "_blank",
+                          "noopener,noreferrer",
+                        )
+                      }
+                      className={styles.btnCards}
+                    >
                       View prototype
                     </Button>
-                  </div>
-                  <div className={styles.chipsContainer}>
+                  </span>
+                  <span className={styles.chipsContainer}>
                     <Chip variant="secondary">Figma</Chip>
                     <Chip variant="secondary">photoshop</Chip>
-                  </div>
+                  </span>
                 </div>
+                <span className={styles.btnProject}>
+                  <Button variant="link">
+                    View Project
+                    <ArrowRight />
+                  </Button>
+                </span>
               </Card>
               <Card>
                 <img
@@ -237,7 +240,7 @@ function Homepage() {
                 />
                 <div className={styles.infoContainer}>
                   <h4>Feminine Dashboard</h4>
-                  <div className={styles.containerBtn}>
+                  <span className={styles.containerBtn}>
                     <Button
                       variant="primary"
                       onClick={() =>
@@ -264,28 +267,35 @@ function Homepage() {
                     >
                       Code GitHub
                     </Button>
-                  </div>
-                  <div className={styles.chipsContainer}>
+                  </span>
+                  <span className={styles.chipsContainer}>
                     <Chip variant="secondary">Figma</Chip>
                     <Chip variant="secondary">react</Chip>
                     <Chip variant="secondary">javascript</Chip>
                     <Chip variant="secondary">typescript</Chip>
                     <Chip variant="secondary">css</Chip>
                     <Chip variant="secondary">html</Chip>
-                  </div>
+                  </span>
                   <SyntaxHighlighter
                     language="tsx"
-                    style={isDark ? vscDarkPlus : vs}
+                    style={vscDarkPlus}
                     customStyle={{
                       border: "none",
                       boxShadow: "none",
                       margin: "0",
                       padding: "0",
+                      background: "none",
                     }}
                   >
                     {code}
                   </SyntaxHighlighter>
                 </div>
+                <span className={styles.btnProject}>
+                  <Button variant="link">
+                    View Project
+                    <ArrowRight />
+                  </Button>
+                </span>
               </Card>
 
               <Card>
@@ -296,16 +306,32 @@ function Homepage() {
                 />
                 <div className={styles.infoContainer}>
                   <h4>Baby Tracker App</h4>
-                  <div className={styles.containerBtn}>
-                    <Button variant="primary" className={styles.btnCards}>
+                  <span className={styles.containerBtn}>
+                    <Button
+                      variant="primary"
+                      onClick={() =>
+                        window.open(
+                          "https://www.figma.com/proto/WWQG1zJ0Hl0bcocvW0S3GR/Baby-app?node-id=66-1059&p=f&viewport=430%2C258%2C0.19&t=2lWgQEFbnqYfN6BA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=66%3A1059&page-id=0%3A1",
+                          "_blank",
+                          "noopener,noreferrer",
+                        )
+                      }
+                      className={styles.btnCards}
+                    >
                       View prototype
                     </Button>
-                  </div>
-                  <div className={styles.chipsContainer}>
+                  </span>
+                  <span className={styles.chipsContainer}>
                     <Chip variant="secondary">Figma</Chip>
                     <Chip variant="secondary">photoshop</Chip>
-                  </div>
+                  </span>
                 </div>
+                <span className={styles.btnProject}>
+                  <Button variant="link">
+                    View Project
+                    <ArrowRight />
+                  </Button>
+                </span>
               </Card>
             </div>
           </div>
@@ -316,3 +342,7 @@ function Homepage() {
 }
 
 export default Homepage;
+
+//mesmo tendo oa função do darm mode no navbar, eu preciso de ter aqui tambem, para que quando haja trigger no botao da navbar, ele verifica essa mudança de estado para que o SyntaxHighlighter troque tambem de cor.
+//relativamente ao syntax:
+//usa-se o useEffect para vigiar o atributo data-theme do HTML e, sempre que ele muda, executa o setIsDark para validar se o tema é "dark", forçando o componente a atualizar o estado e mudar as cores.
