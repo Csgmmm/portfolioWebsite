@@ -76,12 +76,13 @@ body {
 }
 
 .subTitle h5 {
-  letter-spacing: 10px;
+  letter-spacing: var(--xs);
   font-weight: 300;
   text-transform: uppercase;
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: var(--lg);
 }
 
 .contentDetailsContainer h2 {
@@ -138,17 +139,19 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .stacksDetails {
-    display: grid;
+  display: grid;
   grid-template-columns: repeat(7, 1fr);
   justify-items: center;
   column-gap: var(--md);
   row-gap: var(--md);
   align-items: center;
   width: fit-content;
+  padding-bottom: var(--md);
 }
-
 
 .eachStack {
   display: flex;
@@ -161,10 +164,89 @@ body {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .stacksDetails {
     grid-template-columns: repeat(4, 1fr);
     display: grid;
     justify-items: center;
+    column-gap: var(--xxs);
   }
+}
+
+p {
+  width: var(--xl-9);
+  padding: 0;
+  margin: var(--md) 0 0 0;
+}
+
+/* projects */
+
+.projects {
+  width: 100%;
+}
+.cardContainer {
+  width: fit-content;
+  gap: var(--md);
+  display: flex;
+  padding: var(--null) var(--xl-4);
+}
+
+.imgProject {
+  width: 100%;
+  border-radius: 0px;
+}
+
+.cardContainer h4 {
+  width: 100%;
+  display: flex;
+  margin: var(--null);
+  padding-top: var(--md);
+}
+
+.containerBtn {
+  display: flex;
+  justify-content: center;
+  padding: var(--md) var(--md) var(--md) var(--null);
+  gap: var(--sm);
+}
+
+.btnCards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.infoContainer {
+  padding-left: var(--md);
+}
+
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sm);
+  padding-right: var(--xxs);
+  padding-bottom: var(--md);
+}
+
+@media (max-width: 968px) {
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    margin: var(--md);
+    width: 70%;
+  }
+  .chipsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sm);
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.titleUsername {
+  color: antiquewhite;
 }

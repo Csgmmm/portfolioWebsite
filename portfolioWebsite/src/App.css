@@ -1,6 +1,8 @@
 :root {
   --background: #0a0a0c;
   --background-secondary: #262626;
+  --background-card: #1f1f1f;
+  --border: #454546;
   --text: #ffffff;
   --primary: #7639ff;
   --secondary: #af8bff;
@@ -13,7 +15,7 @@
   --sm: 16px;
   --md: 24px;
   --lg: 32px;
-  --xl: 40px;
+  --xl: 44px;
   --xl-2: 48px;
   --xl-3: 56px;
   --xl-4: 64px;
@@ -21,7 +23,22 @@
   --xl-6: 80px;
   --xl-7: 88px;
   --xl-8: 96px;
+  --xl-9: 112px;
   --text-caption: 12px;
+  --shadow: #1f1f1f;
+  --chip-font-size: 14px;
+}
+
+[data-theme="light"] {
+  --background: #ffffff;
+  --background-secondary: #eaeaea;
+  --background-card: #ffffff;
+  --border: #dbdbdb;
+  --text: #414141;
+  --primary: #7639ff;
+  --secondary: #af8bff;
+  --h1: #414141;
+  --shadow: #dcdcdc;
 }
 
 h1 {
@@ -44,15 +61,6 @@ h5 {
 }
 h6 {
   font-size: 0.67em;
-}
-
-[data-theme="light"] {
-  --background: #ffffff;
-  --background-secondary: #eaeaea;
-  --text: #414141;
-  --primary: #7639ff;
-  --secondary: #af8bff;
-  --h1: #414141;
 }
 
 body {

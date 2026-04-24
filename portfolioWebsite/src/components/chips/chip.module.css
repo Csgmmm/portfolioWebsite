@@ -12,8 +12,9 @@
   border: 1px solid var(--placeholder);
   border-radius: var(--xl);
   padding: var(--xxs) var(--sm);
-  font-size: var(--sm);
+  font-size: var(--chip-font-size);
   font-weight: 800;
   color: var(--placeholder);
   width: fit-content;
+  text-transform: uppercase;
 }

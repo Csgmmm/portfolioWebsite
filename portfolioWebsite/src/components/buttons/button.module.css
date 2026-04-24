@@ -1,13 +1,14 @@
 .button {
   display: flex;
   align-items: center;
-  border-radius: var(--xl);
+  border-radius: var(--xs);
   padding: var(--xs);
   border: 0;
   cursor: pointer;
   font-size: var(--m);
   font-family: inherit;
   font-weight: 600;
+  height: var(--xl);
 }
 
 .primary {

@@ -5,13 +5,14 @@ type Button = {
   variant: "primary" | "secondary" | "tertiary";
   isActive?: boolean;
   onClick?: () => void;
+  className?: string;
 };
 
-function Button({ children, variant, isActive, onClick }: Button) {
+function Button({ children, variant, isActive, onClick, className }: Button) {
   return (
     <button
       onClick={onClick}
-      className={`${styles.button} ${styles[variant]} ${isActive ? styles.active : ""}`}
+      className={`${styles.button} ${styles[variant]} ${isActive ? styles.active : ""} ${className}`}
     >
       {children}
     </button>

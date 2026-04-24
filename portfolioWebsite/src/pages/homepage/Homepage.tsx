@@ -7,23 +7,50 @@ import {
 import Chip from "../../components/chips/Chip";
 import Navbar from "../../components/navbar/Navbar";
 import styles from "./homepage.module.css";
-import profilePic from "./profilePic.png";
-import figma from "./figma.svg";
-import js from "./js.svg";
-import react from "./react.svg";
-import typescript from "./typescript.svg";
-import miro from "./miro.svg";
-import html from "./html.svg";
-import css from "./css.svg";
-import vscode from "./vscode.svg";
-import scrumAgile from "./scrumAgile.svg";
-import commandLine from "./commandLine.svg";
-import github from "./github.svg";
-import illustrator from "./illustrator.svg";
-import photoshop from "./photoshop.svg";
-import sass from "./sass.svg";
+import profilePic from "./assets/profilePic.png";
+import figma from "./assets/figma.svg";
+import js from "./assets/js.svg";
+import react from "./assets/react.svg";
+import typescript from "./assets/typescript.svg";
+import miro from "./assets/miro.svg";
+import html from "./assets/html.svg";
+import css from "./assets/css.svg";
+import vscode from "./assets/vscode.svg";
+import scrumAgile from "./assets/scrumAgile.svg";
+import commandLine from "./assets/commandLine.svg";
+import github from "./assets/github.svg";
+import illustrator from "./assets/illustrator.svg";
+import photoshop from "./assets/photoshop.svg";
+import sass from "./assets/sass.svg";
+import Card from "../../components/card/Card";
+import yumyum from "./assets/yumyum.png";
+import babyTracker from "./assets/babyTracker.png";
+import feminDashboard from "./assets/feminDashboard.png";
+import Button from "../../components/buttons/Button";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  vscDarkPlus,
+  vs,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useState, useEffect } from "react";
 
 function Homepage() {
+  const code = `<div className="loginInfo">
+  <p>luisa@email.com / pw: luisa</p>
+  <p>maria@email.com / pw: maria</p>
+  <p>joana@email.com / pw: joana</p>
+</div>`;
+
+  const [isDark, setIsDark] = useState(
+    document.documentElement.getAttribute("data-theme") === "dark",
+  );
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.getAttribute("data-theme") === "dark");
+    });
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
       <section className={styles.headerContainer}>
@@ -52,9 +79,9 @@ function Homepage() {
         </div>
       </section>
       <section className={styles.contentContainer}>
-        <span className={styles.subTitle}>
+        <div className={styles.subTitle}>
           <h5>Expertise</h5>
-        </span>
+        </div>
         <div className={styles.contentDetailsContainer}>
           <h2>What I bring to the table</h2>
           <span className={styles.detailsContainer}>
@@ -76,10 +103,11 @@ function Homepage() {
             </span>
           </span>
 
-          <span className={styles.subTitle}>
-            <h5>tech stack</h5>
-          </span>
+          {/* tech skills */}
           <div className={styles.stacksContainer}>
+            <span className={styles.subTitle}>
+              <h5>tech stack</h5>
+            </span>
             <span className={styles.stacksDetails}>
               <div className={styles.eachStack}>
                 <span className={styles.iconStacks}>
@@ -123,6 +151,14 @@ function Homepage() {
                 </span>
                 <p>CSS</p>
               </div>
+            </span>
+
+            {/*  */}
+
+            <span className={styles.subTitle}>
+              <h5>other skills</h5>
+            </span>
+            <span className={styles.stacksDetails}>
               <div className={styles.eachStack}>
                 <span className={styles.iconStacks}>
                   <img src={vscode} alt="visual studio code" />
@@ -166,6 +202,112 @@ function Homepage() {
                 <p>SASS</p>
               </div>
             </span>
+          </div>
+
+          {/* projects */}
+          <div className={styles.projects}>
+            <span className={styles.subTitle}>
+              <h5>projects</h5>
+            </span>
+            <div className={styles.cardContainer}>
+              <Card>
+                <img
+                  src={yumyum}
+                  className={styles.imgProject}
+                  alt="Asian Food Delivery App"
+                />
+                <div className={styles.infoContainer}>
+                  <h4>Asian Food Delivery App</h4>
+                  <div className={styles.containerBtn}>
+                    <Button variant="primary" className={styles.btnCards}>
+                      View prototype
+                    </Button>
+                  </div>
+                  <div className={styles.chipsContainer}>
+                    <Chip variant="secondary">Figma</Chip>
+                    <Chip variant="secondary">photoshop</Chip>
+                  </div>
+                </div>
+              </Card>
+              <Card>
+                <img
+                  src={feminDashboard}
+                  className={styles.imgProject}
+                  alt="feminine dashboard"
+                />
+                <div className={styles.infoContainer}>
+                  <h4>Feminine Dashboard</h4>
+                  <div className={styles.containerBtn}>
+                    <Button
+                      variant="primary"
+                      onClick={() =>
+                        window.open(
+                          "https://feminine-dashboard.vercel.app/",
+                          "_blank",
+                          "noopener,noreferrer",
+                        )
+                      }
+                      className={styles.btnCards}
+                    >
+                      Live Website
+                    </Button>
+                    <Button
+                      variant="primary"
+                      onClick={() =>
+                        window.open(
+                          "https://github.com/Csgmmm/feminine-dashboard.git",
+                          "_blank",
+                          "noopener,noreferrer",
+                        )
+                      }
+                      className={styles.btnCards}
+                    >
+                      Code GitHub
+                    </Button>
+                  </div>
+                  <div className={styles.chipsContainer}>
+                    <Chip variant="secondary">Figma</Chip>
+                    <Chip variant="secondary">react</Chip>
+                    <Chip variant="secondary">javascript</Chip>
+                    <Chip variant="secondary">typescript</Chip>
+                    <Chip variant="secondary">css</Chip>
+                    <Chip variant="secondary">html</Chip>
+                  </div>
+                  <SyntaxHighlighter
+                    language="tsx"
+                    style={isDark ? vscDarkPlus : vs}
+                    customStyle={{
+                      border: "none",
+                      boxShadow: "none",
+                      margin: "0",
+                      padding: "0",
+                    }}
+                  >
+                    {code}
+                  </SyntaxHighlighter>
+                </div>
+              </Card>
+
+              <Card>
+                <img
+                  src={babyTracker}
+                  className={styles.imgProject}
+                  alt="baby tracker"
+                />
+                <div className={styles.infoContainer}>
+                  <h4>Baby Tracker App</h4>
+                  <div className={styles.containerBtn}>
+                    <Button variant="primary" className={styles.btnCards}>
+                      View prototype
+                    </Button>
+                  </div>
+                  <div className={styles.chipsContainer}>
+                    <Chip variant="secondary">Figma</Chip>
+                    <Chip variant="secondary">photoshop</Chip>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
