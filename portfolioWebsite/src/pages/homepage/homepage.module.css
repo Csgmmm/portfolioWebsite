@@ -346,3 +346,42 @@ p {
     margin: var(--xl) var(--xl);
   }
 }
+
+/* footer */
+
+.socialMediaIcon {
+  background-color: var(--secondary);
+  border-radius: var(--xl-3);
+  padding: var(--xs);
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  display: flex;
+}
+
+.socialMedia {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  gap: var(--sm);
+  padding: var(--lg);
+}
+
+.privateInfo {
+  font-size: 14px;
+  margin: var(--null);
+  align-items: center;
+  display: flex;
+  gap: var(--xs);
+  width: fit-content;
+}
+
+.emailLink {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
+  color: var(--secondary);
+}

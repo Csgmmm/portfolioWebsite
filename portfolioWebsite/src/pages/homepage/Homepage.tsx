@@ -4,6 +4,8 @@ import {
   LayoutTemplate,
   MousePointerClick,
   PersonStanding,
+  Send,
+  Smartphone,
 } from "lucide-react";
 import Chip from "../../components/chips/Chip";
 import Navbar from "../../components/navbar/Navbar";
@@ -30,6 +32,7 @@ import feminDashboard from "./assets/feminDashboard.png";
 import Button from "../../components/buttons/Button";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import linkedinLogo from "./assets/linkedinLogo.svg";
 
 function Homepage() {
   const code = `<div className="loginInfo">
@@ -419,6 +422,28 @@ function Homepage() {
           </div>
         </div>
       </section>
+      <footer>
+        <div className={styles.socialMedia}>
+          <span className={styles.socialMediaIcon}>
+            <img src={linkedinLogo} alt="Linkedin Logo" />
+          </span>
+          <span className={styles.socialMediaIcon}>
+            <img src={github} alt="github Logo" />
+          </span>
+          <p className={styles.privateInfo}>
+            <Smartphone /> +351 910 061 795
+          </p>
+          <p className={styles.privateInfo}>
+            <Send />
+            <a
+              href="mailto:carla.s.ofia@hotmail.com"
+              className={styles.emailLink}
+            >
+              carla.s.ofia@hotmail.com
+            </a>
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
