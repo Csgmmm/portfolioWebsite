@@ -1,5 +1,3 @@
-
-
 .header {
   padding: var(--xl-3) var(--lg) var(--md);
   display: flex;
@@ -70,13 +68,17 @@
   border-radius: var(--md) var(--md) var(--null) var(--null);
 }
 
+.subTitle {
+  display: flex;
+  justify-content: center;
+  margin: var(--md) var(--null);
+}
+
 .subTitle h5 {
   letter-spacing: var(--xs);
   font-weight: 300;
   text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  margin: var(--lg);
+  margin: var(--null);
 }
 
 .contentDetailsContainer h2 {
@@ -175,14 +177,16 @@ p {
 
 /* projects */
 
-.projects {
-  width: 100%;
+.projectsRecomenContainer {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  margin: var(--null) var(--xl);
 }
 .cardContainer {
   width: fit-content;
   gap: var(--md);
   display: flex;
-  padding: var(--null) var(--xl-4);
 }
 
 .imgProject {
@@ -241,20 +245,104 @@ p {
   }
 }
 
-.titleUsername {
-  color: antiquewhite;
-}
-
 .infoContainer {
   display: flex;
   flex-direction: column;
-  height: 100%; 
+  height: 100%;
 }
 
 .btnProject {
-  margin-top: auto; 
+  margin-top: auto;
   display: flex;
-  justify-content: flex-end; 
-  padding-top: 20px; 
+  justify-content: flex-end;
+  padding-top: var(--md);
   padding-right: var(--md);
+}
+
+.title-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: var(--xl) var(--null) var(--md) var(--null);
+  position: relative;
+}
+
+.title-link h5 {
+  margin: 0 auto;
+  letter-spacing: var(--xs);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.title-link a,
+.title-link button,
+.title-link .link-class {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 968px) {
+  .title-link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sm);
+    text-align: center;
+    position: static;
+    margin: var(--lg) var(--null) var(--null) var(--null);
+  }
+
+  .title-link h5 {
+    margin: 0;
+    width: 100%;
+  }
+
+  .title-link a,
+  .title-link button,
+  .title-link [class*="button"] {
+    position: static;
+    margin: 0 auto;
+  }
+}
+
+/* recommendations */
+
+.containerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.paragraph {
+  display: flex;
+  width: auto;
+  padding: var(--null) var(--md);
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.personsName {
+  color: var(--text);
+  font-weight: 600;
+  padding: var(--null) var(--md);
+  width: auto;
+}
+
+.personsJob {
+  padding: var(--null) var(--md);
+  margin: var(--null);
+  width: auto;
+}
+
+.codeSyntax {
+  padding-right: var(--md);
+}
+
+@media (max-width: 768px) {
+  .recommendationsContainer {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    margin: var(--xl) var(--xl);
+  }
 }

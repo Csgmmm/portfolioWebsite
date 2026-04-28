@@ -192,9 +192,13 @@ function Homepage() {
           </div>
 
           {/* projects */}
-          <div className={styles.projects}>
-            <span className={styles.subTitle}>
+          <div className={styles["projectsRecomenContainer"]}>
+            <span className={styles["title-link"]}>
               <h5>projects</h5>
+              <Button variant="link">
+                View Projects
+                <ArrowRight />
+              </Button>
             </span>
             <div className={styles.cardContainer}>
               <Card>
@@ -232,6 +236,7 @@ function Homepage() {
                   </Button>
                 </span>
               </Card>
+
               <Card>
                 <img
                   src={feminDashboard}
@@ -276,19 +281,30 @@ function Homepage() {
                     <Chip variant="secondary">css</Chip>
                     <Chip variant="secondary">html</Chip>
                   </span>
-                  <SyntaxHighlighter
-                    language="tsx"
-                    style={vscDarkPlus}
-                    customStyle={{
-                      border: "none",
-                      boxShadow: "none",
-                      margin: "0",
-                      padding: "0",
-                      background: "none",
-                    }}
-                  >
-                    {code}
-                  </SyntaxHighlighter>
+                  <div className={styles.codeSyntax}>
+                    <SyntaxHighlighter
+                      language="tsx"
+                      style={vscDarkPlus}
+                      wrapLongLines={true}
+                      codeTagProps={{
+                        style: {
+                          whiteSpace: "pre-wrap",
+                          wordBreak: "break-all",
+                        },
+                      }}
+                      customStyle={{
+                        border: "none",
+                        boxShadow: "none",
+                        margin: "0",
+                        padding: "0",
+                        background: "none",
+
+                        width: "100%",
+                      }}
+                    >
+                      {code}
+                    </SyntaxHighlighter>
+                  </div>
                 </div>
                 <span className={styles.btnProject}>
                   <Button variant="link">
@@ -335,6 +351,72 @@ function Homepage() {
               </Card>
             </div>
           </div>
+
+          {/* recommendations */}
+          <div className={styles["projectsRecomenContainer"]}>
+            <span className={styles["title-link"]}>
+              <h5>Linkedin recommendations</h5>
+              <Button variant="link">
+                View LinkedIn
+                <ArrowRight />
+              </Button>
+            </span>
+            <div className={styles.cardContainer}>
+              <Card>
+                <div className={styles.containerText}>
+                  <p className={styles.paragraph}>
+                    “I had the pleasure of working with Carla on the SNS 24
+                    project, where she contributed as a designer. From day one,
+                    she impressed us with her speed and efficiency, consistently
+                    meeting tight deadlines without ever compromising on
+                    quality. (..) always striking the right balance between
+                    aesthetics, functionality, and user experience. (..)”
+                  </p>
+                  <div className={styles.infoPerson}>
+                    <p className={styles.personsName}>Patricia Wittine</p>
+                    <p className={styles.personsJob}>Project Manager</p>
+                  </div>
+                </div>
+              </Card>
+              <Card>
+                <div className={styles.containerText}>
+                  <p className={styles.paragraph}>
+                    “(..) Her creativity and efficiency are evident in every
+                    project, offering innovative solutions and demonstrating a
+                    meticulous approach to each task. She is resilient, capable
+                    of overcoming challenges with determination and adapting
+                    easily to dynamic situations. Her ability to work in a team
+                    is notable, creating a collaborative environment where her
+                    dynamism and high technical performance shine. (..)”
+                  </p>
+                  <div className={styles.infoPerson}>
+                    <p className={styles.personsName}>Pedro Gómez</p>
+                    <p className={styles.personsJob}>Project Manager</p>
+                  </div>
+                </div>
+              </Card>
+              <Card>
+                <div className={styles.containerText}>
+                  <p className={styles.paragraph}>
+                    “I had the pleasure of studying alongside Carla during our
+                    Front-End Engineer bootcamp, and it was great working with
+                    her throughout the course. She is a strong team player and
+                    consistently very proactive. I was especially impressed with
+                    the project she developer, it was clear, well-structured and
+                    thoughtfully executed. If I ever had the opportunity to work
+                    with her in a professional setting, I world be genuinely
+                    happy to have her on my team. Any workplace would be lucky
+                    to have someone with her attitude, dedication and
+                    collaborative spirit. “
+                  </p>
+                  <div className={styles.infoPerson}>
+                    <p className={styles.personsName}>Beatriz Gabriel</p>
+                    <p className={styles.personsJob}>UI/UX Designer</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
         </div>
       </section>
     </>
@@ -342,7 +424,3 @@ function Homepage() {
 }
 
 export default Homepage;
-
-//mesmo tendo oa função do darm mode no navbar, eu preciso de ter aqui tambem, para que quando haja trigger no botao da navbar, ele verifica essa mudança de estado para que o SyntaxHighlighter troque tambem de cor.
-//relativamente ao syntax:
-//usa-se o useEffect para vigiar o atributo data-theme do HTML e, sempre que ele muda, executa o setIsDark para validar se o tema é "dark", forçando o componente a atualizar o estado e mudar as cores.
