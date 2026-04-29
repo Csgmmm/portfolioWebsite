@@ -9,6 +9,7 @@
   font-family: inherit;
   font-weight: 600;
   height: var(--xl);
+  width: fit-content;
 }
 
 .primary {
@@ -39,4 +40,23 @@
 .active {
   color: var(--secondary);
   border-radius: 0;
+}
+
+.link a {
+  color: var(--secondary);
+  background-color: transparent;
+}
+
+.primary a {
+  background-color: var(--primary);
+  color: var(--button-color);
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: var(--secondary);
+  font-size: var(--m);
+  font-family: inherit;
+  font-weight: 600;
 }

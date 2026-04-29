@@ -1,0 +1,99 @@
+.container {
+  padding: var(--md);
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: var(--lg);
+  gap: var(--md);
+  padding-left: var(--md);
+  padding-right: var(--md);
+}
+
+.section h5 {
+  letter-spacing: var(--xs);
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: var(--null);
+}
+
+.cardsContainer {
+  display: flex;
+  gap: var(--md);
+  width: 100%;
+  justify-content: center;
+}
+
+.portfolioImg {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.otherProjectImg {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  /* sem min-width! */
+}
+
+.card {
+  width: 500px;
+}
+
+@media (max-width: 920px) {
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* info */
+
+.title {
+  margin: 0;
+  padding: var(--null) var(--sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.infoContainer {
+  padding-left: var(--sm);
+}
+
+.infoContainer p {
+  width: 100%;
+  color: var(--placeholder);
+  font-size: var(--sm);
+}
+
+.containerBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--md) var(--md) var(--md) var(--null);
+  gap: var(--sm);
+}
+
+.btnCards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sm);
+  padding-right: var(--xxs);
+}

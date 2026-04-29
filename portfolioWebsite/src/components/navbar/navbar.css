@@ -1,4 +1,3 @@
-
 /*desktop*/
 
 .menu-icon {
@@ -26,6 +25,12 @@
   align-items: center;
   gap: var(--xs);
   font-weight: 700;
+  
+}
+
+.btnTheme {
+  width: fit-content;
+
 }
 
 .logo {

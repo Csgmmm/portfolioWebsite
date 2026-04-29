@@ -33,6 +33,7 @@ import Button from "../../components/buttons/Button";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import linkedinLogo from "./assets/linkedinLogo.svg";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const code = `<div className="loginInfo">
@@ -198,9 +199,11 @@ function Homepage() {
           <div className={styles["projectsRecomenContainer"]}>
             <span className={styles["title-link"]}>
               <h5>projects</h5>
-              <Button variant="link">
-                View Projects
-                <ArrowRight />
+              <Button variant="link" className={styles.btnLink}>
+                <Link to="/projects"  >
+                  View Projects
+                  <ArrowRight />
+                </Link>
               </Button>
             </span>
             <div className={styles.cardContainer}>
@@ -213,18 +216,13 @@ function Homepage() {
                 <div className={styles.infoContainer}>
                   <h4>Asian Food Delivery App</h4>
                   <span className={styles.containerBtn}>
-                    <Button
-                      variant="primary"
-                      onClick={() =>
-                        window.open(
-                          "https://www.figma.com/proto/bc78eK6Kvi0658WAZmmFoI/yumyum?node-id=4-333&p=f&viewport=3%2C294%2C0.13&t=1TKBUC7W5dZf2h1W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A333&page-id=1%3A2",
-                          "_blank",
-                          "noopener,noreferrer",
-                        )
-                      }
-                      className={styles.btnCards}
-                    >
-                      View prototype
+                    <Button variant="primary" className={styles.btnCards}>
+                      <a
+                        href="https://www.figma.com/proto/bc78eK6Kvi0658WAZmmFoI/yumyum?node-id=4-333&p=f&viewport=3%2C294%2C0.13&t=1TKBUC7W5dZf2h1W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A333&page-id=1%3A2"
+                        target="_blank"
+                      >
+                        View prototype
+                      </a>
                     </Button>
                   </span>
                   <span className={styles.chipsContainer}>
@@ -249,31 +247,23 @@ function Homepage() {
                 <div className={styles.infoContainer}>
                   <h4>Feminine Dashboard</h4>
                   <span className={styles.containerBtn}>
-                    <Button
-                      variant="primary"
-                      onClick={() =>
-                        window.open(
-                          "https://feminine-dashboard.vercel.app/",
-                          "_blank",
-                          "noopener,noreferrer",
-                        )
-                      }
-                      className={styles.btnCards}
-                    >
-                      Live Website
+                    <Button variant="primary" className={styles.btnCards}>
+                      <a
+                        href="https://feminine-dashboard.vercel.app/"
+                        target="_blank"
+                        className={styles.btnCards}
+                      >
+                        Live Website
+                      </a>
                     </Button>
-                    <Button
-                      variant="primary"
-                      onClick={() =>
-                        window.open(
-                          "https://github.com/Csgmmm/feminine-dashboard.git",
-                          "_blank",
-                          "noopener,noreferrer",
-                        )
-                      }
-                      className={styles.btnCards}
-                    >
-                      Code GitHub
+                    <Button variant="primary" className={styles.btnCards}>
+                      <a
+                        href="https://github.com/Csgmmm/feminine-dashboard"
+                        target="_blank"
+                        className={`${styles.button} ${styles.btnCards}`}
+                      >
+                        Code GitHub
+                      </a>
                     </Button>
                   </span>
                   <span className={styles.chipsContainer}>
@@ -326,18 +316,14 @@ function Homepage() {
                 <div className={styles.infoContainer}>
                   <h4>Baby Tracker App</h4>
                   <span className={styles.containerBtn}>
-                    <Button
-                      variant="primary"
-                      onClick={() =>
-                        window.open(
-                          "https://www.figma.com/proto/WWQG1zJ0Hl0bcocvW0S3GR/Baby-app?node-id=66-1059&p=f&viewport=430%2C258%2C0.19&t=2lWgQEFbnqYfN6BA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=66%3A1059&page-id=0%3A1",
-                          "_blank",
-                          "noopener,noreferrer",
-                        )
-                      }
-                      className={styles.btnCards}
-                    >
-                      View prototype
+                    <Button variant="primary" className={styles.btnCards}>
+                      <a
+                        href="https://www.figma.com/proto/WWQG1zJ0Hl0bcocvW0S3GR/Baby-app?node-id=66-1059&p=f&viewport=430%2C258%2C0.19&t=2lWgQEFbnqYfN6BA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=66%3A1059&page-id=0%3A1"
+                        target="_blank"
+                        className={styles.btnCards}
+                      >
+                        View prototype
+                      </a>
                     </Button>
                   </span>
                   <span className={styles.chipsContainer}>
@@ -359,9 +345,15 @@ function Homepage() {
           <div className={styles["projectsRecomenContainer"]}>
             <span className={styles["title-link"]}>
               <h5>Linkedin recommendations</h5>
-              <Button variant="link">
-                View LinkedIn
-                <ArrowRight />
+              <Button variant="link" className={styles.btnLink}>
+                <a
+                  href="https://www.linkedin.com/in/carlasofiagm/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View LinkedIn
+                  <ArrowRight />
+                </a>
               </Button>
             </span>
             <div className={styles.cardContainer}>
@@ -425,10 +417,24 @@ function Homepage() {
       <footer>
         <div className={styles.socialMedia}>
           <span className={styles.socialMediaIcon}>
-            <img src={linkedinLogo} alt="Linkedin Logo" />
+            <a
+              href="https://www.linkedin.com/in/carlasofiagm/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.socialLink}
+            >
+              <img src={linkedinLogo} alt="Linkedin" />
+            </a>
           </span>
           <span className={styles.socialMediaIcon}>
-            <img src={github} alt="github Logo" />
+            <a
+              href="https://github.com/Csgmmm"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.socialLink}
+            >
+              <img src={github} alt="github Logo" />
+            </a>
           </span>
           <p className={styles.privateInfo}>
             <Smartphone /> +351 910 061 795
