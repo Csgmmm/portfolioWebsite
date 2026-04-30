@@ -3,16 +3,23 @@ This project was built to showcase my dual expertise in UI/UX Design and Front-e
 
 ##  🚀 The Project
 The main goal of this portfolio is to present all my projects. It features a dynamic routing system where each project's details are rendered through a single, scalable template component.
-**Key Features**
-**Dynamic Project Rendering:** Projects are managed via a centralized "local API" (JSON/TypeScript) for easy maintenance.
-**Responsive UI/UX Case Studies:** Detailed views including User Flows, Wireframes, and Iconography.
-**Dual-Focus Presentation:** Showcases both high-fidelity Figma designs and clean, typed React code.
+**Key Features**  
+
+**Dynamic Project Rendering:** Projects are managed via a centralized "local API" (JSON/TypeScript) for easy maintenance  
+
+**Responsive UI/UX Case Studies:** Detailed views including User Flows, Wireframes, and Iconography  
+
+**Dual-Focus Presentation:** Showcases both high-fidelity Figma designs and clean, typed React code  
+
 **Theme Switching:** Integrated light/dark mode support.
 
 ## 🛠️ Tech Stack
-**Core:** React.js, TypeScript.
-**Styling:** CSS Modules.
-**Routing:** React Router DOM (Dynamic Routes).
+**Core:** React.js, TypeScript;  
+
+**Styling:** CSS Modules;  
+
+**Routing:** React Router DOM (Dynamic Routes);  
+
 **Design Tools:** Figma, Photoshop, Illustrator.
 
 ## 📬 Contact
