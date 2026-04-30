@@ -121,7 +121,7 @@
 }
 
 .iconStacks {
-  background-color: var(--light-background);
+  background-color: var(--secondary);
   border-radius: var(--xl-3);
   padding: var(--sm);
   width: 40px;
@@ -229,7 +229,7 @@ p {
 .chipsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sm);
+    gap: var(--xs);
   padding-right: var(--xxs);
   padding-bottom: var(--md);
 }

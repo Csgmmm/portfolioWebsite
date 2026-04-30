@@ -33,13 +33,11 @@
   --background: #ffffff;
   --background-secondary: #eaeaea;
   --background-card: #ffffff;
-  --light-background: #cebded;
   --border: #dbdbdb;
   --text: #414141;
-  --primary: #7639ff;
-  --secondary: #af8bff;
   --h1: #414141;
   --shadow: #dcdcdc;
+  --lighter-background: #d7caf7;
 }
 
 h1 {

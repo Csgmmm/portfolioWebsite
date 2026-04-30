@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: var(--lg);
+  padding-bottom: var(--xl-3);
   gap: var(--md);
   padding-left: var(--md);
   padding-right: var(--md);
@@ -35,6 +35,7 @@
   object-fit: contain;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  background-color: var(--lighter-background);
 }
 
 .otherProjectImg {
@@ -94,6 +95,9 @@
 .chipsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sm);
+  gap: var(--xs);
   padding-right: var(--xxs);
 }
+
+
+
