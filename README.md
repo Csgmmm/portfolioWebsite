@@ -1,4 +1,4 @@
-## *💻 Professional Portfolio | UI/UX & Front-end Engineer*
+## 💻 Professional Portfolio | UI/UX & Front-end Engineer
 This project was built to showcase my dual expertise in UI/UX Design and Front-end Engineering, bridging the gap between design and scalable code.
 
 ##  🚀 The Project
