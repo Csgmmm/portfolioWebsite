@@ -23,7 +23,9 @@ The main goal of this portfolio is to present all my projects. It features a dyn
 **Design Tools:** Figma, Photoshop, Illustrator.
 
 ## 📬 Contact
-**Email:** carla.s.ofia@hotmail.com
-**LinkedIn:** https://www.linkedin.com/in/carlasofiagm/
+**Email:** carla.s.ofia@hotmail.com  
+
+**LinkedIn:** https://www.linkedin.com/in/carlasofiagm/  
+
 **Behance:** https://www.behance.net/carlasofiagm
 
