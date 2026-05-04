@@ -262,7 +262,7 @@ function Homepage() {
                         target="_blank"
                         className={`${styles.button} ${styles.btnCards}`}
                       >
-                        Code GitHub
+                        GitHub Code
                       </a>
                     </Button>
                   </span>
