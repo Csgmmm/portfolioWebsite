@@ -1,6 +1,7 @@
 export interface Project {
   id: string;
   title: string;
+  year?: number;
   category?: "Front-End Development" | "UI/UX Design";
   mainImage: string;
   shortDescription?: string;
@@ -13,6 +14,7 @@ export interface Project {
   wireframe?: string;
   iconography?: string[];
   images?: string[];
+  vimeoId?: string;
 }
 
 export const projects: Project[] = [
@@ -26,9 +28,11 @@ export const projects: Project[] = [
       "Built this portfolio to act as a handshake between my two worlds UI/UX Design and Front-End Engineering. Accessibility & Readability - Font sizes are readable and line lengths are kept within 60-80 characters; - Made sure the color contrast is ensuring the high visibility;- Every chip, button and links have clear indication, using colors, underlines, and icon arrows to make it obvious what's clickable. Engineering & Scalability - Used experience across different tech stacks to make the designs functional and accurate to the idea - From the theme switching to the smallest card, everything was built to be scalable and responsive.",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
   },
+  //feminine
   {
     id: "feminineDashboard",
     title: "Feminine Dashboard",
+    year: 2026,
     mainImage: "/assets/feminDashboard.png",
     shortDescription:
       "This project was part of a Front-End Engineering course.",
@@ -39,9 +43,11 @@ export const projects: Project[] = [
       "Based on my own experience with apps like Clue, I believe these tools are essential for women’s health, and I wanted to explore how mobile-first experience could be translated into a desktop dashboard. - To simulate a real-world application, I implemented a login system that fetches data from a user API, showcasing history logs for each specific user; - Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile; - Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
   },
+  //yumyum
   {
     id: "yumyum",
     title: "Yumyum - Asian Food Delivery App",
+    year: 2024,
     mainImage: "/assets/yumyum.png",
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
@@ -58,9 +64,30 @@ export const projects: Project[] = [
     ],
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
   },
+  //evolve
+  {
+    id: "evolve",
+    title: "Evolve - Banking App",
+    year: 2024,
+    mainImage: "/assets/evolve",
+    shortDescription: "For portfolio purposes only.",
+    prototypeUrl:
+      "https://www.figma.com/proto/WhMciosdrNjbvBnhvod9Zj/Evolve?node-id=4-333&page-id=1%3A2&starting-point-node-id=4%3A333&t=dqQaayh0SxPhd0HP-1",
+    tags: ["FIGMA", "photoshop", "illustrator"],
+    fullDescription:
+      "I decided to create this project to explore the complexities of financial interfaces. I wanted to design a banking app that feels both secure and effortless to use, balancing sensitive information like balances and transfers with a clean aesthetic. - Integrated clear visual flows for secure entry, including biometric prompts (FaceID/Fingerprint) and numeric pin pads that prioritize user privacy. - Used Material Symbols icons between 24px, 32px, and 40px; - Built modals for common actions, like canceling orders or applying promo codes - Developed a full library of components, including buttons, cards, badges, and input fields - Used variables for spacing to guarantee the design is scalable and organized",
+    iconography: [
+      "/assets/code1.png",
+      "/assets/code2.png",
+      "/assets/code3.png",
+    ],
+    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+  },
+  //tinytracker
   {
     id: "tinytracker",
     title: "TinyTracker - Baby Tracker App",
+    year: 2024,
     mainImage: "/assets/babyTracker.png",
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
@@ -77,9 +104,11 @@ export const projects: Project[] = [
     wireframe: "/assets/code1.png",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
   },
+  //slotQi
   {
     id: "slotqi",
     title: "SlotQi - Talent Management Software",
+    year: 2024,
     mainImage: "/assets/slotqi.png",
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
@@ -89,5 +118,22 @@ export const projects: Project[] = [
       "developed SlotQi to address the complex needs of HR teams and department leads. This platform acts as a central hub for recruitment, employee statistics, and team scheduling. My goal was to create a high-performance interface that makes managing a large workforce feel organized and data-driven rather than overwhelming. The details I focused on: Information Architecture: I designed a comprehensive dashboard that prioritizes high-level recruitment statistics and upcoming events, allowing managers to see the health of their department at a glance. Functional Modals: Built modals for common actions, like adding new log events, editing employee profiles, or managing interview schedules, to keep users in their current workflow without full page reloads. Design System: Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.",
 
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+  },
+  //pawmate
+  {
+    id: "pawmate",
+    title: "PawMate - UI/UX App and Front-end development website",
+    year: 2024,
+    mainImage: "/assets/pawmate.png",
+    shortDescription:
+      "This project was conceived during a Web Development Bootcamp.",
+    prototypeUrl:
+      "https://www.figma.com/proto/QmCuNbxDTVTjkdeGeb9oan/Pawmate?node-id=17-102&viewport=296%2C291%2C0.23&t=KMADnMnXHBVrn12Z-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=68%3A3924&page-id=0%3A1",
+    tags: ["FIGMA", "photoshop", "illustrator", "CSS", "HTML"],
+    fullDescription:
+      "This project was conceived during a Web Development Bootcamp by Dr. Angela Yu, that created Tindog, an app inspired by the popular dating platform Tinder. This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo - PawMate. With PawMate, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.",
+    wireframe: "/assets/code1.png",
+    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    vimeoId: "943623829",
   },
 ];
