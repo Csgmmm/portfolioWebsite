@@ -9,6 +9,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   prototypeUrl?: string;
+  behanceUrl?: string;
   fullDescription?: string;
   userFlow?: string;
   wireframe?: string;
@@ -52,6 +53,8 @@ export const projects: Project[] = [
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/bc78eK6Kvi0658WAZmmFoI/yumyum?node-id=4-333&p=f&viewport=3%2C294%2C0.13&t=1TKBUC7W5dZf2h1W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A333&page-id=1%3A2",
+    behanceUrl:
+      "https://www.behance.net/gallery/223774571/Asian-Food-Delivery-App-Yumyum?share=1",
     tags: ["FIGMA", "photoshop", "illustrator", "miro"],
     fullDescription:
       "Designed this app from the user's perspective. - I implemented cultural food tags paired with flag icons to help users identify cuisines; - I mapped out the entire user flow through wireframes to make sure the journey is understandable; - Used Material Symbols icons between 24px, 32px, and 40px; - Built modals for common actions, like canceling orders or applying promo codes - Developed a full library of components, including buttons, cards, badges, and input fields - Used variables for spacing to guarantee the design is scalable and organized",
@@ -73,6 +76,7 @@ export const projects: Project[] = [
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/WhMciosdrNjbvBnhvod9Zj/Evolve?node-id=4-333&page-id=1%3A2&starting-point-node-id=4%3A333&t=dqQaayh0SxPhd0HP-1",
+    behanceUrl: "https://www.behance.net/gallery/211557841/Banking-App-Evolve",
     tags: ["FIGMA", "photoshop", "illustrator"],
     fullDescription:
       "I decided to create this project to explore the complexities of financial interfaces. I wanted to design a banking app that feels both secure and effortless to use, balancing sensitive information like balances and transfers with a clean aesthetic. - Integrated clear visual flows for secure entry, including biometric prompts (FaceID/Fingerprint) and numeric pin pads that prioritize user privacy. - Used Material Symbols icons between 24px, 32px, and 40px; - Built modals for common actions, like canceling orders or applying promo codes - Developed a full library of components, including buttons, cards, badges, and input fields - Used variables for spacing to guarantee the design is scalable and organized",
@@ -92,6 +96,8 @@ export const projects: Project[] = [
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/WWQG1zJ0Hl0bcocvW0S3GR/Baby-app?node-id=66-1059&p=f&viewport=430%2C258%2C0.19&t=2lWgQEFbnqYfN6BA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=66%3A1059&page-id=0%3A1",
+    behanceUrl:
+      "https://www.behance.net/gallery/220910113/Baby-Development-Tracker-App",
     tags: ["FIGMA", "photoshop", "illustrator", "miro"],
     fullDescription:
       "I decided to create TinyTracker because I noticed a gap in the market for a truly all-in-one parenting tool. Most apps focus on just one area, but I wanted to build a single platform that combines medical appointments, developmental tracking, and daily routines with practical features like reminders and a dedicated screen with sleep sounds to help babies rest. - Wireframes to establish the early structure and layout decisions of the app; - Mapped out the entire user flow through wireframes - Used Material Symbols icons scaled between 24px, 32px, and 40px to maintain a consistent visual hierarchy. - Designed modals to handle key interactions, including showing all medical appointments, editing user profiles, and adding daily logs",
@@ -113,6 +119,8 @@ export const projects: Project[] = [
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/jplBol1DRptoJeCjmqgIqB/SlotQi?node-id=52-9409&viewport=422%2C-427%2C0.39&t=WWLNs1sYFta5vvHh-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
+    behanceUrl:
+      "https://www.behance.net/gallery/208892093/Talent-Management-Software-Dashboard",
     tags: ["FIGMA", "photoshop", "illustrator"],
     fullDescription:
       "developed SlotQi to address the complex needs of HR teams and department leads. This platform acts as a central hub for recruitment, employee statistics, and team scheduling. My goal was to create a high-performance interface that makes managing a large workforce feel organized and data-driven rather than overwhelming. The details I focused on: Information Architecture: I designed a comprehensive dashboard that prioritizes high-level recruitment statistics and upcoming events, allowing managers to see the health of their department at a glance. Functional Modals: Built modals for common actions, like adding new log events, editing employee profiles, or managing interview schedules, to keep users in their current workflow without full page reloads. Design System: Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.",
@@ -129,6 +137,8 @@ export const projects: Project[] = [
       "This project was conceived during a Web Development Bootcamp.",
     prototypeUrl:
       "https://www.figma.com/proto/QmCuNbxDTVTjkdeGeb9oan/Pawmate?node-id=17-102&viewport=296%2C291%2C0.23&t=KMADnMnXHBVrn12Z-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=68%3A3924&page-id=0%3A1",
+    behanceUrl:
+      "https://www.behance.net/gallery/197923083/Front-End-Development-UIUX-PawMate",
     tags: ["FIGMA", "photoshop", "illustrator", "CSS", "HTML"],
     fullDescription:
       "This project was conceived during a Web Development Bootcamp by Dr. Angela Yu, that created Tindog, an app inspired by the popular dating platform Tinder. This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo - PawMate. With PawMate, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.",
