@@ -9,7 +9,7 @@
   font-family: inherit;
   font-weight: 600;
   height: var(--xl);
-  width: fit-content;
+  min-width: fit-content;
 }
 
 .primary {
