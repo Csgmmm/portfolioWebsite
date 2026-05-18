@@ -70,3 +70,9 @@ body {
   color: var(--text);
   margin: var(--null);
 }
+
+html, body, #root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -5,15 +5,19 @@ import Projects from "./pages/projects/Projects";
 import AboutMe from "./pages/aboutMe/AboutMe";
 import ProjectsDetail from "./pages/projectsDetail/projectsDetails";
 import Footer from "./components/footer/Footer";
+import Emptystate from "./pages/emptyState/Emptystate";
 
 function App() {
+
+  
   return (
     <>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/homepage" element={<Homepage />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/project/:id" element={<ProjectsDetail />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="*" element={<Emptystate/>} />
       </Routes>
       <Footer />
     </>

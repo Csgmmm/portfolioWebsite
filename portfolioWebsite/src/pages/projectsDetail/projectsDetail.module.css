@@ -1,0 +1,22 @@
+.container {
+      margin: var(--md);
+}
+
+
+.projectImg {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: var(--sm);
+}
+
+.containerImgDescription {
+  display: flex;
+  gap: var(--md);
+}
+
+.description p {
+    margin:0;
+    width: 100%;
+}

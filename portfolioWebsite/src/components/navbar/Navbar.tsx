@@ -26,10 +26,11 @@ function Navbar() {
 
       <div className={`nav-content ${isOpen ? "is-open" : ""}`}>
         <span className="logo">
-          <NameLogo />
+          <Link to ="/homepage">
+          <NameLogo /></Link>
         </span>
         <div className="links">
-          <Link to="/" onClick={() => setIsOpen(false)}>
+          <Link to="/homepage" onClick={() => setIsOpen(false)}>
             <Button variant="tertiary" isActive={location.pathname === "/"}>
               Homepage
             </Button>

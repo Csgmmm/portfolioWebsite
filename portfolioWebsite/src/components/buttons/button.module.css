@@ -10,6 +10,7 @@
   font-weight: 600;
   height: var(--xl);
   min-width: fit-content;
+  white-space: nowrap;
 }
 
 .primary {
@@ -48,12 +49,10 @@
 
 .link a {
   color: var(--secondary);
-
 }
 
 .primary a {
   color: var(--button-color);
-  
 }
 
 a {

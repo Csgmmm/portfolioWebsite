@@ -3,6 +3,7 @@ import Button from "../buttons/Button";
 import Chip from "../chips/Chip";
 import styles from "./card.module.css";
 import { type IProjectData } from "../../types/projectsData";
+import { Link } from "react-router-dom";
 
 
 interface CardProps {
@@ -20,9 +21,11 @@ const Card = ({ project, children, className }: CardProps) => {
       <div className={styles.title}>
         <h4>{project?.title}</h4>
 
+        <Link to={`/project/${project?.id}`}>
         <Button variant="link">
           View Project <ArrowRight />
         </Button>
+        </Link>
       </div>
 
       <div className={styles.containerCard}>

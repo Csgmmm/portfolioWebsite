@@ -5,6 +5,7 @@
   display: flex;
   gap: var(--sm);
   padding: var(--lg);
+  border-top: 2px solid var(--background-secondary);
 }
 .socialMediaIcon {
   background-color: var(--secondary);
