@@ -16,7 +16,7 @@ function Projects() {
             <div className={styles.cardsContainer}>
               {projects
                 .filter(
-                  (project) => project.category === "Front-End Development",
+                  (project) => project.category?.includes("Front-End Development"),
                 )
                 .map((project) => (
                   <div key={project.id} className={styles.card}>
@@ -29,7 +29,7 @@ function Projects() {
             <h5>UI/UX Designer</h5>
             <div className={styles.cardsContainer}>
                 {projects
-                  .filter((project) => project.category === "UI/UX Design")
+                  .filter((project) => project.category?.includes("UI/UX Design"))
                   .map((project) => (
                     <div key={project.id} className={styles.card}>
                       <Card project={project} />

@@ -32,8 +32,6 @@ import { Link } from "react-router-dom";
 import { projects } from "../../types/projectsData";
 
 function Homepage() {
-
-
   return (
     <>
       <section className={styles.headerContainer}>
@@ -186,26 +184,28 @@ function Homepage() {
               </div>
             </span>
           </div>
-</div>
-          {/* projects */}
-          <div className={styles["projectsRecomenContainer"]}>
-            <span className={styles["title-link"]}>
-              <h5>projects</h5>
-              <Button variant="link" className={styles.btnLink}>
-                <Link to="/projects"  >
-                  View Projects
-                  <ArrowRight />
-                </Link>
-              </Button>
-            </span>
-           <div className={styles.cardContainer}>
-  {projects.map((project) => (
-    <Card key={project.title} project={project} />
-  ))}
-</div>
+        </div>
+        {/* projects */}
+        <div>
+          <span className={styles["title-link"]}>
+            <h5>projects</h5>
+            <Button variant="link" className={styles.btnLink}>
+              <Link to="/projects">
+                View Projects
+                <ArrowRight />
+              </Link>
+            </Button>
+          </span>
+          <div className={styles.cardContainer}>
+            {projects
+              .filter((project) => project.category?.includes("Homepage"))
+              .map((project) => (
+                <Card key={project.title} project={project} />
+              ))}
+          </div>
 
           {/* recommendations */}
-          <div className={styles["projectsRecomenContainer"]}>
+          <div>
             <span className={styles["title-link"]}>
               <h5>Linkedin recommendations</h5>
               <Button variant="link" className={styles.btnLink}>
@@ -220,7 +220,7 @@ function Homepage() {
               </Button>
             </span>
             <div className={styles.cardContainer}>
-              <div className={styles.card}>
+              <Card>
                 <div className={styles.containerText}>
                   <p className={styles.paragraph}>
                     “I had the pleasure of working with Carla on the SNS 24
@@ -235,8 +235,8 @@ function Homepage() {
                     <p className={styles.personsJob}>Project Manager</p>
                   </div>
                 </div>
-              </div>
-              <div className={styles.card}>
+              </Card>
+              <Card>
                 <div className={styles.containerText}>
                   <p className={styles.paragraph}>
                     “(..) Her creativity and efficiency are evident in every
@@ -252,8 +252,8 @@ function Homepage() {
                     <p className={styles.personsJob}>Project Manager</p>
                   </div>
                 </div>
-              </div>
-              <div className={styles.card}>
+              </Card>
+              <Card>
                 <div className={styles.containerText}>
                   <p className={styles.paragraph}>
                     “I had the pleasure of studying alongside Carla during our
@@ -272,7 +272,7 @@ function Homepage() {
                     <p className={styles.personsJob}>UI/UX Designer</p>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
         </div>

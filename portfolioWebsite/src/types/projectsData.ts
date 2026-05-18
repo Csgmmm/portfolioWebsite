@@ -2,7 +2,7 @@ export interface IProjectData {
   id: string;
   title: string;
   year?: number | string;
-  category?: "Front-End Development" | "UI/UX Design";
+  category?: ("Front-End Development" | "UI/UX Design" | "Homepage")[];
   mainImage: string;
   shortDescription?: string;
   chips: string[];
@@ -21,7 +21,7 @@ export interface IProjectData {
 
 export const projects: IProjectData[] = [
   {
-    category: "Front-End Development",
+    category: ["Front-End Development"],
     id: "portfolio",
     title: "Portfolio",
     mainImage: "/assets/portfolioImg.png",
@@ -33,7 +33,7 @@ export const projects: IProjectData[] = [
   },
   //SNS 24
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design", "Homepage"],
     id: "sns24",
     title: "SNS 24 - Portuguese National Healthcare",
     year: "2023-present",
@@ -51,7 +51,7 @@ export const projects: IProjectData[] = [
 
   //feminine
   {
-    category: "Front-End Development",
+    category: ["Front-End Development", "Homepage"],
     id: "feminineDashboard",
     title: "Feminine Dashboard",
     year: 2026,
@@ -73,7 +73,7 @@ export const projects: IProjectData[] = [
   },
   //yumyum
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design", "Homepage"],
     id: "yumyum",
     title: "Yumyum - Asian Food Delivery App",
     year: 2024,
@@ -97,7 +97,7 @@ export const projects: IProjectData[] = [
   },
   //evolve
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design"],
     id: "evolve",
     title: "Evolve - Banking App",
     year: 2024,
@@ -118,7 +118,7 @@ export const projects: IProjectData[] = [
   },
   //tinytracker
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design"],
     id: "tinytracker",
     title: "TinyTracker - Baby Tracker App",
     year: 2024,
@@ -142,7 +142,7 @@ export const projects: IProjectData[] = [
   },
   //slotQi
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design"],
     id: "slotqi",
     title: "SlotQi - Talent Management Software",
     year: 2024,
@@ -160,7 +160,7 @@ export const projects: IProjectData[] = [
   },
   //pawmate
   {
-    category: "Front-End Development",
+    category: ["Front-End Development"],
     id: "pawmate",
     title: "PawMate - UI/UX App and website",
     year: 2024,
@@ -180,7 +180,7 @@ export const projects: IProjectData[] = [
   },
   //bmw
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design"],
     id: "bmw",
     title: "BMW - App & iDrive Redesign",
     year: 2023,
@@ -195,7 +195,7 @@ export const projects: IProjectData[] = [
   },
   //bmw
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design"],
     id: "mercedes",
     title: "Mercedes A-Class HMI: UI Concept",
     year: 2023,
@@ -210,7 +210,7 @@ export const projects: IProjectData[] = [
   },
   //montepio
   {
-    category: "UI/UX Design",
+    category: ["UI/UX Design"],
     id: "montepio",
     title: "Banco Montepio: Modernizing the Portuguese Banking Experience",
     year: 2022,

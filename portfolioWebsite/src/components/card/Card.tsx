@@ -6,9 +6,13 @@ import { type IProjectData } from "../../types/projectsData";
 
 interface CardProps {
   project?: IProjectData;
+  children?: React.ReactNode;
 }
 
-const Card = ({ project }: CardProps) => {
+const Card = ({ project, children }: CardProps) => {
+   if (children) {
+    return <div className={styles.card}>{children}</div>;
+  }
   return (
     <div className={styles.card}>
       <div className={styles.title}>
