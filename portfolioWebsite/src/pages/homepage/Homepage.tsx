@@ -26,21 +26,13 @@ import illustrator from "./assets/illustrator.svg";
 import photoshop from "./assets/photoshop.svg";
 import sass from "./assets/sass.svg";
 import Card from "../../components/card/Card";
-import yumyum from "./assets/yumyum.png";
-import babyTracker from "./assets/babyTracker.png";
-import feminDashboard from "./assets/feminDashboard.png";
 import Button from "../../components/buttons/Button";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import linkedinLogo from "./assets/linkedinLogo.svg";
 import { Link } from "react-router-dom";
+import { projects } from "../../types/projectsData";
 
 function Homepage() {
-  const code = `<div className="loginInfo">
-  <p>luisa@email.com / pw: luisa</p>
-  <p>maria@email.com / pw: maria</p>
-  <p>joana@email.com / pw: joana</p>
-</div>`;
+
 
   return (
     <>
@@ -194,7 +186,7 @@ function Homepage() {
               </div>
             </span>
           </div>
-
+</div>
           {/* projects */}
           <div className={styles["projectsRecomenContainer"]}>
             <span className={styles["title-link"]}>
@@ -206,140 +198,11 @@ function Homepage() {
                 </Link>
               </Button>
             </span>
-            <div className={styles.cardContainer}>
-              <Card>
-                <img
-                  src={yumyum}
-                  className={styles.imgProject}
-                  alt="Asian Food Delivery App"
-                />
-                <div className={styles.infoContainer}>
-                  <h4>Asian Food Delivery App</h4>
-                  <span className={styles.containerBtn}>
-                    <Button variant="primary" className={styles.btnCards}>
-                      <a
-                        href="https://www.figma.com/proto/bc78eK6Kvi0658WAZmmFoI/yumyum?node-id=4-333&p=f&viewport=3%2C294%2C0.13&t=1TKBUC7W5dZf2h1W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A333&page-id=1%3A2"
-                        target="_blank"
-                      >
-                        View prototype
-                      </a>
-                    </Button>
-                  </span>
-                  <span className={styles.chipsContainer}>
-                    <Chip variant="secondary">Figma</Chip>
-                    <Chip variant="secondary">photoshop</Chip>
-                  </span>
-                </div>
-                <span className={styles.btnProject}>
-                  <Button variant="link">
-                    View Project
-                    <ArrowRight />
-                  </Button>
-                </span>
-              </Card>
-
-              <Card>
-                <img
-                  src={feminDashboard}
-                  className={styles.imgProject}
-                  alt="feminine dashboard"
-                />
-                <div className={styles.infoContainer}>
-                  <h4>Feminine Dashboard</h4>
-                  <span className={styles.containerBtn}>
-                    <Button variant="primary" className={styles.btnCards}>
-                      <a
-                        href="https://feminine-dashboard.vercel.app/"
-                        target="_blank"
-                        className={styles.btnCards}
-                      >
-                        Live Website
-                      </a>
-                    </Button>
-                    <Button variant="primary" className={styles.btnCards}>
-                      <a
-                        href="https://github.com/Csgmmm/feminine-dashboard"
-                        target="_blank"
-                        className={`${styles.button} ${styles.btnCards}`}
-                      >
-                        GitHub Code
-                      </a>
-                    </Button>
-                  </span>
-                  <span className={styles.chipsContainer}>
-                    <Chip variant="secondary">Figma</Chip>
-                    <Chip variant="secondary">react</Chip>
-                    <Chip variant="secondary">javascript</Chip>
-                    <Chip variant="secondary">typescript</Chip>
-                    <Chip variant="secondary">css</Chip>
-                    <Chip variant="secondary">html</Chip>
-                  </span>
-                  <div className={styles.codeSyntax}>
-                    <SyntaxHighlighter
-                      language="tsx"
-                      style={vscDarkPlus}
-                      wrapLongLines={true}
-                      codeTagProps={{
-                        style: {
-                          whiteSpace: "pre-wrap",
-                          wordBreak: "break-all",
-                        },
-                      }}
-                      customStyle={{
-                        border: "none",
-                        boxShadow: "none",
-                        margin: "0",
-                        padding: "0",
-                        background: "none",
-
-                        width: "100%",
-                      }}
-                    >
-                      {code}
-                    </SyntaxHighlighter>
-                  </div>
-                </div>
-                <span className={styles.btnProject}>
-                  <Button variant="link">
-                    View Project
-                    <ArrowRight />
-                  </Button>
-                </span>
-              </Card>
-
-              <Card>
-                <img
-                  src={babyTracker}
-                  className={styles.imgProject}
-                  alt="baby tracker"
-                />
-                <div className={styles.infoContainer}>
-                  <h4>Baby Tracker App</h4>
-                  <span className={styles.containerBtn}>
-                    <Button variant="primary" className={styles.btnCards}>
-                      <a
-                        href="https://www.figma.com/proto/WWQG1zJ0Hl0bcocvW0S3GR/Baby-app?node-id=66-1059&p=f&viewport=430%2C258%2C0.19&t=2lWgQEFbnqYfN6BA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=66%3A1059&page-id=0%3A1"
-                        target="_blank"
-                        className={styles.btnCards}
-                      >
-                        View prototype
-                      </a>
-                    </Button>
-                  </span>
-                  <span className={styles.chipsContainer}>
-                    <Chip variant="secondary">Figma</Chip>
-                    <Chip variant="secondary">photoshop</Chip>
-                  </span>
-                </div>
-                <span className={styles.btnProject}>
-                  <Button variant="link">
-                    View Project
-                    <ArrowRight />
-                  </Button>
-                </span>
-              </Card>
-            </div>
-          </div>
+           <div className={styles.cardContainer}>
+  {projects.map((project) => (
+    <Card key={project.title} project={project} />
+  ))}
+</div>
 
           {/* recommendations */}
           <div className={styles["projectsRecomenContainer"]}>
@@ -357,7 +220,7 @@ function Homepage() {
               </Button>
             </span>
             <div className={styles.cardContainer}>
-              <Card>
+              <div className={styles.card}>
                 <div className={styles.containerText}>
                   <p className={styles.paragraph}>
                     “I had the pleasure of working with Carla on the SNS 24
@@ -372,8 +235,8 @@ function Homepage() {
                     <p className={styles.personsJob}>Project Manager</p>
                   </div>
                 </div>
-              </Card>
-              <Card>
+              </div>
+              <div className={styles.card}>
                 <div className={styles.containerText}>
                   <p className={styles.paragraph}>
                     “(..) Her creativity and efficiency are evident in every
@@ -389,8 +252,8 @@ function Homepage() {
                     <p className={styles.personsJob}>Project Manager</p>
                   </div>
                 </div>
-              </Card>
-              <Card>
+              </div>
+              <div className={styles.card}>
                 <div className={styles.containerText}>
                   <p className={styles.paragraph}>
                     “I had the pleasure of studying alongside Carla during our
@@ -409,7 +272,7 @@ function Homepage() {
                     <p className={styles.personsJob}>UI/UX Designer</p>
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>
