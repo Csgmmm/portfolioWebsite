@@ -9,6 +9,7 @@
   --placeholder: #959595;
   --h1: #ffffff;
   --button-color: #ffffff;
+  --darker-background: #433d53;
   --null: 0px;
   --xxs: 4px;
   --xs: 8px;
@@ -31,13 +32,15 @@
 
 [data-theme="light"] {
   --background: #ffffff;
+  --primary: #966afd;
+  --secondary: #9981cc;
   --background-secondary: #eaeaea;
   --background-card: #ffffff;
   --border: #dbdbdb;
   --text: #414141;
   --h1: #414141;
   --shadow: #dcdcdc;
-  --lighter-background: #d7caf7;
+  --darker-background: #b4a5d3;
 }
 
 h1 {

@@ -10,7 +10,7 @@ function Projects() {
       <section>
         <Navbar />
         <div className={styles.container}>
-          <div className={styles.section}>
+          <div className={styles.sectionFrontEnd}>
             <h5>FRONT-END development</h5>
 
             <div className={styles.cardsContainer}>
@@ -25,7 +25,7 @@ function Projects() {
                 ))}
             </div>
           </div>
-          <div className={styles.section}>
+          <div className={styles.sectionUIUX}>
             <h5>UI/UX Designer</h5>
             <div className={styles.cardsContainer}>
                 {projects

@@ -4,6 +4,7 @@ import Homepage from "./pages/homepage/Homepage";
 import Projects from "./pages/projects/Projects";
 import AboutMe from "./pages/aboutMe/AboutMe";
 import ProjectsDetail from "./pages/projectsDetail/projectsDetails";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/project/:id" element={<ProjectsDetail />} />
         <Route path="/aboutme" element={<AboutMe />} />
       </Routes>
+      <Footer />
     </>
   );
 }

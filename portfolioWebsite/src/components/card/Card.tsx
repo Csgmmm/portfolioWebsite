@@ -4,17 +4,19 @@ import Chip from "../chips/Chip";
 import styles from "./card.module.css";
 import { type IProjectData } from "../../types/projectsData";
 
+
 interface CardProps {
   project?: IProjectData;
   children?: React.ReactNode;
+  className?: string;
 }
 
-const Card = ({ project, children }: CardProps) => {
+const Card = ({ project, children, className }: CardProps) => {
    if (children) {
-    return <div className={styles.card}>{children}</div>;
+    return <div className={className || styles.card}>{children}</div>;
   }
   return (
-    <div className={styles.card}>
+    <div className={className || styles.card}>
       <div className={styles.title}>
         <h4>{project?.title}</h4>
 
@@ -33,39 +35,39 @@ const Card = ({ project, children }: CardProps) => {
         <div className={styles.infoContainer}>
           <span className={styles.containerBtn}>
             {project?.liveUrl && (
-              <Button variant="primary" className={styles.btnCards}>
                 <a href={project.liveUrl} target="_blank">
+              <Button variant="primary" className={styles.btnCards}>
                   Live Website
-                </a>
               </Button>
+                </a>
             )}
             {project?.githubUrl && (
-              <Button variant="primary" className={styles.btnCards}>
                 <a href={project.githubUrl} target="_blank">
+              <Button variant="primary" className={styles.btnCards}>
                   GitHub Code
-                </a>
               </Button>
+                </a>
             )}
             {project?.appStoreUrl && (
-              <Button variant="primary" className={styles.btnCards}>
                 <a href={project.appStoreUrl} target="_blank">
+              <Button variant="primary" className={styles.btnCards}>
                   AppStore
-                </a>
               </Button>
+                </a>
             )}
             {project?.prototypeUrl && (
-              <Button variant="primary" className={styles.btnCards}>
                 <a href={project.prototypeUrl} target="_blank">
+              <Button variant="primary" className={styles.btnCards}>
                   Prototype
-                </a>
               </Button>
+                </a>
             )}
             {project?.behanceUrl && (
-              <Button variant="primary" className={styles.btnCards}>
                 <a href={project.behanceUrl} target="_blank">
+              <Button variant="primary" className={styles.btnCards}>
                   Behance Project
-                </a>
               </Button>
+                </a>
             )}
           </span>
 

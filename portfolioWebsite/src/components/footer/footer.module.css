@@ -1,0 +1,48 @@
+
+.socialMedia {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  gap: var(--sm);
+  padding: var(--lg);
+}
+.socialMediaIcon {
+  background-color: var(--secondary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMediaIcon:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.socialMediaIcon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  object-fit: contain;
+}
+
+.privateInfo {
+  font-size: 14px;
+  margin: var(--null);
+  align-items: center;
+  display: flex;
+  gap: var(--xs);
+  width: fit-content;
+}
+
+.emailLink {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
+  color: var(--secondary);
+}

@@ -1,3 +1,15 @@
+import sns24 from "../pages/homepage/assets/sns24.png";
+import femin from "../pages/homepage/assets/feminDashboard.png"
+import yumyum from "../pages/homepage/assets/yumyum.png"
+import portfolio from "../pages/projects/assets/portfolioImg.png"
+import pawmate from "../pages/projects/assets/pawmate.png"
+import tinytracker from "../pages/projects/assets/babyTracker.png"
+import evolve from "../pages/projects/assets/evolve.png"
+import bmw from "../pages/projects/assets/bmw.png"
+import mercedes from "../pages/projects/assets/mercedes.png"
+import montepio from "../pages/projects/assets/montepio.png"
+import slotqi from "../pages/projects/assets/slotqi.png"
+
 export interface IProjectData {
   id: string;
   title: string;
@@ -19,12 +31,13 @@ export interface IProjectData {
   video?: string;
 }
 
+
 export const projects: IProjectData[] = [
   {
     category: ["Front-End Development"],
     id: "portfolio",
     title: "Portfolio",
-    mainImage: "/assets/portfolioImg.png",
+    mainImage: portfolio,
     githubUrl: "https://github.com...",
     chips: ["FIGMA", "REACT", "TYPESCRIPT", "JAVASCRIPT", "CSS", "HTML"],
     fullDescription:
@@ -35,9 +48,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design", "Homepage"],
     id: "sns24",
-    title: "SNS 24 - Portuguese National Healthcare",
+    title: "Portuguese National Healthcare",
     year: "2023-present",
-    mainImage: "/assets/sns24.png",
+    mainImage: sns24,
     appStoreUrl: "https://apps.apple.com/us/app/sns-24/id1192353854",
     liveUrl: "https://www.sns24.gov.pt/pt/inicio",
     shortDescription:
@@ -55,7 +68,7 @@ export const projects: IProjectData[] = [
     id: "feminineDashboard",
     title: "Feminine Dashboard",
     year: 2026,
-    mainImage: "/assets/feminDashboard.png",
+    mainImage: femin,
     shortDescription:
       "This project was part of a Front-End Engineering course.",
     liveUrl: "https://feminine-dashboard.vercel.app/",
@@ -75,9 +88,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design", "Homepage"],
     id: "yumyum",
-    title: "Yumyum - Asian Food Delivery App",
+    title: "Asian Food Delivery App",
     year: 2024,
-    mainImage: "/assets/yumyum.png",
+    mainImage: yumyum,
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/bc78eK6Kvi0658WAZmmFoI/yumyum?node-id=4-333&p=f&viewport=3%2C294%2C0.13&t=1TKBUC7W5dZf2h1W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4%3A333&page-id=1%3A2",
@@ -99,9 +112,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design"],
     id: "evolve",
-    title: "Evolve - Banking App",
+    title: "Banking App",
     year: 2024,
-    mainImage: "/assets/evolve",
+    mainImage: evolve,
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/WhMciosdrNjbvBnhvod9Zj/Evolve?node-id=4-333&page-id=1%3A2&starting-point-node-id=4%3A333&t=dqQaayh0SxPhd0HP-1",
@@ -120,9 +133,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design"],
     id: "tinytracker",
-    title: "TinyTracker - Baby Tracker App",
+    title: "Baby Tracker App",
     year: 2024,
-    mainImage: "/assets/babyTracker.png",
+    mainImage: tinytracker,
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/WWQG1zJ0Hl0bcocvW0S3GR/Baby-app?node-id=66-1059&p=f&viewport=430%2C258%2C0.19&t=2lWgQEFbnqYfN6BA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=66%3A1059&page-id=0%3A1",
@@ -144,9 +157,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design"],
     id: "slotqi",
-    title: "SlotQi - Talent Management Software",
+    title: "Talent Management Software",
     year: 2024,
-    mainImage: "/assets/slotqi.png",
+    mainImage: slotqi,
     shortDescription: "For portfolio purposes only.",
     prototypeUrl:
       "https://www.figma.com/proto/jplBol1DRptoJeCjmqgIqB/SlotQi?node-id=52-9409&viewport=422%2C-427%2C0.39&t=WWLNs1sYFta5vvHh-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
@@ -162,9 +175,9 @@ export const projects: IProjectData[] = [
   {
     category: ["Front-End Development"],
     id: "pawmate",
-    title: "PawMate - UI/UX App and website",
+    title: " UI/UX App & website",
     year: 2024,
-    mainImage: "/assets/pawmate.png",
+    mainImage: pawmate,
     shortDescription:
       "This project was conceived during a Web Development Bootcamp.",
     prototypeUrl:
@@ -182,9 +195,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design"],
     id: "bmw",
-    title: "BMW - App & iDrive Redesign",
+    title: "App & iDrive Redesign",
     year: 2023,
-    mainImage: "/assets/bmw.png",
+    mainImage: bmw,
     shortDescription: "For portfolio purposes only.",
     behanceUrl:
       "https://www.behance.net/gallery/174481013/My-BMW-app-iDrive-System-Redesign",
@@ -197,9 +210,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design"],
     id: "mercedes",
-    title: "Mercedes A-Class HMI: UI Concept",
+    title: "HMI: UI Concept",
     year: 2023,
-    mainImage: "/assets/mercedes.png",
+    mainImage: mercedes,
     shortDescription: "For portfolio purposes only.",
     behanceUrl:
       "https://www.behance.net/gallery/145724997/Mercedes-Benz-UI-Concept",
@@ -212,9 +225,9 @@ export const projects: IProjectData[] = [
   {
     category: ["UI/UX Design"],
     id: "montepio",
-    title: "Banco Montepio: Modernizing the Portuguese Banking Experience",
+    title: "Mobile App Redesign",
     year: 2022,
-    mainImage: "/assets/montepio.png",
+    mainImage: montepio,
     shortDescription: "For portfolio purposes only.",
     behanceUrl:
       "https://www.behance.net/gallery/146683469/Banking-App-Montepio",
