@@ -40,10 +40,9 @@ function Homepage() {
             </div>
             <span className={styles["chip-title"]}>
               <h1>
-                I'm <span className={styles.name}>Carla</span>
+                I'm <span className={styles.name}>Carla</span>,
                 <br className={styles.hideOnMobile} />
-                UI/UX Designer <br className={styles.hideOnMobile} />& Front-end
-                Engineer
+                UX Design Engineer
               </h1>
             </span>
             <div>
@@ -131,8 +130,6 @@ function Homepage() {
               </div>
             </span>
 
-            {/*  */}
-
             <span className={styles.subTitle}>
               <h5>other skills</h5>
             </span>
@@ -183,26 +180,28 @@ function Homepage() {
           </div>
         </div>
         {/* projects */}
-        <div>
-          <span className={styles["title-link"]}>
-            <h5>projects</h5>
-            <Button variant="link" className={styles.btnLink}>
-              <Link to="/projects">
-                View Projects
-                <ArrowRight />
-              </Link>
-            </Button>
-          </span>
-          <div className={styles.cardContainer}>
-            {projects
-              .filter((project) => project.category?.includes("Homepage"))
-              .map((project) => (
-                <Card key={project.title} project={project} />
-              ))}
+        <div className={styles.projectsRecomendationsContainer}>
+          <div className={styles.projectsContainer}>
+            <span className={styles["title-link"]}>
+              <h5>projects</h5>
+              <Button variant="link" className={styles.btnLink}>
+                <Link to="/projects">
+                  View Projects
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </span>
+            <div className={styles.cardContainer}>
+              {projects
+                .filter((project) => project.category?.includes("Homepage"))
+                .map((project) => (
+                  <Card key={project.title} project={project} />
+                ))}
+            </div>
           </div>
 
           {/* recommendations */}
-          <div>
+          <div className={styles.recomendationsContainer}>
             <span className={styles["title-link"]}>
               <h5>Linkedin recommendations</h5>
               <Button variant="link" className={styles.btnLink}>

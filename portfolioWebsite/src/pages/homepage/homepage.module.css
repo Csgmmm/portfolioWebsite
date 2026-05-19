@@ -99,7 +99,7 @@
   display: flex;
   flex-direction: column;
   width: 100px;
-  gap:var(--sm)
+  gap: var(--sm);
 }
 
 @media (max-width: 768px) {
@@ -179,9 +179,19 @@ p {
 
 /* projects */
 
+.projectsRecomendationsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
 
 .cardContainer {
-  width: fit-content;
   gap: var(--md);
   display: flex;
 }
@@ -308,6 +318,12 @@ p {
 
 /* recommendations */
 
+.recomendationsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
 .containerText {
   display: flex;
   flex-direction: column;

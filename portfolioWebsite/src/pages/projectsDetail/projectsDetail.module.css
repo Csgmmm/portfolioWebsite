@@ -1,13 +1,17 @@
 .container {
-      margin: var(--md);
+  margin: var(--md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .projectImg {
-  width: 400px;
   height: 250px;
   object-fit: cover;
   border: 1px solid var(--border);
   border-radius: var(--sm);
+  flex: 3;
+  width: 100%;
 }
 
 .containerImgDescription {
@@ -16,6 +20,12 @@
 }
 
 .description p {
-    margin:0;
-    width: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  flex:2;
 }
