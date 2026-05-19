@@ -12,7 +12,7 @@ function Emptystate() {
         <img src={emptystate} width="400" alt="Project not found" />
         <h3 className={styles.errorTitle}>Ooops! Looks like you got lost.</h3>
         <p className={styles.errorP}>Page not found.</p>
-        <Link to="/">
+        <Link to="/homepage">
           <Button variant="primary">Homepage</Button>
         </Link>
       </div>
