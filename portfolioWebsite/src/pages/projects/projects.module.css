@@ -37,16 +37,20 @@
 }
 
 .card {
-  display: flex;
+  height: 90%;
 }
 
 .cardsContainer {
-  display: grid;
+ display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 24px; 
+  row-gap: 24px; 
   width: 100%;
   margin: 0 auto;
+  height: 100%;
+  
 }
+
 
 @media (max-width: 968px) {
   .cardsContainer {

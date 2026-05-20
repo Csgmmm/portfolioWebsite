@@ -192,8 +192,10 @@ p {
 }
 
 .cardContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--md);
-  display: flex;
+  margin-bottom: var(--lg);
 }
 
 .imgProject {

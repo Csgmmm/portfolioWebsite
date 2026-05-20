@@ -18,9 +18,7 @@ function Projects() {
                 project.category?.includes("Front-End Development"),
               )
               .map((project) => (
-                <div key={project.id} className={styles.card}>
-                  <Card project={project} />
-                </div>
+                <Card key={project.id} project={project} />
               ))}
           </div>
         </div>
@@ -30,8 +28,8 @@ function Projects() {
             {projects
               .filter((project) => project.category?.includes("UI/UX Design"))
               .map((project) => (
-                <div key={project.id} className={styles.card}>
-                  <Card project={project} />
+                <div key={project.id} >
+                  <Card project={project} className={styles.card}/>
                 </div>
               ))}
           </div>

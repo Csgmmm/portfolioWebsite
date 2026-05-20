@@ -3,6 +3,7 @@ import { projects } from "../../types/projectsData";
 import styles from "./projectsDetail.module.css";
 import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
+import Card from "../../components/card/Card";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -26,11 +27,15 @@ function ProjectsDetail() {
             alt={project.title}
             className={styles.projectImg}
           />
-          <div className={styles.description}>
+          <div className={styles.details}>
             <p>{project.fullDescription}</p>
+            <div className={styles.cardDetails}>
+              <Card showImage={false} showViewButton={false}>
+                <p>HiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHii</p>
+              </Card>
+            </div>
           </div>
         </div>
-        
       </div>
     </>
   );

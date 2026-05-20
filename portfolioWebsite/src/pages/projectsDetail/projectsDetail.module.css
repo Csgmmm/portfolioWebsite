@@ -11,8 +11,8 @@
 }
 
 .projectImg {
-  flex: none; 
-  width: 100%; 
+  flex: none;
+  width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: var(--md);
@@ -25,19 +25,30 @@
   width: 90%;
 }
 
-.description p {
+.details {
+  display: flex;
+  gap: var(--lg);
+  
+}
+
+.details p {
   margin: 0;
   width: 100%;
   white-space: pre-line;
 }
 
-.description {
+.cardDetails {
+  width: 400px;
+  height: auto;
+}
 
-  flex:2;
+.cardDetails p {
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 968px) {
-  .containerImgDescription{
+  .containerImgDescription {
     display: flex;
     flex-direction: column;
   }
