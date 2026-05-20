@@ -1,14 +1,15 @@
 import sns24 from "../pages/homepage/assets/sns24.png";
-import femin from "../pages/homepage/assets/feminDashboard.png"
-import yumyum from "../pages/homepage/assets/yumyum.png"
-import portfolio from "../pages/projects/assets/portfolioImg.png"
-import pawmate from "../pages/projects/assets/pawmate.png"
-import tinytracker from "../pages/projects/assets/babyTracker.png"
-import evolve from "../pages/projects/assets/evolve.png"
-import bmw from "../pages/projects/assets/bmw.png"
-import mercedes from "../pages/projects/assets/mercedes.png"
-import montepio from "../pages/projects/assets/montepio.png"
-import slotqi from "../pages/projects/assets/slotqi.png"
+import femin from "../pages/homepage/assets/feminDashboard.png";
+import yumyum from "../pages/homepage/assets/yumyum.png";
+import portfolio from "../pages/projects/assets/portfolioImg.png";
+import pawmate from "../pages/projects/assets/pawmate.png";
+import tinytracker from "../pages/projects/assets/babyTracker.png";
+import evolve from "../pages/projects/assets/evolve.png";
+import bmw from "../pages/projects/assets/bmw.png";
+import mercedes from "../pages/projects/assets/mercedes.png";
+import montepio from "../pages/projects/assets/montepio.png";
+import slotqi from "../pages/projects/assets/slotqi.png";
+
 
 export interface IProjectData {
   id: string;
@@ -30,7 +31,6 @@ export interface IProjectData {
   images?: string[];
   video?: string;
 }
-
 
 export const projects: IProjectData[] = [
   {
@@ -57,7 +57,12 @@ export const projects: IProjectData[] = [
       "An ongoing collaborative product design project developed for SNS 24, Portugal's national healthcare platform.",
     chips: ["FIGMA", "MIRO", "AGILE", "PHOTOSHOP", "ILLUSTRATOR"],
     fullDescription:
-      "Built this portfolio to act as a handshake between my two worlds UI/UX Design and Front-End Engineering. Accessibility & Readability - Font sizes are readable and line lengths are kept within 60-80 characters; - Made sure the color contrast is ensuring the high visibility;- Every chip, button and links have clear indication, using colors, underlines, and icon arrows to make it obvious what's clickable. Engineering & Scalability - Used experience across different tech stacks to make the designs functional and accurate to the idea - From the theme switching to the smallest card, everything was built to be scalable and responsive.",
+      `• User Experience Engineering & Interface Optimization Designing and engineering end-to-end UX/UI solutions for the SNS 24 platform, from Figma concepts to production-ready front-end code.
+• Prototyping, UI Development & Design Handoff Creating high-fidelity Figma prototypes and translating them into maintainable front-end code, bridging the gap between design and engineering.
+• Human-Centered & Accessible Design Systems Building inclusive, accessible interfaces grounded in user research and WCAG standards.
+• Cross-Functional Research & Design Strategy Partnering with functional analysts, product managers, and engineers to translate user requirements into validated design decisions.
+• Interaction Design & User Journey Mapping Defining user journeys, task flows, and information architecture through storyboards, and Figma prototypes.
+• Design Systems & Visual Consistency Maintaining and evolving a scalable design system across Figma and codebase, enforcing typography, colour, spacing, and component standards to ensure brand and UX coherence across every touchpoint.`,
     video: "https://www.instagram.com/p/DW3Xl2LtNE5/",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
   },

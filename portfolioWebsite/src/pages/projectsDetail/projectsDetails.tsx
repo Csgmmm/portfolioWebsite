@@ -30,6 +30,7 @@ function ProjectsDetail() {
             <p>{project.fullDescription}</p>
           </div>
         </div>
+        
       </div>
     </>
   );
