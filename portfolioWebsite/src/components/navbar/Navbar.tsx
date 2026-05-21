@@ -16,50 +16,68 @@ function Navbar() {
     );
   };
   return (
-    <nav className="nav">
-      <div className="menu-icon">
-        <NameLogo />
-        <Button onClick={() => setIsOpen(!isOpen)} variant="tertiary">
-          <Menu />
-        </Button>
-      </div>
-
-      <div className={`nav-content ${isOpen ? "is-open" : ""}`}>
-        <span className="logo">
-          <Link to ="/homepage">
-          <NameLogo /></Link>
-        </span>
-        <div className="links">
-          <Link to="/homepage" onClick={() => setIsOpen(false)}>
-            <Button variant="tertiary" isActive={location.pathname === "/"}>
-              Homepage
-            </Button>
-          </Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)}>
-            <Button
-              variant="tertiary"
-              isActive={location.pathname === "/projects"}
-            >
-              Projects
-            </Button>
-          </Link>
-          <Link to="/aboutme" onClick={() => setIsOpen(false)}>
-            <Button
-              variant="tertiary"
-              isActive={location.pathname === "/aboutme"}
-            >
-              About me
-            </Button>
-          </Link>
+    <>
+      {isOpen && <div className="overlay" onClick={() => setIsOpen(false)} />}
+      <nav className={`nav ${isOpen ? "is-open" : ""}`}>
+        <div className={`menu-icon ${isOpen ? "is-open" : ""}`}>
+          <NameLogo />
+          <Button onClick={() => setIsOpen(!isOpen)} variant="tertiary">
+            <Menu />
+          </Button>
         </div>
-        <Button variant="primary" onClick={toggleTheme} className="btnTheme">
-          <span className="theme">
-            <SunMoon />
-            Theme
+
+        <div className={`nav-content ${isOpen ? "is-open" : ""}`}>
+          <span className="logo">
+            <Link to="/homepage">
+              <NameLogo />
+            </Link>
           </span>
-        </Button>
-      </div>
-    </nav>
+          <div className="links">
+            <div className={`menuOpened ${isOpen ? "is-open" : ""}`}>
+              <Button
+                onClick={() => setIsOpen((prev) => !prev)}
+                variant="tertiary"
+              >
+                <Menu />
+              </Button>
+            </div>
+
+            <Link to="/homepage" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="tertiary"
+                isActive={location.pathname === "/homepage"}
+              >
+                Homepage
+              </Button>
+            </Link>
+            <Link to="/projects" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="tertiary"
+                isActive={location.pathname === "/projects"}
+              >
+                Projects
+              </Button>
+            </Link>
+            <Link to="/aboutme" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="tertiary"
+                isActive={location.pathname === "/aboutme"}
+              >
+                About me
+              </Button>
+            </Link>
+          </div>
+          <Button
+            variant="primary"
+            onClick={toggleTheme}
+            className="btnTheme"
+            icon={<SunMoon />}
+          >
+            <span className="theme">Theme</span>
+          </Button>
+        </div>
+      </nav>
+    </>
   );
 }
 
