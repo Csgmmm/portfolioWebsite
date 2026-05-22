@@ -58,8 +58,14 @@
   }
 
   .card {
-    width: 100%;
     padding-bottom: var(--md);
   }
+
+  .container {
+  padding: var(--null) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 }
 

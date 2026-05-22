@@ -18,14 +18,19 @@ function Navbar() {
   return (
     <>
       {isOpen && <div className="overlay" onClick={() => setIsOpen(false)} />}
+        
+      {/* nav itself */}
       <nav className={`nav ${isOpen ? "is-open" : ""}`}>
         <div className={`menu-icon ${isOpen ? "is-open" : ""}`}>
-          <NameLogo />
+          <Link to="/homepage">
+            <NameLogo />
+          </Link>
           <Button onClick={() => setIsOpen(!isOpen)} variant="tertiary">
             <Menu />
           </Button>
         </div>
 
+        {/* nav content */}
         <div className={`nav-content ${isOpen ? "is-open" : ""}`}>
           <span className="logo">
             <Link to="/homepage">

@@ -27,7 +27,7 @@
 
 .details {
   display: flex;
-  gap: var(--lg);
+  gap: var(--xl-9);
   
 }
 

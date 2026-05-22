@@ -5,7 +5,7 @@
   padding: var(--xs);
   border: 0;
   cursor: pointer;
-  font-size: var(--m);
+  font-size: var(--sm);
   font-family: inherit;
   font-weight: 600;
   height: var(--xl);
@@ -59,7 +59,8 @@ a {
   display: flex;
   align-items: center;
   color: var(--secondary);
-  font-size: var(--m);
+  font-size: var(--sm);
   font-family: inherit;
   font-weight: 600;
 }
+
