@@ -9,6 +9,7 @@ import bmw from "../pages/projects/assets/bmw.png";
 import mercedes from "../pages/projects/assets/mercedes.png";
 import montepio from "../pages/projects/assets/montepio.png";
 import slotqi from "../pages/projects/assets/slotqi.png";
+import portImg1 from "../pages/projectsDetail/assets/portImg1.png"
 
 export interface IProjectData {
   id: string;
@@ -49,7 +50,7 @@ export const projects: IProjectData[] = [
       **Engineering & Scalability**
       • Used experience across different tech stacks to make the designs functional and accurate to the idea 
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: [portImg1, portImg1, portImg1, portImg1],
   },
   //SNS 24
   {

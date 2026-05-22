@@ -4,6 +4,7 @@ import styles from "./projectsDetail.module.css";
 import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
 import Card from "../../components/card/Card";
+import Chip from "../../components/chips/Chip";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -45,13 +46,28 @@ function ProjectsDetail() {
           <div className={styles.details}>
             <p>{renderBold(project.fullDescription ?? "")}</p>
             <div className={styles.cardDetails}>
-              <Card showImage={false} showViewButton={false}>
-                <p>
-                  HiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHiiHii
-                </p>
+              <Card
+                project={project}
+                showImage={false}
+                showViewButton={false}
+                className={styles.card}
+              >
+                <span className={styles.chipsContainer}>
+                  {project?.chips.map((chip) => (
+                    <Chip key={chip} variant="secondary">
+                      {chip}
+                    </Chip>
+                  ))}
+                </span>
               </Card>
             </div>
           </div>
+          <div className={styles.images}>
+            {project.images?.map((img, index) => (
+              <img key={index} src={img} />
+            ))}
+          </div>
+          {/* Dentro do project, tenho images? se sim, entao, mapeia cada item (img), que por cada img retorna uma key unica, retornando por fim,  cada image com essa mesma key de cada um  e sendo a source o item de cada imagem mapeada */}
         </div>
       </div>
     </>

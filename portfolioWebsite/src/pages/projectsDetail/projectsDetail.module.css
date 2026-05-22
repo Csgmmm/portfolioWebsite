@@ -28,7 +28,6 @@
 .details {
   display: flex;
   gap: var(--xl-9);
-  
 }
 
 .details p {
@@ -47,6 +46,22 @@
   overflow-wrap: break-word;
 }
 
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs);
+}
+
+.images img {
+  width: 100%;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--md);
+  justify-content: left;
+}
 @media (max-width: 968px) {
   .containerImgDescription {
     display: flex;
