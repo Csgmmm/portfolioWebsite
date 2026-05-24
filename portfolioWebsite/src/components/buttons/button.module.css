@@ -20,12 +20,17 @@
 
 .primary:hover {
   background-color: var(--secondary);
-  color: var(--button-color);
+  color: var(--background);
 }
 .secondary {
-  border: 1px solid var(--primary);
+  border: 1px solid var(--secondary);
   background-color: transparent;
-  color: var(--text);
+  color: var(--secondary);
+}
+
+.secondary:hover {
+  background-color: var(--darker-background);
+  border: 1px solid var(--secondary);
 }
 
 .tertiary {
@@ -33,6 +38,10 @@
   color: var(--text);
 }
 
+.tertiary:hover {
+  background-color: transparent;
+  color: var(--secondary);
+}
 .link {
   color: var(--secondary);
   background-color: transparent;

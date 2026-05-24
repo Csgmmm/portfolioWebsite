@@ -42,7 +42,7 @@ function Homepage() {
               <h1>
                 I'm <span className={styles.name}>Carla</span>,
                 <br className={styles.hideOnMobile} />
-                UX Design Engineer
+                UI/UX Design Engineer
               </h1>
             </span>
             <div>

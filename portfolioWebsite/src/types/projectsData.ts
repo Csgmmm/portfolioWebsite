@@ -9,7 +9,13 @@ import bmw from "../pages/projects/assets/bmw.png";
 import mercedes from "../pages/projects/assets/mercedes.png";
 import montepio from "../pages/projects/assets/montepio.png";
 import slotqi from "../pages/projects/assets/slotqi.png";
-import portImg1 from "../pages/projectsDetail/assets/portImg1.png"
+import portImg1 from "../pages/projectsDetail/assets/port1.png"
+import portImg2 from "../pages/projectsDetail/assets/port2.png"
+import portImg3 from "../pages/projectsDetail/assets/port3.png"
+import portImg5 from "../pages/projectsDetail/assets/port5.png"
+import portImg6 from "../pages/projectsDetail/assets/port6.png"
+import portImg7 from "../pages/projectsDetail/assets/port7.png"
+import portImg8 from "../pages/projectsDetail/assets/port8.png"
 
 export interface IProjectData {
   id: string;
@@ -30,6 +36,8 @@ export interface IProjectData {
   iconography?: string[];
   images?: string[];
   video?: string;
+  figmaImg?: string[];
+  codeImg?: string[];
 }
 
 export const projects: IProjectData[] = [
@@ -38,7 +46,7 @@ export const projects: IProjectData[] = [
     id: "portfolio",
     title: "Portfolio",
     mainImage: portfolio,
-    githubUrl: "https://github.com...",
+    githubUrl: "https://github.com/Csgmmm/portfolioWebsite",
     chips: ["FIGMA", "REACT", "TYPESCRIPT", "JAVASCRIPT", "CSS", "HTML"],
     fullDescription: `Built this portfolio to act as a handshake between my two worlds UI/UX Design and Front-End Engineering. 
 
@@ -50,7 +58,8 @@ export const projects: IProjectData[] = [
       **Engineering & Scalability**
       • Used experience across different tech stacks to make the designs functional and accurate to the idea 
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
-    images: [portImg1, portImg1, portImg1, portImg1],
+    figmaImg: [portImg1, portImg7, portImg8],
+    codeImg: [portImg2, portImg3, portImg5, portImg6],
   },
   //SNS 24
   {

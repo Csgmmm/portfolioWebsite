@@ -5,6 +5,8 @@ import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
 import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
+import Button from "../../components/buttons/Button";
+import Carousel from "../../components/carousel/Carousel";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -52,22 +54,29 @@ function ProjectsDetail() {
                 showViewButton={false}
                 className={styles.card}
               >
-                <span className={styles.chipsContainer}>
-                  {project?.chips.map((chip) => (
-                    <Chip key={chip} variant="secondary">
-                      {chip}
-                    </Chip>
-                  ))}
+                <span className={styles.sideContainer}>
+                  <Button variant="secondary">Github Code</Button>
+                  <div className={styles.chips}>
+                    {project?.chips.map((chip) => (
+                      <Chip key={chip} variant="secondary">
+                        {chip}
+                      </Chip>
+                    ))}
+                  </div>
                 </span>
               </Card>
             </div>
           </div>
           <div className={styles.images}>
-            {project.images?.map((img, index) => (
-              <img key={index} src={img} />
-            ))}
+            <div className={styles.figmaImg}>
+              <h4>Figma</h4>
+              <Carousel img={project.figmaImg ?? []} />
+            </div>
+            <div className={styles.codeImg}>
+              <h4>Code</h4>
+              <Carousel img={project.codeImg ?? []} />
+            </div>
           </div>
-          {/* Dentro do project, tenho images? se sim, entao, mapeia cada item (img), que por cada img retorna uma key unica, retornando por fim,  cada image com essa mesma key de cada um  e sendo a source o item de cada imagem mapeada */}
         </div>
       </div>
     </>

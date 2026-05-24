@@ -28,11 +28,12 @@
 .details {
   display: flex;
   gap: var(--xl-9);
+  justify-content: space-between;
 }
 
 .details p {
   margin: 0;
-  width: 100%;
+  width: 60%;
   white-space: pre-line;
 }
 
@@ -46,22 +47,34 @@
   overflow-wrap: break-word;
 }
 
-.chipsContainer {
+.sideContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--xs);
 }
 
-.images img {
-  width: 100%;
+.sideContainer button {
+  width: fit-content;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs);
+  padding-top: var(--sm);
 }
 
 .images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--md);
-  justify-content: left;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }
+.figmaImg, .codeImg {
+  gap: var(--md);
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 968px) {
   .containerImgDescription {
     display: flex;
