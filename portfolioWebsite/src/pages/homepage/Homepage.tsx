@@ -61,24 +61,26 @@ function Homepage() {
         </div>
         <div className={styles.contentDetailsContainer}>
           <h2>What I bring to the table</h2>
-          <span className={styles.detailsContainer}>
-            <span className={styles.details}>
-              <LayoutTemplate className={styles.icon} />
-              <h4>UI/UX</h4>
-            </span>
-            <span className={styles.details}>
-              <CodeXml className={styles.icon} />
-              <h4>Web Apps</h4>
-            </span>
-            <span className={styles.details}>
-              <PersonStanding className={styles.icon} />
-              <h4>Accessibility</h4>
-            </span>
-            <span className={styles.details}>
-              <MousePointerClick className={styles.icon} />
-              <h4>Prototyping</h4>
-            </span>
-          </span>
+          <div className={styles.detailsContainer}>
+            <div className={styles.itemsContainer}>
+              <div className={styles.details}>
+                <LayoutTemplate className={styles.icon} />
+                <h4>UI/UX</h4>
+              </div>
+              <div className={styles.details}>
+                <CodeXml className={styles.icon} />
+                <h4>Web Apps</h4>
+              </div>
+              <div className={styles.details}>
+                <PersonStanding className={styles.icon} />
+                <h4>Accessibility</h4>
+              </div>
+              <div className={styles.details}>
+                <MousePointerClick className={styles.icon} />
+                <h4>Prototyping</h4>
+              </div>
+            </div>
+          </div>
 
           {/* tech skills */}
           <div className={styles.stacksContainer}>
@@ -184,12 +186,14 @@ function Homepage() {
           <div className={styles.projectsContainer}>
             <span className={styles["title-link"]}>
               <h5>projects</h5>
-              <Button variant="link" className={styles.btnLink}>
-                <Link to="/projects">
-                  View Projects
-                  <ArrowRight />
-                </Link>
-              </Button>
+              <div className={styles.btnContainer}>
+                <Button variant="link" className={styles.btnLink}>
+                  <Link to="/projects">
+                    View Projects
+                    <ArrowRight />
+                  </Link>
+                </Button>
+              </div>
             </span>
             <div className={styles.cardContainer}>
               {projects

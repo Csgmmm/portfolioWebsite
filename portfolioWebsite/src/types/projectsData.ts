@@ -17,6 +17,11 @@ import portImg6 from "../pages/projectsDetail/assets/port6.png"
 import portImg7 from "../pages/projectsDetail/assets/port7.png"
 import portImg8 from "../pages/projectsDetail/assets/port8.png"
 import videoInstaImg from "../pages/projectsDetail/assets/instaImg.png"
+import fem1 from "../pages/projectsDetail/assets/fem1.png"
+import fem2 from "../pages/projectsDetail/assets/fem2.png"
+import fem3 from "../pages/projectsDetail/assets/fem3.png"
+import fem4 from "../pages/projectsDetail/assets/fem4.png"
+import fem5 from "../pages/projectsDetail/assets/fem5.png"
 
 export interface IProjectData {
   id: string;
@@ -107,18 +112,12 @@ disclaimer: `The work presented in this project was developed collaboratively as
     liveUrl: "https://feminine-dashboard.vercel.app/",
     githubUrl: "https://github.com/Csgmmm/feminine-dashboard.git",
     chips: ["FIGMA", "REACT", "TYPESCRIPT", "JAVASCRIPT", "CSS", "HTML"],
-    fullDescription: `Based on my own experience with apps like Clue, I believe these tools are essential for women's health, and I wanted to explore how mobile-first experience could be translated into a desktop dashboard. 
-
-      • To simulate a real-world application, I implemented a login system that fetches data from a user API, showcasing history logs for each specific user;
-      • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
-      • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
-    images: [
-      "/assets/code1.png",
-      "/assets/code2.png",
-      "/assets/code3.png",
-      "/assets/code3.png",
-      "/assets/code3.png",
-    ],
+    fullDescription: `Based on my own experience with apps like Clue, I believe these tools are essential for women's health, and I wanted to explore how mobile-first experience could be translated into a desktop dashboard.
+    
+    • To simulate a real-world application, I implemented a login system that fetches data from a user API, showcasing history logs for each specific user;
+    • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
+    • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
+    codeImg: [fem1, fem2, fem3, fem4, fem5],
   },
   //yumyum
   {
@@ -247,7 +246,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: "/assets/code1.png",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-    video: "943623829",
+    videoUrl: "943623829",
   },
   //bmw
   {

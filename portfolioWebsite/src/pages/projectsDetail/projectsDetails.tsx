@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { projects } from "../../types/projectsData";
 import styles from "./projectsDetail.module.css";
 import Navbar from "../../components/navbar/Navbar";
@@ -7,7 +7,7 @@ import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
-import { Info } from "lucide-react";
+import { ArrowLeft, ArrowRight, Info } from "lucide-react";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -39,8 +39,19 @@ function ProjectsDetail() {
     <>
       <Navbar />
       <div className={styles.container}>
-        <h1>{project.title}</h1>
+        <div className={styles.backPageArrow}>
+          <Button variant="link" className={styles.btnLink}>
+            <Link to="/projects">
+              <span
+                style={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
+                <ArrowLeft size={32} /> Back to projects
+              </span>
+            </Link>
+          </Button>
+        </div>
         <div className={styles.containerImgDescription}>
+          <h1>{project.title}</h1>
           <img
             src={project.mainImage}
             alt={project.title}
@@ -51,113 +62,123 @@ function ProjectsDetail() {
             <h5>{project.shortDescription}</h5>
             <h5 className={styles.year}>{project.year}</h5>
           </div>
-          <div className={styles.details}>
-            <div className={styles.descriptions}>
-              <h3>Description</h3>
-              {renderBold(project.fullDescription ?? "")}
+
+          <div className={styles.bothSide}>
+            <div className={styles.leftSide}>
+              <div className={styles.details}>
+                <div className={styles.description}>
+                  <h3>Description</h3>
+                  {renderBold(project.fullDescription ?? "")}
+                </div>
+              </div>
+
+              {((project.figmaImg ?? []).length > 0 ||
+                (project.codeImg ?? []).length > 0) && (
+                <div className={styles.images}>
+                  {project.figmaImg && project.figmaImg.length > 0 && (
+                    <div className={styles.figmaImg}>
+                      <h4>Figma</h4>
+                      <Carousel img={project.figmaImg ?? []} />
+                    </div>
+                  )}
+                  {project.codeImg && project.codeImg.length > 0 && (
+                    <div className={styles.codeImg}>
+                      <h4>Code</h4>
+                      <Carousel img={project.codeImg ?? []} />
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {project.contribution && project.contribution.length > 0 && (
+                <div className={styles.contribution}>
+                  <h3>Contributions</h3>
+                  {project.contribution}
+                </div>
+              )}
+
+              {project.disclaimer && project.disclaimer.length > 0 && (
+                <div className={styles.disclaimer}>
+                  <div className={styles.introDisclaimer}>
+                    <Info />
+                    <h4>Team Collaboration Disclaimer</h4>
+                  </div>
+                  <p>{project.disclaimer}</p>
+                </div>
+              )}
+
+              {project.videoContainer && project.videoContainer.length > 0 && (
+                <div className={styles.videoInstaContainer}>
+                  <img
+                    src={project.videoContainer}
+                    alt="Insta Video"
+                    className={styles.videoInstaImg}
+                  />
+                  <div className={styles.containerDescription}>
+                    <p className={styles.textDescription}>
+                      Product presentation video created to showcase features
+                      and user experience flows of the SNS 24 mobile
+                      application. The presentation video is in Portuguese and
+                      was created as part of the SNS 24 digital communication
+                      experience for users in Portugal.
+                    </p>
+
+                    <a href={project.videoUrl} target="_blank">
+                      <Button variant="secondary">Watch video</Button>
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
 
-            <div className={styles.cardDetails}>
-              <Card
-                project={project}
-                showImage={false}
-                showViewButton={false}
-                className={styles.card}
-              >
-                <span className={styles.sideContainer}>
-                  <div className={styles.linksUrl}>
-                    {project?.liveUrl && (
-                      <a href={project.liveUrl} target="_blank">
-                        <Button variant="primary">Live Website</Button>
-                      </a>
-                    )}
-                    {project?.githubUrl && (
-                      <a href={project.githubUrl} target="_blank">
-                        <Button variant="primary">GitHub Code</Button>
-                      </a>
-                    )}
-                    {project?.appStoreUrl && (
-                      <a href={project.appStoreUrl} target="_blank">
-                        <Button variant="primary">AppStore</Button>
-                      </a>
-                    )}
-                    {project?.prototypeUrl && (
-                      <a href={project.prototypeUrl} target="_blank">
-                        <Button variant="primary">Prototype</Button>
-                      </a>
-                    )}
-                    {project?.behanceUrl && (
-                      <a href={project.behanceUrl} target="_blank">
-                        <Button variant="primary">Behance Project</Button>
-                      </a>
-                    )}
-                  </div>
-                  <div className={styles.chips}>
-                    {project?.chips.map((chip) => (
-                      <Chip key={chip} variant="secondary">
-                        {chip}
-                      </Chip>
-                    ))}
-                  </div>
-                </span>
-              </Card>
+            <div className={styles.rightSide}>
+              <div className={styles.cardDetails}>
+                <Card
+                  project={project}
+                  showImage={false}
+                  showViewButton={false}
+                  className={styles.card}
+                >
+                  <span className={styles.sideContainer}>
+                    <div className={styles.linksUrl}>
+                      {project?.liveUrl && (
+                        <a href={project.liveUrl} target="_blank">
+                          <Button variant="primary">Live Website</Button>
+                        </a>
+                      )}
+                      {project?.githubUrl && (
+                        <a href={project.githubUrl} target="_blank">
+                          <Button variant="primary">GitHub Code</Button>
+                        </a>
+                      )}
+                      {project?.appStoreUrl && (
+                        <a href={project.appStoreUrl} target="_blank">
+                          <Button variant="primary">AppStore</Button>
+                        </a>
+                      )}
+                      {project?.prototypeUrl && (
+                        <a href={project.prototypeUrl} target="_blank">
+                          <Button variant="primary">Prototype</Button>
+                        </a>
+                      )}
+                      {project?.behanceUrl && (
+                        <a href={project.behanceUrl} target="_blank">
+                          <Button variant="primary">Behance Project</Button>
+                        </a>
+                      )}
+                    </div>
+                    <div className={styles.chips}>
+                      {project?.chips.map((chip) => (
+                        <Chip key={chip} variant="secondary">
+                          {chip}
+                        </Chip>
+                      ))}
+                    </div>
+                  </span>
+                </Card>
+              </div>
             </div>
           </div>
-
-          <div className={styles.images}>
-            {project.figmaImg && project.figmaImg.length > 0 && (
-              <div className={styles.figmaImg}>
-                <h4>Figma</h4>
-                <Carousel img={project.figmaImg ?? []} />
-              </div>
-            )}
-            {project.codeImg && project.codeImg.length > 0 && (
-              <div className={styles.codeImg}>
-                <h4>Code</h4>
-                <Carousel img={project.codeImg ?? []} />
-              </div>
-            )}
-          </div>
-
-          {project.contribution && project.contribution.length > 0 && (
-            <div className={styles.descriptions}>
-              <h3>Contributions</h3>
-              {project.contribution}
-            </div>
-          )}
-
-          {project.disclaimer && project.disclaimer.length > 0 && (
-            <div className={styles.disclaimer}>
-              <div className={styles.introDisclaimer}>
-                <Info />
-                <h4>Team Collaboration Disclaimer</h4>
-              </div>
-              {project.disclaimer}
-            </div>
-          )}
-
-          {project.videoContainer && project.videoContainer.length > 0 && (
-            <div className={styles.videoInstaContainer}>
-              <img
-                src={project.videoContainer}
-                alt="Insta Video"
-                className={styles.videoInstaImg}
-              />
-              <div className={styles.containerDescription}>
-                <p className={styles.textDescription}>
-                  Product presentation video created to showcase features and
-                  user experience flows of the SNS 24 mobile application. The
-                  presentation video is in Portuguese and was created as part of
-                  the SNS 24 digital communication experience for users in
-                  Portugal.
-                </p>
-
-                <a href={project.videoUrl} target="_blank">
-                  <Button variant="primary">Watch video</Button>
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </>

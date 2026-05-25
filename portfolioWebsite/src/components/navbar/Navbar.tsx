@@ -8,11 +8,12 @@ import { useState } from "react";
 function Navbar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  
   const toggleTheme = () => {
     const current = document.documentElement.getAttribute("data-theme");
     document.documentElement.setAttribute(
       "data-theme",
-      current === "dark" ? "light" : "dark", //If the current theme is dark, switch to light. If it's anything else, switch to dark
+      current === "dark" ? "light" : "dark", //o current é dark? então light, senão dark. Nao esqiecer de colocar no index.html o atributo data-theme="dark" para o tema dark ser o padrão
     );
   };
   return (
