@@ -6,10 +6,14 @@
   --text: #ffffff;
   --primary: #7639ff;
   --secondary: #af8bff;
+  --tertiary: #cabbea;
   --placeholder: #959595;
+  --shortDescription: #b9b9b9;
   --h1: #ffffff;
   --button-color: #ffffff;
   --darker-background: #433d53;
+  --disclaimer-border: #376cc2;
+  --disclaimer-text: #9fc0f4;
   --null: 0px;
   --xxs: 4px;
   --xs: 8px;
@@ -34,8 +38,10 @@
   --background: #ffffff;
   --primary: #966afd;
   --secondary: #9981cc;
+  --tertiary: #80729e;
   --background-secondary: #eaeaea;
-  --background-card: #ffffff;
+  --background-card: #f4f4f4;
+  --shortDescription: #5d5d5d;
   --border: #dbdbdb;
   --text: #414141;
   --h1: #414141;
@@ -56,15 +62,14 @@ h3 {
 }
 
 h4 {
-  font-size: 1.17em;
+  font-size: 1.05em;
 }
 h5 {
-  font-size: 0.83em;
+  font-size: 0.9em;
 }
 h6 {
   font-size: 0.67em;
 }
-
 
 body {
   background: var(--background);
@@ -72,7 +77,9 @@ body {
   margin: var(--null);
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   display: flex;
   flex-direction: column;

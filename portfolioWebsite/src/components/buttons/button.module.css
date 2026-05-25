@@ -20,7 +20,7 @@
 
 .primary:hover {
   background-color: var(--secondary);
-  color: var(--background);
+  color: var(--button-color);
 }
 .secondary {
   border: 1px solid var(--secondary);

@@ -18,10 +18,30 @@
   border-radius: var(--md);
 }
 
+.introDescription {
+  color: var(--shortDescription);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lg);
+}
+
+.introDescription h5 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.year {
+  width: fit-content;
+  white-space: nowrap;
+  color: var(--tertiary);
+}
+
 .containerImgDescription {
   display: flex;
   flex-direction: column;
-  gap: var(--md);
+  gap: var(--sm);
   width: 90%;
 }
 
@@ -29,12 +49,18 @@
   display: flex;
   gap: var(--xl-9);
   justify-content: space-between;
+  margin-top: var(--md);
 }
 
-.details p {
+.descriptions {
   margin: 0;
   width: 60%;
   white-space: pre-line;
+}
+
+.descriptions h3 {
+  margin: 0;
+  padding-bottom: var(--md);
 }
 
 .cardDetails {
@@ -51,11 +77,16 @@
   display: flex;
   flex-direction: column;
   gap: var(--xs);
+  padding: var(--sm) var(--sm) 0 var(--sm);
 }
 
-.sideContainer button {
+
+.linksUrl {
   width: fit-content;
+  display: flex;
+  gap:var(--sm)
 }
+
 
 .chips {
   display: flex;
@@ -69,19 +100,114 @@
   flex-direction: row;
   gap: 24px;
 }
-.figmaImg, .codeImg {
+.figmaImg,
+.codeImg {
   gap: var(--md);
   display: flex;
   flex-direction: column;
 }
 
+.introDisclaimer {
+  display: flex;
+  gap: var(--sm);
+}
+
+.disclaimer {
+  border: 1px solid var(--disclaimer-border);
+  color: var(--disclaimer-text);
+  border-radius: var(--sm);
+  padding: var(--sm);
+  gap: var(--sm);
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.videoInstaImg {
+  width: 20%;
+  height: auto;
+}
+
+.videoInstaContainer {
+  display: flex;
+  width: 100%;
+  gap: var(--md);
+}
+.containerDescription {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: var(--md);
+  
+}
+
+.textDescription {
+  width: 50%;
+  margin: 0;
+  
+}
+
+.videoBtn  {
+  width: fit-content;
+}
+
+
 @media (max-width: 968px) {
   .containerImgDescription {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .projectImg {
     width: 100%;
   }
+
+  .details {
+    flex-direction: column-reverse;
+    gap: var(--lg);
+    margin-top: var(--null);
+  }
+
+  .cardDetails {
+    width: 100%;
+  }
+  .descriptions {
+    margin: 0;
+    width: 100%;
+    white-space: pre-line;
+  }
+
+  .images {
+    flex-direction: column;
+  }
+
+  .introDescription {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--md);
+  }
+  .introDescription h5 {
+    margin: 0;
+  }
+
+  .disclaimer {
+
+  margin-top: var(--md);
+  width: 95%;
+}
+
+
+.textDescription {
+  width: 100%;
+  margin: 0;
+}
+
+.videoInstaImg {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--xs);
+}
+
 }

@@ -7,6 +7,7 @@ import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
+import { Info } from "lucide-react";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -45,8 +46,17 @@ function ProjectsDetail() {
             alt={project.title}
             className={styles.projectImg}
           />
+
+          <div className={styles.introDescription}>
+            <h5>{project.shortDescription}</h5>
+            <h5 className={styles.year}>{project.year}</h5>
+          </div>
           <div className={styles.details}>
-            <p>{renderBold(project.fullDescription ?? "")}</p>
+            <div className={styles.descriptions}>
+              <h3>Description</h3>
+              {renderBold(project.fullDescription ?? "")}
+            </div>
+
             <div className={styles.cardDetails}>
               <Card
                 project={project}
@@ -55,7 +65,33 @@ function ProjectsDetail() {
                 className={styles.card}
               >
                 <span className={styles.sideContainer}>
-                  <Button variant="secondary">Github Code</Button>
+                  <div className={styles.linksUrl}>
+                    {project?.liveUrl && (
+                      <a href={project.liveUrl} target="_blank">
+                        <Button variant="primary">Live Website</Button>
+                      </a>
+                    )}
+                    {project?.githubUrl && (
+                      <a href={project.githubUrl} target="_blank">
+                        <Button variant="primary">GitHub Code</Button>
+                      </a>
+                    )}
+                    {project?.appStoreUrl && (
+                      <a href={project.appStoreUrl} target="_blank">
+                        <Button variant="primary">AppStore</Button>
+                      </a>
+                    )}
+                    {project?.prototypeUrl && (
+                      <a href={project.prototypeUrl} target="_blank">
+                        <Button variant="primary">Prototype</Button>
+                      </a>
+                    )}
+                    {project?.behanceUrl && (
+                      <a href={project.behanceUrl} target="_blank">
+                        <Button variant="primary">Behance Project</Button>
+                      </a>
+                    )}
+                  </div>
                   <div className={styles.chips}>
                     {project?.chips.map((chip) => (
                       <Chip key={chip} variant="secondary">
@@ -67,16 +103,61 @@ function ProjectsDetail() {
               </Card>
             </div>
           </div>
+
           <div className={styles.images}>
-            <div className={styles.figmaImg}>
-              <h4>Figma</h4>
-              <Carousel img={project.figmaImg ?? []} />
-            </div>
-            <div className={styles.codeImg}>
-              <h4>Code</h4>
-              <Carousel img={project.codeImg ?? []} />
-            </div>
+            {project.figmaImg && project.figmaImg.length > 0 && (
+              <div className={styles.figmaImg}>
+                <h4>Figma</h4>
+                <Carousel img={project.figmaImg ?? []} />
+              </div>
+            )}
+            {project.codeImg && project.codeImg.length > 0 && (
+              <div className={styles.codeImg}>
+                <h4>Code</h4>
+                <Carousel img={project.codeImg ?? []} />
+              </div>
+            )}
           </div>
+
+          {project.contribution && project.contribution.length > 0 && (
+            <div className={styles.descriptions}>
+              <h3>Contributions</h3>
+              {project.contribution}
+            </div>
+          )}
+
+          {project.disclaimer && project.disclaimer.length > 0 && (
+            <div className={styles.disclaimer}>
+              <div className={styles.introDisclaimer}>
+                <Info />
+                <h4>Team Collaboration Disclaimer</h4>
+              </div>
+              {project.disclaimer}
+            </div>
+          )}
+
+          {project.videoContainer && project.videoContainer.length > 0 && (
+            <div className={styles.videoInstaContainer}>
+              <img
+                src={project.videoContainer}
+                alt="Insta Video"
+                className={styles.videoInstaImg}
+              />
+              <div className={styles.containerDescription}>
+                <p className={styles.textDescription}>
+                  Product presentation video created to showcase features and
+                  user experience flows of the SNS 24 mobile application. The
+                  presentation video is in Portuguese and was created as part of
+                  the SNS 24 digital communication experience for users in
+                  Portugal.
+                </p>
+
+                <a href={project.videoUrl} target="_blank">
+                  <Button variant="primary">Watch video</Button>
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
