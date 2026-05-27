@@ -41,11 +41,11 @@ export interface IProjectData {
   wireframe?: string;
   iconography?: string[];
   images?: string[];
-  videoContainer?: string;
+  videoImg?: string;
   videoUrl?: string;
   figmaImg?: string[];
   codeImg?: string[];
-  contribution?:string;
+  contributions?: { title: string; description: string }[];
   disclaimer?: string;
 }
 
@@ -89,14 +89,34 @@ export const projects: IProjectData[] = [
 • Cross-Functional Research & Design Strategy Partnering with functional analysts, product managers, and engineers to translate user requirements into validated design decisions.
 • Interaction Design & User Journey Mapping Defining user journeys, task flows, and information architecture through storyboards, and Figma prototypes.
 • Design Systems & Visual Consistency Maintaining and evolving a scalable design system across Figma and codebase, enforcing typography, colour, spacing, and component standards to ensure brand and UX coherence across every touchpoint.`,
-contribution: `• Contributed to the evolution and maintenance of the SNS 24 Design System (DSM)
-• Designed user flows, interface structures, and mobile-first experiences for iOS and Android platforms
-• Created high-fidelity UI mockups, interactive prototypes, and empty and error states for implemented features
-• Collaborated with functional analysts and cross-functional teams to translate requirements into intuitive user experiences
-• Helped ensure accessibility, consistency, and usability across the SNS 24 application ecosystem
-• Participated in the definition of visual standards including typography, spacing, components, and interaction patterns`,
-disclaimer: `The work presented in this project was developed collaboratively as part of a multidisciplinary product team. My contributions focused primarily on UX/UI design, interface exploration, design system implementation, and user experience improvements alongside other designers, analysts, and developers.`,
-    videoContainer: videoInstaImg,
+    contributions: [
+      {
+        title: "Design System Evolution",
+        description: "Contributed to the evolution and maintenance of the SNS 24 Design System (DSM), creating over 50+ new reusable components for the library."
+      },
+      {
+        title: "User Experience Design",
+        description: "Designed user flows, interface structures, and mobile-first experiences for iOS and Android platforms"
+      },
+      {
+        title: "UI Development",
+        description: "Created high-fidelity UI mockups, interactive prototypes, and empty and error states for implemented features"
+      },
+      {
+        title: "Collaboration",
+        description: "Collaborated with functional analysts and cross-functional teams to translate requirements into intuitive user experiences"
+      },
+      {
+        title: "Accessibility",
+        description: "Helped ensure accessibility, consistency, and usability across the SNS 24 application ecosystem"
+      },
+      {
+        title: "Visual Standards",
+        description: "Participated in the definition of visual standards including typography, spacing, components, and interaction patterns"
+      }
+    ],
+disclaimer: `The work presented in this project was developed collaboratively as part of a multidisciplinary product team. My contributions focused on UX/UI design, interface exploration, design system implementation, and user experience improvements alongside other designers, analysts, and developers.`,
+    videoImg: videoInstaImg,
     videoUrl: "https://www.instagram.com/p/DW3Xl2LtNE5/"
   },
 

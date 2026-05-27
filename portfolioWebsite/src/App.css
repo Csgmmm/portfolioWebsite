@@ -1,16 +1,16 @@
 :root {
-  --background: #0a0a0c;
-  --background-secondary: #262626;
-  --background-card: #131313;
+  --background: #051424;
+  --background-secondary: #101e2e;
+  --background-card: #010F1F;
   --border: #454546;
-  --text: #ffffff;
-  --primary: #4f46e5;
+  --text: #d3d4ff;
+  --title: #f4f4f4;
+  --primary: #C0C1FF;
   --secondary: #888af8;
-  --tertiary: #acaefd;
+  --tertiary: #ffffff;
   --placeholder: #959595;
   --shortDescription: #b9b9b9;
-  --h1: #ffffff;
-  --button-color: #ffffff;
+  --button-color: #1000A9;
   --darker-background: #3c3b60;
   --disclaimer-border: #376cc2;
   --disclaimer-text: #9fc0f4;
@@ -36,39 +36,45 @@
 
 [data-theme="light"] {
   --background: #ffffff;
-  --primary: #966afd;
+  --primary: #3525cd;
   --secondary: #9981cc;
-  --tertiary: #80729e;
+    --tertiary: #464555;
   --background-secondary: #eaeaea;
   --background-card: #f4f4f4;
   --shortDescription: #5d5d5d;
   --border: #dbdbdb;
-  --text: #414141;
-  --h1: #414141;
+  --text: #464555;
+  --title: #191c1e;
   --shadow: #dcdcdc;
   --darker-background: #b4a5d3;
 }
 
 h1 {
   font-size: 2.5em;
+  color: var(--title);
 }
 
 h2 {
   font-size: 1.5em;
+  color: var(--title);
 }
 
 h3 {
   font-size: 1.33em;
+  color: var(--title);
 }
 
 h4 {
   font-size: 1.05em;
+  color: var(--title);
 }
 h5 {
   font-size: 0.9em;
+  color: var(--title);
 }
 h6 {
   font-size: 0.67em;
+  color: var(--title);
 }
 
 body {

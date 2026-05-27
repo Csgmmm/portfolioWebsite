@@ -7,7 +7,7 @@ import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
-import { ArrowLeft, ArrowRight, Info } from "lucide-react";
+import { ArrowLeft, CheckCircle, Info } from "lucide-react";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -90,10 +90,18 @@ function ProjectsDetail() {
                 </div>
               )}
 
-              {project.contribution && project.contribution.length > 0 && (
-                <div className={styles.contribution}>
-                  <h3>Contributions</h3>
-                  {project.contribution}
+              {project.contributions && project.contributions.length > 0 && (
+                <div className={styles.contributions}>
+                  <h3>My Contribution</h3>
+                  {project.contributions.map((item, index) => (
+                    <div key={index} className={styles.contributionItem}>
+                      <CheckCircle size={20} />
+                      <div>
+                        <h5>{item.title}</h5>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
 
@@ -107,10 +115,10 @@ function ProjectsDetail() {
                 </div>
               )}
 
-              {project.videoContainer && project.videoContainer.length > 0 && (
+              {project.videoImg && project.videoImg.length > 0 && (
                 <div className={styles.videoInstaContainer}>
                   <img
-                    src={project.videoContainer}
+                    src={project.videoImg}
                     alt="Insta Video"
                     className={styles.videoInstaImg}
                   />
