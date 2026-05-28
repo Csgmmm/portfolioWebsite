@@ -49,39 +49,49 @@ const Card = ({
           <div className={styles.details}>
             <span className={styles.containerBtn}>
               {project?.liveUrl && (
-                <a href={project.liveUrl} target="_blank">
-                  <Button variant="primary" className={styles.btnCards}>
-                    Live Website
-                  </Button>
-                </a>
+                <div className={styles.btnCards}>
+                  <a href={project.liveUrl} target="_blank">
+                    <Button variant="primary" className={styles.btnCards}>
+                      Live Website
+                    </Button>
+                  </a>
+                </div>
               )}
               {project?.githubUrl && (
-                <a href={project.githubUrl} target="_blank">
-                  <Button variant="primary" className={styles.btnCards}>
-                    GitHub Code
-                  </Button>
-                </a>
+                <div className={styles.btnCards}>
+                  <a href={project.githubUrl} target="_blank">
+                    <Button variant="primary" className={styles.btnCards}>
+                      GitHub Code
+                    </Button>
+                  </a>
+                </div>
               )}
               {project?.appStoreUrl && (
-                <a href={project.appStoreUrl} target="_blank">
-                  <Button variant="primary" className={styles.btnCards}>
-                    AppStore
-                  </Button>
-                </a>
+                <div className={styles.btnCards}>
+                  <a href={project.appStoreUrl} target="_blank">
+                    <Button variant="primary" className={styles.btnCards}>
+                      AppStore
+                    </Button>
+                  </a>
+                </div>
               )}
               {project?.prototypeUrl && (
-                <a href={project.prototypeUrl} target="_blank">
-                  <Button variant="primary" className={styles.btnCards}>
-                    Prototype
-                  </Button>
-                </a>
+                <div className={styles.btnCards}>
+                  <a href={project.prototypeUrl} target="_blank">
+                    <Button variant="primary" className={styles.btnCards}>
+                      Prototype
+                    </Button>
+                  </a>
+                </div>
               )}
               {project?.behanceUrl && (
-                <a href={project.behanceUrl} target="_blank">
-                  <Button variant="primary" className={styles.btnCards}>
-                    Behance Project
-                  </Button>
-                </a>
+                <div className={styles.btnCards}>
+                  <a href={project.behanceUrl} target="_blank">
+                    <Button variant="primary" className={styles.btnCards}>
+                      Behance Project
+                    </Button>
+                  </a>
+                </div>
               )}
             </span>
 

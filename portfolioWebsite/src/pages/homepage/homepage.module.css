@@ -252,6 +252,11 @@
   height: var(--xl);
  }
 
+ .infoPerson {
+  display: flex;
+  flex-direction: column;
+ }
+
 @media (max-width: 968px) {
   .cardContainer {
     display: flex;
@@ -364,6 +369,7 @@
   color: var(--secondary);
   font-weight: 600;
   padding: var(--null) var(--md);
+  margin: var(--null);
   width: auto;
 }
 

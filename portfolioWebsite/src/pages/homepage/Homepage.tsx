@@ -186,14 +186,13 @@ function Homepage() {
           <div className={styles.projectsContainer}>
             <span className={styles["title-link"]}>
               <h5>projects</h5>
-              <div className={styles.btnContainer}>
-                <Button variant="link" className={styles.btnLink}>
-                  <Link to="/projects">
-                    View Projects
-                    <ArrowRight />
-                  </Link>
-                </Button>
-              </div>
+
+              <Button variant="link" className={styles.btnLink}>
+                <Link to="/projects">
+                  View Projects
+                  <ArrowRight />
+                </Link>
+              </Button>
             </span>
             <div className={styles.cardContainer}>
               {projects

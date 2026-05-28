@@ -30,7 +30,6 @@ h4 {
   display: flex;
   gap: var(--sm);
   padding: var(--sm) var(--null);
-  flex-wrap: wrap;
 }
 
 .img {
@@ -52,6 +51,12 @@ h4 {
 .infoContainer {
   padding: 0 var(--sm) 0 var(--sm);
 }
+ .btnCards {
+    width: 100%;
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
 @media (max-width: 768px) {
   .title {
@@ -65,7 +70,7 @@ h4 {
   }
 
   .btnCards {
-    width: 100%;
+    width: 10%;
     display: flex;
     justify-content: center;
   }

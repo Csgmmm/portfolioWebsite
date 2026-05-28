@@ -38,6 +38,7 @@ function Navbar() {
               <NameLogo />
             </Link>
           </span>
+          <div className="links-divider">
           <div className="links">
             <div className={`menuOpened ${isOpen ? "is-open" : ""}`}>
               <Button
@@ -73,14 +74,15 @@ function Navbar() {
               </Button>
             </Link>
           </div>
+
           <Button
-            variant="primary"
+            variant="secondary"
             onClick={toggleTheme}
             className="btnTheme"
             icon={<SunMoon />}
           >
             <span className="theme">Theme</span>
-          </Button>
+          </Button></div>
         </div>
       </nav>
     </>

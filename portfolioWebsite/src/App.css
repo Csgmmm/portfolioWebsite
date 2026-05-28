@@ -1,17 +1,17 @@
 :root {
   --background: #051424;
   --background-secondary: #101e2e;
-  --background-card: #010F1F;
+  --background-card: #010f1f;
   --border: #454546;
   --text: #d3d4ff;
   --title: #f4f4f4;
-  --primary: #C0C1FF;
-  --secondary: #888af8;
+  --primary: #c0c1ff;
+  --secondary: #9fa0ff;
+  --secondary-hover: #8688c6;
   --tertiary: #ffffff;
   --placeholder: #959595;
   --shortDescription: #b9b9b9;
-  --button-color: #1000A9;
-  --darker-background: #3c3b60;
+  --button-color: #1b1461;
   --disclaimer-border: #376cc2;
   --disclaimer-text: #9fc0f4;
   --null: 0px;
@@ -38,7 +38,8 @@
   --background: #ffffff;
   --primary: #3525cd;
   --secondary: #9981cc;
-    --tertiary: #464555;
+  --secondary-hover: #d8d9f6;
+  --tertiary: #464555;
   --background-secondary: #eaeaea;
   --background-card: #f4f4f4;
   --shortDescription: #5d5d5d;
@@ -46,7 +47,6 @@
   --text: #464555;
   --title: #191c1e;
   --shadow: #dcdcdc;
-  --darker-background: #b4a5d3;
 }
 
 h1 {

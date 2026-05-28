@@ -21,6 +21,7 @@
 .primary:hover {
   background-color: var(--secondary);
   color: var(--button-color);
+  transition: background-color 0.5s ease;
 }
 .secondary {
   border: 1px solid var(--secondary);
@@ -29,20 +30,24 @@
 }
 
 .secondary:hover {
-  background-color: var(--darker-background);
+  background-color: var(--secondary-hover);
   border: 1px solid var(--secondary);
+  color: var(--button-color);
+  transition: background-color 0.5s ease;
 }
 
 .tertiary {
   background-color: transparent;
   color: var(--tertiary);
-  font-weight: 100;
+  font-weight: 600;
 }
 
 .tertiary:hover {
   background-color: transparent;
   color: var(--secondary);
+  transition: background-color 0.5s ease;
 }
+
 .link {
   color: var(--secondary);
   background-color: transparent;
@@ -50,11 +55,14 @@
 
 .link:hover {
   color: var(--primary);
+  transition: background-color 0.5s ease;
 }
 
 .active {
   color: var(--secondary);
   border-radius: 0;
+  text-decoration: underline;
+  text-underline-offset: var(--sm);
 }
 
 .link a {

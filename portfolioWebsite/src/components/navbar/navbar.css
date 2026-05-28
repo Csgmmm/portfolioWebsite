@@ -32,6 +32,11 @@
   font-weight: 700;
 }
 
+.links-divider {
+  display: flex;
+  gap: var(--xl-3);
+}
+
 .btnTheme {
   width: fit-content;
 }
