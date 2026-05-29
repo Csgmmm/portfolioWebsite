@@ -2,13 +2,21 @@ import { Link, useLocation } from "react-router-dom";
 import NameLogo from "./NameLogo";
 import "./navbar.css";
 import Button from "../buttons/Button";
-import { Menu, SunMoon } from "lucide-react";
+import { ArrowRight, Menu, SunMoon, X } from "lucide-react";
 import { useState } from "react";
+import linkedinLogo from "../../pages/homepage/assets/linkedinLogo.svg";
+import github from "../../pages/homepage/assets/github.svg";
 
 function Navbar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  
+
+  const links = [
+    { to: "/homepage", label: "Homepage" },
+    { to: "/projects", label: "Projects" },
+    { to: "/aboutme", label: "About me" },
+  ];
+
   const toggleTheme = () => {
     const current = document.documentElement.getAttribute("data-theme");
     document.documentElement.setAttribute(
@@ -19,10 +27,10 @@ function Navbar() {
   return (
     <>
       {isOpen && <div className="overlay" onClick={() => setIsOpen(false)} />}
-        
-      {/* nav itself */}
-      <nav className={`nav ${isOpen ? "is-open" : ""}`}>
-        <div className={`menu-icon ${isOpen ? "is-open" : ""}`}>
+
+      {/* nav */}
+      <nav className="nav">
+        <div className="menu-icon">
           <Link to="/homepage">
             <NameLogo />
           </Link>
@@ -38,51 +46,66 @@ function Navbar() {
               <NameLogo />
             </Link>
           </span>
-          <div className="links-divider">
-          <div className="links">
-            <div className={`menuOpened ${isOpen ? "is-open" : ""}`}>
-              <Button
-                onClick={() => setIsOpen((prev) => !prev)}
-                variant="tertiary"
-              >
-                <Menu />
+
+          <div className="btnClose-Links">
+            <div className="closeBtn">
+              <Button variant="secondary" onClick={() => setIsOpen(false)}>
+                <X size={24} />
               </Button>
             </div>
 
-            <Link to="/homepage" onClick={() => setIsOpen(false)}>
-              <Button
-                variant="tertiary"
-                isActive={location.pathname === "/homepage"}
-              >
-                Homepage
-              </Button>
-            </Link>
-            <Link to="/projects" onClick={() => setIsOpen(false)}>
-              <Button
-                variant="tertiary"
-                isActive={location.pathname === "/projects"}
-              >
-                Projects
-              </Button>
-            </Link>
-            <Link to="/aboutme" onClick={() => setIsOpen(false)}>
-              <Button
-                variant="tertiary"
-                isActive={location.pathname === "/aboutme"}
-              >
-                About me
-              </Button>
-            </Link>
-          </div>
+            <div className="links-divider">
+              <div className="links">
+                {links.map((link) => (
+                  <Link to={link.to} key={link.to}>
+                    <Button
+                      variant="tertiary"
+                      isActive={location.pathname === link.to}
+                    >
+                      {link.label}
+                      <ArrowRight className="iconLinks" />
+                    </Button>
+                  </Link>
+                ))}
+              </div>
 
-          <Button
-            variant="secondary"
-            onClick={toggleTheme}
-            className="btnTheme"
-            icon={<SunMoon />}
-          >
-            <span className="theme">Theme</span>
-          </Button></div>
+              <div className="nav-footer">
+                <Button
+                  variant="secondary"
+                  onClick={toggleTheme}
+                  className="btnTheme"
+                  icon={<SunMoon />}
+                >
+                  <span className="theme">Theme</span>
+                </Button>
+
+                <div className="socialMediaLogos">
+                  <span className="socialMediaIcon">
+                    <a
+                      href="https://www.linkedin.com/in/carlasofiagm/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="socialLink"
+                    >
+                      <img src={linkedinLogo} alt="Linkedin" />
+                    </a>
+                  </span>
+                  <span className="socialMediaIcon">
+                    <a
+                      href="https://github.com/Csgmmm"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="socialLink"
+                    >
+                      <img src={github} alt="github Logo" />
+                    </a>
+                  </span>
+                </div>
+
+                <h6>© 2026 DESIGNED & ENGINEERED</h6>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </>

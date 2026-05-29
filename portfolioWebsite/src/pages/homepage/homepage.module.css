@@ -129,7 +129,7 @@
 }
 
 .iconStacks {
-  background-color: var(--darker-background);
+  background-color: var(--secondary);
   border-radius: var(--xl-3);
   padding: var(--sm);
   width: 40px;
