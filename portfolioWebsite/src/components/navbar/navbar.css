@@ -11,6 +11,8 @@
   margin: var(--md) var(--null);
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--md);
 }
 
 .nav-content {
@@ -30,12 +32,11 @@
   gap: var(--md);
 }
 
-.theme {
+.footerContainer {
   display: flex;
-  align-items: center;
-  gap: var(--xs);
-  font-weight: 700;
+  flex-direction: column;
 }
+
 
 .btnTheme {
   width: fit-content;
@@ -57,6 +58,10 @@
 .iconLinks {
   display: none;
 }
+  .links-divider {
+    display: flex;
+    gap: var(--md);
+  }
 
 /*mobile*/
 @media (max-width: 768px) {
@@ -129,6 +134,7 @@
   .theme {
     display: none;
   }
+
   .btnTheme {
     width: 100%;
     justify-content: center;
@@ -157,7 +163,7 @@
     width: 100%;
     padding-top: var(--md);
     border-top: 1px solid var(--border-color);
-    margin-top: var(--xl);
+    margin-top: var(--md);
   }
 
   .socialMediaIcon {

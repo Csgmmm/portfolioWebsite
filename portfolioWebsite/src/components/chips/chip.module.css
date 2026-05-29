@@ -1,20 +1,19 @@
 .primary {
-  border: 1px solid var(--secondary);
+  background-color: var(--primary);
   border-radius: var(--xl);
   padding: var(--xxs) var(--sm);
   font-size: var(--sm);
-  font-weight: 800;
-  color: var(--secondary);
+  color: var(--button-color);
   width: fit-content;
 }
 
 .secondary {
-  border: 1px solid var(--placeholder);
+  border: 1px solid var(--secondary);
   border-radius: var(--xl);
   padding: var(--xxs) var(--sm);
   font-size: var(--chip-font-size);
   font-weight: 800;
-  color: var(--placeholder);
+  color: var(--secondary);
   width: fit-content;
   text-transform: uppercase;
 }

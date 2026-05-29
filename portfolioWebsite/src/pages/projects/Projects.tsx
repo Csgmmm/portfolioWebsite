@@ -1,8 +1,8 @@
 import Card from "../../components/card/Card";
 import Navbar from "../../components/navbar/Navbar";
 import styles from "./projects.module.css";
-
 import { projects } from "../../types/projectsData";
+import Button from "../../components/buttons/Button";
 
 function Projects() {
   return (
@@ -10,7 +10,9 @@ function Projects() {
       <Navbar />
       <div className={styles.container}>
         <div className={styles.sectionFrontEnd}>
-          <h5>FRONT-END development</h5>
+          <Button variant="primary">Hi</Button>
+          <Button variant="primary">Hi</Button>
+          <Button variant="primary">Hi</Button>
 
           <div className={styles.cardsContainer}>
             {projects
@@ -28,8 +30,8 @@ function Projects() {
             {projects
               .filter((project) => project.category?.includes("UI/UX Design"))
               .map((project) => (
-                <div key={project.id} >
-                  <Card project={project} className={styles.card}/>
+                <div key={project.id}>
+                  <Card project={project} className={styles.card} />
                 </div>
               ))}
           </div>

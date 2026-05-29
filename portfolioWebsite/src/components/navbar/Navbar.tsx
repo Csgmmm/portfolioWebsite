@@ -69,7 +69,7 @@ function Navbar() {
                 ))}
               </div>
 
-              <div className="nav-footer">
+              <div className="footerContainer">
                 <Button
                   variant="secondary"
                   onClick={toggleTheme}
@@ -78,31 +78,32 @@ function Navbar() {
                 >
                   <span className="theme">Theme</span>
                 </Button>
+                <div className="nav-footer">
+                  <div className="socialMediaLogos">
+                    <span className="socialMediaIcon">
+                      <a
+                        href="https://www.linkedin.com/in/carlasofiagm/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="socialLink"
+                      >
+                        <img src={linkedinLogo} alt="Linkedin" />
+                      </a>
+                    </span>
+                    <span className="socialMediaIcon">
+                      <a
+                        href="https://github.com/Csgmmm"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="socialLink"
+                      >
+                        <img src={github} alt="github Logo" />
+                      </a>
+                    </span>
+                  </div>
 
-                <div className="socialMediaLogos">
-                  <span className="socialMediaIcon">
-                    <a
-                      href="https://www.linkedin.com/in/carlasofiagm/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="socialLink"
-                    >
-                      <img src={linkedinLogo} alt="Linkedin" />
-                    </a>
-                  </span>
-                  <span className="socialMediaIcon">
-                    <a
-                      href="https://github.com/Csgmmm"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="socialLink"
-                    >
-                      <img src={github} alt="github Logo" />
-                    </a>
-                  </span>
+                  <h6>© 2026 DESIGNED & ENGINEERED</h6>
                 </div>
-
-                <h6>© 2026 DESIGNED & ENGINEERED</h6>
               </div>
             </div>
           </div>
