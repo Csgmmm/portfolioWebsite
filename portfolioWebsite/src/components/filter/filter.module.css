@@ -1,0 +1,6 @@
+.filter {
+  width: 100%;
+  display: flex;
+  gap: var(--sm);
+  margin-bottom: var(--md);
+}
