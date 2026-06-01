@@ -2,12 +2,10 @@
   display: flex;
   align-items: center;
   border-radius: var(--xs);
-  padding: var(--xs);
   border: 0;
   cursor: pointer;
   font-size: var(--sm);
-  font-family: inherit;
-  font-weight: 600;
+  font-weight: 300;
   height: var(--xl);
   min-width: fit-content;
   white-space: nowrap;
@@ -50,6 +48,7 @@
 .link {
   color: var(--secondary);
   background-color: transparent;
+  padding: 0
 }
 
 .link:hover {

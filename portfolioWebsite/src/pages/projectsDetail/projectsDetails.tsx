@@ -7,7 +7,7 @@ import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
-import { ArrowLeft, CheckCircle, Info } from "lucide-react";
+import { CheckCircle, ChevronLeft, Info } from "lucide-react";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -45,7 +45,7 @@ function ProjectsDetail() {
               <span
                 style={{ display: "flex", alignItems: "center", gap: "8px" }}
               >
-                <ArrowLeft size={32} /> Back to projects
+                <ChevronLeft size={32} /> Back to projects
               </span>
             </Link>
           </Button>
@@ -72,6 +72,7 @@ function ProjectsDetail() {
                 </div>
               </div>
 
+              {/*  figmaImg ou codeimg é maior que 0?, então.. */}
               {((project.figmaImg ?? []).length > 0 ||
                 (project.codeImg ?? []).length > 0) && (
                 <div className={styles.images}>
@@ -90,6 +91,7 @@ function ProjectsDetail() {
                 </div>
               )}
 
+              {/* contributions é maior que 0? entao... */}
               {project.contributions && project.contributions.length > 0 && (
                 <div className={styles.contributions}>
                   <h3>My Contribution</h3>

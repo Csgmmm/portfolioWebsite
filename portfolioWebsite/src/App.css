@@ -2,6 +2,7 @@
   --background: #051424;
   --background-secondary: #101e2e;
   --background-card: #010f1f;
+  --background-card-rgb: 1, 15, 31;
   --border: #454546;
   --border-color: #404168;
   --text: #f8f8ff;
@@ -33,7 +34,7 @@
   --xl-9: 112px;
   --text-caption: 12px;
   --shadow: #1f1f1f;
-  --chip-font-size: 14px;
+  --chip-font-size: 12px;
 }
 
 [data-theme="light"] {

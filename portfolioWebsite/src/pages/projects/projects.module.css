@@ -14,13 +14,13 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   row-gap: 24px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   height: 100%;
 }
 
 .filters {
-  width: 100%;
+  width: 90%;
 }
 
 @media (max-width: 968px) {

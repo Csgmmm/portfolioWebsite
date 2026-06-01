@@ -47,6 +47,7 @@ export interface IProjectData {
   codeImg?: string[];
   contributions?: { title: string; description: string }[];
   disclaimer?: string;
+  resume?: string;
 }
 
 export const projects: IProjectData[] = [
@@ -54,6 +55,7 @@ export const projects: IProjectData[] = [
     category: ["Front-End Development"],
     id: "portfolio",
     title: "Portfolio",
+    year: 2026,
     mainImage: portfolio,
     githubUrl: "https://github.com/Csgmmm/portfolioWebsite",
     chips: ["FIGMA", "REACT", "TYPESCRIPT", "JAVASCRIPT", "CSS", "HTML"],
@@ -69,6 +71,7 @@ export const projects: IProjectData[] = [
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
     figmaImg: [portImg1, portImg7, portImg8],
     codeImg: [portImg2, portImg3, portImg5, portImg6],
+    resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`
   },
   //SNS 24
   {
@@ -117,7 +120,8 @@ export const projects: IProjectData[] = [
     ],
 disclaimer: `The work presented in this project was developed collaboratively as part of a multidisciplinary product team. My contributions focused on UX/UI design, interface exploration, design system implementation, and user experience improvements alongside other designers, analysts, and developers.`,
     videoImg: videoInstaImg,
-    videoUrl: "https://www.instagram.com/p/DW3Xl2LtNE5/"
+    videoUrl: "https://www.instagram.com/p/DW3Xl2LtNE5/",
+    resume: `End-to-end UX/UI design and front-end engineering for Portugal's national healthcare platform.`
   },
 
   //feminine
@@ -138,6 +142,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
     • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
     • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
     codeImg: [fem1, fem2, fem3, fem4, fem5],
+    resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`
   },
   //yumyum
   {
@@ -168,6 +173,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       "/assets/code3.png",
     ],
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`
   },
   //evolve
   {
@@ -195,6 +201,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       "/assets/code3.png",
     ],
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+      resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`
   },
   //tinytracker
   {
@@ -223,6 +230,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
     ],
     wireframe: "/assets/code1.png",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`
   },
   //slotQi
   {
@@ -245,6 +253,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`
   },
   //pawmate
   {
@@ -267,6 +276,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
     wireframe: "/assets/code1.png",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
     videoUrl: "943623829",
+     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`
   },
   //bmw
   {
@@ -287,8 +297,9 @@ disclaimer: `The work presented in this project was developed collaboratively as
        **Scalable Layouts:** Used variables for spacing to guarantee the design is organized and adapts perfectly to different screen aspect ratios;
        **Data Clarity:** Reimagined the iDrive Dashboard to balance critical driving data with music and navigation without cluttering the driver's view.`,
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+         resume: `A premium BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`
   },
-  //bmw
+  //mercedes
   {
     category: ["UI/UX Design"],
     id: "mercedes",
@@ -306,6 +317,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
         **Dynamic Visual Identity:** Reimagined the classic dashboard with a futuristic, high-contrast aesthetic. Including a personalized 'Display Color Change' feature to match the driver's preference or ambient lighting.
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`
   },
   //montepio
   {
@@ -327,5 +339,6 @@ disclaimer: `The work presented in this project was developed collaboratively as
         **Visual Spending Insights:** A dedicated expenses hub featuring interactive bar charts and color-coded categories like Food and public transports;
         **Digital Piggy Bank:**  Integrated features to encourage micro-savings and goal-oriented financial planning.`,
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+     resume: `A mobile-first redesign of Banco Montepio targeting younger users, with biometric onboarding, account carousels, spending insights, and savings goals.`
   },
 ];

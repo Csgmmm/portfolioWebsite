@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Button from "../buttons/Button";
 import Chip from "../chips/Chip";
 import styles from "./card.module.css";
@@ -13,95 +13,38 @@ interface CardProps {
   showImage?: boolean;
 }
 
-const Card = ({
-  project,
-  children,
-  className,
-  showViewButton = true,
-  showImage = true,
-}: CardProps) => {
+const Card = ({ project, children }: CardProps) => {
   if (children) {
-    return <div className={className || styles.card}>{children}</div>;
+    return <div className={styles.card}>{children}</div>;
+    // Se houver children, devolve uma div com a class card e o children lá dentro
   }
   return (
-    <div className={`${styles.card} ${className || ""}`}>
+    <div className={styles.card}>
       <div className={styles.containerCard}>
-        {showImage && (
+        <div className={styles.imageYear}>
           <img
             className={styles.img}
             src={project?.mainImage}
             alt={project?.title}
           />
-        )}
+          <Chip variant="tertiary" className={styles.chipYear}>
+            {project?.year}
+          </Chip>
+        </div>
 
         <div className={styles.infoContainer}>
           <div className={styles.title}>
             <h4>{project?.title}</h4>
 
-            {showViewButton && (
-              <Link to={`/project/${project?.id}`}>
-                <Button variant="link">
-                  View Project <ArrowRight />
-                </Button>
-              </Link>
-            )}
-          </div>
-          <div className={styles.details}>
-            <span className={styles.containerBtn}>
-              {project?.liveUrl && (
-                <div className={styles.btnCards}>
-                  <a href={project.liveUrl} target="_blank">
-                    <Button variant="primary" className={styles.btnCards}>
-                      Live Website
-                    </Button>
-                  </a>
-                </div>
-              )}
-              {project?.githubUrl && (
-                <div className={styles.btnCards}>
-                  <a href={project.githubUrl} target="_blank">
-                    <Button variant="primary" className={styles.btnCards}>
-                      GitHub Code
-                    </Button>
-                  </a>
-                </div>
-              )}
-              {project?.appStoreUrl && (
-                <div className={styles.btnCards}>
-                  <a href={project.appStoreUrl} target="_blank">
-                    <Button variant="primary" className={styles.btnCards}>
-                      AppStore
-                    </Button>
-                  </a>
-                </div>
-              )}
-              {project?.prototypeUrl && (
-                <div className={styles.btnCards}>
-                  <a href={project.prototypeUrl} target="_blank">
-                    <Button variant="primary" className={styles.btnCards}>
-                      Prototype
-                    </Button>
-                  </a>
-                </div>
-              )}
-              {project?.behanceUrl && (
-                <div className={styles.btnCards}>
-                  <a href={project.behanceUrl} target="_blank">
-                    <Button variant="primary" className={styles.btnCards}>
-                      Behance Project
-                    </Button>
-                  </a>
-                </div>
-              )}
-            </span>
-
-            <span className={styles.chipsContainer}>
-              {project?.chips.map((chip) => (
-                <Chip key={chip} variant="secondary">
-                  {chip}
-                </Chip>
-              ))}
-            </span>
+          <p className={styles.resume}>
+            {project?.resume}
+          </p>
+            <Link to={`/project/${project?.id}`}>
+              <Button variant="link">
+                Read case study
+                <ChevronRight />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@
 
 .contentContainer {
   background-color: var(--background-secondary);
-  padding: var(--md);
+
   border-radius: var(--md) var(--md) var(--null) var(--null);
 }
 

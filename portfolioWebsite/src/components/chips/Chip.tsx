@@ -3,12 +3,13 @@ import styles from "./chip.module.css";
 
 interface IChip {
   children: ReactNode;
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "tertiary";
+  className?: string;
 }
 
-function Chip({ children, variant }: IChip) {
+function Chip({ children, variant, className }: IChip) {
   return (
-    <div className={`${styles[variant]}`}>
+    <div className={`${styles[variant]} ${className || ""}`}>
       <span>{children}</span>
     </div>
   );

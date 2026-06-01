@@ -5,14 +5,37 @@
   display: flex;
   flex-direction: column;
   padding-bottom: var(--md);
+  overflow: hidden;
 }
 
 .title {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
+  flex-direction: column;
+
+
+}
+
+.imageYear {
+  position: relative;
+  /* diz que este elemento é o "ponto de referência" para os filhos com position: absolute */
+}
+
+.imageYear::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--background-card), transparent);
+}
+
+.chipYear {
+  position: absolute;
+  top: var(--sm);
+  /* cola ao topo */
+  left: var(--sm);
+  /* cola ao left */
+  /*  retira o elemento do fluxo normal e posiciona-o em relação ao pai com position: relative, sem o position: relative no pai, o absolute posicionava-se em relação à página toda e não à imagem */
+  z-index: 1;
+  /* coloca o chip em cima do gradient */
 }
 
 h4 {
@@ -29,7 +52,7 @@ h4 {
 .containerBtn {
   display: flex;
   gap: var(--sm);
-  padding: var(--sm) var(--null);
+  padding: var(--sm) var(--null) var(--null) var(--null);
 }
 
 .img {
@@ -49,14 +72,18 @@ h4 {
 }
 
 .infoContainer {
-  padding: 0 var(--sm) 0 var(--sm);
+  padding: var(--xs) var(--sm) 0 var(--sm);
 }
- .btnCards {
-    width: 100%;
-   display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.btnCards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resume {
+  color: var(--shortDescription);
+}
 
 @media (max-width: 768px) {
   .title {
