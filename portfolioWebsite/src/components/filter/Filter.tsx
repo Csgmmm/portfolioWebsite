@@ -4,13 +4,13 @@ import styles from "./filter.module.css"
 export type FilterType =
   | "All"
   | "Front-End Development"
-  | "UI/UX Design"
-  | "Homepage";
+  | "UI/UX Design";
 
 interface IFilterProps {
   activeFilter: FilterType;
   onFilterChange: (filter: FilterType) => void;
   className: string;
+
 }
 
 function Filter({ activeFilter, onFilterChange }: IFilterProps) {
@@ -19,9 +19,11 @@ function Filter({ activeFilter, onFilterChange }: IFilterProps) {
     "UI/UX Design",
     "Front-End Development",
   ];
+  
 
   return (
     <div className={styles.filter}>
+      
       {filters.map((filter) => (
         <Button
           key={filter}

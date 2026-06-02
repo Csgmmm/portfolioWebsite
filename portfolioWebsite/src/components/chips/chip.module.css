@@ -19,7 +19,7 @@
 }
 
 .tertiary {
-  background-color: rgba(var(--background-card-rgb));
+  background-color: var(--tertiary);
   border-radius: var(--xs);
   padding: var(--xxs) var(--xs);
   font-size: var(--chip-font-size);

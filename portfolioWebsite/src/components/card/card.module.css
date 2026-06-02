@@ -11,8 +11,7 @@
 .title {
   display: flex;
   flex-direction: column;
-
-
+  height: 100%;
 }
 
 .imageYear {
@@ -20,12 +19,7 @@
   /* diz que este elemento é o "ponto de referência" para os filhos com position: absolute */
 }
 
-.imageYear::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, var(--background-card), transparent);
-}
+
 
 .chipYear {
   position: absolute;
@@ -71,9 +65,30 @@ h4 {
   justify-content: space-between;
 }
 
+.allContainer {
+      height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerResumeBtn {
+      height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .infoContainer {
   padding: var(--xs) var(--sm) 0 var(--sm);
+  height: 100%;
 }
+
+.containerResumeBtn {
+  height: 100%;
+}
+
+
+
 .btnCards {
   width: 100%;
   display: flex;

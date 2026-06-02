@@ -1,16 +1,18 @@
 .container {
-  margin: var(--md) var(--md) var(--xl) var(--md);
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.backPageArrow {
+.headerPage {
   width: 90%;
-  justify-content: left;
+  flex-direction: column;
   display: flex;
-  margin-bottom: var(--md);
+}
+
+.headerPage h1 {
+  margin: var(--sm) var(--null);
 }
 
 .container h1 {
@@ -22,13 +24,67 @@
   width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: var(--md);
 }
+
+.containerImg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+  width: 100%;
+}
+
+/* both sides */
 
 .bothSide {
   display: flex;
-  gap:var(--xl-9)
+  width: 90%;
+  padding-top: var(--md);
+  gap: var(--lg);
 }
+
+/* left side */
+
+.leftSide {
+  width: 80%;
+  min-width: 30%;
+}
+
+.projectYear {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--lg);
+  gap: var(--xs);
+}
+
+.projectYear h3 {
+  text-transform:uppercase;
+  font-weight: 300;
+  margin: 0;
+}
+
+.chipsContainer {
+  display: flex;
+  gap: var(--xs);
+  flex-wrap: wrap;
+}
+
+.disclaimerContainer {
+  border: 1px solid var(--disclaimer-border);
+  color: var(--disclaimer-text);
+  border-radius: var(--xs);
+  padding: var(--sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+}
+
+.introDisclaimer {
+  font-weight: 600;
+  display: flex;
+  gap: var(--xs);
+}
+
+/* right side */
 
 .introDescription {
   color: var(--shortDescription);
@@ -45,193 +101,30 @@
   font-weight: 500;
 }
 
-.year {
-  width: fit-content;
-  white-space: nowrap;
-  color: var(--tertiary);
-}
-
-.containerImgDescription {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sm);
+.description {
+  white-space: pre-line;
   width: 90%;
 }
 
-.containerImgDescription h1 {
-  margin: 0
-}
-
-
-.cardDetails {
-  width: 450px;
-  height: auto;
-}
-
-.righcardDetailstSide p {
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-
-.sideContainer {
-  display: flex;
-  flex-direction: column;
-  gap: var(--xs);
-  padding: var(--sm) var(--sm) 0 var(--sm);
-}
-
-.linksUrl {
-  width: fit-content;
-  display: flex;
-  gap: var(--sm);
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--xs);
-  padding-top: var(--sm);
-}
-
-.images {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-}
-
-.figmaImg,
-.codeImg {
-  gap: var(--md);
-  display: flex;
-  flex-direction: column;
-}
-
-.containerDescription {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  gap: var(--md);
-}
-
-.description {
-  white-space: pre-line;
-}
-
 .description h3 {
-  margin-top: 0
+  margin-top: 0;
 }
 .textDescription {
   width: 100%;
   margin: 0;
 }
 
-.introDisclaimer {
-  display: flex;
-  gap: var(--sm);
-  width: 100%;
-}
-
-.introDisclaimer p {
-  width: 100%;
-}
-
-.disclaimer {
-  border: 1px solid var(--disclaimer-border);
-  color: var(--disclaimer-text);
-  border-radius: var(--sm);
-  padding: var(--sm);
-  gap: var(--sm);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: var(--md);
-}
-
-.videoInstaContainer {
-  display: flex;
-  width: 100%;
-  gap: var(--md);
-  margin-top: var(--md);
-}
 .videoInstaImg {
-  object-fit: cover;
-  width: 30%;
+  width: 40%;
 }
-
-
-
-
-@media (min-width: 962px) and (max-width: 1500px) {
-.bothSide {
-  gap:var(--lg)
-} 
-.disclaimer {
-  width: 100%;
-}
-
-.videoInstaContainer {
-  width: 100%;
-}
-.videoInstaImg {
-  width: 45%;
-  height: auto;}
-
-}
-
 
 @media (max-width: 962px) {
-  .containerImgDescription {
+  .bothSide {
     display: flex;
     flex-direction: column;
-    width: 100%;
-  }
-  .bothSide {
-    flex-direction:column-reverse;
-    gap:var(--lg)
   }
 
-  .projectImg {
-    width: 100%;
-  }
-
-  .details {
-    flex-direction: column-reverse;
-    gap: var(--lg);
-    margin-top: var(--null);
-  }
-
- .cardDetails {
-  width: 100%;
- }
-  
-
-  .images {
-    flex-direction: column;
-  }
-
-  .introDescription {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--md);
-  }
-  .introDescription h5 {
-    margin: 0;
-  }
-
-  .disclaimer {
-    margin-top: var(--md);
-    width: 95%;
-  }
-
-  .textDescription {
-    width: 100%;
-    margin: 0;
-  }
-
-  .videoInstaImg {
-    width: 35%;
-    height: auto;
-    object-fit: cover;
-    border-radius: var(--xs);
+  .leftSide {
+      width: 100%;
   }
 }

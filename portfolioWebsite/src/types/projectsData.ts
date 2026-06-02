@@ -78,14 +78,14 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design", "Homepage"],
     id: "sns24",
     title: "Portuguese National Healthcare",
-    year: "2023-present",
+    year: "2023 - Current",
     mainImage: sns24,
     appStoreUrl: "https://apps.apple.com/us/app/sns-24/id1192353854",
     liveUrl: "https://www.sns24.gov.pt/pt/inicio",
     shortDescription:
       "An ongoing collaborative product design project developed for SNS 24, Portugal's national healthcare platform.",
     chips: ["FIGMA", "MIRO", "AGILE", "PHOTOSHOP", "ILLUSTRATOR"],
-    fullDescription: `User Experience Engineering & Interface Optimization Designing and engineering end-to-end UX/UI solutions for the SNS 24 platform, from Figma concepts to production-ready front-end code.
+    fullDescription: `**User Experience Engineering & Interface Optimization Designing and engineering end-to-end UX/UI solutions for the SNS 24 platform, from Figma concepts to production-ready front-end code.**
       
 • Prototyping, UI Development & Design Handoff Creating high-fidelity Figma prototypes and translating them into maintainable front-end code, bridging the gap between design and engineering.
 • Human-Centered & Accessible Design Systems Building inclusive, accessible interfaces grounded in user research and WCAG standards.
