@@ -9,19 +9,22 @@ import bmw from "../pages/projects/assets/bmw.png";
 import mercedes from "../pages/projects/assets/mercedes.png";
 import montepio from "../pages/projects/assets/montepio.png";
 import slotqi from "../pages/projects/assets/slotqi.png";
-import portImg1 from "../pages/projectsDetail/assets/port1.png"
-import portImg2 from "../pages/projectsDetail/assets/port2.png"
-import portImg3 from "../pages/projectsDetail/assets/port3.png"
-import portImg5 from "../pages/projectsDetail/assets/port5.png"
-import portImg6 from "../pages/projectsDetail/assets/port6.png"
-import portImg7 from "../pages/projectsDetail/assets/port7.png"
-import portImg8 from "../pages/projectsDetail/assets/port8.png"
-import videoInstaImg from "../pages/projectsDetail/assets/instaImg.png"
-import fem1 from "../pages/projectsDetail/assets/fem1.png"
-import fem2 from "../pages/projectsDetail/assets/fem2.png"
-import fem3 from "../pages/projectsDetail/assets/fem3.png"
-import fem4 from "../pages/projectsDetail/assets/fem4.png"
-import fem5 from "../pages/projectsDetail/assets/fem5.png"
+import portImg1 from "../pages/projectsDetail/assets/port1.png";
+import portImg2 from "../pages/projectsDetail/assets/port2.png";
+import portImg3 from "../pages/projectsDetail/assets/port3.png";
+import portImg5 from "../pages/projectsDetail/assets/port5.png";
+import portImg6 from "../pages/projectsDetail/assets/port6.png";
+import portImg7 from "../pages/projectsDetail/assets/port7.png";
+import portImg8 from "../pages/projectsDetail/assets/port8.png";
+import videoInstaImg from "../pages/projectsDetail/assets/instaImg.png";
+import fem1 from "../pages/projectsDetail/assets/fem1.png";
+import fem2 from "../pages/projectsDetail/assets/fem2.png";
+import fem3 from "../pages/projectsDetail/assets/fem3.png";
+import fem4 from "../pages/projectsDetail/assets/fem4.png";
+import fem5 from "../pages/projectsDetail/assets/fem5.png";
+import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
 
 export interface IProjectData {
   id: string;
@@ -45,9 +48,14 @@ export interface IProjectData {
   videoUrl?: string;
   figmaImg?: string[];
   codeImg?: string[];
-  contributions?: { title: string; description: string }[];
+  contributions?: { title: string;icon: LucideIcon, description: string }[];
   disclaimer?: string;
   resume?: string;
+  bigNumber?: {
+    label: string;
+    value: string;
+    description: string;
+  };
 }
 
 export const projects: IProjectData[] = [
@@ -71,7 +79,7 @@ export const projects: IProjectData[] = [
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
     figmaImg: [portImg1, portImg7, portImg8],
     codeImg: [portImg2, portImg3, portImg5, portImg6],
-    resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`
+    resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`,
   },
   //SNS 24
   {
@@ -95,33 +103,50 @@ export const projects: IProjectData[] = [
     contributions: [
       {
         title: "Design System Evolution",
-        description: "Contributed to the evolution and maintenance of the SNS 24 Design System (DSM), creating over 50+ new reusable components for the library."
+        icon: CheckCircle,
+        description:
+          "Contributed to the evolution and maintenance of the SNS 24 Design System (DSM), creating over 50+ new reusable components for the library.",
       },
       {
         title: "User Experience Design",
-        description: "Designed user flows, interface structures, and mobile-first experiences for iOS and Android platforms"
+        icon: Palette,
+        description:
+          "Designed user flows, interface structures, and mobile-first experiences for iOS and Android platforms",
       },
       {
         title: "UI Development",
-        description: "Created high-fidelity UI mockups, interactive prototypes, and empty and error states for implemented features"
+        icon: Code,
+        description:
+          "Created high-fidelity UI mockups, interactive prototypes, and empty and error states for implemented features",
       },
       {
         title: "Collaboration",
-        description: "Collaborated with functional analysts and cross-functional teams to translate requirements into intuitive user experiences"
+        icon: Users,
+        description:
+          "Collaborated with functional analysts and cross-functional teams to translate requirements into intuitive user experiences",
       },
       {
         title: "Accessibility",
-        description: "Helped ensure accessibility, consistency, and usability across the SNS 24 application ecosystem"
+        icon: Eye,
+        description:
+          "Helped ensure accessibility, consistency, and usability across the SNS 24 application ecosystem",
       },
       {
         title: "Visual Standards",
-        description: "Participated in the definition of visual standards including typography, spacing, components, and interaction patterns"
-      }
+        icon: Ruler,
+        description:
+          "Participated in the definition of visual standards including typography, spacing, components, and interaction patterns",
+      },
     ],
-disclaimer: `The work presented in this project was developed collaboratively as part of a multidisciplinary product team. My contributions focused on UX/UI design, interface exploration, design system implementation, and user experience improvements alongside other designers, analysts, and developers.`,
+    disclaimer: `The work presented in this project was developed collaboratively as part of a multidisciplinary product team. My contributions focused on UX/UI design, interface exploration, design system implementation, and user experience improvements alongside other designers, analysts, and developers.`,
     videoImg: videoInstaImg,
     videoUrl: "https://www.instagram.com/p/DW3Xl2LtNE5/",
-    resume: `End-to-end UX/UI design and front-end engineering for Portugal's national healthcare platform.`
+    resume: `End-to-end UX/UI design and front-end engineering for Portugal's national healthcare platform.`,
+    bigNumber: {
+      label: "Reach",
+      value: "+10M",
+      description: "Portuguese citizens served nationwide.",
+    },
   },
 
   //feminine
@@ -142,7 +167,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
     • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
     • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
     codeImg: [fem1, fem2, fem3, fem4, fem5],
-    resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`
+    resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`,
   },
   //yumyum
   {
@@ -173,7 +198,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       "/assets/code3.png",
     ],
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-    resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`
+    resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
   //evolve
   {
@@ -201,7 +226,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       "/assets/code3.png",
     ],
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-      resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`
+    resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
   //tinytracker
   {
@@ -230,7 +255,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
     ],
     wireframe: "/assets/code1.png",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-    resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`
+    resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
   //slotQi
   {
@@ -253,7 +278,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-    resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`
+    resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
   //pawmate
   {
@@ -276,7 +301,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
     wireframe: "/assets/code1.png",
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
     videoUrl: "943623829",
-     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`
+    resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },
   //bmw
   {
@@ -297,7 +322,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
        **Scalable Layouts:** Used variables for spacing to guarantee the design is organized and adapts perfectly to different screen aspect ratios;
        **Data Clarity:** Reimagined the iDrive Dashboard to balance critical driving data with music and navigation without cluttering the driver's view.`,
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-         resume: `A premium BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`
+    resume: `A premium BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`,
   },
   //mercedes
   {
@@ -317,7 +342,7 @@ disclaimer: `The work presented in this project was developed collaboratively as
         **Dynamic Visual Identity:** Reimagined the classic dashboard with a futuristic, high-contrast aesthetic. Including a personalized 'Display Color Change' feature to match the driver's preference or ambient lighting.
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-    resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`
+    resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`,
   },
   //montepio
   {
@@ -339,6 +364,6 @@ disclaimer: `The work presented in this project was developed collaboratively as
         **Visual Spending Insights:** A dedicated expenses hub featuring interactive bar charts and color-coded categories like Food and public transports;
         **Digital Piggy Bank:**  Integrated features to encourage micro-savings and goal-oriented financial planning.`,
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
-     resume: `A mobile-first redesign of Banco Montepio targeting younger users, with biometric onboarding, account carousels, spending insights, and savings goals.`
+    resume: `A mobile-first redesign of Banco Montepio targeting younger users, with biometric onboarding, account carousels, spending insights, and savings goals.`,
   },
 ];

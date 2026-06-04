@@ -23,6 +23,7 @@
   width: 90%;
 }
 
+
 @media (max-width: 968px) {
   .cardsContainer {
     grid-template-columns: 1fr;

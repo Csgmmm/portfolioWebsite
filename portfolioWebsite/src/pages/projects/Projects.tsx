@@ -11,7 +11,7 @@ function Projects() {
 
 const yearToNumber = (year: number | string | undefined) => {
   if (!year) return 0;
-  if (String(year).includes("present")) return 9999;
+  if (String(year).toLowerCase().includes("current")) return 9999;
   return parseInt(String(year), 10);
 };
 

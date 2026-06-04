@@ -5,13 +5,19 @@ import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
-import { CheckCircle, ChevronLeft, CircleAlert, Info } from "lucide-react";
+import {
+  CheckCircle,
+  ChevronLeft,
+  CircleAlert,
+  Info,
+  Video,
+} from "lucide-react";
 import Chip from "../../components/chips/Chip";
+import Card from "../../components/card/Card";
 
 function ProjectsDetail() {
   const { id } = useParams();
   const project = projects.find((project) => project.id === id);
-  
 
   const renderBold = (text: string) => {
     // divide o texto em partes, separando pelo padrão **...**
@@ -61,14 +67,13 @@ function ProjectsDetail() {
         </div>
 
         <div className={styles.bothSide}>
+          {/* leftSide */}
           <div className={styles.leftSide}>
-            
-            <div className={styles.projectYear}>
+            <div className={styles.infoProject}>
               <h3>Project year</h3>
               {project.year}
             </div>
-
-            <div className={styles.projectYear}>
+            <div className={styles.infoProject}>
               <h3>Tech stack</h3>
               <div className={styles.chipsContainer}>
                 {project.chips &&
@@ -80,9 +85,8 @@ function ProjectsDetail() {
               </div>
             </div>
 
-
-            <div className={styles.disclaimerContainer}>
-              {project.disclaimer && (
+            {project.disclaimer && (
+              <div className={styles.disclaimerContainer}>
                 <>
                   <div className={styles.introDisclaimer}>
                     <CircleAlert /> Disclaimer
@@ -90,9 +94,61 @@ function ProjectsDetail() {
 
                   {project.disclaimer}
                 </>
+              </div>
+            )}
+
+            <div className={styles.btnContainer}>
+              {project.appStoreUrl && (
+                <div className={styles.btnLinks}>
+                  <a href={project.appStoreUrl} target="_blank">
+                    <Button variant="secondary">AppStore</Button>
+                  </a>
+                </div>
+              )}
+
+              {project.githubUrl && (
+                <div className={styles.btnLinks}>
+                  <a href={project.githubUrl} target="_blank">
+                    <Button variant="secondary">Github Code</Button>
+                  </a>
+                </div>
+              )}
+
+              {project.liveUrl && (
+                <div className={styles.btnLinks}>
+                  <a href={project.liveUrl} target="_blank">
+                    <Button variant="secondary">Website</Button>
+                  </a>
+                </div>
+              )}
+
+              {project.prototypeUrl && (
+                <div className={styles.btnLinks}>
+                  <a href={project.prototypeUrl} target="_blank">
+                    <Button variant="secondary">Prototype</Button>
+                  </a>
+                </div>
+              )}
+
+              {project.behanceUrl && (
+                <div className={styles.btnLinks}>
+                  <a href={project.behanceUrl} target="_blank">
+                    <Button variant="secondary">Behance</Button>
+                  </a>
+                </div>
               )}
             </div>
+
+            {project.bigNumber && (
+              <div className={styles.bigNumber}>
+                <h4>Reach</h4>
+                <h1>+10M</h1>
+                <p>Portuguese citizens served nationwide.</p>
+              </div>
+            )}
           </div>
+
+          {/* rightSide */}
 
           <div className={styles.rightSide}>
             <div className={styles.details}>
@@ -102,17 +158,17 @@ function ProjectsDetail() {
               </div>
             </div>
 
-            {/*  figmaImg ou codeimg é maior que 0?, então.. */}
+            {/*  para que nãoo apareca div. figmaImg ou codeimg é maior que 0?, então.. */}
             {((project.figmaImg ?? []).length > 0 ||
               (project.codeImg ?? []).length > 0) && (
               <div className={styles.images}>
-                {project.figmaImg && project.figmaImg.length > 0 && (
+                {project.figmaImg && (
                   <div className={styles.figmaImg}>
                     <h4>Figma</h4>
                     <Carousel img={project.figmaImg ?? []} />
                   </div>
                 )}
-                {project.codeImg && project.codeImg.length > 0 && (
+                {project.codeImg && (
                   <div className={styles.codeImg}>
                     <h4>Code</h4>
                     <Carousel img={project.codeImg ?? []} />
@@ -121,52 +177,56 @@ function ProjectsDetail() {
               </div>
             )}
 
-            {/* contributions é maior que 0? entao... */}
-            {project.contributions && project.contributions.length > 0 && (
+            {/* contributions */}
+            {project.contributions && (
               <div className={styles.contributions}>
                 <h3>My Contribution</h3>
-                {project.contributions.map((item, index) => (
-                  <div key={index} className={styles.contributionItem}>
-                    <CheckCircle size={20} />
-                    <div>
-                      <h5>{item.title}</h5>
-                      <p>{item.description}</p>
+                <div className={styles.containerContributionsItems}>
+                  {project.contributions.map((contributionItem) => (
+                    <Card>
+                      <div className={styles.contributionsInfo}>
+                        <div className={styles.titleContribution}>
+                          {/* para cada item do array que fazes map, acede a propriedade icon desse item */}
+                          <contributionItem.icon size={20} />
+                          <h4>{contributionItem.title}</h4>
+                        </div>
+                        <p>{contributionItem.description}</p>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* videoInsta */}
+            {project.videoImg && (
+              <div className={styles.containerVideo}>
+                <Card>
+                  <div className={styles.containerInfoVideo}>
+                    <img
+                      src={project.videoImg}
+                      alt="Insta Video"
+                      className={styles.videoInstaImg}
+                    />
+                    <div className={styles.descriptionBtn}>
+                      <h3>Project Walkthrough</h3>
+                      <p>
+                        Product presentation video created to showcase features
+                        and user experience flows of the SNS 24 mobile
+                        application. The presentation video is in Portuguese and
+                        was created as part of the SNS 24 digital communication
+                        experience for users in Portugal.
+                      </p>
+
+                      <a href={project.videoUrl} target="_blank">
+                        <Button variant="secondary">
+                          <Video style={{ marginRight: 8 }} />
+                          Watch video
+                        </Button>
+                      </a>
                     </div>
                   </div>
-                ))}
-              </div>
-            )}
-
-            {project.disclaimer && project.disclaimer.length > 0 && (
-              <div className={styles.disclaimer}>
-                <div className={styles.introDisclaimer}>
-                  <Info />
-                  <h4>Team Collaboration Disclaimer</h4>
-                </div>
-                <p>{project.disclaimer}</p>
-              </div>
-            )}
-
-            {project.videoImg && project.videoImg.length > 0 && (
-              <div className={styles.videoInstaContainer}>
-                <img
-                  src={project.videoImg}
-                  alt="Insta Video"
-                  className={styles.videoInstaImg}
-                />
-                <div className={styles.containerDescription}>
-                  <p className={styles.textDescription}>
-                    Product presentation video created to showcase features and
-                    user experience flows of the SNS 24 mobile application. The
-                    presentation video is in Portuguese and was created as part
-                    of the SNS 24 digital communication experience for users in
-                    Portugal.
-                  </p>
-
-                  <a href={project.videoUrl} target="_blank">
-                    <Button variant="secondary">Watch video</Button>
-                  </a>
-                </div>
+                </Card>
               </div>
             )}
           </div>

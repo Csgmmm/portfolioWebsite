@@ -4,7 +4,6 @@
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  padding-bottom: var(--md);
   overflow: hidden;
 }
 
@@ -79,7 +78,7 @@ h4 {
     justify-content: space-between;
 }
 .infoContainer {
-  padding: var(--xs) var(--sm) 0 var(--sm);
+  padding: var(--sm) ;
   height: 100%;
 }
 

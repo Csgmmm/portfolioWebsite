@@ -39,25 +39,25 @@
   display: flex;
   width: 90%;
   padding-top: var(--md);
-  gap: var(--lg);
+  gap: var(--xl-3);
 }
 
 /* left side */
 
 .leftSide {
-  width: 80%;
+  width: 30%;
   min-width: 30%;
 }
 
-.projectYear {
+.infoProject {
   display: flex;
   flex-direction: column;
   margin-bottom: var(--lg);
-  gap: var(--xs);
+  gap: var(--sm);
 }
 
-.projectYear h3 {
-  text-transform:uppercase;
+.infoProject h3 {
+  text-transform: uppercase;
   font-weight: 300;
   margin: 0;
 }
@@ -84,7 +84,37 @@
   gap: var(--xs);
 }
 
+.btnContainer {
+  margin-top: var(--lg);
+  display: flex;
+  gap: var(--sm);
+}
+
+.bigNumber {
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--lg);
+  padding-top: var(--sm);
+}
+
+.bigNumber h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.bigNumber h1 {
+  margin: var(--xs) var(--null) var(--null) var(--null);
+  color: var(--primary);
+}
+
+.bigNumber p {
+  margin: 0;
+}
+
 /* right side */
+
+.rightSide {
+  width: 60%;
+}
 
 .introDescription {
   color: var(--shortDescription);
@@ -103,7 +133,7 @@
 
 .description {
   white-space: pre-line;
-  width: 90%;
+  margin-bottom: var(--xl-2);
 }
 
 .description h3 {
@@ -114,8 +144,47 @@
   margin: 0;
 }
 
+.contributions {
+  margin-bottom: var(--xl);
+}
+
+.containerContributionsItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sm);
+}
+
+.titleContribution {
+  display: flex;
+  gap: var(--sm);
+}
+
+.contributionsInfo {
+  margin: var(--sm);
+}
+
+.contributionsInfo p {
+  margin: var(--null);
+}
+
+.containerVideo {
+  width: 100%;
+}
+.containerInfoVideo {
+  display: flex;
+  margin: var(--md);
+  gap: var(--lg);
+}
+
+.descriptionBtn h3 {
+  margin: 0;
+}
+.descriptionBtn p {
+  width: 100%;
+}
+
 .videoInstaImg {
-  width: 40%;
+  width: 200px;
 }
 
 @media (max-width: 962px) {
@@ -125,6 +194,24 @@
   }
 
   .leftSide {
-      width: 100%;
+    width: 100%;
+  }
+
+  .containerContributionsItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sm);
+  }
+
+  .descriptionBtn p {
+  width: 100%;
+}
+}
+@media (max-width: 600px) {
+  .containerContributionsItems {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--sm);
   }
 }

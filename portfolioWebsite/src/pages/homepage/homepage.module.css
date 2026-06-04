@@ -23,6 +23,10 @@
   width: 0%;
 }
 
+.chipItSelf {
+  font-size: var(--sm);
+}
+
 .name {
   color: var(--primary);
 }
@@ -255,13 +259,14 @@
  .infoPerson {
   display: flex;
   flex-direction: column;
+  margin-bottom: var(--sm);
  }
 
 @media (max-width: 968px) {
   .cardContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
   .chipsContainer {
     display: flex;
