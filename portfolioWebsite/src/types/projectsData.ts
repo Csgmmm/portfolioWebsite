@@ -9,22 +9,35 @@ import bmw from "../pages/projects/assets/bmw.png";
 import mercedes from "../pages/projects/assets/mercedes.png";
 import montepio from "../pages/projects/assets/montepio.png";
 import slotqi from "../pages/projects/assets/slotqi.png";
-import portImg1 from "../pages/projectsDetail/assets/port1.png";
-import portImg2 from "../pages/projectsDetail/assets/port2.png";
-import portImg3 from "../pages/projectsDetail/assets/port3.png";
-import portImg5 from "../pages/projectsDetail/assets/port5.png";
-import portImg6 from "../pages/projectsDetail/assets/port6.png";
-import portImg7 from "../pages/projectsDetail/assets/port7.png";
-import portImg8 from "../pages/projectsDetail/assets/port8.png";
 import videoInstaImg from "../pages/projectsDetail/assets/instaImg.png";
-import fem1 from "../pages/projectsDetail/assets/fem1.png";
-import fem2 from "../pages/projectsDetail/assets/fem2.png";
-import fem3 from "../pages/projectsDetail/assets/fem3.png";
-import fem4 from "../pages/projectsDetail/assets/fem4.png";
-import fem5 from "../pages/projectsDetail/assets/fem5.png";
+import codeFem1 from "../pages/projectsDetail/assets/feminine/codeFem1.png";
+import codeFem2 from "../pages/projectsDetail/assets/feminine/codeFem2.png";
+import codeFem3 from "../pages/projectsDetail/assets/feminine/codeFem3.png";
+import codeFem4 from "../pages/projectsDetail/assets/feminine/codeFem4.png";
+import codeFem5 from "../pages/projectsDetail/assets/feminine/codeFem5.png";
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-
+import FigmaPort1 from "../pages/projectsDetail/assets/portfolio/FigmaPort1.png";
+import FigmaPort2 from "../pages/projectsDetail/assets/portfolio/FigmaPort2.png";
+import FigmaPort3 from "../pages/projectsDetail/assets/portfolio/FigmaPort3.png";
+import FigmaPort4 from "../pages/projectsDetail/assets/portfolio/FigmaPort4.png";
+import FigmaPort5 from "../pages/projectsDetail/assets/portfolio/FigmaPort5.png";
+import CodePort1 from "../pages/projectsDetail/assets/portfolio/codePort1.png";
+import CodePort2 from "../pages/projectsDetail/assets/portfolio/codePort2.png";
+import CodePort3 from "../pages/projectsDetail/assets/portfolio/codePort3.png";
+import CodePort4 from "../pages/projectsDetail/assets/portfolio/codePort4.png";
+import CodePort5 from "../pages/projectsDetail/assets/portfolio/codePort5.png";
+import CodePort6 from "../pages/projectsDetail/assets/portfolio/codePort6.png";
+import CodePort7 from "../pages/projectsDetail/assets/portfolio/CodePort7.png";
+import CodePort8 from "../pages/projectsDetail/assets/portfolio/CodePort8.png";
+import webFem1 from "../pages/projectsDetail/assets/feminine/webFem1.png";
+import webFem2 from "../pages/projectsDetail/assets/feminine/webFem2.png";
+import webFem3 from "../pages/projectsDetail/assets/feminine/webFem3.png";
+import webFem4 from "../pages/projectsDetail/assets/feminine/webFem4.png";
+import webFem5 from "../pages/projectsDetail/assets/feminine/webFem5.png";
+import webFem6 from "../pages/projectsDetail/assets/feminine/webFem6.png";
+import webFem7 from "../pages/projectsDetail/assets/feminine/webFem7.png";
+import webFem8 from "../pages/projectsDetail/assets/feminine/webFem8.png";
 
 export interface IProjectData {
   id: string;
@@ -46,9 +59,9 @@ export interface IProjectData {
   images?: string[];
   videoImg?: string;
   videoUrl?: string;
-  figmaImg?: string[];
-  codeImg?: string[];
-  contributions?: { title: string;icon: LucideIcon, description: string }[];
+  figmaImg?: { title: string; img: string[] };
+  codeImg?: { title: string; img: string[] };
+  contributions?: { title: string; icon: LucideIcon; description: string }[];
   disclaimer?: string;
   resume?: string;
   bigNumber?: {
@@ -56,6 +69,10 @@ export interface IProjectData {
     value: string;
     description: string;
   };
+  codeCredentials?: {
+    username: string;
+    password: string;
+  } []
 }
 
 export const projects: IProjectData[] = [
@@ -77,8 +94,29 @@ export const projects: IProjectData[] = [
       **Engineering & Scalability**
       • Used experience across different tech stacks to make the designs functional and accurate to the idea 
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
-    figmaImg: [portImg1, portImg7, portImg8],
-    codeImg: [portImg2, portImg3, portImg5, portImg6],
+    figmaImg: {
+      title: "Interface",
+      img: [
+        FigmaPort1,
+        FigmaPort2,
+        FigmaPort3,
+        FigmaPort4,
+        FigmaPort5,
+      ],
+    },
+    codeImg: {
+      title: "Development",
+      img: [
+        CodePort1,
+        CodePort2,
+        CodePort3,
+        CodePort4,
+        CodePort5,
+        CodePort6,
+        CodePort7,
+        CodePort8,
+      ],
+    },
     resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`,
   },
   //SNS 24
@@ -166,8 +204,19 @@ export const projects: IProjectData[] = [
     • To simulate a real-world application, I implemented a login system that fetches data from a user API, showcasing history logs for each specific user;
     • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
     • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
-    codeImg: [fem1, fem2, fem3, fem4, fem5],
+    codeImg: { title: "Development", img: [codeFem1, codeFem2, codeFem3, codeFem4, codeFem5] },
+    figmaImg: {
+      title: "Interface",
+      img: [
+        webFem1,webFem2,webFem3,webFem4,webFem5, webFem6,webFem7,webFem8,
+      ],
+    },
     resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`,
+   codeCredentials: [
+  { username: "luisa@email.com", password: "luisa" },
+  { username: "maria@email.com", password: "maria" },
+  { username: "joana@email.com", password: "joana" },
+]
   },
   //yumyum
   {

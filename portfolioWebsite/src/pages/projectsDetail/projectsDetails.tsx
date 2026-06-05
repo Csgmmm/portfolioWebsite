@@ -5,13 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
-import {
-  CheckCircle,
-  ChevronLeft,
-  CircleAlert,
-  Info,
-  Video,
-} from "lucide-react";
+import { ChevronLeft, CircleAlert, Video } from "lucide-react";
 import Chip from "../../components/chips/Chip";
 import Card from "../../components/card/Card";
 
@@ -146,6 +140,25 @@ function ProjectsDetail() {
                 <p>Portuguese citizens served nationwide.</p>
               </div>
             )}
+
+            {project.codeCredentials && (
+              <div className={styles.credentials}>
+                <Card>
+                  <pre className={styles.code}>
+                    {project.codeCredentials.map((item) => (
+                      <div>
+                        <span className={styles.key}>username:</span>{" "}
+                        {item.username}
+                        {"\n"}
+                        <span className={styles.key}>password:</span>{" "}
+                        {item.password}
+                        {"\n\n"}
+                      </div>
+                    ))}
+                  </pre>
+                </Card>
+              </div>
+            )}
           </div>
 
           {/* rightSide */}
@@ -159,21 +172,22 @@ function ProjectsDetail() {
             </div>
 
             {/*  para que nãoo apareca div. figmaImg ou codeimg é maior que 0?, então.. */}
-            {((project.figmaImg ?? []).length > 0 ||
-              (project.codeImg ?? []).length > 0) && (
-              <div className={styles.images}>
-                {project.figmaImg && (
-                  <div className={styles.figmaImg}>
-                    <h4>Figma</h4>
-                    <Carousel img={project.figmaImg ?? []} />
-                  </div>
-                )}
-                {project.codeImg && (
-                  <div className={styles.codeImg}>
-                    <h4>Code</h4>
-                    <Carousel img={project.codeImg ?? []} />
-                  </div>
-                )}
+            {(project.figmaImg || project.codeImg) && (
+              <div className={styles.containerCarousel}>
+                <div className={styles.carouselFrames}>
+                  {project.figmaImg && (
+                    <Carousel
+                      img={project.figmaImg.img}
+                      title={project.figmaImg.title}
+                    />
+                  )}
+                  {project.codeImg && (
+                    <Carousel
+                      img={project.codeImg.img}
+                      title={project.codeImg.title}
+                    />
+                  )}
+                </div>
               </div>
             )}
 

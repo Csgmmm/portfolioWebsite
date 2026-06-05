@@ -110,6 +110,21 @@
   margin: 0;
 }
 
+.credentials {
+  margin-top: var(--lg);
+  
+}
+
+.code {
+  font-family: "Courier New", Courier, monospace;
+
+  margin: var(--md) var(--md) var(--null) var(--md);
+}
+
+.key {
+  color: var(--primary);
+}
+
 /* right side */
 
 .rightSide {
@@ -187,10 +202,23 @@
   width: 200px;
 }
 
+.containerCarousel h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: var(--sm);
+}
+
+.carouselFrames {
+  display: flex;
+  gap: var(--md);
+}
+
+
 @media (max-width: 962px) {
   .bothSide {
     display: flex;
     flex-direction: column;
+
   }
 
   .leftSide {
@@ -204,6 +232,16 @@
   }
 
   .descriptionBtn p {
+  width: 100%;
+}
+
+.carouselContainer {
+  display: flex;
+  gap: var(--md);
+  flex-direction: column;
+}
+
+.rightSide {
   width: 100%;
 }
 }

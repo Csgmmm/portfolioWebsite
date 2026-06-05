@@ -1,6 +1,6 @@
 .primary {
   background-color: var(--primary);
-  border-radius: var(--xs);
+  border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
   font-size: var(--chip-font-size);
   color: var(--button-color);
@@ -9,7 +9,7 @@
 
 .secondary {
   border: 1px solid var(--secondary);
-  border-radius: var(--xs);
+  border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
   font-size: var(--chip-font-size);
   font-weight: 800;
@@ -20,7 +20,7 @@
 
 .tertiary {
   background-color: var(--tertiary);
-  border-radius: var(--xs);
+  border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
   font-size: var(--chip-font-size);
   font-weight: 300;

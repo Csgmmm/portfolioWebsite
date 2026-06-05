@@ -1,42 +1,68 @@
 import { useState } from "react";
 import styles from "./carousel.module.css";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Minus, X } from "lucide-react";
+import Button from "../buttons/Button";
 
-interface CarouselProps {
+interface ICarousel {
   img: string[];
-  title?: string;
+  title: string;
 }
 
-function Carousel({ img, title }: CarouselProps) {
+function Carousel({ img, title }: ICarousel) {
   const [current, setCurrent] = useState(0);
+  const [minimized, setMinimized] = useState(false);
+  const [closed, setClosed] = useState(false);
   const isFirst = current === 0;
   const isLast = current === img.length - 1;
 
   return (
-    <div className={styles.browserFrame}>
-      <div className={styles.browserBar}>
-        <span className={`${styles.dot} ${styles.dotRed}`} />
-        <span className={`${styles.dot} ${styles.dotYellow}`} />
-        <span className={`${styles.dot} ${styles.dotGreen}`} />
-        {title && <span className={styles.browserTitle}>{title}</span>}
-      </div>
+    <>
+      {!closed && (
+        
+        <div className={styles.browserFrame}>
+          <div className={styles.browserBar}>
+            <span
+              className={`${styles.dot} ${styles.dotRed}`}
+              onClick={() => setClosed(!closed)}><X size={8} className={styles.icon} /></span>
+            <span
+              className={`${styles.dot} ${styles.dotYellow}`}
+              onClick={() => setMinimized(!minimized)}
+            >
+              <Minus size={8} className={styles.icon} />
+            </span>
 
-      <div className={styles.carousel}>
-        <img src={img[current]} />
+            <span className={`${styles.dot} ${styles.dotGreen}`} />
+            <div className={styles.title}>{title}</div>
+          </div>
 
-        {!isFirst && (
-          <button className={styles.prev} onClick={() => setCurrent(current - 1)}>
-            <ChevronLeft />
-          </button>
-        )}
+          {!minimized && (
+            <div className={styles.carousel}>
+              <img src={img[current]} />
 
-        {!isLast && (
-          <button className={styles.next} onClick={() => setCurrent(current + 1)}>
-            <ChevronRight />
-          </button>
-        )}
-      </div>
-    </div>
+              {!isFirst && (
+                <Button
+                  variant="primary"
+                  className={styles.prev}
+                  onClick={() => setCurrent(current - 1)}
+                >
+                  <ChevronLeft />
+                </Button>
+              )}
+
+              {!isLast && (
+                <Button
+                  variant="primary"
+                  className={styles.next}
+                  onClick={() => setCurrent(current + 1)}
+                >
+                  <ChevronRight />
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </>
   );
 }
 
