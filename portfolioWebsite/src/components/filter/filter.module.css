@@ -4,3 +4,12 @@
   gap: var(--sm);
   margin-bottom: var(--md);
 }
+
+@media (max-width: 768px) {
+  .filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+  }
+}

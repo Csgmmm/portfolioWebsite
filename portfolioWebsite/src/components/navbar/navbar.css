@@ -37,7 +37,6 @@
   flex-direction: column;
 }
 
-
 .btnTheme {
   width: fit-content;
 }
@@ -58,10 +57,10 @@
 .iconLinks {
   display: none;
 }
-  .links-divider {
-    display: flex;
-    gap: var(--md);
-  }
+.links-divider {
+  display: flex;
+  gap: var(--md);
+}
 
 /*mobile*/
 @media (max-width: 768px) {
@@ -91,6 +90,7 @@
     width: 70%;
     background-color: var(--navbar-background);
     height: 100dvh;
+    z-index: 100;
   }
 
   /* forces closeBtn to show */
