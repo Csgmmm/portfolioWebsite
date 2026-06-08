@@ -1,16 +1,14 @@
-import Button from "../buttons/Button";
-import styles from "./filter.module.css"
+import { useEffect, useState } from "react";
+import ButtonFilter from "../buttonFilter/buttonFilter";
+import styles from "./filter.module.css";
+import { ChevronDown } from "lucide-react";
 
-export type FilterType =
-  | "All"
-  | "Front-End Development"
-  | "UI/UX Design";
+export type FilterType = "All" | "Front-End Development" | "UI/UX Design";
 
 interface IFilterProps {
   activeFilter: FilterType;
   onFilterChange: (filter: FilterType) => void;
   className: string;
-
 }
 
 function Filter({ activeFilter, onFilterChange }: IFilterProps) {
@@ -19,21 +17,74 @@ function Filter({ activeFilter, onFilterChange }: IFilterProps) {
     "UI/UX Design",
     "Front-End Development",
   ];
-  
+  const [open, setOpen] = useState(false);
+
+ useEffect(() => {
+  const clickOutside = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest(`.${styles.filterMobile}`)) {
+      setOpen(false);
+    }
+  };
+
+  if (open) {
+    document.addEventListener("click", clickOutside);
+  }
+
+  return () => {
+    document.removeEventListener("click", clickOutside);
+  };
+}, [open]);
 
   return (
-    <div className={styles.filter}>
-      
-      {filters.map((filter) => (
-        <Button
-          key={filter}
-          variant={activeFilter === filter ? "primary" : "secondary"}
-          onClick={() => onFilterChange(filter)}
+    <>
+      <div className={styles.filterDesktop}>
+        {filters.map((filter, index) => (
+          <ButtonFilter
+            key={filter}
+            variant={activeFilter === filter ? "primary" : "secondary"}
+            onClick={() => onFilterChange(filter)}
+            position={
+              index === 0
+                ? "first"
+                : index === filters.length - 1
+                  ? "last"
+                  : "middle"
+            }
+            // index === 0 → é o primeiro → "first". index === filters length - 1 → é o último → "last"qualquer outro → está no meio → "middle". AKA: "o index ´0? então é first, senão se o index tiver exatamente o tamanho do array -1, que é que o ultimo item do arrau então é o "last", senão, é middle"
+          >
+            {filter}
+          </ButtonFilter>
+        ))}
+      </div>
+
+      <div className={styles.filterMobile}>
+        <button
+          className={styles.dropdownButton}
+          onClick={() => setOpen(!open)}
         >
-          {filter}
-        </Button>
-      ))}
-    </div>
+          {activeFilter}
+          <ChevronDown size={16} />
+        </button>
+
+        {open && (
+          <div className={styles.dropdownMenu}>
+            {filters.map((filter) => (
+              <ButtonFilter
+                key={filter}
+                variant={activeFilter === filter ? "primary" : "secondary"}
+                onClick={() => {
+                  onFilterChange(filter);
+                  setOpen(false);
+                }}
+              >
+                {filter}
+              </ButtonFilter>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 

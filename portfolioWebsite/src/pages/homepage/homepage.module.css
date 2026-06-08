@@ -23,9 +23,6 @@
   width: 0%;
 }
 
-.chipItSelf {
-  font-size: var(--sm);
-}
 
 .name {
   color: var(--primary);
@@ -288,7 +285,7 @@
 
 }
 }
-
+x
 .infoContainer {
   display: flex;
   flex-direction: column;

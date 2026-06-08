@@ -30,7 +30,7 @@ const Card = ({ project, children, showViewButton = true,
             src={project?.mainImage}
             alt={project?.title}
           />
-          <Chip variant="tertiary" className={styles.chipYear}>
+          <Chip variant="secondary" className={styles.chipYear}>
             {project?.year}
           </Chip>
         </div>)}

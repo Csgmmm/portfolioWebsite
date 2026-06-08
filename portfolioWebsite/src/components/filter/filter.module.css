@@ -1,15 +1,56 @@
-.filter {
-  width: 100%;
+.filterDesktop {
+  width: fit-content;
   display: flex;
-  gap: var(--sm);
   margin-bottom: var(--md);
+  border-radius: 10px;
+  border: 1px solid var(--primary);
+  overflow: hidden;
+}
+
+.filterMobile {
+  display: none;
 }
 
 @media (max-width: 768px) {
-  .filter {
+  .filterMobile {
     display: flex;
     flex-direction: column;
     width: 100%;
-
+    position: relative;
+      margin-bottom: var(--md);
   }
+
+  .filterDesktop {
+    display: none;
+  }
+
+  .dropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  padding: 0 var(--md);
+  height: var(--xl);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: var(--sm);
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--background);
+  width: 70%;
+}
+
 }

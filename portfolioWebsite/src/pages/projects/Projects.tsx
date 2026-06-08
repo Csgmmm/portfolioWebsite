@@ -35,6 +35,7 @@ const sortedProjects = [...filteredProjects].sort(
             onFilterChange={setActiveFilter}
           />
         </div>
+        
         <div className={styles.cardsContainer}>
           {sortedProjects.map((project) => (
             <Card key={project.id} project={project} />

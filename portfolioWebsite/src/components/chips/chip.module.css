@@ -2,29 +2,20 @@
   background-color: var(--primary);
   border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
-  font-size: var(--chip-font-size);
+  font-size: var(--chip-font-size-homepage);
   color: var(--button-color);
   width: fit-content;
 }
 
-.secondary {
-  border: 1px solid var(--secondary);
-  border-radius: var(--lg);
-  padding: var(--xxs) var(--xs);
-  font-size: var(--chip-font-size);
-  font-weight: 800;
-  color: var(--secondary);
-  width: fit-content;
-  text-transform: uppercase;
-}
 
-.tertiary {
-  background-color: var(--tertiary);
+
+.secondary {
+  background-color: var(--chip-card);
   border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
-  font-size: var(--chip-font-size);
+  font-size: var(--chip-font-size-card);
   font-weight: 300;
-  color: var(--text);
+  color: var(--chip-text);
   width: fit-content;
   text-transform: uppercase;
 }

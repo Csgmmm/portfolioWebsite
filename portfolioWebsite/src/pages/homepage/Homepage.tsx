@@ -36,7 +36,7 @@ function Homepage() {
         <div className={styles.header}>
           <div className={styles["title-Pic"]}>
             <div className={styles.chip}>
-              <Chip variant="primary" className={styles.chipItSelf}>
+              <Chip variant="primary">
                 Hello!
               </Chip>
             </div>
