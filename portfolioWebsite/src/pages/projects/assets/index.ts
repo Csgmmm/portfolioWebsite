@@ -1,0 +1,8 @@
+export { default as portfolio } from "./portfolioImg.png";
+export { default as pawmate } from "./pawmate.png";
+export { default as tinytracker } from "./babyTracker.png";
+export { default as evolve } from "./evolve.png";
+export { default as bmw } from "./bmw.png";
+export { default as mercedes } from "./mercedes.png";
+export { default as montepio } from "./montepio.png";
+export { default as slotqi } from "./slotqi.png";

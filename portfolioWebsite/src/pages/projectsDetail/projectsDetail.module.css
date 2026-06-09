@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: var(--xl-3);
 }
 
 .headerPage {
@@ -22,8 +23,19 @@
 .projectImg {
   flex: none;
   width: 100%;
-  height: 150px;
+  height: 230px;
   object-fit: cover;
+}
+
+.containerImg {
+  position: relative;
+}
+
+.containerImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
 }
 
 .containerImg {
@@ -45,8 +57,17 @@
 /* left side */
 
 .leftSide {
-  width: 30%;
+   width: 30%;
   min-width: 30%;
+  position: sticky;
+  top: 24px;
+  align-self: flex-start;
+  height: fit-content;
+
+}
+
+.containerLeftCard {
+  padding: var(--md);
 }
 
 .infoProject {
@@ -57,8 +78,6 @@
 }
 
 .infoProject h3 {
-  text-transform: uppercase;
-  font-weight: 300;
   margin: 0;
 }
 
@@ -88,6 +107,7 @@
   margin-top: var(--lg);
   display: flex;
   gap: var(--sm);
+  flex-wrap: wrap;
 }
 
 .bigNumber {
@@ -214,6 +234,26 @@
 }
 
 
+.IAMobile {
+  display: none;
+}
+
+.imgDesktop {
+  width: 100%;
+}
+
+.containerProject {
+  margin: var(--null) var(--lg) var(--lg) var(--lg);
+}
+.containerProject h3 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: var(--md);
+}
+
+
+
 @media (max-width: 962px) {
   .bothSide {
     display: flex;
@@ -223,6 +263,7 @@
 
   .leftSide {
     width: 100%;
+     position: static;
   }
 
   .containerContributionsItems {
@@ -244,7 +285,29 @@
 .rightSide {
   width: 100%;
 }
+
+
+.IADesktop {
+  display: none;
 }
+
+.IAMobile {
+  display: flex;
+padding: var(--md);
+}
+
+.imgMobile {
+  width: 100%;
+}
+
+.containerProject {
+  margin-bottom: var(--xl);
+}
+
+}
+
+
+
 @media (max-width: 600px) {
   .containerContributionsItems {
     display: flex;

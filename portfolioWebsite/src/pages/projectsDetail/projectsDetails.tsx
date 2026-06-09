@@ -63,104 +63,107 @@ function ProjectsDetail() {
         <div className={styles.bothSide}>
           {/* leftSide */}
           <div className={styles.leftSide}>
-            <div className={styles.infoProject}>
-              <h3>Project year</h3>
-              {project.year}
-            </div>
-            <div className={styles.infoProject}>
-              <h3>Tech stack</h3>
-              <div className={styles.chipsContainer}>
-                {project.chips &&
-                  project.chips.map((item) => (
-                    <Chip variant="tertiary" className={styles.chip}>
-                      {item}
-                    </Chip>
-                  ))}
-              </div>
-            </div>
-
-            {project.disclaimer && (
-              <div className={styles.disclaimerContainer}>
-                <>
-                  <div className={styles.introDisclaimer}>
-                    <CircleAlert /> Disclaimer
+            <Card variant="secondary">
+              <div className={styles.containerLeftCard}>
+                <div className={styles.infoProject}>
+                  <h3>Project year</h3>
+                  {project.year}
+                </div>
+                <div className={styles.infoProject}>
+                  <h3>Tech stack</h3>
+                  <div className={styles.chipsContainer}>
+                    {project.chips &&
+                      project.chips.map((item) => (
+                        <Chip variant="secondary" className={styles.chip}>
+                          {item}
+                        </Chip>
+                      ))}
                   </div>
-
-                  {project.disclaimer}
-                </>
-              </div>
-            )}
-
-            <div className={styles.btnContainer}>
-              {project.appStoreUrl && (
-                <div className={styles.btnLinks}>
-                  <a href={project.appStoreUrl} target="_blank">
-                    <Button variant="secondary">AppStore</Button>
-                  </a>
                 </div>
-              )}
 
-              {project.githubUrl && (
-                <div className={styles.btnLinks}>
-                  <a href={project.githubUrl} target="_blank">
-                    <Button variant="secondary">Github Code</Button>
-                  </a>
-                </div>
-              )}
-
-              {project.liveUrl && (
-                <div className={styles.btnLinks}>
-                  <a href={project.liveUrl} target="_blank">
-                    <Button variant="secondary">Website</Button>
-                  </a>
-                </div>
-              )}
-
-              {project.prototypeUrl && (
-                <div className={styles.btnLinks}>
-                  <a href={project.prototypeUrl} target="_blank">
-                    <Button variant="secondary">Prototype</Button>
-                  </a>
-                </div>
-              )}
-
-              {project.behanceUrl && (
-                <div className={styles.btnLinks}>
-                  <a href={project.behanceUrl} target="_blank">
-                    <Button variant="secondary">Behance</Button>
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {project.bigNumber && (
-              <div className={styles.bigNumber}>
-                <h4>Reach</h4>
-                <h1>+10M</h1>
-                <p>Portuguese citizens served nationwide.</p>
-              </div>
-            )}
-
-            {project.codeCredentials && (
-              <div className={styles.credentials}>
-                <Card>
-                  <pre className={styles.code}>
-                    {project.codeCredentials.map((item) => (
-                      <div>
-                        <span className={styles.key}>username:</span>{" "}
-                        {item.username}
-                        {"\n"}
-                        <span className={styles.key}>password:</span>{" "}
-                        {item.password}
-                        {"\n\n"}
+                {project.disclaimer && (
+                  <div className={styles.disclaimerContainer}>
+                    <>
+                      <div className={styles.introDisclaimer}>
+                        <CircleAlert /> Disclaimer
                       </div>
-                    ))}
-                  </pre>
-                </Card>
-              </div>
-            )}
-          </div>
 
+                      {project.disclaimer}
+                    </>
+                  </div>
+                )}
+
+                <div className={styles.btnContainer}>
+                  {project.appStoreUrl && (
+                    <div className={styles.btnLinks}>
+                      <a href={project.appStoreUrl} target="_blank">
+                        <Button variant="secondary">AppStore</Button>
+                      </a>
+                    </div>
+                  )}
+
+                  {project.githubUrl && (
+                    <div className={styles.btnLinks}>
+                      <a href={project.githubUrl} target="_blank">
+                        <Button variant="secondary">Github Code</Button>
+                      </a>
+                    </div>
+                  )}
+
+                  {project.liveUrl && (
+                    <div className={styles.btnLinks}>
+                      <a href={project.liveUrl} target="_blank">
+                        <Button variant="secondary">Website</Button>
+                      </a>
+                    </div>
+                  )}
+
+                  {project.prototypeUrl && (
+                    <div className={styles.btnLinks}>
+                      <a href={project.prototypeUrl} target="_blank">
+                        <Button variant="secondary">Prototype</Button>
+                      </a>
+                    </div>
+                  )}
+
+                  {project.behanceUrl && (
+                    <div className={styles.btnLinks}>
+                      <a href={project.behanceUrl} target="_blank">
+                        <Button variant="secondary">Behance</Button>
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+                {project.bigNumber && (
+                  <div className={styles.bigNumber}>
+                    <h4>Reach</h4>
+                    <h1>+10M</h1>
+                    <p>Portuguese citizens served nationwide.</p>
+                  </div>
+                )}
+
+                {project.codeCredentials && (
+                  <div className={styles.credentials}>
+                    <Card>
+                      <pre className={styles.code}>
+                        {project.codeCredentials.map((item) => (
+                          <div>
+                            <span className={styles.key}>username:</span>{" "}
+                            {item.username}
+                            {"\n"}
+                            <span className={styles.key}>password:</span>{" "}
+                            {item.password}
+                            {"\n\n"}
+                          </div>
+                        ))}
+                      </pre>
+                    </Card>
+                  </div>
+                )}
+              </div>
+            </Card>
+          </div>
           {/* rightSide */}
 
           <div className={styles.rightSide}>
@@ -242,6 +245,43 @@ function ProjectsDetail() {
                   </div>
                 </Card>
               </div>
+            )}
+
+            {(project.InformationArchitectureMap || project.wireframe) && (
+              <Card>
+                {project.InformationArchitectureMap && (
+                  <div className={styles.containerProject}>
+                    <h3>{project.InformationArchitectureMap.title}</h3>
+                    <div className={styles.IADesktop}>
+                      <img
+                        src={project.InformationArchitectureMap.desktop}
+                        alt="Information Architecture Map"
+                        className={styles.imgDesktop}
+                      />
+                    </div>
+                    <div className={styles.IAMobile}>
+                      <img
+                        src={project.InformationArchitectureMap.mobile}
+                        alt="Information Architecture Map"
+                        className={styles.imgMobile}
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {project.wireframe && (
+                  <div className={styles.containerProject}>
+                    <h3>{project.wireframe.title}</h3>
+                    <div className={styles.containerWireframe}>
+                      <img
+                        src={project.wireframe.img}
+                        alt="Wireframe"
+                        className={styles.imgDesktop}
+                      />
+                    </div>
+                  </div>
+                )}
+              </Card>
             )}
           </div>
         </div>

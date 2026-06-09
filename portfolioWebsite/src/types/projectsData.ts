@@ -1,43 +1,73 @@
-import sns24 from "../pages/homepage/assets/sns24.png";
-import femin from "../pages/homepage/assets/feminDashboard.png";
-import yumyum from "../pages/homepage/assets/yumyum.png";
-import portfolio from "../pages/projects/assets/portfolioImg.png";
-import pawmate from "../pages/projects/assets/pawmate.png";
-import tinytracker from "../pages/projects/assets/babyTracker.png";
-import evolve from "../pages/projects/assets/evolve.png";
-import bmw from "../pages/projects/assets/bmw.png";
-import mercedes from "../pages/projects/assets/mercedes.png";
-import montepio from "../pages/projects/assets/montepio.png";
-import slotqi from "../pages/projects/assets/slotqi.png";
+//homepage
+import { sns24, femin, yumyum } from "../pages/homepage/assets/index";
+
+//projects
+import {
+  portfolio,
+  pawmate,
+  tinytracker,
+  evolve,
+  bmw,
+  mercedes,
+  montepio,
+  slotqi,
+} from "../pages/projects/assets/index";
+
+//projectsDetails
 import videoInstaImg from "../pages/projectsDetail/assets/instaImg.png";
-import codeFem1 from "../pages/projectsDetail/assets/feminine/codeFem1.png";
-import codeFem2 from "../pages/projectsDetail/assets/feminine/codeFem2.png";
-import codeFem3 from "../pages/projectsDetail/assets/feminine/codeFem3.png";
-import codeFem4 from "../pages/projectsDetail/assets/feminine/codeFem4.png";
-import codeFem5 from "../pages/projectsDetail/assets/feminine/codeFem5.png";
+
+//Portfolio
+import {
+  FigmaPort1,
+  FigmaPort2,
+  FigmaPort3,
+  FigmaPort4,
+  FigmaPort5,
+  FigmaPort6,
+  CodePort1,
+  CodePort2,
+  CodePort3,
+  CodePort4,
+  CodePort5,
+  CodePort6,
+  CodePort7,
+  CodePort8,
+  CodePort9,
+} from "../pages/projectsDetail/assets/portfolio/index";
+
+//Feminine Dashboard
+import {
+  codeFem1,
+  codeFem2,
+  codeFem3,
+  codeFem4,
+  codeFem5,
+  webFem1,
+  webFem2,
+  webFem3,
+  webFem4,
+  webFem5,
+  webFem6,
+  webFem7,
+  webFem8,
+} from "../pages/projectsDetail/assets/feminine/index";
+
+//yumyum
+import {
+  IAMobileYumYum,
+  IADesktopYumYum,
+  wireframeYumyum,
+} from "../pages/projectsDetail/assets/yumyum/index";
+
+//tiny
+import {
+  wireframeTiny, IADesktopTiny, IAMobileTiny
+} from "../pages/projectsDetail/assets/tinytracker/index";
+
+
+
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import FigmaPort1 from "../pages/projectsDetail/assets/portfolio/FigmaPort1.png";
-import FigmaPort2 from "../pages/projectsDetail/assets/portfolio/FigmaPort2.png";
-import FigmaPort3 from "../pages/projectsDetail/assets/portfolio/FigmaPort3.png";
-import FigmaPort4 from "../pages/projectsDetail/assets/portfolio/FigmaPort4.png";
-import FigmaPort5 from "../pages/projectsDetail/assets/portfolio/FigmaPort5.png";
-import CodePort1 from "../pages/projectsDetail/assets/portfolio/codePort1.png";
-import CodePort2 from "../pages/projectsDetail/assets/portfolio/codePort2.png";
-import CodePort3 from "../pages/projectsDetail/assets/portfolio/codePort3.png";
-import CodePort4 from "../pages/projectsDetail/assets/portfolio/codePort4.png";
-import CodePort5 from "../pages/projectsDetail/assets/portfolio/codePort5.png";
-import CodePort6 from "../pages/projectsDetail/assets/portfolio/codePort6.png";
-import CodePort7 from "../pages/projectsDetail/assets/portfolio/CodePort7.png";
-import CodePort8 from "../pages/projectsDetail/assets/portfolio/CodePort8.png";
-import webFem1 from "../pages/projectsDetail/assets/feminine/webFem1.png";
-import webFem2 from "../pages/projectsDetail/assets/feminine/webFem2.png";
-import webFem3 from "../pages/projectsDetail/assets/feminine/webFem3.png";
-import webFem4 from "../pages/projectsDetail/assets/feminine/webFem4.png";
-import webFem5 from "../pages/projectsDetail/assets/feminine/webFem5.png";
-import webFem6 from "../pages/projectsDetail/assets/feminine/webFem6.png";
-import webFem7 from "../pages/projectsDetail/assets/feminine/webFem7.png";
-import webFem8 from "../pages/projectsDetail/assets/feminine/webFem8.png";
 
 export interface IProjectData {
   id: string;
@@ -53,8 +83,12 @@ export interface IProjectData {
   prototypeUrl?: string;
   behanceUrl?: string;
   fullDescription?: string;
-  userFlow?: string;
-  wireframe?: string;
+  InformationArchitectureMap?: {
+    title: string;
+    desktop: string;
+    mobile: string;
+  };
+  wireframe?: { title: string; img: string };
   iconography?: string[];
   images?: string[];
   videoImg?: string;
@@ -72,7 +106,7 @@ export interface IProjectData {
   codeCredentials?: {
     username: string;
     password: string;
-  } []
+  }[];
 }
 
 export const projects: IProjectData[] = [
@@ -102,6 +136,7 @@ export const projects: IProjectData[] = [
         FigmaPort3,
         FigmaPort4,
         FigmaPort5,
+        FigmaPort6,
       ],
     },
     codeImg: {
@@ -115,6 +150,7 @@ export const projects: IProjectData[] = [
         CodePort6,
         CodePort7,
         CodePort8,
+        CodePort9,
       ],
     },
     resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`,
@@ -204,19 +240,29 @@ export const projects: IProjectData[] = [
     • To simulate a real-world application, I implemented a login system that fetches data from a user API, showcasing history logs for each specific user;
     • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
     • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
-    codeImg: { title: "Development", img: [codeFem1, codeFem2, codeFem3, codeFem4, codeFem5] },
+    codeImg: {
+      title: "Development",
+      img: [codeFem1, codeFem2, codeFem3, codeFem4, codeFem5],
+    },
     figmaImg: {
       title: "Interface",
       img: [
-        webFem1,webFem2,webFem3,webFem4,webFem5, webFem6,webFem7,webFem8,
+        webFem1,
+        webFem2,
+        webFem3,
+        webFem4,
+        webFem5,
+        webFem6,
+        webFem7,
+        webFem8,
       ],
     },
     resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`,
-   codeCredentials: [
-  { username: "luisa@email.com", password: "luisa" },
-  { username: "maria@email.com", password: "maria" },
-  { username: "joana@email.com", password: "joana" },
-]
+    codeCredentials: [
+      { username: "luisa@email.com", password: "luisa" },
+      { username: "maria@email.com", password: "maria" },
+      { username: "joana@email.com", password: "joana" },
+    ],
   },
   //yumyum
   {
@@ -232,15 +278,18 @@ export const projects: IProjectData[] = [
       "https://www.behance.net/gallery/223774571/Asian-Food-Delivery-App-Yumyum?share=1",
     chips: ["FIGMA", "photoshop", "illustrator", "miro"],
     fullDescription: `**Designed this app from the user's perspective.** 
-
-      • I implemented cultural food tags paired with flag icons to help users identify cuisines; 
-      • I mapped out the entire user flow through wireframes to make sure the journey is understandable; 
+      • Implemented cultural food tags paired with flag icons to help users identify cuisines; 
+      • Mapped out the entire user flow through wireframes to make sure the journey is understandable; 
       • Used Material Symbols icons between 24px, 32px, and 40px; 
       • Built modals for common actions, like canceling orders or applying promo codes 
       • Developed a full library of components, including buttons, cards, badges, and input fields 
       • Used variables for spacing to guarantee the design is scalable and organized`,
-    userFlow: "/assets/code1.png",
-    wireframe: "/assets/code1.png",
+    InformationArchitectureMap: {
+      title: "Information Architecture Map",
+      desktop: IADesktopYumYum,
+      mobile: IAMobileYumYum,
+    },
+    wireframe: { title: "Wireframes", img: wireframeYumyum },
     iconography: [
       "/assets/code1.png",
       "/assets/code2.png",
@@ -296,13 +345,17 @@ export const projects: IProjectData[] = [
       • Mapped out the entire user flow through wireframes 
       • Used Material Symbols icons scaled between 24px, 32px, and 40px to maintain a consistent visual hierarchy. 
       • Designed modals to handle key interactions, including showing all medical appointments, editing user profiles, and adding daily logs`,
-    userFlow: "/assets/code1.png",
+    InformationArchitectureMap: {
+      title: "Information Architecture Map",
+      desktop: IADesktopTiny,
+      mobile: IAMobileTiny,
+    },
     iconography: [
       "/assets/code1.png",
       "/assets/code2.png",
       "/assets/code3.png",
     ],
-    wireframe: "/assets/code1.png",
+    wireframe: { title: "Wireframes", img: wireframeTiny },
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
@@ -347,7 +400,7 @@ export const projects: IProjectData[] = [
 
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
-    wireframe: "/assets/code1.png",
+    wireframe: { title: "Wireframes", img: wireframeYumyum },
     images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
     videoUrl: "943623829",
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,

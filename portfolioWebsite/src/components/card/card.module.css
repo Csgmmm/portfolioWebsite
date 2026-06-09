@@ -7,6 +7,14 @@
   overflow: hidden;
 }
 
+.default {
+  background: var(--background-card);
+}
+
+.secondary {
+  background: var(--background-secondary);
+}
+
 .title {
   display: flex;
   flex-direction: column;
@@ -17,8 +25,6 @@
   position: relative;
   /* diz que este elemento é o "ponto de referência" para os filhos com position: absolute */
 }
-
-
 
 .chipYear {
   position: absolute;
@@ -65,28 +71,26 @@ h4 {
 }
 
 .allContainer {
-      height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .containerResumeBtn {
-      height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .infoContainer {
-  padding: var(--sm) ;
+  padding: var(--sm);
   height: 100%;
 }
 
 .containerResumeBtn {
   height: 100%;
 }
-
-
 
 .btnCards {
   width: 100%;

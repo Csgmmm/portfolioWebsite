@@ -1,0 +1,13 @@
+export { default as codeFem1 } from "./codeFem1.png";
+export { default as codeFem2 } from "./codeFem2.png";
+export { default as codeFem3 } from "./codeFem3.png";
+export { default as codeFem4 } from "./codeFem4.png";
+export { default as codeFem5 } from "./codeFem5.png";
+export { default as webFem1 } from "./webFem1.png";
+export { default as webFem2 } from "./webFem2.png";
+export { default as webFem3 } from "./webFem3.png";
+export { default as webFem4 } from "./webFem4.png";
+export { default as webFem5 } from "./webFem5.png";
+export { default as webFem6 } from "./webFem6.png";
+export { default as webFem7 } from "./webFem7.png";
+export { default as webFem8 } from "./webFem8.png";

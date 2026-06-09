@@ -11,12 +11,17 @@ interface ICardProps {
   className?: string;
   showViewButton?: boolean;
   showImage?: boolean;
+  variant?: "default" | "secondary";
 }
 
-const Card = ({ project, children, showViewButton = true, 
-  showImage = true }: ICardProps) => {
+const Card = ({
+  project,
+  children,
+  showViewButton = true,
+  showImage = true,variant = "default"
+}: ICardProps) => {
   if (children) {
-    return <div className={styles.card}>{children}</div>;
+    return <div className={`${styles.card} ${styles[variant]}`}>{children}</div>
     // Se houver children, devolve uma div com a class card e o children lá dentro
   }
   return (
@@ -24,32 +29,33 @@ const Card = ({ project, children, showViewButton = true,
       <div className={styles.allContainer}>
         {/* se o project tiver img, então... */}
         {showImage && (
-        <div className={styles.imageYear}>
-          <img
-            className={styles.img}
-            src={project?.mainImage}
-            alt={project?.title}
-          />
-          <Chip variant="secondary" className={styles.chipYear}>
-            {project?.year}
-          </Chip>
-        </div>)}
+          <div className={styles.imageYear}>
+            <img
+              className={styles.img}
+              src={project?.mainImage}
+              alt={project?.title}
+            />
+            <Chip variant="secondary" className={styles.chipYear}>
+              {project?.year}
+            </Chip>
+          </div>
+        )}
 
         <div className={styles.infoContainer}>
           <div className={styles.title}>
             <h4>{project?.title}</h4>
-            
+
             <div className={styles.containerResumeBtn}>
               <p className={styles.resume}>{project?.resume}</p>
               {showViewButton && (
-              <Link to={`/project/${project?.id}`}>
-                <Button variant="link">
-                  Read case study
-                  <ChevronRight />
-                </Button>
-              </Link> )}
+                <Link to={`/project/${project?.id}`}>
+                  <Button variant="link">
+                    Read case study
+                    <ChevronRight />
+                  </Button>
+                </Link>
+              )}
             </div>
-
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
   background-color: var(--primary);
   border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
-  font-size: var(--chip-font-size-homepage);
+  font-size: var(--chip-font-size-card);
   color: var(--button-color);
   width: fit-content;
 }

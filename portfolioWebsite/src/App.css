@@ -2,7 +2,6 @@
   --background: #051424;
   --background-secondary: #101e2e;
   --background-card: #010f1f;
-  --background-card-rgb: 1, 15, 31;
   --border: #454546;
   --border-color: #404168;
   --text: #f8f8ff;
@@ -19,7 +18,6 @@
   --chip-card: #1c2b3c;
   --chip-text: #ffffff;
   --chip-font-size-card: 14px;
-  --chip-font-size-homepage: 18px;
   --null: 0px;
   --xxs: 4px;
   --xs: 8px;
@@ -72,11 +70,15 @@ h2 {
 h3 {
   font-size: 1.33em;
   color: var(--title);
+   text-transform: uppercase;
+  font-weight: 300;
+
 }
 
 h4 {
   font-size: 1.05em;
   color: var(--title);
+  
 }
 h5 {
   font-size: 0.9em;
