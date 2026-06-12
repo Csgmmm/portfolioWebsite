@@ -57,14 +57,62 @@ import {
   IAMobileYumYum,
   IADesktopYumYum,
   wireframeYumyum,
+  account_balance_wallet,
+  apartment,
+  call1,
+  call,
+  chevron_left1,
+  chevron_left2,
+  chevron_left3,
+  chevron_left4,
+  chevron_left5,
+  chevron_left,
+  clock,
+  close,
+  confirmation_number,
+  favorite,
+  fluent_mdl2_calories,
+  Frame26088399,
+  Frame26088400,
+  Frame26088402,
+  Frame26088403,
+  Frame26088404,
+  Frame26088405,
+  Frame26088406,
+  Frame26088407,
+  Frame26088408,
+  Frame26088409,
+  Frame26088410,
+  help,
+  history,
+  home,
+  hugeicons_eggs,
+  logout,
+  map_pin,
+  moped,
+  mynaui_pizza,
+  near_me,
+  person1,
+  person,
+  receipt_long,
+  search,
+  sell,
+  settings,
+  skillet1,
+  skillet,
+  storefront,
+  support_agent,
+  components,
+  modals,
+  variables_styles,
 } from "../pages/projectsDetail/assets/yumyum/index";
 
 //tiny
 import {
-  wireframeTiny, IADesktopTiny, IAMobileTiny
+  wireframeTiny,
+  IADesktopTiny,
+  IAMobileTiny,
 } from "../pages/projectsDetail/assets/tinytracker/index";
-
-
 
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -89,8 +137,8 @@ export interface IProjectData {
     mobile: string;
   };
   wireframe?: { title: string; img: string };
-  iconography?: string[];
-  images?: string[];
+  iconography?: { title: string; img: string[] };
+  images?: { title: string; img: string[] };
   videoImg?: string;
   videoUrl?: string;
   figmaImg?: { title: string; img: string[] };
@@ -290,12 +338,60 @@ export const projects: IProjectData[] = [
       mobile: IAMobileYumYum,
     },
     wireframe: { title: "Wireframes", img: wireframeYumyum },
-    iconography: [
-      "/assets/code1.png",
-      "/assets/code2.png",
-      "/assets/code3.png",
-    ],
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    iconography: {
+      title: "Iconography",
+      img: [
+        account_balance_wallet,
+        apartment,
+        call1,
+        call,
+        chevron_left1,
+        chevron_left2,
+        chevron_left3,
+        chevron_left4,
+        chevron_left5,
+        chevron_left,
+        clock,
+        close,
+        confirmation_number,
+        favorite,
+        fluent_mdl2_calories,
+        Frame26088399,
+        Frame26088400,
+        Frame26088402,
+        Frame26088403,
+        Frame26088404,
+        Frame26088405,
+        Frame26088406,
+        Frame26088407,
+        Frame26088408,
+        Frame26088409,
+        Frame26088410,
+        help,
+        history,
+        home,
+        hugeicons_eggs,
+        logout,
+        map_pin,
+        moped,
+        mynaui_pizza,
+        near_me,
+        person1,
+        person,
+        receipt_long,
+        search,
+        sell,
+        settings,
+        skillet1,
+        skillet,
+        storefront,
+        support_agent,
+      ],
+    },
+    images: {
+      title: "Img",
+      img: [components, modals, variables_styles],
+    },
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
   //evolve
@@ -318,12 +414,14 @@ export const projects: IProjectData[] = [
       • Built modals for common actions, like canceling orders or applying promo codes 
       • Developed a full library of components, including buttons, cards, badges, and input fields 
       • Used variables for spacing to guarantee the design is scalable and organized`,
-    iconography: [
-      "/assets/code1.png",
-      "/assets/code2.png",
-      "/assets/code3.png",
-    ],
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    iconography: {
+      title: "Iconography",
+      img: [account_balance_wallet, apartment, call1],
+    },
+    images: {
+      title: "Img",
+        img: [components, modals, variables_styles],
+    },
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
   //tinytracker
@@ -350,13 +448,15 @@ export const projects: IProjectData[] = [
       desktop: IADesktopTiny,
       mobile: IAMobileTiny,
     },
-    iconography: [
-      "/assets/code1.png",
-      "/assets/code2.png",
-      "/assets/code3.png",
-    ],
+    iconography: {
+      title: "Iconography",
+      img: [account_balance_wallet, apartment, call1],
+    },
     wireframe: { title: "Wireframes", img: wireframeTiny },
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: {
+      title: "Img",
+      img: [components, modals, variables_styles],
+    },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
   //slotQi
@@ -379,7 +479,10 @@ export const projects: IProjectData[] = [
       **Functional Modals:** Built modals for common actions, like adding new log events, editing employee profiles, or managing interview schedules, to keep users in their current workflow without full page reloads;
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: {
+      title: "Img",
+      img: [components, modals, variables_styles],
+    },
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
   //pawmate
@@ -401,7 +504,10 @@ export const projects: IProjectData[] = [
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: wireframeYumyum },
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: {
+      title: "Img",
+         img: [components, modals, variables_styles],
+    },
     videoUrl: "943623829",
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },
@@ -423,7 +529,10 @@ export const projects: IProjectData[] = [
        **Design System:** Developed a full library of components, including cards for vehicle status, high-contrast input fields, and badges; 
        **Scalable Layouts:** Used variables for spacing to guarantee the design is organized and adapts perfectly to different screen aspect ratios;
        **Data Clarity:** Reimagined the iDrive Dashboard to balance critical driving data with music and navigation without cluttering the driver's view.`,
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: {
+      title: "Img",
+         img: [components, modals, variables_styles],
+    },
     resume: `A premium BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`,
   },
   //mercedes
@@ -443,7 +552,10 @@ export const projects: IProjectData[] = [
        
         **Dynamic Visual Identity:** Reimagined the classic dashboard with a futuristic, high-contrast aesthetic. Including a personalized 'Display Color Change' feature to match the driver's preference or ambient lighting.
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: {
+      title: "Img",
+      img: [components, modals, variables_styles],
+    },
     resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`,
   },
   //montepio
@@ -465,7 +577,10 @@ export const projects: IProjectData[] = [
         **Intuitive Account Management:** Users can swipe through different account types (Current vs. Savings) using a familiar carousel pattern;
         **Visual Spending Insights:** A dedicated expenses hub featuring interactive bar charts and color-coded categories like Food and public transports;
         **Digital Piggy Bank:**  Integrated features to encourage micro-savings and goal-oriented financial planning.`,
-    images: ["/assets/code1.png", "/assets/code2.png", "/assets/code3.png"],
+    images: {
+      title: "Img",
+      img: [components, modals, variables_styles],
+    },
     resume: `A mobile-first redesign of Banco Montepio targeting younger users, with biometric onboarding, account carousels, spending insights, and savings goals.`,
   },
 ];

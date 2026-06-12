@@ -17,11 +17,12 @@ interface ICardProps {
 const Card = ({
   project,
   children,
+  className,
   showViewButton = true,
   showImage = true,variant = "default"
 }: ICardProps) => {
   if (children) {
-    return <div className={`${styles.card} ${styles[variant]}`}>{children}</div>
+    return <div className={`${styles.card} ${styles[variant]} ${className ?? ""}`}>{children}</div>
     // Se houver children, devolve uma div com a class card e o children lá dentro
   }
   return (

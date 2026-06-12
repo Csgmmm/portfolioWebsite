@@ -281,6 +281,35 @@ function ProjectsDetail() {
                     </div>
                   </div>
                 )}
+
+                {project.iconography && (
+                  <div className={styles.containerProject}>
+                    <h3>{project.iconography.title}</h3>
+                    <div className={styles.iconographyContainer}>
+                      {project.iconography.img.map((icon) => (
+                        <Card className={styles.iconCard}>
+                          <img
+                            src={icon}
+                            alt={icon}
+                            className={styles.iconography}
+                          />
+                        </Card>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {project.images && (
+                  <div className={styles.containerProject}>
+                    <h3>{project.images.title}</h3>
+                    <div className={styles.imagesContainer}>
+                      {project.images.img.map((img) => (
+                        <Card className={styles.cardImgs}>
+                        <img src={img} alt={img} className={styles.imagesDSM} /></Card>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </Card>
             )}
           </div>

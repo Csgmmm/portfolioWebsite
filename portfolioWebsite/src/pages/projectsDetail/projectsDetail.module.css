@@ -35,7 +35,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .containerImg {
@@ -57,13 +57,12 @@
 /* left side */
 
 .leftSide {
-   width: 30%;
+  width: 30%;
   min-width: 30%;
   position: sticky;
   top: 24px;
   align-self: flex-start;
   height: fit-content;
-
 }
 
 .containerLeftCard {
@@ -132,7 +131,6 @@
 
 .credentials {
   margin-top: var(--lg);
-  
 }
 
 .code {
@@ -233,7 +231,6 @@
   gap: var(--md);
 }
 
-
 .IAMobile {
   display: none;
 }
@@ -252,18 +249,49 @@
   padding: var(--md);
 }
 
+.iconographyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs);
+}
 
+.iconCard {
+  width: var(--xl-3);
+  height: var(--xl-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconography {
+  width: var(--lg);
+  height: auto;
+}
+
+.cardImgs {
+  width: 45%;
+  height: fit-content;
+  padding: var(--xs);
+}
+
+.imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs);
+}
+.imagesDSM {
+width: 100%;
+}
 
 @media (max-width: 962px) {
   .bothSide {
     display: flex;
     flex-direction: column;
-
   }
 
   .leftSide {
     width: 100%;
-     position: static;
+    position: static;
   }
 
   .containerContributionsItems {
@@ -273,40 +301,36 @@
   }
 
   .descriptionBtn p {
-  width: 100%;
+    width: 100%;
+  }
+
+  .carouselContainer {
+    display: flex;
+    gap: var(--md);
+    flex-direction: column;
+  }
+
+  .rightSide {
+    width: 100%;
+  }
+
+  .IADesktop {
+    display: none;
+  }
+
+  .IAMobile {
+    display: flex;
+    padding: var(--md);
+  }
+
+  .imgMobile {
+    width: 100%;
+  }
+
+  .containerProject {
+    margin-bottom: var(--xl);
+  }
 }
-
-.carouselContainer {
-  display: flex;
-  gap: var(--md);
-  flex-direction: column;
-}
-
-.rightSide {
-  width: 100%;
-}
-
-
-.IADesktop {
-  display: none;
-}
-
-.IAMobile {
-  display: flex;
-padding: var(--md);
-}
-
-.imgMobile {
-  width: 100%;
-}
-
-.containerProject {
-  margin-bottom: var(--xl);
-}
-
-}
-
-
 
 @media (max-width: 600px) {
   .containerContributionsItems {
