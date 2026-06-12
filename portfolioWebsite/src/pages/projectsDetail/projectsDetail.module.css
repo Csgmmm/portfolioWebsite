@@ -257,6 +257,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--xs);
+  margin-bottom: var(--md
+  
+);
 }
 
 .iconCard {
@@ -284,16 +287,14 @@
   padding: var(--xs);
 }
 
-.imagesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--md);
-  justify-content: center;
-  margin-bottom:var(--md);
-}
+
 .imagesDSM {
 width: 70%;
 
+}
+
+.carouselImages {
+  margin:var(--md) var(--null) var(--md) 
 }
 
 @media (max-width: 962px) {
@@ -352,4 +353,54 @@ width: 70%;
 
     gap: var(--sm);
   }
+}
+
+.browserFrame {
+  border-radius: var(--sm);
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+}
+
+.browserBar {
+  background: var(--card);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dotRed {
+  background: #fb6861;
+}
+.dotYellow {
+  background: #ffcc5e;
+}
+.dotGreen {
+  background: #59b867;
+}
+
+.icon {
+  display: none;
+}
+
+.dotYellow:hover .icon, .dotRed:hover .icon {
+  display: block;
+  color: var(--background);
+  cursor: pointer;
+}
+
+.browserTitle {
+  color: var(--shortDescription);
+  font-size: 12px;
+  margin-left: 8px;
 }

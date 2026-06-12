@@ -389,7 +389,7 @@ export const projects: IProjectData[] = [
       ],
     },
     images: {
-      title: "Img",
+      title: "Styles, variables, modals and empty states",
       img: [components, modals, variables_styles],
     },
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,

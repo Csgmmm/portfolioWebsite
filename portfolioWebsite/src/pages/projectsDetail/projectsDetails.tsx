@@ -5,13 +5,16 @@ import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
 import Button from "../../components/buttons/Button";
 import Carousel from "../../components/carousel/Carousel";
-import { ChevronLeft, CircleAlert, Video } from "lucide-react";
+import { ChevronLeft, CircleAlert, Minus, Video, X } from "lucide-react";
 import Chip from "../../components/chips/Chip";
 import Card from "../../components/card/Card";
+import { useState } from "react";
 
 function ProjectsDetail() {
   const { id } = useParams();
   const project = projects.find((project) => project.id === id);
+  const [minimized, setMinimized] = useState(false);
+  const [closed, setClosed] = useState(false);
 
   const renderBold = (text: string) => {
     // divide o texto em partes, separando pelo padrão **...**
@@ -218,7 +221,27 @@ function ProjectsDetail() {
             {/* videoInsta */}
             {project.videoImg && (
               <div className={styles.containerVideo}>
+                
                 <Card>
+                  <div className={styles.browserFrame}>
+                  <div className={styles.browserBar}>
+                    <span
+                      className={`${styles.dot} ${styles.dotRed}`}
+                      onClick={() => setClosed(!closed)}
+                    >
+                      <X size={8} className={styles.icon} />
+                    </span>
+                    <span
+                      className={`${styles.dot} ${styles.dotYellow}`}
+                      onClick={() => setMinimized(!minimized)}
+                    >
+                      <Minus size={8} className={styles.icon} />
+                    </span>
+
+                    <span className={`${styles.dot} ${styles.dotGreen}`} />
+                  </div>
+                </div>
+                {!minimized && (
                   <div className={styles.containerInfoVideo}>
                     <img
                       src={project.videoImg}
@@ -242,76 +265,98 @@ function ProjectsDetail() {
                         </Button>
                       </a>
                     </div>
-                  </div>
+                  </div>)}
                 </Card>
               </div>
             )}
 
-            {(project.InformationArchitectureMap || project.wireframe ||project.iconography || project.images
-            ) && (
+            {(project.InformationArchitectureMap ||
+              project.wireframe ||
+              project.iconography ||
+              project.images) && (
               <Card className={styles.cardProjects}>
-                {project.InformationArchitectureMap && (
-                  <div className={styles.containerProject}>
-                    <h3>{project.InformationArchitectureMap.title}</h3>
-                    <div className={styles.IADesktop}>
-                      <img
-                        src={project.InformationArchitectureMap.desktop}
-                        alt="Information Architecture Map"
-                        className={styles.imgDesktop}
-                      />
-                    </div>
-                    <div className={styles.IAMobile}>
-                      <img
-                        src={project.InformationArchitectureMap.mobile}
-                        alt="Information Architecture Map"
-                        className={styles.imgMobile}
-                      />
-                    </div>
-                  </div>
-                )}
+                <div className={styles.browserFrame}>
+                  <div className={styles.browserBar}>
+                    <span
+                      className={`${styles.dot} ${styles.dotRed}`}
+                      onClick={() => setClosed(!closed)}
+                    >
+                      <X size={8} className={styles.icon} />
+                    </span>
+                    <span
+                      className={`${styles.dot} ${styles.dotYellow}`}
+                      onClick={() => setMinimized(!minimized)}
+                    >
+                      <Minus size={8} className={styles.icon} />
+                    </span>
 
-                {project.wireframe && (
-                  <div className={styles.containerProject}>
-                    <h3>{project.wireframe.title}</h3>
-                    <div className={styles.containerWireframe}>
-                      <img
-                        src={project.wireframe.img}
-                        alt="Wireframe"
-                        className={styles.imgDesktop}
-                      />
-                    </div>
+                    <span className={`${styles.dot} ${styles.dotGreen}`} />
                   </div>
-                )}
+                </div>
 
-                {project.iconography && (
-                  <div className={styles.containerProject}>
-                    <h3>{project.iconography.title}</h3>
-                    <div className={styles.iconographyContainer}>
-                      {project.iconography.img.map((icon) => (
-                        <Card className={styles.iconCard}>
+                {!minimized && (
+                  <>
+                    {project.InformationArchitectureMap && (
+                      <div className={styles.containerProject}>
+                        <h3>{project.InformationArchitectureMap.title}</h3>
+                        <div className={styles.IADesktop}>
                           <img
-                            src={icon}
-                            alt={icon}
-                            className={styles.iconography}
+                            src={project.InformationArchitectureMap.desktop}
+                            alt="Information Architecture Map"
+                            className={styles.imgDesktop}
                           />
-                        </Card>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                        </div>
+                        <div className={styles.IAMobile}>
+                          <img
+                            src={project.InformationArchitectureMap.mobile}
+                            alt="Information Architecture Map"
+                            className={styles.imgMobile}
+                          />
+                        </div>
+                      </div>
+                    )}
 
-                {project.images && (
-                  <div className={styles.containerProject}>
-                    <h3>{project.images.title}</h3>
-                    <div className={styles.imagesContainer}>
-                      {project.images.img.map((img) => (
+                    {project.wireframe && (
+                      <div className={styles.containerProject}>
+                        <h3>{project.wireframe.title}</h3>
+                        <div className={styles.containerWireframe}>
+                          <img
+                            src={project.wireframe.img}
+                            alt="Wireframe"
+                            className={styles.imgDesktop}
+                          />
+                        </div>
+                      </div>
+                    )}
 
-                        <img src={img} alt={img} className={styles.imagesDSM} />
-                      ))}
-                    </div>
-                  </div>
+                    {project.iconography && (
+                      <div className={styles.containerProject}>
+                        <h3>{project.iconography.title}</h3>
+                        <div className={styles.iconographyContainer}>
+                          {project.iconography.img.map((icon, index) => (
+                            <Card key={index} className={styles.iconCard}>
+                              <img
+                                src={icon}
+                                alt={`icon ${index + 1}`}
+                                className={styles.iconography}
+                              />
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </>
                 )}
               </Card>
+            )}
+
+            {project.images && (
+              <div className={styles.carouselImages}>
+                <Carousel
+                  img={project.images.img}
+                  title={project.images.title}
+                />
+              </div>
             )}
           </div>
         </div>
