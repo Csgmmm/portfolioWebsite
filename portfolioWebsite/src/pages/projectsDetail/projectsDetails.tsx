@@ -247,8 +247,9 @@ function ProjectsDetail() {
               </div>
             )}
 
-            {(project.InformationArchitectureMap || project.wireframe) && (
-              <Card>
+            {(project.InformationArchitectureMap || project.wireframe ||project.iconography || project.images
+            ) && (
+              <Card className={styles.cardProjects}>
                 {project.InformationArchitectureMap && (
                   <div className={styles.containerProject}>
                     <h3>{project.InformationArchitectureMap.title}</h3>
@@ -304,8 +305,8 @@ function ProjectsDetail() {
                     <h3>{project.images.title}</h3>
                     <div className={styles.imagesContainer}>
                       {project.images.img.map((img) => (
-                        <Card className={styles.cardImgs}>
-                        <img src={img} alt={img} className={styles.imagesDSM} /></Card>
+
+                        <img src={img} alt={img} className={styles.imagesDSM} />
                       ))}
                     </div>
                   </div>

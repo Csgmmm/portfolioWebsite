@@ -239,15 +239,19 @@
   width: 100%;
 }
 
+.cardProjects {
+  background: var(--background-card);
+
+}
 .containerProject {
-  margin: var(--null) var(--lg) var(--lg) var(--lg);
+  margin: var(--null) var(--lg) var(--null) var(--lg);
 }
 .containerProject h3 {
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: var(--md);
-}
+  padding: var(--md) var(--null) var(--xs) var(--null);
+}  
 
 .iconographyContainer {
   display: flex;
@@ -266,6 +270,12 @@
 .iconography {
   width: var(--lg);
   height: auto;
+   filter: invert(0);
+  
+}
+
+[data-theme="light"] .iconography {
+  filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(102%) hue-rotate(201deg) brightness(93%) contrast(83%);
 }
 
 .cardImgs {
@@ -277,10 +287,13 @@
 .imagesContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--xs);
+  gap: var(--md);
+  justify-content: center;
+  margin-bottom:var(--md);
 }
 .imagesDSM {
-width: 100%;
+width: 70%;
+
 }
 
 @media (max-width: 962px) {
