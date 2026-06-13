@@ -221,59 +221,59 @@ function ProjectsDetail() {
             {/* videoInsta */}
             {project.videoImg && (
               <div className={styles.containerVideo}>
-                
                 <Card>
                   <div className={styles.browserFrame}>
-                  <div className={styles.browserBar}>
-                    <span
-                      className={`${styles.dot} ${styles.dotRed}`}
-                      onClick={() => setClosed(!closed)}
-                    >
-                      <X size={8} className={styles.icon} />
-                    </span>
-                    <span
-                      className={`${styles.dot} ${styles.dotYellow}`}
-                      onClick={() => setMinimized(!minimized)}
-                    >
-                      <Minus size={8} className={styles.icon} />
-                    </span>
+                    <div className={styles.browserBar}>
+                      <span
+                        className={`${styles.dot} ${styles.dotRed}`}
+                        onClick={() => setClosed(!closed)}
+                      >
+                        <X size={8} className={styles.icon} />
+                      </span>
+                      <span
+                        className={`${styles.dot} ${styles.dotYellow}`}
+                        onClick={() => setMinimized(!minimized)}
+                      >
+                        <Minus size={8} className={styles.icon} />
+                      </span>
 
-                    <span className={`${styles.dot} ${styles.dotGreen}`} />
-                  </div>
-                </div>
-                {!minimized && (
-                  <div className={styles.containerInfoVideo}>
-                    <img
-                      src={project.videoImg}
-                      alt="Insta Video"
-                      className={styles.videoInstaImg}
-                    />
-                    <div className={styles.descriptionBtn}>
-                      <h3>Project Walkthrough</h3>
-                      <p>
-                        Product presentation video created to showcase features
-                        and user experience flows of the SNS 24 mobile
-                        application. The presentation video is in Portuguese and
-                        was created as part of the SNS 24 digital communication
-                        experience for users in Portugal.
-                      </p>
-
-                      <a href={project.videoUrl} target="_blank">
-                        <Button variant="secondary">
-                          <Video style={{ marginRight: 8 }} />
-                          Watch video
-                        </Button>
-                      </a>
+                      <span className={`${styles.dot} ${styles.dotGreen}`} />
                     </div>
-                  </div>)}
+                  </div>
+                  {!minimized && (
+                    <div className={styles.containerInfoVideo}>
+                      <img
+                        src={project.videoImg}
+                        alt="Insta Video"
+                        className={styles.videoInstaImg}
+                      />
+                      <div className={styles.descriptionBtn}>
+                        <h3>Project Walkthrough</h3>
+                        <p>
+                          Product presentation video created to showcase
+                          features and user experience flows of the SNS 24
+                          mobile application. The presentation video is in
+                          Portuguese and was created as part of the SNS 24
+                          digital communication experience for users in
+                          Portugal.
+                        </p>
+
+                        <a href={project.videoUrl} target="_blank">
+                          <Button variant="secondary">
+                            <Video style={{ marginRight: 8 }} />
+                            Watch video
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </Card>
               </div>
             )}
 
             {(project.InformationArchitectureMap ||
               project.wireframe ||
-              project.iconography ||
-              project.images) && (
+              project.iconography) && (
               <Card className={styles.cardProjects}>
                 <div className={styles.browserFrame}>
                   <div className={styles.browserBar}>
@@ -291,6 +291,12 @@ function ProjectsDetail() {
                     </span>
 
                     <span className={`${styles.dot} ${styles.dotGreen}`} />
+                    <h4 className={styles.title}>
+                      {project.InformationArchitectureMap?.title}
+                      {`, `}
+                      {project.wireframe?.title} {`and`}{" "}
+                      {project.iconography?.title}
+                    </h4>
                   </div>
                 </div>
 
@@ -298,7 +304,6 @@ function ProjectsDetail() {
                   <>
                     {project.InformationArchitectureMap && (
                       <div className={styles.containerProject}>
-                        <h3>{project.InformationArchitectureMap.title}</h3>
                         <div className={styles.IADesktop}>
                           <img
                             src={project.InformationArchitectureMap.desktop}
@@ -318,7 +323,6 @@ function ProjectsDetail() {
 
                     {project.wireframe && (
                       <div className={styles.containerProject}>
-                        <h3>{project.wireframe.title}</h3>
                         <div className={styles.containerWireframe}>
                           <img
                             src={project.wireframe.img}
@@ -331,7 +335,6 @@ function ProjectsDetail() {
 
                     {project.iconography && (
                       <div className={styles.containerProject}>
-                        <h3>{project.iconography.title}</h3>
                         <div className={styles.iconographyContainer}>
                           {project.iconography.img.map((icon, index) => (
                             <Card key={index} className={styles.iconCard}>

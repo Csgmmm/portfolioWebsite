@@ -118,6 +118,8 @@
 .bigNumber h4 {
   text-transform: uppercase;
   font-weight: 300;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .bigNumber h1 {
@@ -244,7 +246,9 @@
 
 }
 .containerProject {
-  margin: var(--null) var(--lg) var(--null) var(--lg);
+  margin: var(--sm) var(--lg) var(--null) var(--lg);
+  border-top: 1px solid var(--border-color);
+  padding-top:var(--lg)
 }
 .containerProject h3 {
   display: flex;
@@ -297,11 +301,14 @@ width: 70%;
   margin:var(--md) var(--null) var(--md) 
 }
 
+
 @media (max-width: 962px) {
   .bothSide {
     display: flex;
     flex-direction: column;
   }
+
+
 
   .leftSide {
     width: 100%;
@@ -368,6 +375,7 @@ width: 70%;
   display: flex;
   align-items: center;
   gap: 6px;
+   width: 100%;
 }
 
 .dot {
@@ -387,6 +395,12 @@ width: 70%;
 }
 .dotGreen {
   background: #59b867;
+}
+
+.browserBar h4 {
+  color: var(--primary);
+  font-weight: 300;
+  width: 100%;
 }
 
 .icon {
