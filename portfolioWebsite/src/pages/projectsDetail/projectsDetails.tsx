@@ -303,7 +303,7 @@ function ProjectsDetail() {
                 {!minimized && (
                   <>
                     {project.InformationArchitectureMap && (
-                      <div className={styles.containerProject}>
+                      <div className={styles.containerProjectMap}>
                         <div className={styles.IADesktop}>
                           <img
                             src={project.InformationArchitectureMap.desktop}
