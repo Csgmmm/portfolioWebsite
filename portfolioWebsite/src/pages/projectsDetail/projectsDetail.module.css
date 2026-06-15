@@ -288,7 +288,7 @@
 .iconography {
   width: var(--lg);
   height: auto;
-  filter: invert(0);
+  filter: brightness(0) invert(1);
 }
 
 [data-theme="light"] .iconography {
