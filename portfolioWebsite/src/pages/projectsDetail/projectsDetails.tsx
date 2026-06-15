@@ -9,6 +9,7 @@ import { ChevronLeft, CircleAlert, Minus, Video, X } from "lucide-react";
 import Chip from "../../components/chips/Chip";
 import Card from "../../components/card/Card";
 import { useState } from "react";
+import VideoComponent from "./assets/pawmate/pawMateVimeo";
 
 function ProjectsDetail() {
   const { id } = useParams();
@@ -392,21 +393,42 @@ function ProjectsDetail() {
                   img={project.images.img}
                   title={project.images.title}
                   className={styles.carousel}
-                  
                 />
               </div>
             )}
 
             {project.mockup && (
               <Carousel
-                  img={project.mockup.img}
-                  title={project.mockup.title}
-                  className={styles.carousel}
-                  
-                />
+                img={project.mockup.img}
+                title={project.mockup.title}
+                className={styles.carousel}
+              />
             )}
 
+            {project.videoUrl && (
+              <Card>
+                <div className={styles.browserFrame}>
+                  <div className={styles.browserBar}>
+                    <span
+                      className={`${styles.dot} ${styles.dotRed}`}
+                      onClick={() => setClosed(!closed)}
+                    >
+                      <X size={8} className={styles.icon} />
+                    </span>
+                    <span
+                      className={`${styles.dot} ${styles.dotYellow}`}
+                      onClick={() => setMinimized(!minimized)}
+                    >
+                      <Minus size={8} className={styles.icon} />
+                    </span>
 
+                    <span className={`${styles.dot} ${styles.dotGreen}`} />
+                    <h4 className={styles.title}>{project.videoUrl}</h4>
+                  </div>
+                </div>
+                {!minimized && <VideoComponent />}
+              </Card>
+            )}
           </div>
         </div>
       </div>

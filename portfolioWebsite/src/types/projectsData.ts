@@ -221,6 +221,21 @@ import {
   stethoscope,
 } from "../pages/projectsDetail/assets/tinytracker/index";
 
+//slotqi
+import {
+  modal,
+  modal2,
+  modal3,
+  slotQICalendar,
+  slotQiOpenings,
+  mockup1
+} from "../pages/projectsDetail/assets/slotiq/index";
+
+//pawmate
+import {
+  pawmateWireframe, pawMateCode, pawMateCode2, pawMateCode3
+} from "../pages/projectsDetail/assets/pawmate/index"
+
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -689,6 +704,7 @@ export const projects: IProjectData[] = [
     mockup: { title: "Mockup", img: [tinyMockup1] },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
+
   //slotQi
   {
     category: ["UI/UX Design"],
@@ -710,11 +726,13 @@ export const projects: IProjectData[] = [
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
     images: {
-      title: "Img",
-      img: [components, modals, variables_styles],
+      title: "Components and Interface",
+      img: [modal, modal2, modal3, slotQICalendar, slotQiOpenings],
     },
+    mockup: {title: "Mockup", img: [mockup1]},
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
+
   //pawmate
   {
     category: ["Front-End Development"],
@@ -733,12 +751,9 @@ export const projects: IProjectData[] = [
 
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
-    wireframe: { title: "Wireframes", img: wireframeYumyum },
-    images: {
-      title: "Img",
-      img: [components, modals, variables_styles],
-    },
-    videoUrl: "943623829",
+    wireframe: { title: "Wireframes", img: pawmateWireframe },
+    codeImg: {title:"Code", img:[pawMateCode, pawMateCode2, pawMateCode3]},
+    videoUrl: "Vimeo",
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },
   //bmw

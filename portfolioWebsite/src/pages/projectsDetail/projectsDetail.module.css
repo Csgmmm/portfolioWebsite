@@ -149,6 +149,9 @@
 
 .rightSide {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .introDescription {
@@ -168,7 +171,6 @@
 
 .description {
   white-space: pre-line;
-  margin-bottom: var(--xl-2);
 }
 
 .description h3 {
@@ -230,6 +232,7 @@
 
 .carouselFrames {
   display: flex;
+  flex-direction: column;
   gap: var(--md);
 }
 
@@ -247,11 +250,11 @@
 
 .titleProject {
   margin: 0;
-  padding: var(--sm)   var(--null) var(--sm) var(--null);
+  padding: var(--sm) var(--null) var(--sm) var(--null);
 }
 
 .containerProjectFirst {
-  padding: var(--null) var(--sm) var(--sm)  var(--md);
+  padding: var(--null) var(--sm) var(--sm) var(--md);
 }
 
 .containerProject {
@@ -305,13 +308,6 @@
 .imagesDSM {
   width: 70%;
 }
-
-.carouselImages {
-  margin: var(--md) var(--null);
-}
-
-
-
 
 @media (max-width: 962px) {
   .bothSide {
