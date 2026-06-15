@@ -2,10 +2,12 @@ import { useState } from "react";
 import styles from "./carousel.module.css";
 import { ChevronLeft, ChevronRight, Minus, X } from "lucide-react";
 import Button from "../buttons/Button";
+import Card from "../card/Card";
 
 interface ICarousel {
   img: string[];
   title: string;
+  className?: string;
 }
 
 function Carousel({ img, title }: ICarousel) {
@@ -18,7 +20,7 @@ function Carousel({ img, title }: ICarousel) {
   return (
     <>
       {!closed && (
-        
+        <Card>
         <div className={styles.browserFrame}>
           <div className={styles.browserBar}>
             <span
@@ -36,6 +38,7 @@ function Carousel({ img, title }: ICarousel) {
           </div>
 
           {!minimized && (
+            
             <div className={styles.carousel}>
               <img src={img[current]} />
 
@@ -60,7 +63,7 @@ function Carousel({ img, title }: ICarousel) {
               )}
             </div>
           )}
-        </div>
+        </div></Card>
       )}
     </>
   );

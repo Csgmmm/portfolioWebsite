@@ -237,38 +237,44 @@
   display: none;
 }
 
-.imgDesktop {
+.imgProject {
   width: 100%;
 }
 
 .cardProjects {
   background: var(--background-card);
-
 }
+
+.titleProject {
+  margin: 0;
+  padding: var(--sm)   var(--null) var(--sm) var(--null);
+}
+
+.containerProjectFirst {
+  padding: var(--null) var(--sm) var(--sm)  var(--md);
+}
+
 .containerProject {
-  margin: var(--sm) var(--lg) var(--null) var(--lg);
   border-top: 1px solid var(--border-color);
-  padding-top:var(--lg)
+  padding: var(--null) var(--md) var(--md);
 }
 
-.containerProjectMap {
-  margin: var(--null) var(--lg) var(--null) var(--lg);
-  padding-top:var(--xs)
+.projectsWrapper .containerProject:first-child {
+  border-top: none;
 }
+
 .containerProject h3 {
   display: flex;
   justify-content: center;
   margin: 0;
   padding: var(--md) var(--null) var(--xs) var(--null);
-}  
+}
 
 .iconographyContainer {
   display: flex;
   flex-wrap: wrap;
   gap: var(--xs);
-  margin-bottom: var(--md
-  
-);
+  margin-bottom: var(--md);
 }
 
 .iconCard {
@@ -282,12 +288,12 @@
 .iconography {
   width: var(--lg);
   height: auto;
-   filter: invert(0);
-  
+  filter: invert(0);
 }
 
 [data-theme="light"] .iconography {
-  filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(102%) hue-rotate(201deg) brightness(93%) contrast(83%);
+  filter: brightness(0) saturate(100%) invert(24%) sepia(6%) saturate(102%)
+    hue-rotate(201deg) brightness(93%) contrast(83%);
 }
 
 .cardImgs {
@@ -296,15 +302,15 @@
   padding: var(--xs);
 }
 
-
 .imagesDSM {
-width: 70%;
-
+  width: 70%;
 }
 
 .carouselImages {
-  margin:var(--md) var(--null) var(--md) 
+  margin: var(--md) var(--null);
 }
+
+
 
 
 @media (max-width: 962px) {
@@ -312,8 +318,6 @@ width: 70%;
     display: flex;
     flex-direction: column;
   }
-
-
 
   .leftSide {
     width: 100%;
@@ -349,7 +353,7 @@ width: 70%;
     padding: var(--md);
   }
 
-  .imgMobile {
+  .imgProject {
     width: 100%;
   }
 
@@ -380,7 +384,7 @@ width: 70%;
   display: flex;
   align-items: center;
   gap: 6px;
-   width: 100%;
+  width: 100%;
 }
 
 .dot {
@@ -412,7 +416,8 @@ width: 70%;
   display: none;
 }
 
-.dotYellow:hover .icon, .dotRed:hover .icon {
+.dotYellow:hover .icon,
+.dotRed:hover .icon {
   display: block;
   color: var(--background);
   cursor: pointer;

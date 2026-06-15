@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 320px;
+  padding-bottom: var(--md);
 }
 
 .carousel img {
@@ -33,7 +34,7 @@
 .browserFrame {
   border-radius: var(--sm);
   overflow: hidden;
-  border: 1px solid var(--border);
+
   width: 100%;
   height: fit-content;
 }

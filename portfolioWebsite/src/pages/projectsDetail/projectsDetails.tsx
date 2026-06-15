@@ -16,6 +16,21 @@ function ProjectsDetail() {
   const [minimized, setMinimized] = useState(false);
   const [closed, setClosed] = useState(false);
 
+  const availableTitles = [
+    project?.InformationArchitectureMap?.title,
+    project?.wireframe?.title,
+    project?.iconography?.title,
+    project?.prototype?.title,
+  ].filter(Boolean);
+
+  let dynamicTitle = "";
+  if (availableTitles.length === 1) {
+    dynamicTitle = availableTitles[0] || "";
+  } else if (availableTitles.length > 1) {
+    const lastTitle = availableTitles.pop();
+    dynamicTitle = `${availableTitles.join(", ")} and ${lastTitle}`;
+  }
+
   const renderBold = (text: string) => {
     // divide o texto em partes, separando pelo padrão **...**
     const parts = text.split(/\*\*(.*?)\*\*/g);
@@ -273,7 +288,8 @@ function ProjectsDetail() {
 
             {(project.InformationArchitectureMap ||
               project.wireframe ||
-              project.iconography) && (
+              project.iconography ||
+              project.prototype) && (
               <Card className={styles.cardProjects}>
                 <div className={styles.browserFrame}>
                   <div className={styles.browserBar}>
@@ -291,31 +307,29 @@ function ProjectsDetail() {
                     </span>
 
                     <span className={`${styles.dot} ${styles.dotGreen}`} />
-                    <h4 className={styles.title}>
-                      {project.InformationArchitectureMap?.title}
-                      {`, `}
-                      {project.wireframe?.title} {`and`}{" "}
-                      {project.iconography?.title}
-                    </h4>
+                    <h4 className={styles.title}>{dynamicTitle}</h4>
                   </div>
                 </div>
 
                 {!minimized && (
-                  <>
+                  <div className={styles.projectsWrapper}>
                     {project.InformationArchitectureMap && (
-                      <div className={styles.containerProjectMap}>
+                      <div className={styles.containerProjectFirst}>
+                        <h5 className={styles.titleProject}>
+                          {project.InformationArchitectureMap.title}
+                        </h5>
                         <div className={styles.IADesktop}>
                           <img
                             src={project.InformationArchitectureMap.desktop}
                             alt="Information Architecture Map"
-                            className={styles.imgDesktop}
+                            className={styles.imgProject}
                           />
                         </div>
                         <div className={styles.IAMobile}>
                           <img
                             src={project.InformationArchitectureMap.mobile}
                             alt="Information Architecture Map"
-                            className={styles.imgMobile}
+                            className={styles.imgProject}
                           />
                         </div>
                       </div>
@@ -323,11 +337,14 @@ function ProjectsDetail() {
 
                     {project.wireframe && (
                       <div className={styles.containerProject}>
+                        <h5 className={styles.titleProject}>
+                          {project.wireframe.title}
+                        </h5>
                         <div className={styles.containerWireframe}>
                           <img
                             src={project.wireframe.img}
                             alt="Wireframe"
-                            className={styles.imgDesktop}
+                            className={styles.imgProject}
                           />
                         </div>
                       </div>
@@ -335,12 +352,15 @@ function ProjectsDetail() {
 
                     {project.iconography && (
                       <div className={styles.containerProject}>
+                        <h5 className={styles.titleProject}>
+                          {project.iconography.title}
+                        </h5>
                         <div className={styles.iconographyContainer}>
-                          {project.iconography.img.map((icon, index) => (
-                            <Card key={index} className={styles.iconCard}>
+                          {project.iconography.img.map((icon) => (
+                            <Card className={styles.iconCard}>
                               <img
                                 src={icon}
-                                alt={`icon ${index + 1}`}
+                                alt={icon}
                                 className={styles.iconography}
                               />
                             </Card>
@@ -348,7 +368,20 @@ function ProjectsDetail() {
                         </div>
                       </div>
                     )}
-                  </>
+
+                    {project.prototype && (
+                      <div className={styles.containerProject}>
+                        <h5>{project.prototype.title}</h5>
+                        {project.prototype.img.map((prototype) => (
+                          <img
+                            src={prototype}
+                            alt={prototype}
+                            className={styles.imgProject}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 )}
               </Card>
             )}
@@ -358,6 +391,8 @@ function ProjectsDetail() {
                 <Carousel
                   img={project.images.img}
                   title={project.images.title}
+                  className={styles.carousel}
+                  
                 />
               </div>
             )}
