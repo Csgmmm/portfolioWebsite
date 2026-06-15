@@ -3,9 +3,13 @@ export { default as evolveFigma2 } from "./evolveFigma2.png";
 export { default as evolveFigma3 } from "./evolveFigma3.png";
 export { default as evolveFigma4 } from "./evolveFigma4.png";
 export { default as evolveFigma5 } from "./evolveFigma5.png";
+export { default as evolveFigma6 } from "./evolveFigma6.png";
+export { default as evolveFigma7 } from "./evolveFigma7.png";
+export { default as evolveFigma8 } from "./evolveFigma8.png";
 export { default as prototype1 } from "./prototype1.png";
 export { default as prototype2 } from "./prototype2.png";
 export { default as prototype3 } from "./prototype3.png";
+export { default as smartwatch } from ".//smartwatch.png";
 
 export { default as Frame1000002812 } from "./iconography/Frame1000002812.svg";
 export { default as account_circle } from "./iconography/account_circle.svg";

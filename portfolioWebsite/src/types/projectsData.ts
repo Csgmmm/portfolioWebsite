@@ -121,9 +121,13 @@ import {
   evolveFigma3,
   evolveFigma4,
   evolveFigma5,
+  evolveFigma6,
+  evolveFigma7,
+  evolveFigma8,
   prototype1,
   prototype2,
   prototype3,
+  smartwatch,
   Frame1000002812,
   account_circle,
   add_circle1,
@@ -214,6 +218,7 @@ export interface IProjectData {
     password: string;
   }[];
   prototype?: { title: string; img: string[] };
+  mockup?: { title: string; img: string[] };
 }
 
 export const projects: IProjectData[] = [
@@ -537,13 +542,16 @@ export const projects: IProjectData[] = [
         evolveFigma3,
         evolveFigma4,
         evolveFigma5,
+        evolveFigma6,
+        evolveFigma7,
+        evolveFigma8,
       ],
     },
     prototype: {
       title: "Prototype",
       img: [prototype1, prototype2, prototype3],
     },
-
+    mockup: {title: "Mockup", img:[smartwatch]},
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
   //tinytracker
