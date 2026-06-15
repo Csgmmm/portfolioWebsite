@@ -398,35 +398,12 @@ function ProjectsDetail() {
             )}
 
             {project.mockup && (
-              <Card className={styles.cardProjects}>
-                <div className={styles.browserFrame}>
-                  <div className={styles.browserBar}>
-                    <span
-                      className={`${styles.dot} ${styles.dotRed}`}
-                      onClick={() => setClosed(!closed)}
-                    >
-                      <X size={8} className={styles.icon} />
-                    </span>
-                    <span
-                      className={`${styles.dot} ${styles.dotYellow}`}
-                      onClick={() => setMinimized(!minimized)}
-                    >
-                      <Minus size={8} className={styles.icon} />
-                    </span>
-
-                    <span className={`${styles.dot} ${styles.dotGreen}`} />
-                    <h4 className={styles.title}>{project.mockup.title}</h4>
-                  </div>
-                </div>
-
-                {!minimized && (
-                  <div className={styles.containerProject}>
-                    {project.mockup.img.map((img) => (
-                      <img src={img} alt="App on the smartwatch" className={styles.imgProject} />
-                    ))}
-                  </div>
-                )}
-                </Card>
+              <Carousel
+                  img={project.mockup.img}
+                  title={project.mockup.title}
+                  className={styles.carousel}
+                  
+                />
             )}
 
 

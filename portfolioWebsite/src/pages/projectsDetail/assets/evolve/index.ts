@@ -6,10 +6,13 @@ export { default as evolveFigma5 } from "./evolveFigma5.png";
 export { default as evolveFigma6 } from "./evolveFigma6.png";
 export { default as evolveFigma7 } from "./evolveFigma7.png";
 export { default as evolveFigma8 } from "./evolveFigma8.png";
-export { default as prototype1 } from "./prototype1.png";
-export { default as prototype2 } from "./prototype2.png";
-export { default as prototype3 } from "./prototype3.png";
-export { default as smartwatch } from ".//smartwatch.png";
+export { default as evolveFigma9 } from "./evolveFigma9.png";
+export { default as evolveprototype1 } from "./evolveprototype1.png";
+export { default as evolveprototype2 } from "./evolveprototype2.png";
+export { default as evolveprototype3 } from "./evolveprototype3.png";
+export { default as smartwatch } from "./smartwatch.png";
+export { default as evolvepersonWithPhoneOnHands } from "./evolvepersonWithPhoneOnHands.png";
+export { default as evolveappIconOnIphone } from "./evolveappIconOnIphone.png";
 
 export { default as Frame1000002812 } from "./iconography/Frame1000002812.svg";
 export { default as account_circle } from "./iconography/account_circle.svg";

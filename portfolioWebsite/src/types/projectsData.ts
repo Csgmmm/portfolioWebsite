@@ -14,7 +14,7 @@ import {
 } from "../pages/projects/assets/index";
 
 //projectsDetails
-import videoInstaImg from "../pages/projectsDetail/assets/instaImg.png";
+import videoInstaImg from "../pages/projectsDetail/assets/sns24/instaImg.png"
 
 //Portfolio
 import {
@@ -107,13 +107,6 @@ import {
   variables_styles,
 } from "../pages/projectsDetail/assets/yumyum/index";
 
-//tiny
-import {
-  wireframeTiny,
-  IADesktopTiny,
-  IAMobileTiny,
-} from "../pages/projectsDetail/assets/tinytracker/index";
-
 //evolve
 import {
   evolveFigma1,
@@ -124,10 +117,13 @@ import {
   evolveFigma6,
   evolveFigma7,
   evolveFigma8,
-  prototype1,
-  prototype2,
-  prototype3,
+  evolveFigma9,
+  evolveprototype1,
+  evolveprototype2,
+  evolveprototype3,
   smartwatch,
+  evolvepersonWithPhoneOnHands,
+  evolveappIconOnIphone,
   Frame1000002812,
   account_circle,
   add_circle1,
@@ -175,6 +171,22 @@ import {
   visibility_off,
   widgets,
 } from "../pages/projectsDetail/assets/evolve/index";
+
+//tiny
+import {
+  wireframeTiny,
+  IADesktopTiny,
+  IAMobileTiny,
+  prototypeTinyTracker1,
+  tinyTrackerEmptyState,
+  tinyTrackerFigma1,
+  tinyTrackerFigma2,
+  tinyTrackerFigma3,
+  tinyTrackerFigma4,
+  tinyTrackerFigma5,
+  tinyTrackerFigma6,
+  tinyTrackerFigma7,
+} from "../pages/projectsDetail/assets/tinytracker/index";
 
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -267,6 +279,7 @@ export const projects: IProjectData[] = [
     },
     resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`,
   },
+
   //SNS 24
   {
     category: ["UI/UX Design", "Homepage"],
@@ -376,6 +389,7 @@ export const projects: IProjectData[] = [
       { username: "joana@email.com", password: "joana" },
     ],
   },
+
   //yumyum
   {
     category: ["UI/UX Design", "Homepage"],
@@ -458,6 +472,7 @@ export const projects: IProjectData[] = [
     },
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
+
   //evolve
   {
     category: ["UI/UX Design"],
@@ -535,7 +550,7 @@ export const projects: IProjectData[] = [
       ],
     },
     images: {
-      title: "Interface",
+      title: "Styles, Variables and Components",
       img: [
         evolveFigma1,
         evolveFigma2,
@@ -545,15 +560,20 @@ export const projects: IProjectData[] = [
         evolveFigma6,
         evolveFigma7,
         evolveFigma8,
+        evolveFigma9,
       ],
     },
     prototype: {
       title: "Prototype",
-      img: [prototype1, prototype2, prototype3],
+      img: [evolveprototype1, evolveprototype2, evolveprototype3],
     },
-    mockup: {title: "Mockup", img:[smartwatch]},
+    mockup: {
+      title: "Mockup",
+      img: [smartwatch, evolvepersonWithPhoneOnHands, evolveappIconOnIphone],
+    },
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
+
   //tinytracker
   {
     category: ["UI/UX Design"],
@@ -584,8 +604,19 @@ export const projects: IProjectData[] = [
     },
     wireframe: { title: "Wireframes", img: wireframeTiny },
     images: {
-      title: "Img",
-      img: [components, modals, variables_styles],
+      title: "Components, Empty State, Interface, Variables and Styles",
+      img: [  tinyTrackerEmptyState,
+  tinyTrackerFigma1,
+  tinyTrackerFigma2,
+  tinyTrackerFigma3,
+  tinyTrackerFigma4,
+  tinyTrackerFigma5,
+  tinyTrackerFigma6,
+  tinyTrackerFigma7,],
+    },
+    prototype: {
+      title: "Prototype",
+      img: [prototypeTinyTracker1],
     },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },

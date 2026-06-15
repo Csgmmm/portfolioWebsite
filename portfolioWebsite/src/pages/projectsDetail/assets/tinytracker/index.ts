@@ -1,3 +1,12 @@
 export { default as wireframeTiny } from "./wireframeTiny.png";
 export { default as IADesktopTiny } from "./IADesktopTiny.png";
 export { default as IAMobileTiny } from "./IAMobileTiny.png";
+export { default as prototypeTinyTracker1 } from "./prototypeTinyTracker1.png";
+export { default as tinyTrackerEmptyState } from "./tinyTrackerEmptyState.png";
+export { default as tinyTrackerFigma1 } from "./tinyTrackerFigma1.png";
+export { default as tinyTrackerFigma2 } from "./tinyTrackerFigma2.png";
+export { default as tinyTrackerFigma3 } from "./tinyTrackerFigma3.png";
+export { default as tinyTrackerFigma4 } from "./tinyTrackerFigma4.png";
+export { default as tinyTrackerFigma5 } from "./tinyTrackerFigma5.png";
+export { default as tinyTrackerFigma6 } from "./tinyTrackerFigma6.png";
+export { default as tinyTrackerFigma7 } from "./tinyTrackerFigma7.png";
