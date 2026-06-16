@@ -217,10 +217,16 @@ padding-bottom: var(--md);
 .containerVideo {
   width: 100%;
 }
+
 .containerInfoVideo {
   display: flex;
   margin: var(--md);
   gap: var(--lg);
+}
+
+.credentialsTitle {
+  margin: 0;
+  padding: var(--md) var(--null) var(--null) var(--md);
 }
 
 .descriptionBtn h3 {

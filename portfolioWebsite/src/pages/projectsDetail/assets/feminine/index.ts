@@ -11,3 +11,4 @@ export { default as webFem5 } from "./webFem5.png";
 export { default as webFem6 } from "./webFem6.png";
 export { default as webFem7 } from "./webFem7.png";
 export { default as webFem8 } from "./webFem8.png";
+export { default as mockupMyCycle } from "./mockupMyCycle.png";

@@ -18,7 +18,6 @@ import videoInstaImg from "../pages/projectsDetail/assets/sns24/instaImg.png";
 
 //Portfolio
 import {
-  FigmaPort1,
   FigmaPort2,
   FigmaPort3,
   FigmaPort4,
@@ -29,7 +28,6 @@ import {
   CodePort3,
   CodePort4,
   CodePort5,
-  CodePort6,
   CodePort7,
   CodePort8,
   CodePort9,
@@ -42,14 +40,7 @@ import {
   codeFem3,
   codeFem4,
   codeFem5,
-  webFem1,
-  webFem2,
-  webFem3,
-  webFem4,
-  webFem5,
-  webFem6,
-  webFem7,
-  webFem8,
+  mockupMyCycle
 } from "../pages/projectsDetail/assets/feminine/index";
 
 //yumyum
@@ -272,7 +263,6 @@ export interface IProjectData {
   images?: { title: string; img: string[] };
   videoImg?: string;
   videoUrl?: string;
-  figmaImg?: { title: string; img: string[] };
   codeImg?: { title: string; img: string[] };
   contributions?: { title: string; icon: LucideIcon; description: string }[];
   disclaimer?: string;
@@ -311,10 +301,9 @@ export const projects: IProjectData[] = [
       **Engineering & Scalability**
       • Used experience across different tech stacks to make the designs functional and accurate to the idea 
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
-    figmaImg: {
-      title: "Interface",
+    images: {
+      title: "Figma",
       img: [
-        FigmaPort1,
         FigmaPort2,
         FigmaPort3,
         FigmaPort4,
@@ -330,7 +319,6 @@ export const projects: IProjectData[] = [
         CodePort3,
         CodePort4,
         CodePort5,
-        CodePort6,
         CodePort7,
         CodePort8,
         CodePort9,
@@ -399,7 +387,6 @@ export const projects: IProjectData[] = [
     ],
     disclaimer: `The work presented in this project was developed collaboratively as part of a multidisciplinary product team. My contributions focused on UX/UI design, interface exploration, design system implementation, and user experience improvements alongside other designers, analysts, and developers.`,
     videoImg: videoInstaImg,
-    videoUrl: "https://www.instagram.com/p/DW3Xl2LtNE5/",
     resume: `End-to-end UX/UI design and front-end engineering for Portugal's national healthcare platform.`,
     bigNumber: {
       label: "Reach",
@@ -430,21 +417,10 @@ export const projects: IProjectData[] = [
       title: "Development",
       img: [codeFem1, codeFem2, codeFem3, codeFem4, codeFem5],
     },
-    figmaImg: {
-      title: "Interface",
-      img: [
-        webFem1,
-        webFem2,
-        webFem3,
-        webFem4,
-        webFem5,
-        webFem6,
-        webFem7,
-        webFem8,
-      ],
-    },
+    mockup: {title:"Mockup", img: [mockupMyCycle]},
     resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`,
     codeCredentials: [
+      
       { username: "luisa@email.com", password: "luisa" },
       { username: "maria@email.com", password: "maria" },
       { username: "joana@email.com", password: "joana" },

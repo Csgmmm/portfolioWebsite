@@ -1,4 +1,4 @@
-export { default as FigmaPort1 } from "./FigmaPort1.png";
+
 export { default as FigmaPort2 } from "./FigmaPort2.png";
 export { default as FigmaPort3 } from "./FigmaPort3.png";
 export { default as FigmaPort4 } from "./FigmaPort4.png";
@@ -9,7 +9,6 @@ export { default as CodePort2 } from "./codePort2.png";
 export { default as CodePort3 } from "./codePort3.png";
 export { default as CodePort4 } from "./codePort4.png";
 export { default as CodePort5 } from "./codePort5.png";
-export { default as CodePort6 } from "./codePort6.png";
 export { default as CodePort7 } from "./CodePort7.png";
 export { default as CodePort8 } from "./CodePort8.png";
 export { default as CodePort9 } from "./codePort9.png";

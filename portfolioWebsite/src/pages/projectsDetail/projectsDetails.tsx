@@ -31,6 +31,7 @@ function ProjectsDetail() {
     project?.wireframe,
     project?.iconography,
     project?.prototype,
+    project?.interface,
   ].filter(Boolean).length; //remove tudo o que é undefined, null, 0 ou "". (tudo o que é falsy) e conta quantos sobram.
 
   let dynamicTitle = "";
@@ -93,8 +94,7 @@ function ProjectsDetail() {
           <div className={styles.leftSide}>
             <Card variant="secondary">
               <div className={styles.containerLeftCard}>
-                <h2 className={styles.projectTitle}>
-                {project.projectTitle}</h2>
+                <h2 className={styles.projectTitle}>{project.projectTitle}</h2>
                 <div className={styles.infoProject}>
                   <h4>Project year</h4>
                   {project.year}
@@ -176,6 +176,7 @@ function ProjectsDetail() {
                 {project.codeCredentials && (
                   <div className={styles.credentials}>
                     <Card>
+                      <h5 className={styles.credentialsTitle}>Users</h5>
                       <pre className={styles.code}>
                         {project.codeCredentials.map((item) => (
                           <div>
@@ -205,13 +206,13 @@ function ProjectsDetail() {
             </div>
 
             {/*  para que nãoo apareca div. figmaImg ou codeimg é maior que 0?, então.. */}
-            {(project.figmaImg || project.codeImg) && (
+            {(project.images || project.codeImg) && (
               <div className={styles.containerCarousel}>
                 <div className={styles.carouselFrames}>
-                  {project.figmaImg && (
+                  {project.images && (
                     <Carousel
-                      img={project.figmaImg.img}
-                      title={project.figmaImg.title}
+                      img={project.images.img}
+                      title={project.images.title}
                     />
                   )}
                   {project.codeImg && (
@@ -233,7 +234,6 @@ function ProjectsDetail() {
                     <Card>
                       <div className={styles.contributionsInfo}>
                         <div className={styles.titleContribution}>
-                          
                           <contributionItem.icon size={20} />
                           <h5>{contributionItem.title}</h5>
                         </div>
@@ -300,7 +300,8 @@ function ProjectsDetail() {
             {(project.InformationArchitectureMap ||
               project.wireframe ||
               project.iconography ||
-              project.prototype) && (
+              project.prototype ||
+              project.interface) && (
               <Card className={styles.cardProjects}>
                 <div className={styles.browserFrame}>
                   <div className={styles.browserBar}>
@@ -324,13 +325,13 @@ function ProjectsDetail() {
 
                 {!minimized && (
                   <div className={styles.projectsWrapper}>
-                    
                     {project.InformationArchitectureMap && (
                       <div className={styles.containerProjectFirst}>
                         {cardItemsCount > 1 && (
-                        <h5 className={styles.titleProject}>
-                          {project.InformationArchitectureMap.title}
-                        </h5>)}
+                          <h5 className={styles.titleProject}>
+                            {project.InformationArchitectureMap.title}
+                          </h5>
+                        )}
                         <div className={styles.IADesktop}>
                           <img
                             src={project.InformationArchitectureMap.desktop}
@@ -399,25 +400,21 @@ function ProjectsDetail() {
 
                     {project.interface && (
                       <div className={styles.containerProject}>
-                        <h5>{project.interface.title}</h5>
+                        {cardItemsCount > 1 && (
+                          <h5>{project.interface.title}</h5>
+                        )}
                         {project.interface.img.map((screen) => (
-                          <img src={screen} className={styles.imgProject} alt={project.interface?.title}/>
+                          <img
+                            src={screen}
+                            className={styles.imgProject}
+                            alt={project.interface?.title}
+                          />
                         ))}
                       </div>
                     )}
                   </div>
                 )}
               </Card>
-            )}
-
-            {project.images && (
-              <div className={styles.carouselImages}>
-                <Carousel
-                  img={project.images.img}
-                  title={project.images.title}
-                  className={styles.carousel}
-                />
-              </div>
             )}
 
             {project.mockup && (
