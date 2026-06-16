@@ -48,6 +48,9 @@ import {
   IAMobileYumYum,
   IADesktopYumYum,
   wireframeYumyum,
+  mockupYumyum2,
+  mockupYumyum,
+  prototypeYumYum,
   account_balance_wallet,
   apartment,
   call1,
@@ -111,10 +114,9 @@ import {
   evolveFigma9,
   evolveprototype1,
   evolveprototype2,
-  evolveprototype3,
   smartwatch,
   evolvepersonWithPhoneOnHands,
-  evolveappIconOnIphone,
+  mockupEvolveScreens,
   Frame1000002812,
   account_circle,
   add_circle1,
@@ -177,6 +179,7 @@ import {
   tinyTrackerFigma5,
   tinyTrackerFigma6,
   tinyTrackerFigma7,
+  mockupTinyTrackeriPhone,
   tinyMockup1,
   ad_units,
   ar_on_you,
@@ -220,10 +223,7 @@ import {
   mockup1,
   loginCredentials,
   slotQiPrototype,
-  SlotQILogin,
-  slotQICurrentOpenings,
-  slotQIAddEvent,
-  slotQIDashboard,
+mockupScreens
 } from "../pages/projectsDetail/assets/slotiq/index";
 
 //pawmate
@@ -278,7 +278,6 @@ export interface IProjectData {
   }[];
   prototype?: { title?: string; img: string[] };
   mockup?: { title?: string; img: string[] };
-  interface?: { title?: string; img: string[] };
 }
 
 export const projects: IProjectData[] = [
@@ -508,6 +507,9 @@ export const projects: IProjectData[] = [
       title: "Styles, Variables, Modals and Empty states",
       img: [components, modals, variables_styles],
     },
+    mockup: {title: "Mockup", img: [mockupYumyum2,
+  mockupYumyum]},
+  prototype: {title: "Prototype", img: [prototypeYumYum]},
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
 
@@ -604,11 +606,11 @@ export const projects: IProjectData[] = [
     },
     prototype: {
       title: "Prototype",
-      img: [evolveprototype1, evolveprototype2, evolveprototype3],
+      img: [evolveprototype1, evolveprototype2],
     },
     mockup: {
       title: "Mockup",
-      img: [smartwatch, evolvepersonWithPhoneOnHands, evolveappIconOnIphone],
+      img: [smartwatch,mockupEvolveScreens, evolvepersonWithPhoneOnHands, ],
     },
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
@@ -693,7 +695,7 @@ export const projects: IProjectData[] = [
       title: "Prototype",
       img: [prototypeTinyTracker1],
     },
-    mockup: { title: "Mockup", img: [tinyMockup1] },
+    mockup: { title: "Mockup", img: [mockupTinyTrackeriPhone,tinyMockup1 ] },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
 
@@ -722,17 +724,8 @@ export const projects: IProjectData[] = [
       title: "Components",
       img: [loginCredentials, modal, modal2, modal3],
     },
-    mockup: { title: "Mockup", img: [mockup1] },
+    mockup: { title: "Mockup", img: [mockupScreens, mockup1 ] },
     prototype: { title: "Prototype", img: [slotQiPrototype] },
-    interface: {
-      title: "Interface",
-      img: [
-        SlotQILogin,
-        slotQICurrentOpenings,
-        slotQIAddEvent,
-        slotQIDashboard,
-      ],
-    },
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
 
@@ -758,7 +751,6 @@ export const projects: IProjectData[] = [
     wireframe: { title: "Wireframes", img: pawmateWireframe },
     codeImg: { title: "Code", img: [pawMateCode, pawMateCode2, pawMateCode3] },
     videoUrl: "Vimeo",
-    interface: {title:"Interface", img: []},
     InformationArchitectureMap: {title: "Information Architecture Map", desktop: PawMateInformationArchitectureMap, mobile: PawMateInformationArchitectureMap },
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },

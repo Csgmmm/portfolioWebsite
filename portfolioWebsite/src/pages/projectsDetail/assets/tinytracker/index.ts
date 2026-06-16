@@ -11,7 +11,7 @@ export { default as tinyTrackerFigma5 } from "./tinyTrackerFigma5.png";
 export { default as tinyTrackerFigma6 } from "./tinyTrackerFigma6.png";
 export { default as tinyTrackerFigma7 } from "./tinyTrackerFigma7.png";
 export { default as tinyMockup1 } from "./tinyMockup1.png";
-
+export { default as mockupTinyTrackeriPhone } from "./mockupTinyTrackeriPhone.png";
 export { default as account_circle } from "./iconography/account_circle.svg";
 export { default as ad_units } from "./iconography/ad_units.svg";
 export { default as ar_on_you } from "./iconography/ar_on_you.svg";

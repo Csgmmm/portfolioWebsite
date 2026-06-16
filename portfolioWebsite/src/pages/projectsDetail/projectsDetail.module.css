@@ -11,6 +11,7 @@ margin:0;
 padding-bottom: var(--md);
 }
 
+
 .headerPage {
   width: 90%;
   flex-direction: column;
@@ -240,11 +241,7 @@ padding-bottom: var(--md);
   width: 200px;
 }
 
-.containerCarousel h4 {
-  text-transform: uppercase;
-  font-weight: 300;
-  margin-bottom: var(--sm);
-}
+
 
 .carouselFrames {
   display: flex;
@@ -259,6 +256,7 @@ padding-bottom: var(--md);
 .imgProject {
   width: 100%;
 }
+
 
 .cardProjects {
   background: var(--background-card);
@@ -277,6 +275,16 @@ padding-bottom: var(--md);
   border-top: 1px solid var(--border-color);
   padding: var(--null) var(--md) var(--md);
 }
+
+.containerProjectMockUp {
+   border-top: 1px solid var(--border-color);
+}
+
+.containerProjectMockUp h5 {
+   padding: var(--null) var(--md) var(--md);
+   margin: var(--md) var(--null) var(--null)
+}
+
 
 .projectsWrapper .containerProject:first-child {
   border-top: none;
