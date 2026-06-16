@@ -19,10 +19,15 @@ const Card = ({
   children,
   className,
   showViewButton = true,
-  showImage = true,variant = "default"
+  showImage = true,
+  variant = "default",
 }: ICardProps) => {
   if (children) {
-    return <div className={`${styles.card} ${styles[variant]} ${className ?? ""}`}>{children}</div>
+    return (
+      <div className={`${styles.card} ${styles[variant]} ${className ?? ""}`}>
+        {children}
+      </div>
+    );
     // Se houver children, devolve uma div com a class card e o children lá dentro
   }
   return (
@@ -44,7 +49,10 @@ const Card = ({
 
         <div className={styles.infoContainer}>
           <div className={styles.title}>
-            <h4>{project?.title}</h4>
+            <Link to={`/project/${project?.id}`}>
+
+              <Button variant="link">{project?.title} </Button>
+            </Link>
 
             <div className={styles.containerResumeBtn}>
               <p className={styles.resume}>{project?.resume}</p>

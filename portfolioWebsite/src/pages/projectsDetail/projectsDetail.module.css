@@ -6,6 +6,11 @@
   margin-bottom: var(--xl-3);
 }
 
+.projectTitle {
+margin:0;
+padding-bottom: var(--md);
+}
+
 .headerPage {
   width: 90%;
   flex-direction: column;
@@ -173,16 +178,16 @@
   white-space: pre-line;
 }
 
-.description h3 {
-  margin-top: 0;
+.description h4 {
+  margin-bottom: var(--md);
 }
 .textDescription {
   width: 100%;
   margin: 0;
 }
 
-.contributions {
-  margin-bottom: var(--xl);
+.contributions h4{
+  margin-bottom: var(--md);
 }
 
 .containerContributionsItems {
@@ -194,6 +199,11 @@
 .titleContribution {
   display: flex;
   gap: var(--sm);
+}
+
+.titleContribution h5{
+  margin: 0;
+  padding-bottom: var(--sm);
 }
 
 .contributionsInfo {

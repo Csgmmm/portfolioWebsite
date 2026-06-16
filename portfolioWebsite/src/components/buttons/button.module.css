@@ -6,7 +6,6 @@
   cursor: pointer;
   font-size: var(--sm);
   font-weight: 600;
-  height: var(--xl);
   min-width: fit-content;
   white-space: nowrap;
 }
@@ -27,6 +26,7 @@
   background-color: transparent;
   color: var(--secondary);
   padding: 0 var(--md);
+    height: var(--xl);
 }
 
 .secondary:hover {

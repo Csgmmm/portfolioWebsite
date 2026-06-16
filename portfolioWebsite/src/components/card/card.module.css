@@ -101,6 +101,7 @@ h4 {
 
 .resume {
   color: var(--shortDescription);
+  padding-bottom: var(--sm);
 }
 
 @media (max-width: 768px) {

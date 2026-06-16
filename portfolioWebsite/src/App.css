@@ -15,7 +15,7 @@
   --navbar-background: #020f1f;
   --disclaimer-border: #376cc2;
   --disclaimer-text: #9fc0f4;
-  --chip-card: #1c2b3c;
+  --chip-card: #2e3e51;
   --chip-text: #ffffff;
   --chip-font-size-card: 14px;
   --null: 0px;
@@ -70,19 +70,19 @@ h2 {
 h3 {
   font-size: 1.33em;
   color: var(--title);
-   text-transform: uppercase;
-  font-weight: 300;
-
 }
 
 h4 {
   font-size: 1.05em;
   color: var(--title);
-  
+  text-transform: uppercase;
+  font-weight: 300;
 }
 h5 {
   font-size: 0.9em;
   color: var(--title);
+  text-transform: uppercase;
+  font-weight: 300;
 }
 h6 {
   font-size: 0.67em;

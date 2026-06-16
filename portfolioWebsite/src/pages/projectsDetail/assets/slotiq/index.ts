@@ -1,6 +1,10 @@
 export { default as modal } from "./modal.png";
 export { default as modal2 } from "./modal2.png";
 export { default as modal3 } from "./modal3.png";
-export { default as slotQICalendar } from "./slotQICalendar.png";
-export { default as slotQiOpenings } from "./slotQiOpenings.png";
 export { default as mockup1 } from "./mockup1.png";
+export { default as loginCredentials } from "./loginCredentials.png";
+export { default as slotQiPrototype } from "./slotQiPrototype.png";
+export { default as SlotQILogin } from "./SlotQILogin.png";
+export { default as slotQICurrentOpenings } from "./slotQICurrentOpenings.png";
+export { default as slotQIAddEvent } from "./slotQIAddEvent.png";
+export { default as slotQIDashboard } from "./slotQIDashboard.png";

@@ -22,7 +22,16 @@ function ProjectsDetail() {
     project?.wireframe?.title,
     project?.iconography?.title,
     project?.prototype?.title,
+    project?.interface?.title,
   ].filter(Boolean);
+
+  const cardItemsCount = [
+    //cria um array com os 4 items possiveis do card
+    project?.InformationArchitectureMap,
+    project?.wireframe,
+    project?.iconography,
+    project?.prototype,
+  ].filter(Boolean).length; //remove tudo o que é undefined, null, 0 ou "". (tudo o que é falsy) e conta quantos sobram.
 
   let dynamicTitle = "";
   if (availableTitles.length === 1) {
@@ -84,12 +93,14 @@ function ProjectsDetail() {
           <div className={styles.leftSide}>
             <Card variant="secondary">
               <div className={styles.containerLeftCard}>
+                <h2 className={styles.projectTitle}>
+                {project.projectTitle}</h2>
                 <div className={styles.infoProject}>
-                  <h3>Project year</h3>
+                  <h4>Project year</h4>
                   {project.year}
                 </div>
                 <div className={styles.infoProject}>
-                  <h3>Tech stack</h3>
+                  <h4>Tech stack</h4>
                   <div className={styles.chipsContainer}>
                     {project.chips &&
                       project.chips.map((item) => (
@@ -188,7 +199,7 @@ function ProjectsDetail() {
           <div className={styles.rightSide}>
             <div className={styles.details}>
               <div className={styles.description}>
-                <h3>Description</h3>
+                <h4>Description</h4>
                 {renderBold(project.fullDescription ?? "")}
               </div>
             </div>
@@ -216,15 +227,15 @@ function ProjectsDetail() {
             {/* contributions */}
             {project.contributions && (
               <div className={styles.contributions}>
-                <h3>My Contribution</h3>
+                <h4>My Contribution</h4>
                 <div className={styles.containerContributionsItems}>
                   {project.contributions.map((contributionItem) => (
                     <Card>
                       <div className={styles.contributionsInfo}>
                         <div className={styles.titleContribution}>
-                          {/* para cada item do array que fazes map, acede a propriedade icon desse item */}
+                          
                           <contributionItem.icon size={20} />
-                          <h4>{contributionItem.title}</h4>
+                          <h5>{contributionItem.title}</h5>
                         </div>
                         <p>{contributionItem.description}</p>
                       </div>
@@ -252,8 +263,8 @@ function ProjectsDetail() {
                       >
                         <Minus size={8} className={styles.icon} />
                       </span>
-
                       <span className={`${styles.dot} ${styles.dotGreen}`} />
+                      <h4>Project Walkthrough</h4>
                     </div>
                   </div>
                   {!minimized && (
@@ -264,7 +275,6 @@ function ProjectsDetail() {
                         className={styles.videoInstaImg}
                       />
                       <div className={styles.descriptionBtn}>
-                        <h3>Project Walkthrough</h3>
                         <p>
                           Product presentation video created to showcase
                           features and user experience flows of the SNS 24
@@ -314,11 +324,13 @@ function ProjectsDetail() {
 
                 {!minimized && (
                   <div className={styles.projectsWrapper}>
+                    
                     {project.InformationArchitectureMap && (
                       <div className={styles.containerProjectFirst}>
+                        {cardItemsCount > 1 && (
                         <h5 className={styles.titleProject}>
                           {project.InformationArchitectureMap.title}
-                        </h5>
+                        </h5>)}
                         <div className={styles.IADesktop}>
                           <img
                             src={project.InformationArchitectureMap.desktop}
@@ -372,13 +384,24 @@ function ProjectsDetail() {
 
                     {project.prototype && (
                       <div className={styles.containerProject}>
-                        <h5>{project.prototype.title}</h5>
+                        {cardItemsCount > 1 && (
+                          <h5>{project.prototype.title}</h5>
+                        )}
                         {project.prototype.img.map((prototype) => (
                           <img
                             src={prototype}
                             alt="prototype on figma"
                             className={styles.imgProject}
                           />
+                        ))}
+                      </div>
+                    )}
+
+                    {project.interface && (
+                      <div className={styles.containerProject}>
+                        <h5>{project.interface.title}</h5>
+                        {project.interface.img.map((screen) => (
+                          <img src={screen} className={styles.imgProject} alt={project.interface?.title}/>
                         ))}
                       </div>
                     )}
@@ -400,7 +423,7 @@ function ProjectsDetail() {
             {project.mockup && (
               <Carousel
                 img={project.mockup.img}
-                title={project.mockup.title}
+                title={project.mockup.title ?? ""}
                 className={styles.carousel}
               />
             )}

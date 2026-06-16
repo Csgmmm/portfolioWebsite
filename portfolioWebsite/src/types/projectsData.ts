@@ -226,15 +226,23 @@ import {
   modal,
   modal2,
   modal3,
-  slotQICalendar,
-  slotQiOpenings,
-  mockup1
+  mockup1,
+  loginCredentials,
+  slotQiPrototype,
+  SlotQILogin,
+  slotQICurrentOpenings,
+  slotQIAddEvent,
+  slotQIDashboard,
 } from "../pages/projectsDetail/assets/slotiq/index";
 
 //pawmate
 import {
-  pawmateWireframe, pawMateCode, pawMateCode2, pawMateCode3
-} from "../pages/projectsDetail/assets/pawmate/index"
+  pawmateWireframe,
+  pawMateCode,
+  pawMateCode2,
+  pawMateCode3,
+  PawMateInformationArchitectureMap
+} from "../pages/projectsDetail/assets/pawmate/index";
 
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -242,6 +250,7 @@ import type { LucideIcon } from "lucide-react";
 export interface IProjectData {
   id: string;
   title: string;
+  projectTitle?: string;
   year?: number | string;
   category?: ("Front-End Development" | "UI/UX Design" | "Homepage")[];
   mainImage: string;
@@ -256,7 +265,7 @@ export interface IProjectData {
   InformationArchitectureMap?: {
     title: string;
     desktop: string;
-    mobile: string;
+    mobile?: string;
   };
   wireframe?: { title: string; img: string };
   iconography?: { title: string; img: string[] };
@@ -277,11 +286,13 @@ export interface IProjectData {
     username: string;
     password: string;
   }[];
-  prototype?: { title: string; img: string[] };
-  mockup?: { title: string; img: string[] };
+  prototype?: { title?: string; img: string[] };
+  mockup?: { title?: string; img: string[] };
+  interface?: { title?: string; img: string[] };
 }
 
 export const projects: IProjectData[] = [
+  //portfolio
   {
     category: ["Front-End Development"],
     id: "portfolio",
@@ -333,6 +344,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design", "Homepage"],
     id: "sns24",
     title: "Portuguese National Healthcare",
+    projectTitle: "SNS24",
     year: "2023 - Current",
     mainImage: sns24,
     appStoreUrl: "https://apps.apple.com/us/app/sns-24/id1192353854",
@@ -401,6 +413,7 @@ export const projects: IProjectData[] = [
     category: ["Front-End Development", "Homepage"],
     id: "femininedashboard",
     title: "Feminine Dashboard",
+    projectTitle: "MyCicle",
     year: 2026,
     mainImage: femin,
     shortDescription:
@@ -443,6 +456,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design", "Homepage"],
     id: "yumyum",
     title: "Asian Food Delivery App",
+    projectTitle: "YumYum",
     year: 2024,
     mainImage: yumyum,
     shortDescription: "For portfolio purposes only.",
@@ -526,6 +540,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design"],
     id: "evolve",
     title: "Banking App",
+    projectTitle: "Evolve",
     year: 2024,
     mainImage: evolve,
     shortDescription: "For portfolio purposes only.",
@@ -627,6 +642,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design"],
     id: "tinytracker",
     title: "Baby Tracker App",
+    projectTitle: "TinyTracker",
     year: 2024,
     mainImage: tinytracker,
     shortDescription: "For portfolio purposes only.",
@@ -685,7 +701,7 @@ export const projects: IProjectData[] = [
     },
     wireframe: { title: "Wireframes", img: wireframeTiny },
     images: {
-      title: "Components, Empty State, Interface, Variables and Styles",
+      title: "Components, Empty State, Variables and Styles",
       img: [
         tinyTrackerFigma4,
         tinyTrackerFigma3,
@@ -710,6 +726,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design"],
     id: "slotqi",
     title: "Talent Management Software",
+    projectTitle: "SlotQI",
     year: 2024,
     mainImage: slotqi,
     shortDescription: "For portfolio purposes only.",
@@ -726,10 +743,20 @@ export const projects: IProjectData[] = [
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
     images: {
-      title: "Components and Interface",
-      img: [modal, modal2, modal3, slotQICalendar, slotQiOpenings],
+      title: "Components",
+      img: [loginCredentials, modal, modal2, modal3],
     },
-    mockup: {title: "Mockup", img: [mockup1]},
+    mockup: { title: "Mockup", img: [mockup1] },
+    prototype: { title: "Prototype", img: [slotQiPrototype] },
+    interface: {
+      title: "Interface",
+      img: [
+        SlotQILogin,
+        slotQICurrentOpenings,
+        slotQIAddEvent,
+        slotQIDashboard,
+      ],
+    },
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
 
@@ -738,6 +765,7 @@ export const projects: IProjectData[] = [
     category: ["Front-End Development"],
     id: "pawmate",
     title: " UI/UX App & website",
+    projectTitle: "PawMate",
     year: 2024,
     mainImage: pawmate,
     shortDescription:
@@ -746,21 +774,25 @@ export const projects: IProjectData[] = [
       "https://www.figma.com/proto/QmCuNbxDTVTjkdeGeb9oan/Pawmate?node-id=17-102&viewport=296%2C291%2C0.23&t=KMADnMnXHBVrn12Z-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=68%3A3924&page-id=0%3A1",
     behanceUrl:
       "https://www.behance.net/gallery/197923083/Front-End-Development-UIUX-PawMate",
-    chips: ["FIGMA", "photoshop", "illustrator", "CSS", "HTML"],
+    chips: ["FIGMA", "photoshop", "illustrator", "CSS", "HTML", "Bootstrap"],
     fullDescription: `This project was conceived during a **Web Development Bootcamp by Dr. Angela Yu**, that created Tindog, an app inspired by the popular dating platform Tinder. 
 
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: pawmateWireframe },
-    codeImg: {title:"Code", img:[pawMateCode, pawMateCode2, pawMateCode3]},
+    codeImg: { title: "Code", img: [pawMateCode, pawMateCode2, pawMateCode3] },
     videoUrl: "Vimeo",
+    interface: {title:"Interface", img: []},
+    InformationArchitectureMap: {title: "Information Architecture Map", desktop: PawMateInformationArchitectureMap, mobile: PawMateInformationArchitectureMap },
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },
+
   //bmw
   {
     category: ["UI/UX Design"],
     id: "bmw",
     title: "App & iDrive Redesign",
+    projectTitle: "BMW",
     year: 2023,
     mainImage: bmw,
     shortDescription: "For portfolio purposes only.",
@@ -785,6 +817,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design"],
     id: "mercedes",
     title: "HMI: UI Concept",
+    projectTitle: "Mercedez-Benz",
     year: 2023,
     mainImage: mercedes,
     shortDescription: "For portfolio purposes only.",
@@ -808,6 +841,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design"],
     id: "montepio",
     title: "Mobile App Redesign",
+    projectTitle: "Montepio",
     year: 2022,
     mainImage: montepio,
     shortDescription: "For portfolio purposes only.",
