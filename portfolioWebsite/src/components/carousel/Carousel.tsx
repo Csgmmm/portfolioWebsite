@@ -19,7 +19,11 @@ function Carousel({ img }: ICarousel) {
   return (
     <>
       <div className={styles.carousel}>
-        <img src={img[current]} />
+        <img
+          src={img[current]}
+          onDragStart={(e) => e.preventDefault()}
+          onContextMenu={(e) => e.preventDefault()}
+        />
 
         {!isFirst && (
           <Button

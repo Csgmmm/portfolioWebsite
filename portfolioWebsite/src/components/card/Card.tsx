@@ -40,6 +40,8 @@ const Card = ({
               className={styles.img}
               src={project?.mainImage}
               alt={project?.title}
+              onDragStart={(e) => e.preventDefault()}
+            onContextMenu={(e) => e.preventDefault()}
             />
             <Chip variant="secondary" className={styles.chipYear}>
               {project?.year}

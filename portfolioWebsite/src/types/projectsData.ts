@@ -232,7 +232,8 @@ import {
   pawMateCode,
   pawMateCode2,
   pawMateCode3,
-  PawMateInformationArchitectureMap
+  PawMateInformationArchitectureMap, pawMate_PrototypeFigma,
+  mockupPawMateApp
 } from "../pages/projectsDetail/assets/pawmate/index";
 
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
@@ -750,7 +751,9 @@ export const projects: IProjectData[] = [
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: pawmateWireframe },
     codeImg: { title: "Code", img: [pawMateCode, pawMateCode2, pawMateCode3] },
+    prototype: {title: "prototype", img: [pawMate_PrototypeFigma]},
     videoUrl: "Vimeo",
+    mockup: {title: "mockup", img:[mockupPawMateApp]},
     InformationArchitectureMap: {title: "Information Architecture Map", desktop: PawMateInformationArchitectureMap, mobile: PawMateInformationArchitectureMap },
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },

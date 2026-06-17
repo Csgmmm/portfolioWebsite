@@ -31,6 +31,10 @@ padding-bottom: var(--md);
   width: 100%;
   height: 230px;
   object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;  
+  -webkit-touch-callout: none;
 }
 
 .containerImg {
@@ -143,7 +147,7 @@ padding-bottom: var(--md);
 
 .code {
   font-family: "Courier New", Courier, monospace;
-
+text-wrap: auto;
   margin: var(--md) var(--md) var(--null) var(--md);
 }
 
@@ -276,6 +280,11 @@ padding-bottom: var(--md);
   padding: var(--null) var(--md) var(--md);
 }
 
+.containerProject h5 {
+  margin: 0;
+  padding: var(--sm) var(--null)
+}
+
 .containerProjectMockUp {
    border-top: 1px solid var(--border-color);
 }
@@ -380,6 +389,10 @@ padding-bottom: var(--md);
   .containerProject {
     margin-bottom: var(--md);
   }
+
+  .containerProject h5 {
+  padding-bottom: var(--md) 
+}
 }
 
 @media (max-width: 600px) {

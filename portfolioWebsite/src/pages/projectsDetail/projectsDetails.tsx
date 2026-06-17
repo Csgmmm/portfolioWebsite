@@ -50,6 +50,8 @@ function ProjectsDetail() {
     project?.iconography,
     project?.prototype,
     project?.mockup,
+    project?.images,
+    project?.codeImg,
   ].filter(Boolean).length; //remove tudo o que é undefined, null, 0 ou "". (tudo o que é falsy) e conta quantos sobram.
 
   let carouselTitle = "";
@@ -59,24 +61,24 @@ function ProjectsDetail() {
     project?.mockup ? "mockup" : null,
   ].filter(Boolean);
 
-  // Se houver exatamente mockup e images (e nenhum codeImg)
-  if (project?.mockup && project?.images && !project?.codeImg) {
-    carouselTitle = "Figma and Mockups ";
+  // Se houver mockup e images ao mesmo tempo
+  if (project?.mockup && project?.images) {
+    carouselTitle = `${project.images.title} and ${project.mockup.title}`;
   } else if (carouselItems.length === 1) {
-    // Se houver só um deles, mostra o título
+    // Se houver só um deles, mostra o título do que existir
     carouselTitle =
       project?.images?.title ||
       project?.codeImg?.title ||
       project?.mockup?.title ||
       "";
   } else if (carouselItems.length > 1) {
-    // Se houver mais do que dois (ex: mockup, images e code), junta-os com vírgulas e "and"
+    // Caso existam 3 ou mais itens diferentes
     const titleArray = [
       project?.images?.title,
       project?.codeImg?.title,
       project?.mockup?.title,
-    ].filter(Boolean);
-    const lastCarouselTitle = titleArray.pop();
+    ].filter(Boolean); //retira tudo o que é null ou undefined
+    const lastCarouselTitle = titleArray.pop(); //salta e dá-me o ultimo titulo
     carouselTitle = `${titleArray.join(", ")} and ${lastCarouselTitle}`;
   }
 
@@ -125,6 +127,8 @@ function ProjectsDetail() {
             src={project.mainImage}
             alt={project.title}
             className={styles.projectImg}
+            onDragStart={(e) => e.preventDefault()}
+            onContextMenu={(e) => e.preventDefault()}
           />
         </div>
 
@@ -309,12 +313,15 @@ function ProjectsDetail() {
                       <h4>Project Walkthrough</h4>
                     </div>
                   </div>
+
                   {!videoMinimized && (
                     <div className={styles.containerInfoVideo}>
                       <img
                         src={project.videoImg}
                         alt="Insta Video"
                         className={styles.videoInstaImg}
+                        onDragStart={(e) => e.preventDefault()}
+                        onContextMenu={(e) => e.preventDefault()}
                       />
                       <div className={styles.descriptionBtn}>
                         <p>
@@ -384,6 +391,8 @@ function ProjectsDetail() {
                                 src={project.InformationArchitectureMap.desktop}
                                 alt="Information Architecture Map"
                                 className={styles.imgProject}
+                                onDragStart={(e) => e.preventDefault()}
+                                onContextMenu={(e) => e.preventDefault()}
                               />
                             </div>
                             <div className={styles.IAMobile}>
@@ -391,6 +400,8 @@ function ProjectsDetail() {
                                 src={project.InformationArchitectureMap.mobile}
                                 alt="Information Architecture Map"
                                 className={styles.imgProject}
+                                onDragStart={(e) => e.preventDefault()}
+                                onContextMenu={(e) => e.preventDefault()}
                               />
                             </div>
                           </div>
@@ -405,6 +416,8 @@ function ProjectsDetail() {
                               src={project.wireframe.img}
                               alt="Wireframe"
                               className={styles.imgProject}
+                              onDragStart={(e) => e.preventDefault()}
+                              onContextMenu={(e) => e.preventDefault()}
                             />
                           </div>
                         )}
@@ -421,6 +434,8 @@ function ProjectsDetail() {
                                     src={icon}
                                     alt="Icons"
                                     className={styles.iconography}
+                                    onDragStart={(e) => e.preventDefault()}
+                                    onContextMenu={(e) => e.preventDefault()}
                                   />
                                 </Card>
                               ))}
@@ -439,6 +454,8 @@ function ProjectsDetail() {
                                 src={prototype}
                                 alt="prototype on figma"
                                 className={styles.imgProject}
+                                onDragStart={(e) => e.preventDefault()}
+                                onContextMenu={(e) => e.preventDefault()}
                               />
                             ))}
                           </div>
@@ -449,7 +466,6 @@ function ProjectsDetail() {
                 </Card>
               )}
 
-            {/* para que nãoo apareca div. figmaImg ou codeimg é maior que 0?, então.. */}
             {(project.images || project.codeImg || project.mockup) &&
               !carouselClosed && (
                 <div className={styles.containerCarousel}>
@@ -480,24 +496,30 @@ function ProjectsDetail() {
                       </div>
 
                       {!carouselMinimized && (
-                        <div className={styles.containerProject}>
+                        <>
                           {project.images && (
-                            <>
+                            <div className={styles.containerProject}>
                               {cardItemsCount > 1 && (
                                 <h5>{project.images.title}</h5>
                               )}
+
                               <Carousel
                                 img={project.images.img}
                                 title={project.images.title}
                               />
-                            </>
+                            </div>
                           )}
 
                           {project.codeImg && (
-                            <Carousel
-                              img={project.codeImg.img}
-                              title={project.codeImg.title}
-                            />
+                            <div className={styles.containerProject}>
+                              {cardItemsCount > 1 && (
+                                <h5>{project.codeImg.title}</h5>
+                              )}
+                              <Carousel
+                                img={project.codeImg.img}
+                                title={project.codeImg.title}
+                              />
+                            </div>
                           )}
 
                           {project.mockup && (
@@ -511,11 +533,13 @@ function ProjectsDetail() {
                                   src={mockup}
                                   title={project?.mockup?.title}
                                   className={styles.imgProject}
+                                  onDragStart={(e) => e.preventDefault()}
+                                  onContextMenu={(e) => e.preventDefault()}
                                 />
                               ))}
                             </div>
                           )}
-                        </div>
+                        </>
                       )}
                     </Card>
                   </div>
