@@ -149,6 +149,7 @@ padding-bottom: var(--md);
   font-family: "Courier New", Courier, monospace;
 text-wrap: auto;
   margin: var(--md) var(--md) var(--null) var(--md);
+  font-weight: 600;
 }
 
 .key {

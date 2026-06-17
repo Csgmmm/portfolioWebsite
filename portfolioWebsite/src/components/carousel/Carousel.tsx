@@ -1,8 +1,7 @@
 import { useState } from "react";
 import styles from "./carousel.module.css";
-import { ChevronLeft, ChevronRight, Minus, X } from "lucide-react";
+import { ChevronLeft, ChevronRight} from "lucide-react";
 import Button from "../buttons/Button";
-import Card from "../card/Card";
 
 interface ICarousel {
   img: string[];
@@ -23,6 +22,7 @@ function Carousel({ img }: ICarousel) {
           src={img[current]}
           onDragStart={(e) => e.preventDefault()}
           onContextMenu={(e) => e.preventDefault()}
+          className={styles.img}
         />
 
         {!isFirst && (
