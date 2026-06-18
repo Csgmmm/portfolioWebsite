@@ -40,7 +40,7 @@ import {
   codeFem3,
   codeFem4,
   codeFem5,
-  mockupMyCycle
+  mockupMyCycle,
 } from "../pages/projectsDetail/assets/feminine/index";
 
 //yumyum
@@ -96,9 +96,9 @@ import {
   skillet,
   storefront,
   support_agent,
-  components,
-  modals,
-  variables_styles,
+  componentsYumYum,
+  modalsYumYum,
+  variables_stylesYumYum,
 } from "../pages/projectsDetail/assets/yumyum/index";
 
 //evolve
@@ -223,7 +223,7 @@ import {
   mockup1,
   loginCredentials,
   slotQiPrototype,
-mockupScreens
+  mockupScreens,
 } from "../pages/projectsDetail/assets/slotiq/index";
 
 //pawmate
@@ -232,8 +232,9 @@ import {
   pawMateCode,
   pawMateCode2,
   pawMateCode3,
-  PawMateInformationArchitectureMap, pawMate_PrototypeFigma,
-  mockupPawMateApp
+  PawMateInformationArchitectureMap,
+  pawMate_PrototypeFigma,
+  mockupPawMateApp,
 } from "../pages/projectsDetail/assets/pawmate/index";
 
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
@@ -261,7 +262,8 @@ export interface IProjectData {
   };
   wireframe?: { title: string; img: string };
   iconography?: { title: string; img: string[] };
-  images?: { title: string; img: string[] };
+  interface?: { title: string; img: string[] };
+  dsm?: { title: string; img: string[] };
   videoImg?: string;
   videoUrl?: string;
   codeImg?: { title: string; img: string[] };
@@ -301,18 +303,12 @@ export const projects: IProjectData[] = [
       **Engineering & Scalability**
       • Used experience across different tech stacks to make the designs functional and accurate to the idea 
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
-    images: {
-      title: "Figma",
-      img: [
-        FigmaPort2,
-        FigmaPort3,
-        FigmaPort4,
-        FigmaPort5,
-        FigmaPort6,
-      ],
+    dsm: {
+      title: "Component Specs",
+      img: [FigmaPort2, FigmaPort3, FigmaPort4, FigmaPort5, FigmaPort6],
     },
     codeImg: {
-      title: "Development",
+      title: "Code Implementation",
       img: [
         CodePort1,
         CodePort2,
@@ -417,10 +413,9 @@ export const projects: IProjectData[] = [
       title: "Development",
       img: [codeFem1, codeFem2, codeFem3, codeFem4, codeFem5],
     },
-    mockup: {title:"Mockup", img: [mockupMyCycle]},
+    mockup: { title: "High-Fidelity Screens", img: [mockupMyCycle] },
     resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`,
     codeCredentials: [
-      
       { username: "luisa@email.com", password: "luisa" },
       { username: "maria@email.com", password: "maria" },
       { username: "joana@email.com", password: "joana" },
@@ -504,13 +499,14 @@ export const projects: IProjectData[] = [
         support_agent,
       ],
     },
-    images: {
-      title: "Styles, Variables, Modals and Empty states",
-      img: [components, modals, variables_styles],
+    dsm: {title:"Component Specs", img: [componentsYumYum, modalsYumYum]},
+    interface: {
+      title: "",
+      img: [modalsYumYum, variables_stylesYumYum],
     },
-    mockup: {title: "Mockup", img: [mockupYumyum2,
-  mockupYumyum]},
-  prototype: {title: "Prototype", img: [prototypeYumYum]},
+
+    mockup: { title: "High-Fidelity Screens", img: [mockupYumyum2, mockupYumyum] },
+    prototype: { title: "Prototype", img: [prototypeYumYum] },
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
 
@@ -591,8 +587,8 @@ export const projects: IProjectData[] = [
         widgets,
       ],
     },
-    images: {
-      title: "Styles, Variables and Components",
+    interface: {
+      title: "Design Tokens and Specs",
       img: [
         evolveFigma1,
         evolveFigma2,
@@ -610,8 +606,8 @@ export const projects: IProjectData[] = [
       img: [evolveprototype1, evolveprototype2],
     },
     mockup: {
-      title: "Mockup",
-      img: [smartwatch,mockupEvolveScreens, evolvepersonWithPhoneOnHands, ],
+      title: "High-Fidelity Screens",
+      img: [smartwatch, mockupEvolveScreens, evolvepersonWithPhoneOnHands],
     },
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
@@ -679,8 +675,8 @@ export const projects: IProjectData[] = [
       ],
     },
     wireframe: { title: "Wireframes", img: wireframeTiny },
-    images: {
-      title: "Components, Empty State, Variables and Styles",
+    interface: {
+      title: "Component Anatomy and States",
       img: [
         tinyTrackerFigma4,
         tinyTrackerFigma3,
@@ -696,7 +692,7 @@ export const projects: IProjectData[] = [
       title: "Prototype",
       img: [prototypeTinyTracker1],
     },
-    mockup: { title: "Mockup", img: [mockupTinyTrackeriPhone,tinyMockup1 ] },
+    mockup: { title: "High-Fidelity Screens", img: [mockupTinyTrackeriPhone, tinyMockup1] },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
 
@@ -721,11 +717,11 @@ export const projects: IProjectData[] = [
       **Functional Modals:** Built modals for common actions, like adding new log events, editing employee profiles, or managing interview schedules, to keep users in their current workflow without full page reloads;
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
-    images: {
-      title: "Components",
+    interface: {
+      title: "Component Anatomy & States",
       img: [loginCredentials, modal, modal2, modal3],
     },
-    mockup: { title: "Mockup", img: [mockupScreens, mockup1 ] },
+    mockup: { title: "High-Fidelity Screens", img: [mockupScreens, mockup1] },
     prototype: { title: "Prototype", img: [slotQiPrototype] },
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
@@ -751,10 +747,14 @@ export const projects: IProjectData[] = [
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: pawmateWireframe },
     codeImg: { title: "Code", img: [pawMateCode, pawMateCode2, pawMateCode3] },
-    prototype: {title: "prototype", img: [pawMate_PrototypeFigma]},
+    prototype: { title: "prototype", img: [pawMate_PrototypeFigma] },
     videoUrl: "Vimeo",
-    mockup: {title: "mockup", img:[mockupPawMateApp]},
-    InformationArchitectureMap: {title: "Information Architecture Map", desktop: PawMateInformationArchitectureMap, mobile: PawMateInformationArchitectureMap },
+    mockup: { title: "High-Fidelity Screens", img: [mockupPawMateApp] },
+    InformationArchitectureMap: {
+      title: "Information Architecture Map",
+      desktop: PawMateInformationArchitectureMap,
+      mobile: PawMateInformationArchitectureMap,
+    },
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
   },
 
@@ -777,11 +777,11 @@ export const projects: IProjectData[] = [
        **Design System:** Developed a full library of components, including cards for vehicle status, high-contrast input fields, and badges; 
        **Scalable Layouts:** Used variables for spacing to guarantee the design is organized and adapts perfectly to different screen aspect ratios;
        **Data Clarity:** Reimagined the iDrive Dashboard to balance critical driving data with music and navigation without cluttering the driver's view.`,
-    images: {
-      title: "Img",
-      img: [components, modals, variables_styles],
+    mockup: {
+      title: "High-Fidelity Screens",
+      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
     },
-    resume: `A premium BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`,
+    resume: `A BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`,
   },
   //mercedes
   {
@@ -801,9 +801,9 @@ export const projects: IProjectData[] = [
        
         **Dynamic Visual Identity:** Reimagined the classic dashboard with a futuristic, high-contrast aesthetic. Including a personalized 'Display Color Change' feature to match the driver's preference or ambient lighting.
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
-    images: {
-      title: "Img",
-      img: [components, modals, variables_styles],
+    mockup: {
+      title: "High-Fidelity Screens",
+      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
     },
     resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`,
   },
@@ -827,9 +827,9 @@ export const projects: IProjectData[] = [
         **Intuitive Account Management:** Users can swipe through different account types (Current vs. Savings) using a familiar carousel pattern;
         **Visual Spending Insights:** A dedicated expenses hub featuring interactive bar charts and color-coded categories like Food and public transports;
         **Digital Piggy Bank:**  Integrated features to encourage micro-savings and goal-oriented financial planning.`,
-    images: {
-      title: "Img",
-      img: [components, modals, variables_styles],
+    mockup: {
+      title: "High-Fidelity Screens",
+      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
     },
     resume: `A mobile-first redesign of Banco Montepio targeting younger users, with biometric onboarding, account carousels, spending insights, and savings goals.`,
   },

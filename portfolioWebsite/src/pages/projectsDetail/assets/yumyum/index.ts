@@ -52,7 +52,7 @@ export { default as skillet1 } from "./iconography/skillet1.svg";
 export { default as skillet } from "./iconography/skillet.svg";
 export { default as storefront } from "./iconography/storefront.svg";
 export { default as support_agent } from "./iconography/support_agent.svg";
-export { default as components } from "./components.png";
-export { default as modals } from "./modals.png";
-export { default as variables_styles } from "./variables_styles.png";
+export { default as componentsYumYum } from "./componentsYumYum.png";
+export { default as modalsYumYum } from "./modalsYumYum.png";
+export { default as variables_stylesYumYum } from "./variables_stylesYumYum.png";
 

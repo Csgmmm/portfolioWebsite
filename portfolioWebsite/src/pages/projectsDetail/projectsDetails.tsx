@@ -28,58 +28,53 @@ function ProjectsDetail() {
   const [vimeoMinimized, setVimeoMinimized] = useState(false);
   const [vimeoClosed, setVimeoClosed] = useState(false);
 
-  const availableTitles = [
-    project?.InformationArchitectureMap?.title,
-    project?.wireframe?.title,
-    project?.iconography?.title,
-    project?.prototype?.title,
-  ].filter(Boolean);
-
-  let dynamicTitle = "";
-  if (availableTitles.length === 1) {
-    dynamicTitle = availableTitles[0] || "";
-  } else if (availableTitles.length > 1) {
-    const lastTitle = availableTitles.pop();
-    dynamicTitle = `${availableTitles.join(", ")} and ${lastTitle}`;
-  }
-
+  //para quando houver apenas um bloco, não aparecer titulo
   const cardItemsCount = [
-    //cria um array com os 4 items possiveis do card
     project?.InformationArchitectureMap,
     project?.wireframe,
     project?.iconography,
     project?.prototype,
     project?.mockup,
-    project?.images,
+    project?.interface,
     project?.codeImg,
+    project?.dsm,
   ].filter(Boolean).length; //remove tudo o que é undefined, null, 0 ou "". (tudo o que é falsy) e conta quantos sobram.
 
-  let carouselTitle = "";
-  const carouselItems = [
-    project?.images ? "images" : null,
-    project?.codeImg ? "code" : null,
-    project?.mockup ? "mockup" : null,
-  ].filter(Boolean);
+  // Porque o boolean? Não me interessa o número de chaves, não me interessam os undefined. Passa tudo isso pelo detetor de mentiras e dá-me apenas um true se a secção existir com dados, ou um false se estiver vazia/inexistente. Se houver UI, é true senão, é false
+  const hasUX = Boolean(
+    (project?.InformationArchitectureMap &&
+      Object.keys(project.InformationArchitectureMap).length > 0) ||
+    (project?.wireframe && Object.keys(project.wireframe).length > 0) ||
+    (project?.prototype && Object.keys(project.prototype).length > 0),
+  );
 
-  // Se houver mockup e images ao mesmo tempo
-  if (project?.mockup && project?.images) {
-    carouselTitle = `${project.images.title} and ${project.mockup.title}`;
-  } else if (carouselItems.length === 1) {
-    // Se houver só um deles, mostra o título do que existir
-    carouselTitle =
-      project?.images?.title ||
-      project?.codeImg?.title ||
-      project?.mockup?.title ||
-      "";
-  } else if (carouselItems.length > 1) {
-    // Caso existam 3 ou mais itens diferentes
-    const titleArray = [
-      project?.images?.title,
-      project?.codeImg?.title,
-      project?.mockup?.title,
-    ].filter(Boolean); //retira tudo o que é null ou undefined
-    const lastCarouselTitle = titleArray.pop(); //salta e dá-me o ultimo titulo
-    carouselTitle = `${titleArray.join(", ")} and ${lastCarouselTitle}`;
+  const hasUI = Boolean(
+    (project?.iconography && Object.keys(project.iconography).length > 0) ||
+    (project?.interface && Object.keys(project.interface).length > 0) ||
+    (project?.mockup && Object.keys(project.mockup).length > 0),
+  );
+
+  const hasTech = Boolean(
+    (project?.dsm && Object.keys(project.dsm).length > 0) || //existe dsm no project? então, vai buscar as keys do object project.dsm e vê se a length é maior que 0 ou...
+    (project?.codeImg && Object.keys(project.codeImg).length > 0),
+  );
+
+  let adaptableTitles = "";
+
+  // 2. Agora os 'if' vão disparar corretamente!
+  if (hasUX && hasUI && hasTech) {
+    adaptableTitles = "User Experience, Interface and Implementation";
+  } else if (hasUI && hasTech) {
+    adaptableTitles = "UI Specifications and Development";
+  } else if (hasUX && hasUI) {
+    adaptableTitles = "User Experience and Interface Design";
+  } else if (hasTech) {
+    adaptableTitles = "UI Guidelines and Development";
+  } else if (hasUI) {
+    adaptableTitles = "High-Fidelity mockups";
+  } else {
+    // Fallback total se tudo falhar
+    adaptableTitles = "Project Showcase";
   }
 
   const renderBold = (text: string) => {
@@ -372,7 +367,9 @@ function ProjectsDetail() {
                       </span>
 
                       <span className={`${styles.dot} ${styles.dotGreen}`} />
-                      <h4 className={styles.title}>{dynamicTitle}</h4>
+                      <h4 className={styles.title}>
+                        From Concept to Prototype
+                      </h4>
                     </div>
                   </div>
 
@@ -380,9 +377,9 @@ function ProjectsDetail() {
                     <div className={styles.containerProject}>
                       <div className={styles.projectsWrapper}>
                         {project.InformationArchitectureMap && (
-                          <div className={styles.containerProjectFirst}>
+                          <div className={styles.containerProject}>
                             {cardItemsCount > 1 && (
-                              <h5 className={styles.titleProject}>
+                              <h5>
                                 {project.InformationArchitectureMap.title}
                               </h5>
                             )}
@@ -466,7 +463,7 @@ function ProjectsDetail() {
                 </Card>
               )}
 
-            {(project.images || project.codeImg || project.mockup) &&
+            {(project.dsm || project.codeImg || project.mockup) &&
               !carouselClosed && (
                 <div className={styles.containerCarousel}>
                   <div className={styles.carouselFrames}>
@@ -491,21 +488,21 @@ function ProjectsDetail() {
                           <span
                             className={`${styles.dot} ${styles.dotGreen}`}
                           />
-                          <h4 className={styles.title}>{carouselTitle}</h4>
+                          <h4 className={styles.title}>{adaptableTitles}</h4>
                         </div>
                       </div>
 
                       {!carouselMinimized && (
                         <>
-                          {project.images && (
+                          {project.dsm && (
                             <div className={styles.containerProject}>
                               {cardItemsCount > 1 && (
-                                <h5>{project.images.title}</h5>
+                                <h5>{project.dsm.title}</h5>
                               )}
 
                               <Carousel
-                                img={project.images.img}
-                                title={project.images.title}
+                                img={project.dsm.img}
+                                title={project.dsm.title}
                               />
                             </div>
                           )}
@@ -523,7 +520,7 @@ function ProjectsDetail() {
                           )}
 
                           {project.mockup && (
-                            <div className={styles.containerProjectMockUp}>
+                            <div className={styles.containerProject}>
                               {cardItemsCount > 1 && (
                                 <h5>{project.mockup.title}</h5>
                               )}

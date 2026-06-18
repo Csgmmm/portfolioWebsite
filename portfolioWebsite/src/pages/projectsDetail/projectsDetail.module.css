@@ -7,10 +7,9 @@
 }
 
 .projectTitle {
-margin:0;
-padding-bottom: var(--md);
+  margin: 0;
+  padding-bottom: var(--md);
 }
-
 
 .headerPage {
   width: 90%;
@@ -33,7 +32,7 @@ padding-bottom: var(--md);
   object-fit: cover;
   pointer-events: none;
   user-select: none;
-  -webkit-user-select: none;  
+  -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
 
@@ -45,7 +44,7 @@ padding-bottom: var(--md);
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--background-transparent);
 }
 
 .containerImg {
@@ -83,7 +82,7 @@ padding-bottom: var(--md);
   display: flex;
   flex-direction: column;
   margin-bottom: var(--lg);
-  gap: var(--sm);
+  gap: var(--xxs);
 }
 
 .infoProject h3 {
@@ -147,7 +146,7 @@ padding-bottom: var(--md);
 
 .code {
   font-family: "Courier New", Courier, monospace;
-text-wrap: auto;
+  text-wrap: auto;
   margin: var(--md) var(--md) var(--null) var(--md);
   font-weight: 600;
 }
@@ -192,7 +191,7 @@ text-wrap: auto;
   margin: 0;
 }
 
-.contributions h4{
+.contributions h4 {
   margin-bottom: var(--md);
 }
 
@@ -207,7 +206,7 @@ text-wrap: auto;
   gap: var(--sm);
 }
 
-.titleContribution h5{
+.titleContribution h5 {
   margin: 0;
   padding-bottom: var(--sm);
 }
@@ -246,8 +245,6 @@ text-wrap: auto;
   width: 200px;
 }
 
-
-
 .carouselFrames {
   display: flex;
   flex-direction: column;
@@ -262,7 +259,6 @@ text-wrap: auto;
   width: 100%;
 }
 
-
 .cardProjects {
   background: var(--background-card);
 }
@@ -272,32 +268,20 @@ text-wrap: auto;
   padding: var(--sm) var(--null) var(--sm) var(--null);
 }
 
-.containerProjectFirst {
-  padding: var(--null) var(--sm) var(--sm) var(--md);
-}
-
 .containerProject {
   border-top: 1px solid var(--border-color);
-  padding: var(--null) var(--md) var(--md);
+  padding: var(--null) var(--md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--sm);
+  margin-bottom: var(--md);
 }
 
 .containerProject h5 {
   margin: 0;
-  padding: var(--sm) var(--null)
-}
-
-.containerProjectMockUp {
-   border-top: 1px solid var(--border-color);
-}
-
-.containerProjectMockUp h5 {
-   padding: var(--null) var(--md) var(--md);
-   margin: var(--md) var(--null) var(--null)
-}
-
-
-.projectsWrapper .containerProject:first-child {
-  border-top: none;
+  padding: var(--sm) var(--null) var(--null) var(--null);
 }
 
 .containerProject h3 {
@@ -392,8 +376,8 @@ text-wrap: auto;
   }
 
   .containerProject h5 {
-  padding-bottom: var(--md) 
-}
+    padding-bottom: var(--md);
+  }
 }
 
 @media (max-width: 600px) {

@@ -1,6 +1,7 @@
 :root {
   --background: #051424;
   --background-secondary: #101e2e;
+  --background-transparent: color-mix(in srgb, var(  --background-secondary) 50%, transparent);
   --background-card: #010f1f;
   --border: #454546;
   --border-color: #404168;
@@ -40,6 +41,7 @@
 [data-theme="light"] {
   --background: #ffffff;
   --background-secondary: #eaeaea;
+  --background-transparent: color-mix(in srgb, var(  --background-secondary) 50%, transparent);
   --primary: #7567ee;
   --secondary: #6357cc;
   --secondary-hover: #362b98;
@@ -82,8 +84,7 @@ h4 {
 h5 {
   font-size: 0.9em;
   color: var(--title);
-  text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
 }
 h6 {
   font-size: 0.67em;
