@@ -48,7 +48,7 @@ import {
   IAMobileYumYum,
   IADesktopYumYum,
   wireframeYumyum,
-  mockupYumyum2,
+  interfaceYumYum,
   mockupYumyum,
   prototypeYumYum,
   account_balance_wallet,
@@ -114,9 +114,10 @@ import {
   evolveFigma9,
   evolveprototype1,
   evolveprototype2,
-  smartwatch,
+  smartwatchEvolve,
   evolvepersonWithPhoneOnHands,
-  mockupEvolveScreens,
+  interfaceEvolveScreens,
+  interfaceEvolveScreensProfile,
   Frame1000002812,
   account_circle,
   add_circle1,
@@ -308,7 +309,7 @@ export const projects: IProjectData[] = [
       img: [FigmaPort2, FigmaPort3, FigmaPort4, FigmaPort5, FigmaPort6],
     },
     codeImg: {
-      title: "Code Implementation",
+      title: "Development",
       img: [
         CodePort1,
         CodePort2,
@@ -499,13 +500,12 @@ export const projects: IProjectData[] = [
         support_agent,
       ],
     },
-    dsm: {title:"Component Specs", img: [componentsYumYum, modalsYumYum]},
+    dsm: {title:"Component Specs", img: [componentsYumYum, modalsYumYum, variables_stylesYumYum]},
     interface: {
-      title: "",
-      img: [modalsYumYum, variables_stylesYumYum],
+      title: "High-fidelity Screens",
+      img: [interfaceYumYum],
     },
-
-    mockup: { title: "High-Fidelity Screens", img: [mockupYumyum2, mockupYumyum] },
+    mockup: { title: "Mockup", img: [mockupYumyum] },
     prototype: { title: "Prototype", img: [prototypeYumYum] },
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
@@ -587,8 +587,8 @@ export const projects: IProjectData[] = [
         widgets,
       ],
     },
-    interface: {
-      title: "Design Tokens and Specs",
+    dsm: {
+      title: "Component Specs",
       img: [
         evolveFigma1,
         evolveFigma2,
@@ -605,9 +605,11 @@ export const projects: IProjectData[] = [
       title: "Prototype",
       img: [evolveprototype1, evolveprototype2],
     },
+  
+    interface: {title:"High-fidelity Screens", img: [interfaceEvolveScreens, interfaceEvolveScreensProfile]},
     mockup: {
       title: "High-Fidelity Screens",
-      img: [smartwatch, mockupEvolveScreens, evolvepersonWithPhoneOnHands],
+      img: [smartwatchEvolve, evolvepersonWithPhoneOnHands],
     },
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
   },
@@ -746,7 +748,7 @@ export const projects: IProjectData[] = [
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: pawmateWireframe },
-    codeImg: { title: "Code", img: [pawMateCode, pawMateCode2, pawMateCode3] },
+    codeImg: { title: "Development", img: [pawMateCode, pawMateCode2, pawMateCode3] },
     prototype: { title: "prototype", img: [pawMate_PrototypeFigma] },
     videoUrl: "Vimeo",
     mockup: { title: "High-Fidelity Screens", img: [mockupPawMateApp] },

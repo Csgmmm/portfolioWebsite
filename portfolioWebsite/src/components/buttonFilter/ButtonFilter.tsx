@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import styles from "./buttonFilter.module.css";
 
-type ButtonFilter = {
+type ButtonFilterProps = {
   children?: ReactNode;
   variant: "primary" | "secondary";
   isActive?: boolean;
@@ -15,7 +15,7 @@ function ButtonFilter({
   isActive,
   onClick,
   position,
-}: ButtonFilter) {
+}: ButtonFilterProps) { 
   return (
     <button
       onClick={onClick}

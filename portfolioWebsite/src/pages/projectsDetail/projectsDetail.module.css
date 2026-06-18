@@ -257,6 +257,7 @@
 
 .imgProject {
   width: 100%;
+  border-radius: var(--xs);
 }
 
 .cardProjects {

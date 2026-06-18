@@ -59,22 +59,18 @@ function ProjectsDetail() {
     (project?.codeImg && Object.keys(project.codeImg).length > 0),
   );
 
-  let adaptableTitles = "";
+  const hasUIAndTechBlock = hasUI || hasTech; //junta o UI e o Tech num só, ficando o UX a parte.
 
-  // 2. Agora os 'if' vão disparar corretamente!
-  if (hasUX && hasUI && hasTech) {
-    adaptableTitles = "User Experience, Interface and Implementation";
-  } else if (hasUI && hasTech) {
-    adaptableTitles = "UI Specifications and Development";
-  } else if (hasUX && hasUI) {
-    adaptableTitles = "User Experience and Interface Design";
+  let uxTitle = "User Experience, Visual Systems and Strategy";
+  let uiTechTitle = "";
+  if (hasUI && hasTech) {
+    uiTechTitle = "UI Specifications and Implementation";
   } else if (hasTech) {
-    adaptableTitles = "UI Guidelines and Development";
+    uiTechTitle = "UI Guidelines and Development";
   } else if (hasUI) {
-    adaptableTitles = "High-Fidelity mockups";
+    uiTechTitle = "High-Fidelity Mockups";
   } else {
-    // Fallback total se tudo falhar
-    adaptableTitles = "Project Showcase";
+    uiTechTitle = "Project Showcase";
   }
 
   const renderBold = (text: string) => {
@@ -345,10 +341,7 @@ function ProjectsDetail() {
               </div>
             )}
 
-            {(project.InformationArchitectureMap ||
-              project.wireframe ||
-              project.iconography ||
-              project.prototype) &&
+            {hasUX && //bloco com UX
               !uxClosed && (
                 <Card className={styles.cardProjects}>
                   <div className={styles.browserFrame}>
@@ -368,7 +361,8 @@ function ProjectsDetail() {
 
                       <span className={`${styles.dot} ${styles.dotGreen}`} />
                       <h4 className={styles.title}>
-                        From Concept to Prototype
+                        {uxTitle}
+                        {/* coloco de fora o UI */}
                       </h4>
                     </div>
                   </div>
@@ -463,7 +457,7 @@ function ProjectsDetail() {
                 </Card>
               )}
 
-            {(project.dsm || project.codeImg || project.mockup) &&
+            {hasUIAndTechBlock && //bloco com UI e Tech (carousel)
               !carouselClosed && (
                 <div className={styles.containerCarousel}>
                   <div className={styles.carouselFrames}>
@@ -488,7 +482,8 @@ function ProjectsDetail() {
                           <span
                             className={`${styles.dot} ${styles.dotGreen}`}
                           />
-                          <h4 className={styles.title}>{adaptableTitles}</h4>
+                          <h4 className={styles.title}>{uiTechTitle}</h4>
+                          {/* chamo a função para so aparecer o titulo das condições, colocando de lado o que é UX */}
                         </div>
                       </div>
 
@@ -518,7 +513,25 @@ function ProjectsDetail() {
                               />
                             </div>
                           )}
-
+                          
+                           {project.interface && (
+                            <div className={styles.containerProject}>
+                              {cardItemsCount > 1 && (
+                                <h5>{project.interface.title}</h5>
+                              )}
+                              {project.interface.img.map((item) => (
+                                <img
+                                  key={item}
+                                  src={item}
+                                  title={project?.mockup?.title}
+                                  className={styles.imgProject}
+                                  onDragStart={(e) => e.preventDefault()}
+                                  onContextMenu={(e) => e.preventDefault()}
+                                />
+                              ))}
+                            </div>
+                          )}
+                          
                           {project.mockup && (
                             <div className={styles.containerProject}>
                               {cardItemsCount > 1 && (
@@ -536,6 +549,8 @@ function ProjectsDetail() {
                               ))}
                             </div>
                           )}
+
+                         
                         </>
                       )}
                     </Card>

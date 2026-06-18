@@ -1,6 +1,6 @@
 export { default as IADesktopYumYum } from "./IADesktopYumYum.png";
 export { default as IAMobileYumYum } from "./IAMobileYumYum.png";
-export { default as mockupYumyum2 } from "./mockupYumyum2.png";
+export { default as interfaceYumYum } from "./interfaceYumYum.png";
 export { default as mockupYumyum } from "./mockupYumyum.png";
 export { default as wireframeYumyum } from "./wireframeYumyum.png";
 export { default as prototypeYumYum } from "./prototypeYumYum.png";
