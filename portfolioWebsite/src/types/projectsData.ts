@@ -225,6 +225,7 @@ import {
   loginCredentials,
   slotQiPrototype,
   mockupScreens,
+  slotQIScreens
 } from "../pages/projectsDetail/assets/slotiq/index";
 
 //pawmate
@@ -608,7 +609,7 @@ export const projects: IProjectData[] = [
   
     interface: {title:"High-fidelity Screens", img: [interfaceEvolveScreens, interfaceEvolveScreensProfile]},
     mockup: {
-      title: "High-Fidelity Screens",
+      title: "Mockup",
       img: [smartwatchEvolve, evolvepersonWithPhoneOnHands],
     },
     resume: `A banking app balancing security and simplicity, with biometric authentication, clean financial flows, and a scalable component library.`,
@@ -677,7 +678,7 @@ export const projects: IProjectData[] = [
       ],
     },
     wireframe: { title: "Wireframes", img: wireframeTiny },
-    interface: {
+    dsm: {
       title: "Component Anatomy and States",
       img: [
         tinyTrackerFigma4,
@@ -694,7 +695,8 @@ export const projects: IProjectData[] = [
       title: "Prototype",
       img: [prototypeTinyTracker1],
     },
-    mockup: { title: "High-Fidelity Screens", img: [mockupTinyTrackeriPhone, tinyMockup1] },
+    interface: { title: "High-fidelity Screens", img: [mockupTinyTrackeriPhone] },
+    mockup: { title: "Mockup", img: [tinyMockup1] },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
 
@@ -719,11 +721,12 @@ export const projects: IProjectData[] = [
       **Functional Modals:** Built modals for common actions, like adding new log events, editing employee profiles, or managing interview schedules, to keep users in their current workflow without full page reloads;
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
 
-    interface: {
+    dsm: {
       title: "Component Anatomy & States",
       img: [loginCredentials, modal, modal2, modal3],
     },
-    mockup: { title: "High-Fidelity Screens", img: [mockupScreens, mockup1] },
+    interface: {title: "High-fidelity Screens", img: [slotQIScreens]},
+    mockup: { title: "Mockup", img: [mockupScreens, mockup1] },
     prototype: { title: "Prototype", img: [slotQiPrototype] },
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
@@ -751,13 +754,14 @@ export const projects: IProjectData[] = [
     codeImg: { title: "Development", img: [pawMateCode, pawMateCode2, pawMateCode3] },
     prototype: { title: "prototype", img: [pawMate_PrototypeFigma] },
     videoUrl: "Vimeo",
-    mockup: { title: "High-Fidelity Screens", img: [mockupPawMateApp] },
+    interface: { title: "High-fidelity Screens", img: [mockupPawMateApp] },
     InformationArchitectureMap: {
       title: "Information Architecture Map",
       desktop: PawMateInformationArchitectureMap,
       mobile: PawMateInformationArchitectureMap,
     },
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
+    githubUrl: "https://github.com/Csgmmm/Front-End-Development-UI-UX-PawMate"
   },
 
   //bmw

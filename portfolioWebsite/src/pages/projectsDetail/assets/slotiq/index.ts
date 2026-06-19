@@ -9,3 +9,4 @@ export { default as slotQICurrentOpenings } from "./slotQICurrentOpenings.png";
 export { default as slotQIAddEvent } from "./slotQIAddEvent.png";
 export { default as slotQIDashboard } from "./slotQIDashboard.png";
 export { default as mockupScreens } from "./mockupScreens.png";
+export { default as slotQIScreens } from "./slotQIScreens.png";
