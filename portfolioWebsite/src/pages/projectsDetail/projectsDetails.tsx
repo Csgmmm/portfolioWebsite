@@ -28,28 +28,16 @@ function ProjectsDetail() {
   const [vimeoMinimized, setVimeoMinimized] = useState(false);
   const [vimeoClosed, setVimeoClosed] = useState(false);
 
-  //para quando houver apenas um bloco, não aparecer titulo
-  const cardItemsCount = [
-    project?.InformationArchitectureMap,
-    project?.wireframe,
-    project?.iconography,
-    project?.prototype,
-    project?.mockup,
-    project?.interface,
-    project?.codeImg,
-    project?.dsm,
-  ].filter(Boolean).length; //remove tudo o que é undefined, null, 0 ou "". (tudo o que é falsy) e conta quantos sobram.
 
   // Porque o boolean? Não me interessa o número de chaves, não me interessam os undefined. Passa tudo isso pelo detetor de mentiras e dá-me apenas um true se a secção existir com dados, ou um false se estiver vazia/inexistente. Se houver UI, é true senão, é false
   const hasUX = Boolean(
     (project?.InformationArchitectureMap &&
       Object.keys(project.InformationArchitectureMap).length > 0) ||
     (project?.wireframe && Object.keys(project.wireframe).length > 0) ||
-    (project?.prototype && Object.keys(project.prototype).length > 0),
+    (project?.prototype && Object.keys(project.prototype).length > 0) || (project?.iconography && Object.keys(project.iconography).length > 0),
   );
 
   const hasUI = Boolean(
-    (project?.iconography && Object.keys(project.iconography).length > 0) ||
     (project?.interface && Object.keys(project.interface).length > 0) ||
     (project?.mockup && Object.keys(project.mockup).length > 0),
   );
@@ -68,7 +56,7 @@ function ProjectsDetail() {
   } else if (hasTech) {
     uiTechTitle = "UI Guidelines and Development";
   } else if (hasUI) {
-    uiTechTitle = "High-Fidelity Mockups";
+    uiTechTitle = "High-Fidelity Screens and Mockups";
   } else {
     uiTechTitle = "Project Showcase";
   }
@@ -372,11 +360,10 @@ function ProjectsDetail() {
                       <div className={styles.projectsWrapper}>
                         {project.InformationArchitectureMap && (
                           <div className={styles.containerProject}>
-                            {cardItemsCount > 1 && (
+
                               <h5>
                                 {project.InformationArchitectureMap.title}
                               </h5>
-                            )}
                             <div className={styles.IADesktop}>
                               <img
                                 src={project.InformationArchitectureMap.desktop}
@@ -436,9 +423,9 @@ function ProjectsDetail() {
 
                         {project.prototype && (
                           <div className={styles.containerProject}>
-                            {cardItemsCount > 1 && (
+
                               <h5>{project.prototype.title}</h5>
-                            )}
+
                             {project.prototype.img.map((prototype, idx) => (
                               <img
                                 key={idx}
@@ -491,9 +478,8 @@ function ProjectsDetail() {
                         <>
                           {project.dsm && (
                             <div className={styles.containerProject}>
-                              {cardItemsCount > 1 && (
+
                                 <h5>{project.dsm.title}</h5>
-                              )}
 
                               <Carousel
                                 img={project.dsm.img}
@@ -504,9 +490,8 @@ function ProjectsDetail() {
 
                           {project.codeImg && (
                             <div className={styles.containerProject}>
-                              {cardItemsCount > 1 && (
+
                                 <h5>{project.codeImg.title}</h5>
-                              )}
                               <Carousel
                                 img={project.codeImg.img}
                                 title={project.codeImg.title}
@@ -516,9 +501,8 @@ function ProjectsDetail() {
                           
                            {project.interface && (
                             <div className={styles.containerProject}>
-                              {cardItemsCount > 1 && (
                                 <h5>{project.interface.title}</h5>
-                              )}
+
                               {project.interface.img.map((item) => (
                                 <img
                                   key={item}
@@ -534,9 +518,9 @@ function ProjectsDetail() {
                           
                           {project.mockup && (
                             <div className={styles.containerProject}>
-                              {cardItemsCount > 1 && (
+
                                 <h5>{project.mockup.title}</h5>
-                              )}
+
                               {project.mockup.img.map((mockup) => (
                                 <img
                                   key={mockup}

@@ -225,7 +225,7 @@ import {
   loginCredentials,
   slotQiPrototype,
   mockupScreens,
-  slotQIScreens
+  slotQIScreens,
 } from "../pages/projectsDetail/assets/slotiq/index";
 
 //pawmate
@@ -237,7 +237,19 @@ import {
   PawMateInformationArchitectureMap,
   pawMate_PrototypeFigma,
   mockupPawMateApp,
+  PawMateResponsiveScreens,
+  PawMateScreensApp,
 } from "../pages/projectsDetail/assets/pawmate/index";
+
+//bmw
+import {
+  BMWApp,
+  BMWAppMockup,
+  BMWDsmComponentHomepage,
+  BMWDsmComponentProfile,
+  BMWiDriveScreens,
+  BMWiDriveMockup,
+} from "../pages/projectsDetail/assets/bmw/index";
 
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -501,7 +513,10 @@ export const projects: IProjectData[] = [
         support_agent,
       ],
     },
-    dsm: {title:"Component Specs", img: [componentsYumYum, modalsYumYum, variables_stylesYumYum]},
+    dsm: {
+      title: "Component Specs",
+      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
+    },
     interface: {
       title: "High-fidelity Screens",
       img: [interfaceYumYum],
@@ -606,8 +621,11 @@ export const projects: IProjectData[] = [
       title: "Prototype",
       img: [evolveprototype1, evolveprototype2],
     },
-  
-    interface: {title:"High-fidelity Screens", img: [interfaceEvolveScreens, interfaceEvolveScreensProfile]},
+
+    interface: {
+      title: "High-fidelity Screens",
+      img: [interfaceEvolveScreens, interfaceEvolveScreensProfile],
+    },
     mockup: {
       title: "Mockup",
       img: [smartwatchEvolve, evolvepersonWithPhoneOnHands],
@@ -695,7 +713,10 @@ export const projects: IProjectData[] = [
       title: "Prototype",
       img: [prototypeTinyTracker1],
     },
-    interface: { title: "High-fidelity Screens", img: [mockupTinyTrackeriPhone] },
+    interface: {
+      title: "High-fidelity Screens",
+      img: [mockupTinyTrackeriPhone],
+    },
     mockup: { title: "Mockup", img: [tinyMockup1] },
     resume: `An all-in-one parenting app combining medical appointments, developmental tracking, daily routines, and sleep sounds in a single platform.`,
   },
@@ -725,7 +746,7 @@ export const projects: IProjectData[] = [
       title: "Component Anatomy & States",
       img: [loginCredentials, modal, modal2, modal3],
     },
-    interface: {title: "High-fidelity Screens", img: [slotQIScreens]},
+    interface: { title: "High-fidelity Screens", img: [slotQIScreens] },
     mockup: { title: "Mockup", img: [mockupScreens, mockup1] },
     prototype: { title: "Prototype", img: [slotQiPrototype] },
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
@@ -751,7 +772,10 @@ export const projects: IProjectData[] = [
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: pawmateWireframe },
-    codeImg: { title: "Development", img: [pawMateCode, pawMateCode2, pawMateCode3] },
+    codeImg: {
+      title: "Development",
+      img: [pawMateCode, pawMateCode2, pawMateCode3],
+    },
     prototype: { title: "prototype", img: [pawMate_PrototypeFigma] },
     videoUrl: "Vimeo",
     interface: { title: "High-fidelity Screens", img: [mockupPawMateApp] },
@@ -760,8 +784,13 @@ export const projects: IProjectData[] = [
       desktop: PawMateInformationArchitectureMap,
       mobile: PawMateInformationArchitectureMap,
     },
+    mockup: {
+      title: "Mockup Desktop Responsive and App",
+      img: [PawMateResponsiveScreens, PawMateScreensApp],
+    },
+
     resume: `A Tinder-inspired dog social app built with Bootstrap and Flexbox, rebranded as PawMate with custom UI/UX and full responsiveness.`,
-    githubUrl: "https://github.com/Csgmmm/Front-End-Development-UI-UX-PawMate"
+    githubUrl: "https://github.com/Csgmmm/Front-End-Development-UI-UX-PawMate",
   },
 
   //bmw
@@ -783,9 +812,17 @@ export const projects: IProjectData[] = [
        **Design System:** Developed a full library of components, including cards for vehicle status, high-contrast input fields, and badges; 
        **Scalable Layouts:** Used variables for spacing to guarantee the design is organized and adapts perfectly to different screen aspect ratios;
        **Data Clarity:** Reimagined the iDrive Dashboard to balance critical driving data with music and navigation without cluttering the driver's view.`,
-    mockup: {
+    dsm: {
+      title: "Component Specs",
+      img: [BMWDsmComponentHomepage, BMWDsmComponentProfile],
+    },
+    interface: {
       title: "High-Fidelity Screens",
-      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
+      img: [BMWApp, BMWiDriveScreens],
+    },
+    mockup: {
+      title: "Mockups App and Dashbard iDrive",
+      img: [BMWAppMockup, BMWiDriveMockup],
     },
     resume: `A BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`,
   },
@@ -807,9 +844,17 @@ export const projects: IProjectData[] = [
        
         **Dynamic Visual Identity:** Reimagined the classic dashboard with a futuristic, high-contrast aesthetic. Including a personalized 'Display Color Change' feature to match the driver's preference or ambient lighting.
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
-    mockup: {
+    dsm: {
+      title: "Component Specs",
+      img: [BMWDsmComponentHomepage, BMWDsmComponentProfile],
+    },
+    interface: {
       title: "High-Fidelity Screens",
-      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
+      img: [BMWApp, BMWiDriveScreens],
+    },
+    mockup: {
+      title: "Mockups App and Dashbard iDrive",
+      img: [BMWAppMockup, BMWiDriveMockup],
     },
     resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`,
   },
