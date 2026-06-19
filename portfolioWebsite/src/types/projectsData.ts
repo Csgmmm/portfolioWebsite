@@ -251,6 +251,23 @@ import {
   BMWiDriveMockup,
 } from "../pages/projectsDetail/assets/bmw/index";
 
+//mercedes
+import {
+  MercedesDashboardScreens,
+  MercedesDashboardChangedColorMockup,
+  MercedesDashboardChangedColorMusicPlay,
+  MercedesDashboardMockup,
+  MercedesComponentsFigma_1,
+  MercedesComponentsFigma_2,
+} from "../pages/projectsDetail/assets/mercedes/index";
+
+//montepio
+import {
+  Montepio_Prototype,
+  Montepio_Screens,
+  Montepio_ScreensMockup,
+} from "../pages/projectsDetail/assets/montepio/index";
+
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -749,6 +766,7 @@ export const projects: IProjectData[] = [
     interface: { title: "High-fidelity Screens", img: [slotQIScreens] },
     mockup: { title: "Mockup", img: [mockupScreens, mockup1] },
     prototype: { title: "Prototype", img: [slotQiPrototype] },
+
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
 
@@ -824,8 +842,11 @@ export const projects: IProjectData[] = [
       title: "Mockups App and Dashbard iDrive",
       img: [BMWAppMockup, BMWiDriveMockup],
     },
+    prototypeUrl:
+      "https://www.figma.com/proto/nWXtDjpcJjhhLEm4SFRftY/BMW---App-and-iDrive?node-id=12-2&viewport=183%2C368%2C0.5&t=cJjTcjaWO6kwVDZb-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
     resume: `A BMW ecosystem redesign connecting the My BMW app and iDrive dashboard through cohesive UI, high-density data management, and a scalable design system.`,
   },
+
   //mercedes
   {
     category: ["UI/UX Design"],
@@ -846,18 +867,23 @@ export const projects: IProjectData[] = [
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
     dsm: {
       title: "Component Specs",
-      img: [BMWDsmComponentHomepage, BMWDsmComponentProfile],
+      img: [MercedesComponentsFigma_1, MercedesComponentsFigma_2],
     },
     interface: {
       title: "High-Fidelity Screens",
-      img: [BMWApp, BMWiDriveScreens],
+      img: [MercedesDashboardScreens],
     },
     mockup: {
-      title: "Mockups App and Dashbard iDrive",
-      img: [BMWAppMockup, BMWiDriveMockup],
+      title: "Mockups",
+      img: [
+        MercedesDashboardMockup,
+        MercedesDashboardChangedColorMusicPlay,
+        MercedesDashboardChangedColorMockup,
+      ],
     },
     resume: `A futuristic Mercedes A-Class HMI concept with a personalized high-contrast dashboard, dynamic color themes, and streamlined media controls.`,
   },
+
   //montepio
   {
     category: ["UI/UX Design"],
@@ -878,9 +904,14 @@ export const projects: IProjectData[] = [
         **Intuitive Account Management:** Users can swipe through different account types (Current vs. Savings) using a familiar carousel pattern;
         **Visual Spending Insights:** A dedicated expenses hub featuring interactive bar charts and color-coded categories like Food and public transports;
         **Digital Piggy Bank:**  Integrated features to encourage micro-savings and goal-oriented financial planning.`,
-    mockup: {
+    prototype: { title: "Prototype", img: [Montepio_Prototype] },
+    interface: {
       title: "High-Fidelity Screens",
-      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
+      img: [Montepio_Screens],
+    },
+    mockup: {
+      title: "Mockups",
+      img: [Montepio_ScreensMockup],
     },
     resume: `A mobile-first redesign of Banco Montepio targeting younger users, with biometric onboarding, account carousels, spending insights, and savings goals.`,
   },
