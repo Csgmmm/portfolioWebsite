@@ -329,6 +329,7 @@ x
     text-align: center;
     position: static;
     margin: var(--lg) var(--null) var(--null) var(--null);
+    margin-bottom: var(--md);
   }
 
   .title-link h5 {
