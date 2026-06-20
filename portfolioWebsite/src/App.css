@@ -17,7 +17,7 @@
   --disclaimer-border: #376cc2;
   --disclaimer-text: #9fc0f4;
   --chip-card: #2e3e51;
-  --chip-text: #ffffff;
+  --chip-text: #C0C1FF;
   --chip-font-size-card: 14px;
   --null: 0px;
   --xxs: 4px;
@@ -57,7 +57,7 @@
   --title: #191c1e;
   --shadow: #dcdcdc;
   --chip-card: #ffffff;
-  --chip-text: #464555;
+  --chip-text: #5456ca;
 }
 
 h1 {

@@ -1,0 +1,63 @@
+.generalContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--lg);
+  width: 100%;
+}
+
+.intro {
+  width: 50%;
+  display: flex;
+  gap: var(--md);
+
+  /* diz que este elemento é o "ponto de referência" para os filhos com position: absolute */
+}
+
+@media (max-width: 950px) {
+  .intro {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 80%;
+  display: inline-block;
+}
+
+@media (max-width: 950px) {
+  .imageWrapper {
+    width: 100%;
+  }
+}
+
+.chipRelocate {
+  position: absolute;
+  bottom: var(--sm);
+  /* cola ao bottom */
+  left: var(--sm);
+  /* cola ao left */
+  /*  retira o elemento do fluxo normal e posiciona-o em relação ao pai com position: relative, sem o position: relative no pai, o absolute posicionava-se em relação à página toda e não à imagem */
+  z-index: 1;
+  /* coloca o chip em cima do gradient */
+}
+
+.profilePicture {
+  width: 100%;
+  border-radius: var(--sm);
+}
+
+.cardIntro {
+  width: 100%;
+  padding: var(--sm);
+}
+
+.cardIntro h2 {
+  margin: 0;
+}
+
+.wordFocused {
+  color: var(--primary);
+}
