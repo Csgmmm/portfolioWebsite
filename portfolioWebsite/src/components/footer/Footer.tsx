@@ -30,18 +30,20 @@ function Footer() {
           </span>
         </div>
 
-        <p className={styles.privateInfo}>
-          <Smartphone /> <a href="tel:+351910061795"  className={styles.emailLink}>+351 910 061 795</a>
-        </p>
-        <p className={styles.privateInfo}>
+        <section className={styles.privateInfo}>
+          <Smartphone />
+          <a href="tel:+351910061795" className={styles.emailLink}>
+            <p>+351 910 061 795</p>
+          </a>
+
           <Send />
           <a
             href="mailto:carla.s.ofia@hotmail.com"
             className={styles.emailLink}
           >
-            carla.s.ofia@hotmail.com
+            <p>carla.s.ofia@hotmail.com</p>
           </a>
-        </p>
+        </section>
       </div>
     </footer>
   );

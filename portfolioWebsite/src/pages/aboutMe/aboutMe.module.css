@@ -1,47 +1,35 @@
 .generalContainer {
   display: flex;
-  justify-content: center;
-  margin-bottom: var(--lg);
-  width: 100%;
+  margin: var(--lg);
+  flex-direction: column;
+  align-items: center;
 }
 
 .intro {
-  width: 50%;
+  max-width: 70%;
+  min-width: 50%;
   display: flex;
   gap: var(--md);
-
-  /* diz que este elemento é o "ponto de referência" para os filhos com position: absolute */
+  margin-bottom: var(--lg);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
   .intro {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
+    align-items: center;
   }
 }
 
 .imageWrapper {
-  position: relative;
-  width: 80%;
-  display: inline-block;
+  width: 70%;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
   .imageWrapper {
-    width: 100%;
+    width: 60%;
   }
-}
-
-.chipRelocate {
-  position: absolute;
-  bottom: var(--sm);
-  /* cola ao bottom */
-  left: var(--sm);
-  /* cola ao left */
-  /*  retira o elemento do fluxo normal e posiciona-o em relação ao pai com position: relative, sem o position: relative no pai, o absolute posicionava-se em relação à página toda e não à imagem */
-  z-index: 1;
-  /* coloca o chip em cima do gradient */
 }
 
 .profilePicture {
@@ -51,7 +39,7 @@
 
 .cardIntro {
   width: 100%;
-  padding: var(--sm);
+  padding: var(--xl-2);
 }
 
 .cardIntro h2 {
@@ -60,4 +48,157 @@
 
 .wordFocused {
   color: var(--primary);
+}
+
+.description {
+  max-width: 700px;
+}
+
+.journey {
+  width: 70%;
+  display: flex;
+  gap: var(--md);
+}
+
+@media (max-width: 1100px) {
+  .journey {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+.leftSide {
+  width: 50%;
+  position: sticky;
+  top: var(--md);
+  align-self: flex-start;
+}
+
+@media (max-width: 1100px) {
+  .leftSide {
+    width: 100%;
+    position: static;
+  }
+}
+
+.codeDescriptionImg {
+  width: 70%;
+  margin-top: var(--md);
+}
+
+@media (max-width: 1100px) {
+  .codeDescriptionImg {
+    width: 70%;
+  }
+}
+
+.leftSide h2 {
+  margin: 0;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+@media (max-width: 1100px) {
+  .rightSide {
+    width: 100%;
+  }
+}
+.rightSide h2 {
+  margin: 0;
+}
+
+/* O container que engloba a timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px; /* Cria o espaço à esquerda para a linha e as bolinhas */
+  gap: 40px; /* Distância vertical entre cada Card/Item */
+}
+
+/* A linha vertical contínua */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px; /* Alinha a linha perfeitamente com o centro da bolinha */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #2e3440; /* Cor escura da linha */
+  z-index: 1;
+}
+
+/* Cada item da timeline */
+.timelineItem {
+  position: relative;
+  width: 100%;
+}
+
+/* A bolinha gerada automaticamente para cada item */
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: -30px; /* Move a bolinha para a zona do padding do container pai */
+  top: 50%; /* Centra a bolinha verticalmente em relação ao Card */
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #b4befe; /* Cor lilás da bolinha */
+  border-radius: 50%;
+  z-index: 2; /* Garante que fica por cima da linha */
+}
+
+.cardJourney {
+  padding: var(--md);
+}
+
+.cardJourney h3 {
+  padding-top: var(--sm);
+  margin: 0;
+}
+
+.contact {
+  width: 70%;
+  margin-top: var(--xl-3);
+}
+
+.contactCard {
+  padding: var(--md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactCard p {
+  text-align: center;
+  max-width: 600px;
+}
+
+.buttons {
+  display: flex;
+  gap: var(--sm);
+}
+
+@media (max-width: 1100px) {
+  .contact {
+    width: 100%;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--md);
+  }
+
+  .btn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

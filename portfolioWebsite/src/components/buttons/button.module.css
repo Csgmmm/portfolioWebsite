@@ -13,7 +13,7 @@
 .primary {
   background-color: var(--primary);
   color: var(--button-color);
-  padding: 0 var(--md);
+
   padding: var(--sm);
 }
 
@@ -26,8 +26,7 @@
   border: 1px solid var(--secondary);
   background-color: transparent;
   color: var(--secondary);
-  padding: 0 var(--md);
-    height: var(--xl);
+  padding: var(--sm);
 }
 
 .secondary:hover {
@@ -51,7 +50,7 @@
 .link {
   color: var(--secondary);
   background-color: transparent;
-  padding: 0
+  padding: 0;
 }
 
 .link:hover {
@@ -82,4 +81,3 @@ a {
   font-family: inherit;
   font-weight: 600;
 }
-
