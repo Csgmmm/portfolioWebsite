@@ -52,17 +52,8 @@ function AboutMe() {
           <div className={styles.leftSide}>
             <h2>My Journey</h2>
             <p>
-              My journey began in Communication Design, where I mastered visual
-              storytelling and layout design, followed by a Master's in
-              Editorial Design, that refined my eye for information architecture
-              and typography across major Portuguese publications. Wanting to
-              bring this foundation into the digital realm, I transitioned into
-              Web Design and UI/UX, discovering a love for interactive
-              experiences and digital product development. Driven by a desire to
-              bridge the gap between design and engineering, and to truly
-              understand the developer's mindset, I dove into front-end
-              development, graduating in April 2026. This portfolio is the
-              culmination of that entire evolution.
+              My journey started in Communication Design, where I learned about storytelling and layout design. Then, I got a Masters degree in Editorial Design, where helped me improve my skills in information architecture and typography across major Portuguese publications. Decided to transition into the digital field, so I completed 2 courses in WebDesign and UI/UX design to acquire the missing digital skills. In my last two experiences, I realized how differently UI/UX and front-end teams approach problem-solving and to bridge the gap between those fields, I decided to study Front-End Engineering. 
+              <br></br>This portfolio is the culmination of that entire journey.
             </p>
             <img
               src={codeDescription}
