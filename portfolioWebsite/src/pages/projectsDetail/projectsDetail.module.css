@@ -329,9 +329,15 @@
 }
 
 @media (max-width: 962px) {
+
+  .headerPage {
+  width: 85%;
+
+}
   .bothSide {
     display: flex;
     flex-direction: column;
+    width: 85%;
   }
 
   .leftSide {
