@@ -47,9 +47,9 @@ import {
 import {
   IAMobileYumYum,
   IADesktopYumYum,
-  wireframeYumyum,
+  wireframeYumYum,
   interfaceYumYum,
-  mockupYumyum,
+  mockupYumYum,
   prototypeYumYum,
   account_balance_wallet,
   apartment,
@@ -223,7 +223,7 @@ import {
   modal3,
   mockup1,
   loginCredentials,
-  slotQiPrototype,
+  slotQIPrototype,
   mockupScreens,
   slotQIScreens,
 } from "../pages/projectsDetail/assets/slotiq/index";
@@ -479,7 +479,7 @@ export const projects: IProjectData[] = [
       desktop: IADesktopYumYum,
       mobile: IAMobileYumYum,
     },
-    wireframe: { title: "Wireframes", img: wireframeYumyum },
+    wireframe: { title: "Wireframes", img: wireframeYumYum },
     iconography: {
       title: "Iconography",
       img: [
@@ -538,7 +538,7 @@ export const projects: IProjectData[] = [
       title: "High-fidelity Screens",
       img: [interfaceYumYum],
     },
-    mockup: { title: "Mockup", img: [mockupYumyum] },
+    mockup: { title: "Mockup", img: [mockupYumYum] },
     prototype: { title: "Prototype", img: [prototypeYumYum] },
     resume: `A user-centered food delivery app with cultural cuisine tags, full component library, modals, and a scalable design system.`,
   },
@@ -765,7 +765,7 @@ export const projects: IProjectData[] = [
     },
     interface: { title: "High-fidelity Screens", img: [slotQIScreens] },
     mockup: { title: "Mockup", img: [mockupScreens, mockup1] },
-    prototype: { title: "Prototype", img: [slotQiPrototype] },
+    prototype: { title: "Prototype", img: [slotQIPrototype] },
 
     resume: `An HR platform centralizing recruitment, employee stats, and team scheduling with a data-driven dashboard and enterprise-grade design system.`,
   },
