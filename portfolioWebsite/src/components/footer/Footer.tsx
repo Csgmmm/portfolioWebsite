@@ -1,5 +1,4 @@
 import styles from "./footer.module.css";
-import { Smartphone, Send } from "lucide-react";
 import linkedinLogo from "../../pages/homepage/assets/linkedinLogo.svg";
 import github from "../../pages/homepage/assets/github.svg";
 
@@ -30,18 +29,6 @@ function Footer() {
           </span>
         </div>
 
-        <section className={styles.privateInfo}>
-          <a href="tel:+351910061795" className={styles.emailLink}>
-            <Smartphone />
-          </a>
-
-          <a
-            href="mailto:carla.s.ofia@hotmail.com"
-            className={styles.emailLink}
-          >
-            <Send />
-          </a>
-        </section>
       </div>
     </footer>
   );
