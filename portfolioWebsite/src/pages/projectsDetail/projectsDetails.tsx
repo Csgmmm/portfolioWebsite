@@ -28,13 +28,13 @@ function ProjectsDetail() {
   const [vimeoMinimized, setVimeoMinimized] = useState(false);
   const [vimeoClosed, setVimeoClosed] = useState(false);
 
-
   // Porque o boolean? Não me interessa o número de chaves, não me interessam os undefined. Passa tudo isso pelo detetor de mentiras e dá-me apenas um true se a secção existir com dados, ou um false se estiver vazia/inexistente. Se houver UI, é true senão, é false
   const hasUX = Boolean(
     (project?.InformationArchitectureMap &&
       Object.keys(project.InformationArchitectureMap).length > 0) ||
     (project?.wireframe && Object.keys(project.wireframe).length > 0) ||
-    (project?.prototype && Object.keys(project.prototype).length > 0) || (project?.iconography && Object.keys(project.iconography).length > 0),
+    (project?.prototype && Object.keys(project.prototype).length > 0) ||
+    (project?.iconography && Object.keys(project.iconography).length > 0),
   );
 
   const hasUI = Boolean(
@@ -360,10 +360,7 @@ function ProjectsDetail() {
                       <div className={styles.projectsWrapper}>
                         {project.InformationArchitectureMap && (
                           <div className={styles.containerProject}>
-
-                              <h5>
-                                {project.InformationArchitectureMap.title}
-                              </h5>
+                            <h5>{project.InformationArchitectureMap.title}</h5>
                             <div className={styles.IADesktop}>
                               <img
                                 src={project.InformationArchitectureMap.desktop}
@@ -423,8 +420,7 @@ function ProjectsDetail() {
 
                         {project.prototype && (
                           <div className={styles.containerProject}>
-
-                              <h5>{project.prototype.title}</h5>
+                            <h5>{project.prototype.title}</h5>
 
                             {project.prototype.img.map((prototype, idx) => (
                               <img
@@ -478,8 +474,7 @@ function ProjectsDetail() {
                         <>
                           {project.dsm && (
                             <div className={styles.containerProject}>
-
-                                <h5>{project.dsm.title}</h5>
+                              <h5>{project.dsm.title}</h5>
 
                               <Carousel
                                 img={project.dsm.img}
@@ -490,18 +485,17 @@ function ProjectsDetail() {
 
                           {project.codeImg && (
                             <div className={styles.containerProject}>
-
-                                <h5>{project.codeImg.title}</h5>
+                              <h5>{project.codeImg.title}</h5>
                               <Carousel
                                 img={project.codeImg.img}
                                 title={project.codeImg.title}
                               />
                             </div>
                           )}
-                          
-                           {project.interface && (
+
+                          {project.interface && (
                             <div className={styles.containerProject}>
-                                <h5>{project.interface.title}</h5>
+                              <h5>{project.interface.title}</h5>
 
                               {project.interface.img.map((item) => (
                                 <img
@@ -515,11 +509,10 @@ function ProjectsDetail() {
                               ))}
                             </div>
                           )}
-                          
+
                           {project.mockup && (
                             <div className={styles.containerProject}>
-
-                                <h5>{project.mockup.title}</h5>
+                              <h5>{project.mockup.title}</h5>
 
                               {project.mockup.img.map((mockup) => (
                                 <img
@@ -533,8 +526,6 @@ function ProjectsDetail() {
                               ))}
                             </div>
                           )}
-
-                         
                         </>
                       )}
                     </Card>

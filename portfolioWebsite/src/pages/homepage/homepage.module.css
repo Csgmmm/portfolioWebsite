@@ -369,7 +369,7 @@ x
 }
 
 .personsName {
-  color: var(--secondary);
+  color: var(--text);
   font-weight: 600;
   padding: var(--null) var(--md);
   margin: var(--null);

@@ -359,6 +359,17 @@
     width: 100%;
   }
 
+  .videoInstaImg {
+    width: 50%;
+  }
+
+  .containerInfoVideo {
+    display: flex;
+    flex-direction: column;
+    margin: var(--md);
+    gap: var(--sm);
+  }
+
   .IADesktop {
     display: none;
   }

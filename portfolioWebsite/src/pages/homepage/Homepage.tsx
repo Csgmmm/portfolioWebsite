@@ -42,9 +42,9 @@ function Homepage() {
             </div>
             <span className={styles["chip-title"]}>
               <h1>
-                I'm <span className={styles.name}>Carla</span>,
+                I'm <span className={styles.name}>Carla</span>, 
                 <br className={styles.hideOnMobile} />
-                UI/UX Design Engineer
+                 UI/UX Design Engineer
               </h1>
             </span>
             <div>
