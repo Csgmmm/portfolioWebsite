@@ -2,7 +2,7 @@ export { default as IADesktopYumYum } from "./IADesktopYumYum.png";
 export { default as IAMobileYumYum } from "./IAMobileYumYum.png";
 export { default as interfaceYumYum } from "./interfaceYumYum.png";
 export { default as mockupYumYum } from "./mockupYumYum.png";
-export { default as wireframeYumYum } from "./wireframeYumYum.png";
+export { default as wireframeYumYum } from "./wireframeYumyum.png";
 export { default as prototypeYumYum } from "./prototypeYumYum.png";
 export { default as account_balance_wallet } from "./iconography/account_balance_wallet.svg";
 

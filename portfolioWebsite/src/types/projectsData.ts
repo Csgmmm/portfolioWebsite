@@ -225,7 +225,7 @@ import {
   loginCredentials,
   slotQIPrototype,
   mockupScreens,
-  slotQIScreens,
+  SlotQIScreens,
 } from "../pages/projectsDetail/assets/slotiq/index";
 
 //pawmate
@@ -763,7 +763,7 @@ export const projects: IProjectData[] = [
       title: "Component Anatomy & States",
       img: [loginCredentials, modal, modal2, modal3],
     },
-    interface: { title: "High-fidelity Screens", img: [slotQIScreens] },
+    interface: { title: "High-fidelity Screens", img: [SlotQIScreens] },
     mockup: { title: "Mockup", img: [mockupScreens, mockup1] },
     prototype: { title: "Prototype", img: [slotQIPrototype] },
 
