@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ButtonFilter from "../buttonFilter/buttonFilter";
+import ButtonFilter from "../buttonFilter/ButtonFilter";
 import styles from "./filter.module.css";
 import { ChevronDown } from "lucide-react";
 
