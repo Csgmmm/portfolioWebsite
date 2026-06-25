@@ -318,8 +318,9 @@ function ProjectsDetail() {
                           rel="noreferrer"
                         >
                           <Button variant="secondary">
+                            <a href="https://www.instagram.com/p/DW3Xl2LtNE5/" target="_blank" rel="noopener noreferrer">
                             <Video style={{ marginRight: 8 }} />
-                            Watch video
+                            Watch video</a>
                           </Button>
                         </a>
                       </div>
