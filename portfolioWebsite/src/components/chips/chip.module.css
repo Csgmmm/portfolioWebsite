@@ -20,3 +20,14 @@
   text-transform: uppercase;
 }
 
+.tertiary {
+    border: 1px solid var(--chip-card);
+  border-radius: var(--lg);
+  padding: var(--xxs) var(--xs);
+  font-size: var(--chip-font-size-card);
+  font-weight: 300;
+  color: var(--chip-text);
+  width: fit-content;
+  text-transform: uppercase;
+}
+

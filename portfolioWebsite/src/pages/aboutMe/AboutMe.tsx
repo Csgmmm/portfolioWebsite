@@ -5,7 +5,6 @@ import styles from "./aboutMe.module.css";
 import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
 import Button from "../../components/buttons/Button";
-import Resume from "./assets/CarlaMartinsResume.pdf";
 
 function AboutMe() {
   return (
@@ -135,9 +134,6 @@ function AboutMe() {
               strengthen your platform's usability and technical foundation.
             </p>
             <div className={styles.buttons}>
-              <a href={Resume} download="CarlaMartinsResume.pdf">
-                <Button variant="primary" className={styles.btn}>Download Resume</Button>
-              </a>
               <Button
                 variant="secondary" className={styles.btn}
                 onClick={() =>

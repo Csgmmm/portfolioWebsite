@@ -128,7 +128,7 @@ function ProjectsDetail() {
                       project.chips.map((item, idx) => (
                         <Chip
                           key={idx}
-                          variant="secondary"
+                          variant="tertiary"
                           className={styles.chip}
                         >
                           {item}

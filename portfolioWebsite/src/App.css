@@ -34,7 +34,7 @@
   --xl-7: 88px;
   --xl-8: 96px;
   --xl-9: 112px;
-  --text-caption: 12px;
+  --text-caption: 14px;
   --shadow: #1f1f1f;
 }
 
@@ -90,6 +90,8 @@ h6 {
   font-size: 0.67em;
   color: var(--title);
 }
+
+
 
 body {
   background: var(--background);

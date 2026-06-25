@@ -33,7 +33,6 @@ function Footer() {
         <section className={styles.privateInfo}>
           <a href="tel:+351910061795" className={styles.emailLink}>
             <Smartphone />
-            <p>+351 910 061 795</p>
           </a>
 
           <a
@@ -41,7 +40,6 @@ function Footer() {
             className={styles.emailLink}
           >
             <Send />
-            <p>carla.s.ofia@hotmail.com</p>
           </a>
         </section>
       </div>

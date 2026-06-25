@@ -427,7 +427,7 @@ export const projects: IProjectData[] = [
     category: ["Front-End Development", "Homepage"],
     id: "femininedashboard",
     title: "Feminine Dashboard",
-    projectTitle: "MyCicle",
+    projectTitle: "MyCycle",
     year: 2026,
     mainImage: femin,
     shortDescription:
@@ -852,7 +852,7 @@ export const projects: IProjectData[] = [
     category: ["UI/UX Design"],
     id: "mercedes",
     title: "HMI: UI Concept",
-    projectTitle: "Mercedez-Benz",
+    projectTitle: "Mercedes-Benz",
     year: 2023,
     mainImage: mercedes,
     shortDescription: "For portfolio purposes only.",
