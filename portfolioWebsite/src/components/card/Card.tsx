@@ -36,6 +36,7 @@ const Card = ({
         {/* se o project tiver img, então... */}
         {showImage && (
           <div className={styles.imageYear}>
+            <Link to={`/project/${project?.id}`}>
             <img
               className={styles.img}
               src={project?.mainImage}
@@ -46,15 +47,13 @@ const Card = ({
             <Chip variant="secondary" className={styles.chipYear}>
               {project?.year}
             </Chip>
+            </Link>
           </div>
         )}
 
         <div className={styles.infoContainer}>
           <div className={styles.title}>
-            <Link to={`/project/${project?.id}`}>
-
-              <Button variant="link">{project?.title} </Button>
-            </Link>
+         <h3 className={styles.titleProject}>{project?.title}</h3>
 
             <div className={styles.containerResumeBtn}>
               <p className={styles.resume}>{project?.resume}</p>

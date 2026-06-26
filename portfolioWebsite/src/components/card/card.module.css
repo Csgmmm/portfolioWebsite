@@ -104,6 +104,11 @@ h4 {
   padding-bottom: var(--sm);
 }
 
+.titleProject {
+  font-size: var(--sm);
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .title {
     gap: var(--sm);
