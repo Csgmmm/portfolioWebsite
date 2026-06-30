@@ -40,10 +40,10 @@
 
 [data-theme="light"] {
   --background: #ffffff;
-  --background-secondary: #eaeaea;
+  --background-secondary: #ebebeb;
   --background-transparent: color-mix(in srgb, var(  --background-secondary) 50%, transparent);
   --primary: #7567ee;
-  --secondary: #6357cc;
+  --secondary: #a69eef;
   --secondary-hover: #362b98;
     --disclaimer-text: #4471ba;
   --tertiary: #6987a8;

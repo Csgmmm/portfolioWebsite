@@ -31,6 +31,7 @@
 .secondary:hover {
   border: none;
   color: var(--secondary-hover);
+  background-color: var(--background-secondary);
 }
 
 .active {

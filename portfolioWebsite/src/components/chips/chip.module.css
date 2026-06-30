@@ -10,7 +10,7 @@
 
 
 .secondary {
-  background-color: var(--background);
+  background-color: var( --background-secondary);
   border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
   font-size: var(--chip-font-size-card);

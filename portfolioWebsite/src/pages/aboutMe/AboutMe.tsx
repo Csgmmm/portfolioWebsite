@@ -40,7 +40,7 @@ function AboutMe() {
               helps both design and engineering teams ship high-quality products
               faster and consistently.
             </p>
-            <Chip variant="secondary" className={styles.chipRelocate}>
+            <Chip variant="tertiary" className={styles.chipRelocate}>
               Based in Lisbon. Ready to relocate
             </Chip>
           </Card>
@@ -65,7 +65,7 @@ function AboutMe() {
             <div className={styles.timeline}>
               <div className={styles.timelineItem}>
                 <Card variant="secondary" className={styles.cardJourney}>
-                  <Chip variant="secondary">2014-2017</Chip>
+                  <Chip variant="tertiary">2014-2017</Chip>
                   <h3>The Visual Foundation</h3>
                   <p>
                     My journey began in Communication Design. Over these years,
@@ -79,7 +79,7 @@ function AboutMe() {
               </div>
               <div className={styles.timelineItem}>
                 <Card variant="secondary" className={styles.cardJourney}>
-                  <Chip variant="secondary">2018-2020</Chip>
+                  <Chip variant="tertiary">2018-2020</Chip>
                   <h3>Structure and Editorial Design</h3>
                   <p>
                     Driven by a love for typography and layout structure, I
@@ -92,7 +92,7 @@ function AboutMe() {
               </div>
               <div className={styles.timelineItem}>
                 <Card variant="secondary" className={styles.cardJourney}>
-                  <Chip variant="secondary">2018-2020</Chip>
+                  <Chip variant="tertiary">2018-2020</Chip>
                   <h3>From Print to Digital</h3>
                   <p>
                     Wanting to translate my design roots into the digital world,
@@ -106,7 +106,7 @@ function AboutMe() {
               </div>
               <div className={styles.timelineItem}>
                 <Card variant="secondary" className={styles.cardJourney}>
-                  <Chip variant="secondary">2025 - Present</Chip>
+                  <Chip variant="tertiary">2025 - Present</Chip>
                   <h3>Engineering Meets Design</h3>
                   <p>
                     While working on digital projects, I noticed a huge gap
