@@ -317,7 +317,7 @@ function ProjectsDetail() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <Button variant="secondary">
+                          <Button variant="primary">
                             <a href="https://www.instagram.com/p/DW3Xl2LtNE5/" target="_blank" rel="noopener noreferrer">
                             <Video style={{ marginRight: 8 }} />
                             Watch video</a>
