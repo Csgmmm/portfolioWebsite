@@ -1,0 +1,49 @@
+.codeWindow {
+  background-color: var(--background-code);
+  border: 1px solid var(--border-code);
+  border-radius: var(--sm);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  font-family: "Fira Code", "Courier New", monospace;
+  text-align: left;
+  width: 100%;
+}
+
+.codeHeader {
+  background-color: var(--header-code);
+  padding: var(--sm) ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-code);
+}
+
+.filename {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.codeBody {
+  max-height: 380px; 
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  padding: var(--sm);
+}
+
+.codeBody pre {
+  margin: 0;
+  white-space: pre-wrap;       
+  word-break: break-word;     
+}
+
+.codeBody code {
+  color: #e6edf3;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .codeWindow {
+    width: 100%;
+  }
+}

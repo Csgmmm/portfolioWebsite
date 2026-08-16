@@ -1,14 +1,6 @@
-
-export { default as FigmaPort2 } from "./FigmaPort2.png";
-export { default as FigmaPort3 } from "./FigmaPort3.png";
-export { default as FigmaPort4 } from "./FigmaPort4.png";
-export { default as FigmaPort5 } from "./FigmaPort5.png";
-export { default as FigmaPort6 } from "./FigmaPort6.png";
-export { default as CodePort1 } from "./codePort1.png";
-export { default as CodePort2 } from "./codePort2.png";
-export { default as CodePort3 } from "./codePort3.png";
-export { default as CodePort4 } from "./codePort4.png";
-export { default as CodePort5 } from "./codePort5.png";
-export { default as CodePort7 } from "./CodePort7.png";
-export { default as CodePort8 } from "./CodePort8.png";
-export { default as CodePort9 } from "./codePort9.png";
+export { default as cardProjects } from "./cardProjects.png";
+export { default as emptyState } from "./emptyState.png";
+export { default as homepageHeader } from "./homepageHeader.png";
+export { default as linkedinCards } from "./linkedinCards.png";
+export { default as textStyles } from "./textStyles.png";
+export { default as variables } from "./variables.png";

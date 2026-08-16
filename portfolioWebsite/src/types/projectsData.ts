@@ -11,6 +11,7 @@ import {
   mercedes,
   montepio,
   slotqi,
+  finances,
 } from "../pages/projects/assets/index";
 
 //projectsDetails
@@ -18,30 +19,16 @@ import videoInstaImg from "../pages/projectsDetail/assets/sns24/instaImg.png";
 
 //Portfolio
 import {
-  FigmaPort2,
-  FigmaPort3,
-  FigmaPort4,
-  FigmaPort5,
-  FigmaPort6,
-  CodePort1,
-  CodePort2,
-  CodePort3,
-  CodePort4,
-  CodePort5,
-  CodePort7,
-  CodePort8,
-  CodePort9,
+  cardProjects,
+  emptyState,
+  homepageHeader,
+  linkedinCards,
+  textStyles,
+  variables,
 } from "../pages/projectsDetail/assets/portfolio/index";
 
 //Feminine Dashboard
-import {
-  codeFem1,
-  codeFem2,
-  codeFem3,
-  codeFem4,
-  codeFem5,
-  mockupMyCycle,
-} from "../pages/projectsDetail/assets/feminine/index";
+import { mockupMyCycle } from "../pages/projectsDetail/assets/feminine/index";
 
 //yumyum
 import {
@@ -103,14 +90,10 @@ import {
 
 //evolve
 import {
-  evolveFigma1,
-  evolveFigma2,
   evolveFigma3,
   evolveFigma4,
   evolveFigma5,
   evolveFigma6,
-  evolveFigma7,
-  evolveFigma8,
   evolveFigma9,
   evolveprototype1,
   evolveprototype2,
@@ -176,10 +159,7 @@ import {
   tinyTrackerFigma1,
   tinyTrackerFigma2,
   tinyTrackerFigma3,
-  tinyTrackerFigma4,
   tinyTrackerFigma5,
-  tinyTrackerFigma6,
-  tinyTrackerFigma7,
   mockupTinyTrackeriPhone,
   tinyMockup1,
   ad_units,
@@ -231,9 +211,6 @@ import {
 //pawmate
 import {
   pawmateWireframe,
-  pawMateCode,
-  pawMateCode2,
-  pawMateCode3,
   PawMateInformationArchitectureMap,
   pawMate_PrototypeFigma,
   mockupPawMateApp,
@@ -268,8 +245,15 @@ import {
   Montepio_ScreensMockup,
 } from "../pages/projectsDetail/assets/montepio/index";
 
+//finance
+import { finance } from "../pages/projectsDetail/assets/finances/index";
+
 import { CheckCircle, Palette, Code, Users, Eye, Ruler } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+export interface ICodeItem {
+  filename: string;
+  code: string;
+} //aqui faço export da interface do code que vou usar noutro componente, para que nao tenha de repetir codigo no outro componente. Assim, não tenho de escrever 2 vezes "code?: { filename: string; code: string }[];", importo logo daqui para o componente externo
 
 export interface IProjectData {
   id: string;
@@ -293,11 +277,17 @@ export interface IProjectData {
   };
   wireframe?: { title: string; img: string };
   iconography?: { title: string; img: string[] };
+  figma?: {
+    img: {
+      id?: string;
+      title: string;
+      img: string;
+    }[];
+  };
   interface?: { title: string; img: string[] };
-  dsm?: { title: string; img: string[] };
   videoImg?: string;
   videoUrl?: string;
-  codeImg?: { title: string; img: string[] };
+  code?: { filename: string; code: string }[];
   contributions?: { title: string; icon: LucideIcon; description: string }[];
   disclaimer?: string;
   resume?: string;
@@ -315,12 +305,113 @@ export interface IProjectData {
 }
 
 export const projects: IProjectData[] = [
+  //finances
+  {
+    category: ["UI/UX Design", "Front-End Development", "Homepage"],
+    id: "finances",
+    title: "Financial Plan",
+    projectTitle: "Financial Calculator",
+    year: 2026,
+    mainImage: finances,
+    shortDescription: "For portfolio purposes only.",
+    liveUrl: "https://finances-interface.vercel.app/",
+    githubUrl: "https://github.com/Csgmmm/financesInterface",
+    chips: ["FIGMA", "REACT", "TYPESCRIPT", "JAVASCRIPT", "CSS", "HTML"],
+    fullDescription: `**This project started out of a very personal need: the daily struggle to track income, manage expenses, and keep a clear view of the final balance without getting lost in complicated spreadsheets. What began as a tool designed for my own everyday use quickly evolved into a full-fledged application, as I realized many others face the exact same financial organization challenges.**
+       
+       **Secure Onboarding:** Integrated Google Authentication powered by Firebase, ensuring each user has a private, secure, and personalized space to manage their finances;
+        **Effortless Transaction Management:**A dashboard that allows users to record income and expenses, with modals to edit and delete records without losing context;
+        **Real-Time Balance Insights:** Clear visual feedback calculating exact total incomes, expenses, and the remaining net balance in real time;
+        **Dynamic Adaptive UI**Full support for both Dark Mode and Light Mode, ensuring an accessible, visually comfortable experience tailored to user preference at any time of day.`,
+    code: [
+      {
+        filename: "App.tsx",
+        code: `const handleDelete = async () => {
+    try {
+      const currentUser = auth.currentUser;
+
+      if (currentUser) {
+        await deleteDoc(doc(db, "transactions", transaction.id));
+      } else {
+        const sessionData = sessionStorage.getItem("temp_transactions");
+        const currentList: ITransaction[] = sessionData
+          ? JSON.parse(sessionData)
+          : [];
+        const updatedList = currentList.filter(
+          (item) => item.id !== transaction.id,
+        );
+
+        sessionStorage.setItem(
+          "temp_transactions",
+          JSON.stringify(updatedList),
+        );
+
+        window.dispatchEvent(new Event("local-storage-update"));
+      }
+
+      onClose(); 
+    } catch (error) {
+      console.error("Erro ao apagar:", error);
+      alert(error);
+    }
+  };
+`,
+      },
+      {
+        filename: "App.tsx",
+        code: `function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    setTheme(nextTheme);
+  };
+
+  const { transactions, refreshTransactions } = useTransactions();
+
+  return (
+    <div className="appContainer">
+      <nav>
+        <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      </nav>
+      <section className="generalContainer">
+        <TransactionsDataCards transactions={transactions} />
+        
+        <div className="transationsGrid">
+          <Card variant="primary">
+            <TransactionRecord />
+          </Card>
+
+          <Card variant="primary">
+            <RecentTransactions 
+              transactions={transactions} 
+              theme={theme} 
+              onRefresh={refreshTransactions} 
+            />
+          </Card>
+        </div>
+      </section>
+      <Footer/>
+    </div>
+  );
+}`,
+      },
+    ],
+    mockup: {
+      title: "Mockups",
+      img: [finance],
+    },
+    resume: `A personal finance tracker born out of real daily budget struggles, featuring Firebase Google Auth, real-time spending insights, full CRUD modals, and dark/light modes.`,
+  },
+
   //portfolio
   {
     category: ["Front-End Development"],
     id: "portfolio",
     title: "Portfolio",
     year: 2026,
+    projectTitle: "Portfolio Website",
     mainImage: portfolio,
     githubUrl: "https://github.com/Csgmmm/portfolioWebsite",
     chips: ["FIGMA", "REACT", "TYPESCRIPT", "JAVASCRIPT", "CSS", "HTML"],
@@ -334,23 +425,59 @@ export const projects: IProjectData[] = [
       **Engineering & Scalability**
       • Used experience across different tech stacks to make the designs functional and accurate to the idea 
       • From the theme switching to the smallest card, everything was built to be scalable and responsive.`,
-    dsm: {
-      title: "Component Specs",
-      img: [FigmaPort2, FigmaPort3, FigmaPort4, FigmaPort5, FigmaPort6],
-    },
-    codeImg: {
-      title: "Development",
+    figma: {
       img: [
-        CodePort1,
-        CodePort2,
-        CodePort3,
-        CodePort4,
-        CodePort5,
-        CodePort7,
-        CodePort8,
-        CodePort9,
+        { title: "Card", img: cardProjects },
+        { title: "Empty State", img: emptyState },
+        { title: "Homepage Header", img: homepageHeader },
+        { title: "LinkedIn Cards", img: linkedinCards },
+        { title: "Text Styles", img: textStyles },
+        { title: "Variables", img: variables },
       ],
     },
+    code: [
+      {
+        filename: "App.tsx",
+        code: `<Routes>
+ <Route path="/homepage" 
+element={<Homepage theme={theme} onToggleTheme={toggleTheme} />} />
+<Route path="/projects" 
+element={<Projects theme={theme} onToggleTheme={toggleTheme} />} />
+<Route path="/project/:id" 
+element={<ProjectsDetail theme={theme} onToggleTheme={toggleTheme} />}  />
+<Route path="/aboutme" 
+element={<AboutMe theme={theme} onToggleTheme={toggleTheme} />} />
+<Route path="*" element={<Emptystate/>} />
+</Routes>
+<Footer />`,
+      },
+      {
+        filename: "ProjectsDetails.tsx",
+        code: `{project.liveUrl && (
+<div className={styles.btnLinks}>
+<a href={project.liveUrl}
+target="_blank"
+rel="noreferrer">
+<Button variant="primary">Website</Button>
+</a></div>)}`,
+      },
+      {
+        filename: "Project.tsx",
+        code: `function Projects({ theme, onToggleTheme }: ProjectsProps) {
+const [activeFilter, setActiveFilter] = useState<FilterType>("All");
+
+const yearToNumber = (year: number | string | undefined) => {
+if (!year) return 0;
+if (String(year).toLowerCase().includes("current")) return 9999;
+return parseInt(String(year), 10); };
+
+const filteredProjects = projects.filter((project) =>
+activeFilter === "All" ? true : project.category?.includes(activeFilter),);
+        
+const sortedProjects = [...filteredProjects].sort(
+(a, b) => yearToNumber(b.year) - yearToNumber(a.year),);`,
+      },
+    ],
     resume: `A portfolio bridging UI/UX Design and Front-End Engineering, built with accessibility, readability, and scalable code in mind.`,
   },
 
@@ -424,7 +551,7 @@ export const projects: IProjectData[] = [
 
   //feminine
   {
-    category: ["Front-End Development", "Homepage"],
+    category: ["Front-End Development", "UI/UX Design"],
     id: "femininedashboard",
     title: "Feminine Dashboard",
     projectTitle: "MyCycle",
@@ -440,10 +567,54 @@ export const projects: IProjectData[] = [
     • To simulate a real-world application, I implemented a login system that fetches data from a user API, showcasing history logs for each specific user;
     • Made sure the data is easy to read across all devices by creating  table structures for both desktop and mobile;
     • Built a modal system for symptom registration, allowing users to quickly update their daily health logs without leaving their current view.`,
-    codeImg: {
-      title: "Development",
-      img: [codeFem1, codeFem2, codeFem3, codeFem4, codeFem5],
-    },
+    code: [
+      {
+        filename: "Cycle.tsx",
+        code: `function Cycle() {
+  const { user } = useAuth();
+  const [dataPeriod, setDataPeriod] = useState<any[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleDataPeriod = async () => {
+    const { data, error: supabaseError } = await supabase
+      .from("cycles")
+      .select("*")
+      .eq("user_id", user!.id)
+      .order("endDate", { ascending: false });
+
+    if (supabaseError) {
+      setError(supabaseError.message);
+      return;
+    }
+
+    if (data) {
+      setDataPeriod(data);
+    }
+  };`,
+      },
+      {
+        filename: "Layout.tsx",
+        code: `import { useState, type ReactNode } from "react";
+import styles from "./layout.module.css";
+import Sidebar from "./sidebar/Sidebar";
+
+interface ILayout {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: ILayout) => {
+  const [isOpen, setIsOpen] = useState(true);
+  return (
+    <section id={styles.sidebar}>
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <main className={styles.main}>{children}</main>
+    </section>
+  );
+};
+
+export default Layout; `,
+      },
+    ],
     mockup: { title: "High-Fidelity Screens", img: [mockupMyCycle] },
     resume: `A desktop dashboard exploring women's health tracking, with real user authentication, responsive data tables, and a symptom registration modal.`,
     codeCredentials: [
@@ -530,9 +701,12 @@ export const projects: IProjectData[] = [
         support_agent,
       ],
     },
-    dsm: {
-      title: "Component Specs",
-      img: [componentsYumYum, modalsYumYum, variables_stylesYumYum],
+    figma: {
+      img: [
+        { title: "Components", img: componentsYumYum },
+        { title: "Modal", img: modalsYumYum },
+        { title: "Variables and Styles", img: variables_stylesYumYum },
+      ],
     },
     interface: {
       title: "High-fidelity Screens",
@@ -620,18 +794,13 @@ export const projects: IProjectData[] = [
         widgets,
       ],
     },
-    dsm: {
-      title: "Component Specs",
+    figma: {
       img: [
-        evolveFigma1,
-        evolveFigma2,
-        evolveFigma3,
-        evolveFigma4,
-        evolveFigma5,
-        evolveFigma6,
-        evolveFigma7,
-        evolveFigma8,
-        evolveFigma9,
+        { title: "Transactions", img: evolveFigma3 },
+        { title: "Contacts", img: evolveFigma4 },
+        { title: "Text Styles", img: evolveFigma5 },
+        { title: "Gaps", img: evolveFigma6 },
+        { title: "Variables", img: evolveFigma9 },
       ],
     },
     prototype: {
@@ -713,17 +882,14 @@ export const projects: IProjectData[] = [
       ],
     },
     wireframe: { title: "Wireframes", img: wireframeTiny },
-    dsm: {
-      title: "Component Anatomy and States",
+    figma: {
       img: [
-        tinyTrackerFigma4,
-        tinyTrackerFigma3,
-        tinyTrackerFigma5,
-        tinyTrackerFigma1,
-        tinyTrackerFigma2,
-        tinyTrackerFigma6,
-        tinyTrackerFigma7,
-        tinyTrackerEmptyState,
+        { title: "Input Selection", img: tinyTrackerFigma3 },
+        { title: "Variables", img: tinyTrackerFigma5 },
+        { title: "Gaps", img: tinyTrackerFigma1 },
+        { title: "Margins", img: tinyTrackerFigma2 },
+        { title: "Gaps", img: tinyTrackerFigma1 },
+        { title: "Empty State", img: tinyTrackerEmptyState },
       ],
     },
     prototype: {
@@ -758,10 +924,13 @@ export const projects: IProjectData[] = [
       **Information Architecture:** I designed a comprehensive dashboard that prioritizes high-level recruitment statistics and upcoming events, allowing managers to see the health of their department at a glance; 
       **Functional Modals:** Built modals for common actions, like adding new log events, editing employee profiles, or managing interview schedules, to keep users in their current workflow without full page reloads;
       **Design System:** Developed a full library of components, including data cards, interactive calendars, status badges, and input fields, all tailored for a professional enterprise environment.`,
-
-    dsm: {
-      title: "Component Anatomy & States",
-      img: [loginCredentials, modal, modal2, modal3],
+    figma: {
+      img: [
+        { title: "Error message", img: loginCredentials },
+        { title: "Margins", img: modal },
+        { title: "Touch target", img: modal2 },
+        { title: "Interface Element", img: modal3 },
+      ],
     },
     interface: { title: "High-fidelity Screens", img: [SlotQIScreens] },
     mockup: { title: "Mockup", img: [mockupScreens, mockup1] },
@@ -790,10 +959,77 @@ export const projects: IProjectData[] = [
       This project focuses on developing a website utilizing Bootstrap, Flexbox, special attention was given to ensuring responsiveness across devices, CSS, and HTML. In addition to that, through intuitive UI/UX, I've brought the concept to life, fortifying the potential app, rebranding the project with a new name and logo PawMate. 
       With **PawMate**, dogs can have profiles, and swipe right to express interest in making new canine friends, setting up playdates, arranging walks, or finding a compatible mate for breeding purposes, PawMate ensures that every pup and their owner find exactly what they're looking for.`,
     wireframe: { title: "Wireframes", img: pawmateWireframe },
-    codeImg: {
-      title: "Development",
-      img: [pawMateCode, pawMateCode2, pawMateCode3],
-    },
+    code: [
+      {
+        filename: "Index.html - Section: Testimonial",
+        code: `<section id="testimonial">
+  <div class="container my-1">
+    <div class="p-5 text-center bg-body-tertiary rounded-5">
+
+      <h1 class="text-body-emphasis pb-3">"I no longer have to sniff other dogs for love. I've found the hottest Corgi on PawMate. Woof!"</h1>
+
+      <img src="./images/dog-img.jpg" width="100" height="100" style="border-radius: 50%;"></img>
+      <p class="col-lg-8 mx-auto fs-5 text-muted pb-5">
+        Maggie, Lisbon
+      </p>
+
+      <div class="row">
+        <div class="col-md-3">
+          <img src="./images/techcrunch.png" class="img-fluid" width="150px" alt="techcrunch">
+        </div>
+        <div class="col-md-3">
+          <img src="./images/mashable.png" class="img-fluid" width="100px" alt="mashable">
+        </div>
+        <div class="col-md-3">
+          <img src="./images/bizinsider.png" class="img-fluid" width="200px" alt="bizinsider">
+        </div>
+        <div class="col-md-3">
+          <img src="./images/tnw.png" class="img-fluid" width="70px" alt="tnw">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>`,
+      },
+      {
+        filename: "Index.html - Section: Subscriptions",
+        code: `<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Brindle</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">€0<small class="text-body-secondary fw-light">/mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>5 Matches Per Day</li>
+          <li>10 Messages Per Day</li>
+          <li>Unlimited App Usage</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-outline-dark">Sign up for free</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Merle</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">€5<small class="text-body-secondary fw-light">/mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Unlimited Matches</li>
+          <li>Unlimited Messages</li>
+          <li>Unlimited App Usage</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-dark">Get started</button>
+      </div>
+    </div>
+  </div>
+</div>`,
+      },
+    ],
     prototype: { title: "prototype", img: [pawMate_PrototypeFigma] },
     videoUrl: "Vimeo",
     interface: { title: "High-fidelity Screens", img: [mockupPawMateApp] },
@@ -830,9 +1066,11 @@ export const projects: IProjectData[] = [
        **Design System:** Developed a full library of components, including cards for vehicle status, high-contrast input fields, and badges; 
        **Scalable Layouts:** Used variables for spacing to guarantee the design is organized and adapts perfectly to different screen aspect ratios;
        **Data Clarity:** Reimagined the iDrive Dashboard to balance critical driving data with music and navigation without cluttering the driver's view.`,
-    dsm: {
-      title: "Component Specs",
-      img: [BMWDsmComponentHomepage, BMWDsmComponentProfile],
+    figma: {
+      img: [
+        { title: "Clickable Element", img: BMWDsmComponentHomepage },
+        { title: "Border Radius", img: BMWDsmComponentProfile },
+      ],
     },
     interface: {
       title: "High-Fidelity Screens",
@@ -865,9 +1103,11 @@ export const projects: IProjectData[] = [
        
         **Dynamic Visual Identity:** Reimagined the classic dashboard with a futuristic, high-contrast aesthetic. Including a personalized 'Display Color Change' feature to match the driver's preference or ambient lighting.
         **Intuitive Media & Connectivity:** Designed a streamlined music and profile interface that balances rich album art with clear, accessible playback controls.`,
-    dsm: {
-      title: "Component Specs",
-      img: [MercedesComponentsFigma_1, MercedesComponentsFigma_2],
+     figma: {
+      img: [
+        { title: "Interface Element", img: MercedesComponentsFigma_1 },
+        { title: "Touch Target", img: MercedesComponentsFigma_2 },
+      ],
     },
     interface: {
       title: "High-Fidelity Screens",

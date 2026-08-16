@@ -6,10 +6,15 @@ import Card from "../../components/card/Card";
 import Chip from "../../components/chips/Chip";
 import Button from "../../components/buttons/Button";
 
-function AboutMe() {
+interface ProjectsDetailProps {
+  theme: string;
+  onToggleTheme: () => void;
+}
+
+function AboutMe({ theme, onToggleTheme }: ProjectsDetailProps) {
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={onToggleTheme} />
       <div className={styles.generalContainer}>
         <section className={styles.intro}>
           <div className={styles.imageWrapper}>

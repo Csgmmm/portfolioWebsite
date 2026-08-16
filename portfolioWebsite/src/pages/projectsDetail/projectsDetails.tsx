@@ -4,14 +4,21 @@ import styles from "./projectsDetail.module.css";
 import Navbar from "../../components/navbar/Navbar";
 import Emptystate from "../emptyState/Emptystate";
 import Button from "../../components/buttons/Button";
-import Carousel from "../../components/carousel/Carousel";
 import { ChevronLeft, CircleAlert, Minus, Video, X } from "lucide-react";
 import Chip from "../../components/chips/Chip";
 import Card from "../../components/card/Card";
 import { useState } from "react";
 import VideoComponent from "./assets/pawmate/pawMateVimeo";
+import { CodeSection } from "../../components/codeSection/CodeSection";
 
-function ProjectsDetail() {
+import TabsView from "../../components/figmaView/TabsView";
+
+interface ProjectsDetailProps {
+  theme: string;
+  onToggleTheme: () => void;
+}
+
+function ProjectsDetail({ theme, onToggleTheme }: ProjectsDetailProps) {
   const { id } = useParams();
   const project = projects.find((project) => project.id === id);
 
@@ -22,8 +29,8 @@ function ProjectsDetail() {
   const [uxMinimized, setUxMinimized] = useState(false);
   const [uxClosed, setUxClosed] = useState(false);
 
-  const [carouselMinimized, setCarouselMinimized] = useState(false);
-  const [carouselClosed, setCarouselClosed] = useState(false);
+  const [browserMinimized, setBrowserMinimized] = useState(false);
+  const [browserClosed, setBrowserClosed] = useState(false);
 
   const [vimeoMinimized, setVimeoMinimized] = useState(false);
   const [vimeoClosed, setVimeoClosed] = useState(false);
@@ -38,13 +45,15 @@ function ProjectsDetail() {
   );
 
   const hasUI = Boolean(
-    (project?.interface && Object.keys(project.interface).length > 0) ||
+    (project?.figma && Object.keys(project.figma).length > 0) ||
     (project?.mockup && Object.keys(project.mockup).length > 0),
   );
 
   const hasTech = Boolean(
-    (project?.dsm && Object.keys(project.dsm).length > 0) || //existe dsm no project? então, vai buscar as keys do object project.dsm e vê se a length é maior que 0 ou...
-    (project?.codeImg && Object.keys(project.codeImg).length > 0),
+    project?.interface &&
+    Object.keys(project.interface).length > 0 && //existe interface no project? então, vai buscar as keys do object project.interface e vê se a length é maior que 0 ou...
+    project?.code &&
+    Object.keys(project.code).length > 0,
   );
 
   const hasUIAndTechBlock = hasUI || hasTech; //junta o UI e o Tech num só, ficando o UX a parte.
@@ -52,11 +61,11 @@ function ProjectsDetail() {
   let uxTitle = "User Experience, Visual Systems and Strategy";
   let uiTechTitle = "";
   if (hasUI && hasTech) {
-    uiTechTitle = "UI Specifications and Implementation";
+    uiTechTitle = "User Interface and Development";
   } else if (hasTech) {
     uiTechTitle = "UI Guidelines and Development";
   } else if (hasUI) {
-    uiTechTitle = "High-Fidelity Screens and Mockups";
+    uiTechTitle = "High-Fidelity Screens and Components";
   } else {
     uiTechTitle = "Project Showcase";
   }
@@ -80,13 +89,13 @@ function ProjectsDetail() {
   if (!project)
     return (
       <div>
-        <Emptystate />
+        <Emptystate theme={theme} onToggleTheme={onToggleTheme} />
       </div>
     );
 
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={onToggleTheme} />
       <div className={styles.container}>
         <div className={styles.headerPage}>
           <Button variant="link" className={styles.btnLink}>
@@ -156,7 +165,7 @@ function ProjectsDetail() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button variant="secondary">AppStore</Button>
+                        <Button variant="primary">AppStore</Button>
                       </a>
                     </div>
                   )}
@@ -168,7 +177,7 @@ function ProjectsDetail() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button variant="secondary">Github Code</Button>
+                        <Button variant="primary">Github Code</Button>
                       </a>
                     </div>
                   )}
@@ -180,7 +189,7 @@ function ProjectsDetail() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button variant="secondary">Website</Button>
+                        <Button variant="primary">Website</Button>
                       </a>
                     </div>
                   )}
@@ -192,7 +201,7 @@ function ProjectsDetail() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button variant="secondary">Prototype</Button>
+                        <Button variant="primary">Prototype</Button>
                       </a>
                     </div>
                   )}
@@ -204,7 +213,7 @@ function ProjectsDetail() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Button variant="secondary">Behance</Button>
+                        <Button variant="primary">Behance</Button>
                       </a>
                     </div>
                   )}
@@ -238,6 +247,11 @@ function ProjectsDetail() {
                   </div>
                 )}
               </div>
+              {project.shortDescription && (
+                <div className={styles.shortDescription}>
+                  <h6>{project.shortDescription}</h6>
+                </div>
+              )}
             </Card>
           </div>
           {/* rightSide */}
@@ -318,9 +332,14 @@ function ProjectsDetail() {
                           rel="noreferrer"
                         >
                           <Button variant="primary">
-                            <a href="https://www.instagram.com/p/DW3Xl2LtNE5/" target="_blank" rel="noopener noreferrer">
-                            <Video style={{ marginRight: 8 }} />
-                            Watch video</a>
+                            <a
+                              href="https://www.instagram.com/p/DW3Xl2LtNE5/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Video style={{ marginRight: 8 }} />
+                              Watch video
+                            </a>
                           </Button>
                         </a>
                       </div>
@@ -357,7 +376,7 @@ function ProjectsDetail() {
                   </div>
 
                   {!uxMinimized && (
-                    <div className={styles.containerProject}>
+                    <div className={styles.containerProjects}>
                       <div className={styles.projectsWrapper}>
                         {project.InformationArchitectureMap && (
                           <div className={styles.containerProject}>
@@ -441,96 +460,75 @@ function ProjectsDetail() {
                 </Card>
               )}
 
-            {hasUIAndTechBlock && //bloco com UI e Tech (carousel)
-              !carouselClosed && (
-                <div className={styles.containerCarousel}>
-                  <div className={styles.carouselFrames}>
-                    <Card className={styles.cardProjects}>
-                      <div className={styles.browserFrame}>
-                        <div className={styles.browserBar}>
-                          <span
-                            className={`${styles.dot} ${styles.dotRed}`}
-                            onClick={() => setCarouselClosed(true)}
-                          >
-                            <X size={8} className={styles.icon} />
-                          </span>
-                          <span
-                            className={`${styles.dot} ${styles.dotYellow}`}
-                            onClick={() =>
-                              setCarouselMinimized(!carouselMinimized)
-                            }
-                          >
-                            <Minus size={8} className={styles.icon} />
-                          </span>
+            {hasUIAndTechBlock && //bloco com UI e Tech
+              !browserClosed && (
+                <div >
+                  <Card className={styles.cardProjects}>
+                    <div className={styles.browserFrame}>
+                      <div className={styles.browserBar}>
+                        <span
+                          className={`${styles.dot} ${styles.dotRed}`}
+                          onClick={() => setBrowserClosed(true)}
+                        >
+                          <X size={8} className={styles.icon} />
+                        </span>
+                        <span
+                          className={`${styles.dot} ${styles.dotYellow}`}
+                          onClick={() => setBrowserMinimized(!browserMinimized)}
+                        >
+                          <Minus size={8} className={styles.icon} />
+                        </span>
 
-                          <span
-                            className={`${styles.dot} ${styles.dotGreen}`}
-                          />
-                          <h4 className={styles.title}>{uiTechTitle}</h4>
-                          {/* chamo a função para so aparecer o titulo das condições, colocando de lado o que é UX */}
-                        </div>
+                        <span className={`${styles.dot} ${styles.dotGreen}`} />
+                        <h4 className={styles.title}>{uiTechTitle}</h4>
+                        {/* chamo a função para so aparecer o titulo das condições, colocando de lado o que é UX */}
                       </div>
+                    </div>
 
-                      {!carouselMinimized && (
-                        <>
-                          {project.dsm && (
-                            <div className={styles.containerProject}>
-                              <h5>{project.dsm.title}</h5>
+                    {!browserMinimized && (
+                      <div className={styles.containerProjects}>
+                        {project.figma && (
+                          <div className={styles.containerProject}>
+                            <TabsView screens={project.figma.img} />
+                          </div>
+                        )}
 
-                              <Carousel
-                                img={project.dsm.img}
-                                title={project.dsm.title}
+                        {project.code?.map((item) => (
+                          <div className={styles.containerProject}>
+                            <CodeSection code={[item]} />
+                          </div> //vai a cada item do array e devolve como uma div com o estilo x, que contem o cada item do array,em  que contém um filename e um code, que é o que o componente CodeSection espera receber como props
+                        ))}
+
+                        {project.interface && (
+                          <div className={styles.containerProject}>
+                            {project.interface.img.map((item) => (
+                              <img
+                                className={styles.imgProject}
+                                src={item}
+                                onDragStart={(e) => e.preventDefault()}
+                                onContextMenu={(e) => e.preventDefault()}
                               />
-                            </div>
-                          )}
+                            ))}
+                          </div>
+                        )}
 
-                          {project.codeImg && (
-                            <div className={styles.containerProject}>
-                              <h5>{project.codeImg.title}</h5>
-                              <Carousel
-                                img={project.codeImg.img}
-                                title={project.codeImg.title}
+                        {project.mockup && (
+                          <div className={styles.containerProject}>
+                            {project.mockup.img.map((mockup) => (
+                              <img
+                                key={mockup}
+                                src={mockup}
+                                title={project?.mockup?.title}
+                                className={styles.imgProject}
+                                onDragStart={(e) => e.preventDefault()}
+                                onContextMenu={(e) => e.preventDefault()}
                               />
-                            </div>
-                          )}
-
-                          {project.interface && (
-                            <div className={styles.containerProject}>
-                              <h5>{project.interface.title}</h5>
-
-                              {project.interface.img.map((item) => (
-                                <img
-                                  key={item}
-                                  src={item}
-                                  title={project?.mockup?.title}
-                                  className={styles.imgProject}
-                                  onDragStart={(e) => e.preventDefault()}
-                                  onContextMenu={(e) => e.preventDefault()}
-                                />
-                              ))}
-                            </div>
-                          )}
-
-                          {project.mockup && (
-                            <div className={styles.containerProject}>
-                              <h5>{project.mockup.title}</h5>
-
-                              {project.mockup.img.map((mockup) => (
-                                <img
-                                  key={mockup}
-                                  src={mockup}
-                                  title={project?.mockup?.title}
-                                  className={styles.imgProject}
-                                  onDragStart={(e) => e.preventDefault()}
-                                  onContextMenu={(e) => e.preventDefault()}
-                                />
-                              ))}
-                            </div>
-                          )}
-                        </>
-                      )}
-                    </Card>
-                  </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </Card>
                 </div>
               )}
 

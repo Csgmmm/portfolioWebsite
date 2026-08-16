@@ -12,7 +12,10 @@
     transparent
   );
   --background-card: #010f1f;
+  --background-code: #0d1117;
+  --header-code: #161b22;
   --border: #454546;
+  --border-code: #21262d;
   --border-color: #404168;
   --text: #f8f8ff;
   --title: #f4f4f4;
@@ -25,9 +28,8 @@
   --navbar-background: #020f1f;
   --disclaimer-border: #376cc2;
   --disclaimer-text: #9fc0f4;
-  --chip-card-tertiary: #2e3e51;
-  --chip-text-tertiary: #c0c1ff;
   --chip-font-size-card: 14px;
+  --white: #ffffff;
   --null: 0px;
   --xxs: 4px;
   --xs: 8px;
@@ -55,6 +57,9 @@
     var(--background-secondary) 50%,
     transparent
   );
+  --border-code: #9e9e9e;
+  --background-code: #ffffff;
+  --header-code: rgb(230, 225, 253);
   --primary: #7567ee;
   --secondary: #a69eef;
   --secondary-hover: #362b98;
@@ -64,13 +69,11 @@
   --button-color: #ffffff;
   --background-card: #f4f4f4;
   --shortDescription: #5d5d5d;
-  --border: #dbdbdb;
+  --border: #c5c5c5;
   --border-color: #dbdbee;
   --text: #464555;
   --title: #191c1e;
   --shadow: #dcdcdc;
-  --chip-card-tertiary: #adaee6;
-  --chip-text-tertiary: #5456ca;
 }
 
 a {
@@ -128,4 +131,26 @@ h5 {
 h6 {
   font-size: 0.67em;
   color: var(--title);
+}
+
+/* navegadores modernos (Firefox, Chrome 121+) */
+* {
+  scrollbar-color: var(--primary) var(--background);
+  scrollbar-width: thin;
+}
+
+/* Para navegadores WebKit (Chrome mais antigo, Safari, Edge) */
+/* largura bar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* fundo bar */
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+/* indicador bar*/
+::-webkit-scrollbar-thumb {
+  background: #57525d;
+  border-radius: 4px;
 }

@@ -32,10 +32,7 @@
   gap: var(--md);
 }
 
-.footerContainer {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .btnTheme {
   width: fit-content;

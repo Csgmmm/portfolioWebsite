@@ -4,8 +4,12 @@ import styles from "./projects.module.css";
 import { projects } from "../../types/projectsData";
 import Filter, { type FilterType } from "../../components/filter/Filter";
 import { useState } from "react";
+interface ProjectsProps {
+  theme: string;
+  onToggleTheme: () => void;
+}
 
-function Projects() {
+function Projects({ theme, onToggleTheme }: ProjectsProps) {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
 
 
@@ -25,7 +29,7 @@ const sortedProjects = [...filteredProjects].sort(
 
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} onToggleTheme={onToggleTheme} />
 
       <div className={styles.container}>
         <div className={styles.filters}>

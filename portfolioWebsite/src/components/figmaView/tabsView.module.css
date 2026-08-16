@@ -1,0 +1,50 @@
+.figmaViewContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+  align-items: center
+}
+
+.tabs {
+     flex-wrap: wrap;
+    border-bottom: none;
+    gap: var(--xs);
+    display: flex;
+}
+
+.tab {
+  border: 1px solid var(--border);
+  border-radius: var(--xs);
+  padding: var(--xs) var(--sm);
+}
+
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtn:hover {
+  border-color: var(--secondary);
+}
+
+.figmaViewFrame {
+  border: 1px solid var(--border);
+  border-radius: var(--sm);
+  overflow: hidden;
+  width: 60%;
+}
+
+.screenImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) { 
+  .figmaViewFrame {
+    width: 100%;
+  }
+}

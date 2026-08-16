@@ -6,3 +6,4 @@ export { default as bmw } from "./bmw.png";
 export { default as mercedes } from "./mercedes.png";
 export { default as montepio } from "./montepio.png";
 export { default as slotqi } from "./slotqi.png";
+export { default as finances } from "./finances.png";

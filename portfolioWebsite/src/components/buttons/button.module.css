@@ -14,7 +14,7 @@
   background-color: var(--primary);
   color: var(--button-color);
 
-  padding: var(--sm);
+  padding: var(--xs);
 }
 
 .primary:hover {
@@ -26,7 +26,7 @@
   border: 1px solid var(--secondary);
   background-color: transparent;
   color: var(--secondary);
-  padding: var(--sm);
+  padding: var(--xs);
 }
 
 .secondary:hover {
@@ -43,7 +43,7 @@
 
 .tertiary:hover {
   background-color: transparent;
-  color: var(--secondary);
+  color: var(--primary);
   transition: background-color 0.5s ease;
 }
 
@@ -58,11 +58,23 @@
   transition: background-color 0.5s ease;
 }
 
+.tab {
+  border: 1px solid var(--border);
+  border-radius: var(--xs);
+  padding: var(--xs) var(--sm);
+  background-color: transparent;
+  color: var(--text);
+}
+
+.tab.active {
+  border-color: var(--secondary);
+
+  border-radius: var(--xs);
+  transition: ease 0.3s;
+}
+
 .active {
   color: var(--secondary);
-  border-radius: 0;
-  text-decoration: underline;
-  text-underline-offset: var(--sm);
 }
 
 .link a {

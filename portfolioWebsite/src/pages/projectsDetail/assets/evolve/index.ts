@@ -1,11 +1,7 @@
-export { default as evolveFigma1 } from "./evolveFigma1.png";
-export { default as evolveFigma2 } from "./evolveFigma2.png";
 export { default as evolveFigma3 } from "./evolveFigma3.png";
 export { default as evolveFigma4 } from "./evolveFigma4.png";
 export { default as evolveFigma5 } from "./evolveFigma5.png";
 export { default as evolveFigma6 } from "./evolveFigma6.png";
-export { default as evolveFigma7 } from "./evolveFigma7.png";
-export { default as evolveFigma8 } from "./evolveFigma8.png";
 export { default as evolveFigma9 } from "./evolveFigma9.png";
 export { default as evolveprototype1 } from "./evolveprototype1.png";
 export { default as evolveprototype2 } from "./evolveprototype2.png";

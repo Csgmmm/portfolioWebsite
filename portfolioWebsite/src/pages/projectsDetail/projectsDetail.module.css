@@ -155,6 +155,14 @@
   color: var(--primary);
 }
 
+.shortDescription {
+  padding-left: var(--md);
+  padding-bottom: var(--md);
+}
+
+.shortDescription h6 {
+  margin: 0;
+}
 /* right side */
 
 .rightSide {
@@ -245,12 +253,6 @@
   width: 200px;
 }
 
-.carouselFrames {
-  display: flex;
-  flex-direction: column;
-  gap: var(--md);
-}
-
 .IAMobile {
   display: none;
 }
@@ -260,6 +262,10 @@
   border-radius: var(--xs);
 }
 
+
+.containerProjects {
+  border-top: 1px solid var(--border-color);
+}
 .cardProjects {
   background: var(--background-card);
 }
@@ -267,6 +273,9 @@
 .titleProject {
   margin: 0;
   padding: var(--sm) var(--null) var(--sm) var(--null);
+}
+.cardProjects .containerProject:first-child {
+  border-top: none;
 }
 
 .containerProject {
@@ -277,19 +286,10 @@
   justify-content: center;
   flex-direction: column;
   gap: var(--sm);
-  margin-bottom: var(--md);
+  padding: var(--md);
 }
-
 .containerProject h5 {
-  margin: 0;
-  padding: var(--sm) var(--null) var(--null) var(--null);
-}
-
-.containerProject h3 {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: var(--md) var(--null) var(--xs) var(--null);
+  margin: 0
 }
 
 .iconographyContainer {
@@ -329,11 +329,9 @@
 }
 
 @media (max-width: 962px) {
-
   .headerPage {
-  width: 85%;
-
-}
+    width: 85%;
+  }
   .bothSide {
     display: flex;
     flex-direction: column;
@@ -353,12 +351,6 @@
 
   .descriptionBtn p {
     width: 100%;
-  }
-
-  .carouselContainer {
-    display: flex;
-    gap: var(--md);
-    flex-direction: column;
   }
 
   .rightSide {
@@ -391,10 +383,6 @@
 
   .containerProject {
     margin-bottom: var(--md);
-  }
-
-  .containerProject h5 {
-    padding-bottom: var(--md);
   }
 }
 

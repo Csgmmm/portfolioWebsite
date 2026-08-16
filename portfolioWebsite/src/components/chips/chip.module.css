@@ -21,12 +21,12 @@
 }
 
 .tertiary {
-    border: 1px solid var( --chip-card-tertiary);
+    border: 1px solid var( --border);
   border-radius: var(--lg);
   padding: var(--xxs) var(--xs);
   font-size: var(--chip-font-size-card);
   font-weight: 300;
-  color: var(--chip-text-tertiary);
+  color: var(--text);
   width: fit-content;
   text-transform: uppercase;
 }

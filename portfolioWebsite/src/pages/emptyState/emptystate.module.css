@@ -11,17 +11,11 @@
   align-items: center;
   justify-content: center;
 }
-.errorP{
-    color: var(--text);
-    margin: 0;
-    padding: var(--sm) var(--null) var(--xl) var(--null) ;
-}
 
 .errorTitle {
-    margin: var(--xl) var(--null) var(--null) var(--null);
+  margin: var(--xl) var(--null) var(--null) var(--null);
 }
 
-
-.emptyState p{
-    width: fit-content;
+.emptyState p {
+  width: fit-content;
 }

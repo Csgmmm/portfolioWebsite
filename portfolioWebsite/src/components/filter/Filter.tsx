@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ButtonFilter from "../buttonFilter/ButtonFilter";
 import styles from "./filter.module.css";
 import { ChevronDown } from "lucide-react";
@@ -19,22 +19,6 @@ function Filter({ activeFilter, onFilterChange }: IFilterProps) {
   ];
   const [open, setOpen] = useState(false);
 
- useEffect(() => {
-  const clickOutside = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    if (!target.closest(`.${styles.filterMobile}`)) {
-      setOpen(false);
-    }
-  };
-
-  if (open) {
-    document.addEventListener("click", clickOutside);
-  }
-
-  return () => {
-    document.removeEventListener("click", clickOutside);
-  };
-}, [open]);
 
   return (
     <>

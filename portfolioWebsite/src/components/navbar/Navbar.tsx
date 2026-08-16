@@ -2,12 +2,18 @@ import { Link, useLocation } from "react-router-dom";
 import NameLogo from "./NameLogo";
 import "./navbar.css";
 import Button from "../buttons/Button";
-import { ArrowRight, Menu, SunMoon, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 import linkedinLogo from "../../pages/homepage/assets/linkedinLogo.svg";
 import github from "../../pages/homepage/assets/github.svg";
+import Toggle from "../toggle/Toggle";
 
-function Navbar() {
+interface NavbarProps {
+  theme: string;
+  onToggleTheme: () => void;
+}
+
+function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,13 +23,7 @@ function Navbar() {
     { to: "/aboutme", label: "About me" },
   ];
 
-  const toggleTheme = () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    document.documentElement.setAttribute(
-      "data-theme",
-      current === "dark" ? "light" : "dark", //o current é dark? então light, senão dark. Nao esqiecer de colocar no index.html o atributo data-theme="dark" para o tema dark ser o padrão
-    );
-  };
+
   return (
     <>
       {isOpen && <div className="overlay" onClick={() => setIsOpen(false)} />}
@@ -69,15 +69,8 @@ function Navbar() {
                 ))}
               </div>
 
-              <div className="footerContainer">
-                <Button
-                  variant="secondary"
-                  onClick={toggleTheme}
-                  className="btnTheme"
-                  icon={<SunMoon />}
-                >
-                  <span className="theme">Theme</span>
-                </Button>
+              <div>
+                <Toggle theme={theme} toggleTheme={onToggleTheme} />
                 <div className="nav-footer">
                   <div className="socialMediaLogos">
                     <span className="socialMediaIcon">

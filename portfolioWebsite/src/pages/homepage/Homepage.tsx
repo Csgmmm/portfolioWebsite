@@ -28,11 +28,17 @@ import Button from "../../components/buttons/Button";
 import { Link } from "react-router-dom";
 import { projects } from "../../types/projectsData";
 
-function Homepage() {
+
+interface HomepageProps {
+  theme: string;
+  onToggleTheme: () => void;
+}
+
+function Homepage({ theme, onToggleTheme }: HomepageProps) {
   return (
     <>
       <section className={styles.headerContainer}>
-        <Navbar />
+        <Navbar theme={theme} onToggleTheme={onToggleTheme} />
         <div className={styles.header}>
           <div className={styles["title-Pic"]}>
             <div className={styles.chip}>
