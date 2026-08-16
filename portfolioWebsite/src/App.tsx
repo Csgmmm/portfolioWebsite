@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Homepage from "./pages/homepage/Homepage";
 import Projects from "./pages/projects/Projects";
@@ -27,12 +27,18 @@ function App() {
   return (
     <>
       <Routes>
-
-        {/* Passas o theme e o toggleTheme para as páginas onde a Navbar é usada */}
+        {/* Rota principal / que carrega a Homepage */}
         <Route 
-          path="/homepage" 
+          path="/" 
           element={<Homepage theme={theme} onToggleTheme={toggleTheme} />} 
         />
+        
+        {/* Mantém /homepage a redirecionar ou a carregar a Homepage */}
+        <Route 
+          path="/homepage" 
+          element={<Navigate to="/" replace />} 
+        />
+
         <Route 
           path="/projects" 
           element={<Projects theme={theme} onToggleTheme={toggleTheme} />} 
@@ -45,7 +51,10 @@ function App() {
           path="/aboutme" 
           element={<AboutMe theme={theme} onToggleTheme={toggleTheme} />} 
         />
-        <Route path="*" element={<Emptystate theme={theme} onToggleTheme={toggleTheme}/>} />
+        <Route 
+          path="*" 
+          element={<Emptystate theme={theme} onToggleTheme={toggleTheme}/>} 
+        />
       </Routes>
       <Footer />
     </>
